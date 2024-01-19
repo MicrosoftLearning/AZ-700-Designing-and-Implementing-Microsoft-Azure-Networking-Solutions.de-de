@@ -8,6 +8,8 @@ Exercise:
 
 Als Teil des Netzwerksicherheitsteams von Contoso besteht Ihre nächste Aufgabe darin, Firewallregeln zum Zulassen/Verweigern des Zugriffs auf bestimmte Websites zu erstellen. Die folgenden Schritte führen Sie durch das Erstellen einer Ressourcengruppe, eines virtuellen Netzwerks und von Subnetzen sowie eines virtuellen Computers als vorbereitende Aufgaben für die Umgebung, das Bereitstellen einer Firewall und einer Firewallrichtlinie, das Konfigurieren von Standardrouten und Anwendungs-, Netzwerk- und DNAT-Regeln und schließlich das Testen der Firewall.
 
+![Abbildung: Architektur des virtuellen Netzwerks mit Azure Firewall](../media/7-exercise-deploy-configure-azure-firewall-using-azure-portal.png)
+
 In dieser Übung führen Sie die folgenden Schritte aus:
 
 + Aufgabe 1: Erstellen einer Ressourcengruppe
@@ -35,7 +37,7 @@ In dieser Aufgabe erstellen Sie eine neue Ressourcengruppe.
 
 1. Klicken Sie auf der Homepage des Azure-Portals auf **Ressourcengruppen**.
 
-1. Wählen Sie **Erstellen** aus. 
+1. Klicken Sie auf **Erstellen**. 
 
 1. Geben Sie auf der Registerkarte **Grundlagen** unter ** Ressourcengruppe** die Angabe **Test-FW-RG** ein.
 
@@ -55,7 +57,7 @@ In dieser Aufgabe erstellen Sie ein einzelnes virtuelles Netzwerk mit zwei Subne
 
 1. Geben Sie auf der Startseite des Azure-Portals in das Suchfeld **Virtuelles Netzwerk** ein, und wählen Sie **Virtuelles Netzwerk**, wenn diese Option angezeigt wird.
 
-1. Wählen Sie **Erstellen** aus.
+1. Klicken Sie auf **Erstellen**.
 
 1. Wählen Sie die Zuvor erstellte Ressourcengruppe **Test-FW-RG** aus.
 
@@ -71,7 +73,7 @@ In dieser Aufgabe erstellen Sie ein einzelnes virtuelles Netzwerk mit zwei Subne
 
 1. Ändern Sie den **Adressbereich des Subnetzes** in **10.0.1.0/26**.
 
-1. Klicken Sie auf **Speichern**.
+1. Wählen Sie **Speichern**.
 
 1. Wählen Sie **Subnetz hinzufügen** aus, um ein weiteres Subnetz zu erstellen, das den Workloadserver hosten soll, den Sie in Kürze erstellen.
 
@@ -82,7 +84,7 @@ In dieser Aufgabe erstellen Sie ein einzelnes virtuelles Netzwerk mit zwei Subne
 
 1. Ändern Sie den **Subnetzadressbereich** in **10.0.2.0/24**.
 
-1. Klicken Sie auf **Hinzufügen**.
+1. Wählen Sie **Hinzufügen** aus.
 
 1. Klicken Sie auf **Überprüfen + erstellen**.
 
@@ -129,7 +131,7 @@ In dieser Aufgabe stellen Sie die Firewall im virtuellen Netzwerk mit einer konf
 
    | **Einstellung**          | **Wert**                                                    |
    | -------------------- | ------------------------------------------------------------ |
-   | Subscription         | Wählen Sie Ihr Abonnement aus.                                     |
+   | Abonnement         | Wählen Sie Ihr Abonnement aus.                                     |
    | Resource group       | **Test-FW-RG**                                               |
    | Firewallname        | **Test-FW01**                                                |
    | Region               | Ihre Region                                                  |
@@ -177,7 +179,7 @@ In dieser Aufgabe konfigurieren Sie die ausgehende Standardroute für das Subnet
 
    | **Einstellung**              | **Wert**                |
    | ------------------------ | ------------------------ |
-   | Subscription             | Wählen Sie Ihr Abonnement aus. |
+   | Abonnement             | Wählen Sie Ihr Abonnement aus. |
    | Resource group           | **Test-FW-RG**           |
    | Region                   | Ihre Region              |
    | Name                     | **Firewall-route**       |
@@ -198,7 +200,7 @@ In dieser Aufgabe konfigurieren Sie die ausgehende Standardroute für das Subnet
 
 1. Wählen Sie unter **Subnetz** die Option **Workload-SN** aus. Stellen Sie sicher, dass Sie nur das Subnetz Workload-SN für diese Route auswählen. Andernfalls funktioniert die Firewall nicht korrekt.
 
-1. Wählen Sie **OK** aus.
+1. Klickan Sie auf **OK**.
 
 1. Wählen Sie unter **Einstellungen** die Option **Routen** und dann **Hinzufügen** aus.
 
@@ -210,7 +212,7 @@ In dieser Aufgabe konfigurieren Sie die ausgehende Standardroute für das Subnet
 
 1. Geben Sie unter **Adresse des nächsten Hops** die private IP-Adresse für die Firewall ein, die Sie sich zuvor notiert haben (z. B. **10.0.1.4**).
 
-1. Klicken Sie auf **Hinzufügen**.
+1. Wählen Sie **Hinzufügen** aus.
 
     ![Hinzufügen einer Firewallroute](../media/add-firewall-route.png)
 
@@ -235,7 +237,7 @@ In dieser Aufgabe fügen Sie eine Anwendungsregel hinzu, die ausgehenden Zugriff
    | Name                   | **App-Coll01**                            |
    | Regelsammlungstyp   | **Anwendung**                           |
    | Priorität               | **200**                                   |
-   | Regelsammlungsakrion | **Zulassen**                                 |
+   | Regelsammlungsaktion | **Zulassen**                                 |
    | Regelsammlungsgruppe  | **DefaultApplicationRuleCollectionGroup** |
    | **Abschnitt „Regeln“**      |                                           |
    | Name                   | **Allow-Google**                          |
@@ -248,7 +250,7 @@ In dieser Aufgabe fügen Sie eine Anwendungsregel hinzu, die ausgehenden Zugriff
 
    ![Hinzufügen einer Anwendungsregelsammlung](../media/add-an-application-rule-for-firewall.png)
 
-1. Klicken Sie auf **Hinzufügen**.
+1. Wählen Sie **Hinzufügen** aus.
 
  
 
@@ -265,9 +267,9 @@ In dieser Aufgabe fügen Sie eine Netzwerkregel hinzu, die ausgehenden Zugriff a
    | **Einstellung**            | **Wert**                                                    |
    | ---------------------- | ------------------------------------------------------------ |
    | Name                   | **Net-Coll01**                                               |
-   | Regelsammlungstyp   | **Network**                                                  |
+   | Regelsammlungstyp   | **Netzwerk**                                                  |
    | Priorität               | **200**                                                      |
-   | Regelsammlungsakrion | **Zulassen**                                                    |
+   | Regelsammlungsaktion | **Zulassen**                                                    |
    | Regelsammlungsgruppe  | **DefaultNetworkRuleCollectionGroup**                        |
    | **Abschnitt „Regeln“**      |                                                              |
    | Name                   | **Allow-DNS**                                                |
@@ -281,7 +283,7 @@ In dieser Aufgabe fügen Sie eine Netzwerkregel hinzu, die ausgehenden Zugriff a
 
     ![Hinzufügen einer Netzwerkregelsammlung](../media/add-a-network-rule-for-firewall.png)
 
-1. Klicken Sie auf **Hinzufügen**.
+1. Wählen Sie **Hinzufügen** aus.
 
  
 
@@ -299,7 +301,7 @@ In dieser Aufgabe fügen Sie eine DNAT-Regel hinzu, mit der Sie einen Remotedesk
    | --------------------- | ------------------------------------------------------------ |
    | Name                  | **rdp**                                                      |
    | Regelsammlungstyp  | **DNAT**                                                     |
-   | Priorität              | **200**                                                      |
+   | Priority              | **200**                                                      |
    | Regelsammlungsgruppe | **DefaultDnatRuleCollectionGroup**                           |
    | **Abschnitt „Regeln“**     |                                                              |
    | Name                  | **rdp-nat**                                                  |
@@ -315,7 +317,7 @@ In dieser Aufgabe fügen Sie eine DNAT-Regel hinzu, mit der Sie einen Remotedesk
 
         ![Add a DNAT rule collection](../media/add-a-dnat-rule.png)
 
-1. Klicken Sie auf **Hinzufügen**.
+1. Wählen Sie **Hinzufügen** aus.
 
  
 
@@ -337,7 +339,7 @@ In dieser Übung konfigurieren Sie in dieser Aufgabe zu Testzwecken die primäre
 
 1. Geben Sie **209.244.0.3** in das Textfeld **DNS-Server hinzufügen** und **209.244.0.4** in das nächste Textfeld ein.
 
-1. Klicken Sie auf **Speichern**.
+1. Wählen Sie **Speichern**.
 
    ![Ändern von DNS-Servern auf der NIC](../media/change-dns-servers-srv-work-nic-2.png)
 
@@ -355,13 +357,13 @@ In dieser letzten Aufgabe testen Sie die Firewall, um sicherzustellen, dass die 
 
 1. Geben Sie im Feld **Benutzername** den Namen **TestUser** ein.
 
-1. Wählen Sie **Verbinden**.
+1. Wählen Sie **Verbinden** aus.
 
    ![RDP-Verbindung mit der öffentlichen IP-Adresse der Firewall](../media/remote-desktop-connection-1.png)
 
 1. Melden Sie sich im Dialogfeld **Anmeldeinformationen eingeben** beim virtuellen Servercomputer **Srv-Work** an, indem Sie das Kennwort verwenden, das Sie bei der Bereitstellung angegeben haben.
 
-1. Wählen Sie **OK** aus.
+1. Klickan Sie auf **OK**.
 
 1. Wählen Sie in der Zertifikatmeldung **Ja** aus.
 
@@ -371,7 +373,7 @@ In dieser letzten Aufgabe testen Sie die Firewall, um sicherzustellen, dass die 
 
 1. Wählen Sie in den Internet Explorer-Sicherheitswarnungen, die möglicherweise angezeigt werden, **Schließen** aus.
 
-1. Die Google-Startseite sollte nun angezeigt werden.
+1. Die Google-Homepage sollte nun angezeigt werden.
 
     ![RDP-Sitzung auf dem Server „Srv-Work“ – Browser auf google.com](../media/remote-desktop-connection-2.png)
 
@@ -384,7 +386,7 @@ In dieser letzten Aufgabe testen Sie die Firewall, um sicherzustellen, dass die 
  
 ## Aufgabe 11: Bereinigen der Ressourcen 
 
->**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Kosten anfallen.
+>**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 

@@ -11,7 +11,7 @@ In dieser Übung erstellen Sie eine ExpressRoute-Leitung mithilfe des Azure-Port
 
 #### Geschätzte Dauer: 15 Minuten
 
-![Diagramm: Layout der ExpressRoute-Leitung für die Übung](../media/environment-diagram.png)
+![Diagramm: Layout der ExpressRoute-Leitung für die Übung](../media/5-exercise-provision-expressroute-circuit.png)
 
 
 
@@ -128,7 +128,7 @@ Sie können Ihre ExpressRoute-Verbindung löschen. Wählen Sie hierzu das Symbol
 ![Azure-Portal – Löschen einer ExpressRoute-Leitung](../media/expressroute-circuit-delete.png)
 
 
-   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Kosten anfallen.
+   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 

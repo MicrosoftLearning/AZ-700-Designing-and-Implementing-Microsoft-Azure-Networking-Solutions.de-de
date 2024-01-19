@@ -8,6 +8,9 @@ Exercise:
 
 Beginnen Sie mit Azure Private Link, indem Sie einen privaten Endpunkt verwenden, um eine Verbindung mit einer Azure-Web-App herzustellen. Es gibt viele Möglichkeiten zum Erstellen von Endpunkten, einschließlich Portal, CLI, PowerShell usw. 
 
+![Diagramm: Architektur eines privaten Endpunkts](../media/6-exercise-create-azure-private-endpoint-using-azure-powershell.png)
+
+
 **Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20an%20Azure%20private%20endpoint%20using%20Azure%20PowerShell)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
 #### Geschätzte Dauer: 45 Minuten

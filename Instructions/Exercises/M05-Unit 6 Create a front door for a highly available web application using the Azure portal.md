@@ -12,7 +12,7 @@ Exercise:
 
 In dieser Übung richten Sie eine Azure Front Door-Konfiguration ein, die zwei Instanzen einer Webanwendung, die in verschiedenen Azure-Regionen ausgeführt wird, in einem Pool zusammenführt. Diese Konfiguration leitet Datenverkehr an den nächstgelegenen Standort weiter, an dem die Anwendung ausgeführt wird. Die Webanwendung wird von Azure Front Door ständig überwacht. Sie verwenden automatisches Failover auf den nächsten verfügbaren Standort, wenn der nächstgelegene Standort nicht verfügbar ist. Die folgende Abbildung zeigt die Netzwerkkonfiguration:
 
-![Netzwerkkonfiguration für Azure Front Door.](../media/front-door-environment-diagram.png)
+![Netzwerkkonfiguration für Azure Front Door.](../media/6-exercise-create-front-door-for-highly-available.png)
 
 In dieser Übung führen Sie die folgenden Schritte aus:
 
@@ -135,7 +135,7 @@ Nachdem Sie eine Front Door-Instanz erstellt haben, dauert es einige Minuten, b
 
 ## Aufgabe 4: Bereinigen der Ressourcen
    
-   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Kosten anfallen.
+   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 

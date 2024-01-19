@@ -9,6 +9,9 @@ Exercise:
 
 In dieser Übung verwenden Sie das Azure-Portal, um ein Anwendungsgateway zu erstellen. Anschließend testen Sie es, um sicherzustellen, dass es ordnungsgemäß funktioniert.
 
+![Diagramm der Anwendungsgateway-Architektur.](../media/4-exercise-deploy-azure-application-gateway.png)
+
+
 >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
 #### Geschätzte Dauer: 25 Minuten
@@ -167,7 +170,7 @@ Die Erstellung des Anwendungsgateways in Azure kann einige Minuten in Anspruch n
 
    ![Azure-Portal: Hinzufügen von Ziel-Back-Ends zum Back-End-Pool](../media/edit-backend-pool.png)
 
-1. Klicken Sie auf **Speichern**.
+1. Wählen Sie **Speichern**.
 
 Warten Sie, bis die Bereitstellung abgeschlossen ist, bevor Sie mit dem nächsten Schritt fortfahren.
 

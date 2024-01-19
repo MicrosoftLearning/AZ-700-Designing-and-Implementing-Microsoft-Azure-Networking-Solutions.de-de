@@ -8,9 +8,11 @@ Exercise:
 ## Übungsszenario 
 In dieser Lerneinheit konfigurieren Sie die Konnektivität zwischen „CoreServicesVnet“ und „ManufacturingVnet“, indem Sie Peerings zum Zulassen von Datenverkehr hinzufügen. 
 
-Inhalt dieser Lerneinheit:
+![Abbildung: Peering virtueller Netzwerke.](../media/8-exercise-connect-two-azure-virtual-networks-global.png)
 
-+ Aufgabe 1: Erstellen einer VM zum Testen der Konfiguration
+Inhalt dieser Einheit:
+
++ Aufgabe 1: Erstellen einer virtuellen Maschine zum Testen der Konfiguration
 + Aufgabe 2: Herstellen einer Verbindung mit den Test-VMs mit RDP
 + Aufgabe 3: Testen der Verbindung zwischen den VMs
 + Aufgabe 4: Erstellen von VNet-Peerings zwischen CoreServicesVnet und ManufacturingVnet
@@ -21,7 +23,7 @@ Inhalt dieser Lerneinheit:
 
 #### Geschätzte Dauer: 20 Minuten
 
-## Aufgabe 1: Erstellen einer VM zum Testen der Konfiguration
+## Aufgabe 1: Erstellen einer virtuellen Maschine zum Testen der Konfiguration
 
 In diesem Abschnitt erstellen Sie eine Test-VM im VNet für die Fertigung, um zu testen, ob Sie über „ManufacturingVnet“ auf Ressourcen in einem anderen virtuellen Azure-Netzwerk zugreifen können.
 
@@ -119,7 +121,7 @@ In diesem Abschnitt erstellen Sie eine Test-VM im VNet für die Fertigung, um zu
 |                                      | Name des Peeringlinks                             | ManufacturingVnet-to-CoreServicesVnet |
 |                                      | Bereitstellungsmodell für das virtuelle Netzwerk              | Resource Manager                      |
 |                                      | Ich kenne meine Ressourcen-ID                         | Nicht ausgewählt                          |
-|                                      | Subscription                                  | Wählen Sie das bereitgestellte Abonnement aus      |
+|                                      | Abonnement                                  | Wählen Sie das bereitgestellte Abonnement aus      |
 |                                      | Virtuelles Netzwerk                               | ManufacturingVnet                     |
 |                                      | Datenverkehr zum virtuellen Remotenetzwerk             | Zulassen (Standard)                       |
 |                                      | Traffic forwarded from remote virtual network (Vom virtuellen Remotenetzwerk weitergeleiteter Datenverkehr) | Zulassen (Standard)                       |
@@ -154,7 +156,7 @@ Herzlichen Glückwunsch! Sie haben die Konnektivität zwischen den VNets erfolgr
 
 ## Aufgabe 6: Bereinigen der Ressourcen
 
-   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Kosten anfallen.
+   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung. (Erstellen Sie bei Bedarf Cloud Shell-Speicher mithilfe der Standardeinstellungen.)
 

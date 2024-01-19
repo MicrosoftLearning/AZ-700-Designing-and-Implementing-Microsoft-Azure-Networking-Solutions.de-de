@@ -11,7 +11,7 @@ In dieser Übung erstellen Sie einen internen Lastenausgleich für die fiktive O
 
 Das folgende Diagramm veranschaulicht die Umgebung, die Sie in dieser Übung bereitstellen.
 
-![Diagramm zur Veranschaulichung der Lastenausgleichsarchitektur, die in der Übung erstellt wird – einschließlich Lastenausgleich, VNet, Subnetz, Bastion-Subnet und VMs](../media/exercise-internal-standard-load-balancer-environment-diagram.png)
+![Diagramm zur Veranschaulichung der Lastenausgleichsarchitektur, die in der Übung erstellt wird – einschließlich Lastenausgleich, VNet, Subnetz, Bastion-Subnet und VMs](../media/3-exercise-monitor-load-balancer-resource-using-azure-monitor.png)
 
  In dieser Übung führen Sie die folgenden Schritte aus:
 
@@ -55,7 +55,7 @@ In diesem Abschnitt erstellen Sie ein virtuelles Netzwerk und ein Subnetz.
 
    | **Einstellung**    | **Wert**                                           |
    | -------------- | --------------------------------------------------- |
-   | Subscription   | Wählen Sie Ihr Abonnement aus.                            |
+   | Abonnement   | Wählen Sie Ihr Abonnement aus.                            |
    | Resource group | Wählen Sie **Neu erstellen** aus.<br /><br />Name: **IntLB-RG** |
    | Name           | **IntLB-VNet**                                      |
    | Region         | **(USA) USA, Westen**                                    |
@@ -68,7 +68,7 @@ In diesem Abschnitt erstellen Sie ein virtuelles Netzwerk und ein Subnetz.
 
 1. Geben Sie im Bereich **Subnetz hinzufügen** den Subnetznamen **myBackendSubnet** und den Subnetzadressbereich **10.1.0.0/24** ein.
 
-1. Klicken Sie auf **Hinzufügen**.
+1. Wählen Sie **Hinzufügen** aus.
 
 1. Klicken Sie auf **Weiter: Sicherheit**.
 
@@ -95,7 +95,7 @@ In diesem Abschnitt erstellen Sie einen internen Lastenausgleich der Standard-SK
 
    | **Einstellung**           | **Wert**                |
    | --------------------- | ------------------------ |
-   | Registerkarte Grundlagen            |                          | 
+   | Registerkarte „Grundlagen“            |                          | 
    | Subscription          | Wählen Sie Ihr Abonnement aus. |
    | Resource group        | **IntLB-RG**             |
    | Name                  | **myIntLoadBalancer**    |
@@ -131,7 +131,7 @@ Der Back-End-Adresspool enthält die IP-Adressen der virtuellen NICs, die mit de
    | Virtuelles Netzwerk | **IntLB-VNet**       |
    | Konfiguration des Back-End-Pools   | **NIC** |
 
-1. Klicken Sie auf **Hinzufügen**.
+1. Wählen Sie **Hinzufügen** aus.
 
    ![Anzeigen des im Lastenausgleich erstellten Back-End-Pools](../media/create-backendpool.png)
 
@@ -153,7 +153,7 @@ Der Status Ihrer App wird vom Lastenausgleich mithilfe eines Integritätstests �
    | Pfad                | **/**             |
    | Intervall            | **15**            |
 
-1. Klicken Sie auf **Hinzufügen**.
+1. Wählen Sie **Hinzufügen** aus.
 
    ![Anzeigen des im Lastenausgleich erstellten Integritätstests](../media/create-healthprobe.png)
 
@@ -181,7 +181,7 @@ Mithilfe einer Load Balancer-Regel wird definiert, wie Datenverkehr auf die virt
    | Leerlaufzeitüberschreitung (Minuten) | **15**                   |
    | Unverankerte IP            | **Deaktiviert**             |
 
-1. Klicken Sie auf **Hinzufügen**.
+1. Wählen Sie **Hinzufügen** aus.
 
    ![Anzeigen der im Lastenausgleich erstellten Lastenausgleichsregel](../media/create-loadbalancerrule.png)
 
@@ -239,7 +239,7 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
 
    | **Einstellung**          | **Wert**                                    |
    | -------------------- | -------------------------------------------- |
-   | Subscription         | Wählen Sie Ihr Abonnement aus.                     |
+   | Abonnement         | Wählen Sie Ihr Abonnement aus.                     |
    | Resource group       | **IntLB-RG**                                 |
    | Name des virtuellen Computers | **myTestVM**                                 |
    | Region               | **(USA) USA, Westen**                             |
@@ -306,13 +306,13 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
 
    ![Zugreifen auf Log Analytics-Arbeitsbereiche über die Startseite des Azure-Portals](../media/log-analytics-workspace-1.png)
 
-1. Wählen Sie **Erstellen** aus. 
+1. Klicken Sie auf **Erstellen**. 
 
 1. Verwenden Sie auf der Seite **Log Analytics-Arbeitsbereich erstellen** auf der Registerkarte **Grundlagen** die Informationen aus der folgenden Tabelle, um den Arbeitsbereich zu erstellen.
 
    | **Einstellung**    | **Wert**                |
    | -------------- | ------------------------ |
-   | Subscription   | Wählen Sie Ihr Abonnement aus. |
+   | Abonnement   | Wählen Sie Ihr Abonnement aus. |
    | Resource group | **IntLB-RG**             |
    | Name           | **myLAworkspace**        |
    | Region         | **USA, Westen**              |
@@ -410,7 +410,7 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
 
 1. Wählen Sie Ihr Abonnement aus der Liste aus, und wählen Sie dann **myLAworkspace (westus)** aus der Arbeitsbereich-Dropdownliste aus.
 
-1. Klicken Sie auf **Speichern**.
+1. Wählen Sie **Speichern**.
 
    ![Seite „Diagnoseeinstellung“ für Lastenausgleich](../media/diagnostic-settings-2.png)
 
@@ -418,7 +418,7 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
 
 ## Aufgabe 14: Bereinigen der Ressourcen
 
-   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Kosten anfallen.
+   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 

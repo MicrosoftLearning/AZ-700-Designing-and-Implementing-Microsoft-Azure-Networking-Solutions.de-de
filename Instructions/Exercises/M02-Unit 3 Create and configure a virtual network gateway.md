@@ -9,6 +9,8 @@ Exercise:
 
 In dieser Übung konfigurieren Sie ein Gateway für virtuelle Netzwerke, um das Contoso Core Services-VNet und das Fertigungs-VNet zu verbinden. 
 
+![Abbildung eines VNet-Gateways](../media/3-exercise-create-configure-local-network-gateway.png)
+
 In dieser Übung führen Sie die folgenden Schritte aus:
 
 + Aufgabe 1: Erstellen von CoreServicesVnet und ManufacturingVnet

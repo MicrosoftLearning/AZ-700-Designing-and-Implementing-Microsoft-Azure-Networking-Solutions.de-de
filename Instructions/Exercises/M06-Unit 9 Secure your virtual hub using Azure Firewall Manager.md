@@ -9,6 +9,9 @@ Exercise:
 
 In dieser Übung erstellen Sie das virtuelle Spoke-Netzwerk und einen geschützten virtuellen Hub. Anschließend verbinden Sie die virtuellen Hub-and-Spoke-Netzwerke und routen Datenverkehr an Ihren Hub. Im nächsten Schritt stellen Sie die Workloadserver bereit und erstellen dann eine Firewallrichtlinie und schützen Ihren Hub. Schließlich testen Sie die Firewall.
 
+![Abbildung: Architektur des virtuellen Netzwerks mit einem sicheren Hub](../media/9-exercise-secure-your-virtual-hub-using-azure-firewall-manager.png)
+
+
 **Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Secure%20your%20virtual%20hub%20using%20Azure%20Firewall%20Manager)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
 ## Erstellen einer Hub-Spoke-Architektur
@@ -35,7 +38,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 In dieser Aufgabe erstellen Sie die beiden virtuellen Spoke-Netzwerke, die jeweils ein Subnetz enthalten, das Ihre Workloadserver hostet. 
 
 1. Geben Sie auf der Startseite des Azure-Portals in das Suchfeld **Virtuelles Netzwerk** ein, und wählen Sie **Virtuelles Netzwerk**, wenn diese Option angezeigt wird.
-2. Wählen Sie **Erstellen** aus.
+2. Klicken Sie auf **Erstellen**.
 3. Wählen Sie unter **Ressourcengruppe** die Option **Neue erstellen** aus, geben Sie **fw-manager-rg** als Namen ein, und wählen Sie dann **OK** aus.
 4. Geben unter **Name** den Namen **Spoke-01** ein.
 5. Wählen Sie unter **Region** Ihre Region aus.
@@ -45,7 +48,7 @@ In dieser Aufgabe erstellen Sie die beiden virtuellen Spoke-Netzwerke, die jewei
 9. Wählen Sie unter **Subnetzname** das Wort **Standard** aus.
 10. Ändern Sie im Dialogfeld **Subnetz bearbeiten** den Namen in **Workload-01-SN**.
 11. Ändern Sie den **Subnetzadressbereich** in **10.0.1.0/24**.
-12. Klicken Sie auf **Speichern**.
+12. Wählen Sie **Speichern**.
 13. Klicken Sie auf **Überprüfen + erstellen**.
 14. Klicken Sie auf **Erstellen**.
 
@@ -88,7 +91,7 @@ In dieser Aufgabe erstellen Sie Ihren geschützten virtuellen Hub mithilfe von F
 
 13. Klicken Sie auf **Weiter: Überprüfen + erstellen**.
 
-14. Wählen Sie **Erstellen** aus.
+14. Klicken Sie auf **Erstellen**.
 
     > **[!NOTE]** 
     >
@@ -122,7 +125,7 @@ In dieser Aufgabe verbinden Sie die virtuellen Hub-and-Spoke-Netzwerke. Dies wir
 6. Wählen Sie unter **Hubs** die Option **Hub-01** aus.
 7. Wählen Sie unter **Ressourcengruppe** die Ressourcengruppe **fw-manager-rg** aus.
 8. Wählen Sie unter **Virtuelles Netzwerk** die Option **Spoke-01** aus.
-9. Wählen Sie **Erstellen** aus.
+9. Klicken Sie auf **Erstellen**.
    ![Hinzufügen einer Hub-and-Spoke-Verbindung mit dem virtuellen WAN: Spoke 1](../media/connect-hub-spoke-vnet-1.png)
 10. Wiederholen Sie die oben genannten Schritte 4 bis 9, um eine weitere ähnliche Verbindung zu erstellen, verwenden Sie aber den Verbindungsnamen **hub-spoke-02**, um das virtuelle Netzwerk **Spoke-02** zu verbinden.
 
@@ -200,7 +203,7 @@ In dieser Aufgabe erstellen Sie zuerst Ihre Firewallrichtlinie und schützen dan
 
 1. Geben Sie unter **Ziel** die Zeichenfolge ***.microsoft.com** ein.
 
-1. Klicken Sie auf **Hinzufügen**.
+1. Wählen Sie **Hinzufügen** aus.
 
     ![Hinzufügen der Anwendungsregelsammlung zur Firewallrichtlinie](../media/add-rule-collection-firewall-policy-1.png)
 
@@ -230,7 +233,7 @@ In dieser Aufgabe erstellen Sie zuerst Ihre Firewallrichtlinie und schützen dan
 
 1. Geben Sie unter **Übersetzter Port** den Wert **3389** ein.
 
-1. Klicken Sie auf **Hinzufügen**.
+1. Wählen Sie **Hinzufügen** aus.
 
 1. Um eine Netzwerkregel hinzuzufügen, damit Sie einen Remotedesktop von der VM „Srv-workload-01“ mit der VM „Srv-workload-02“ verbinden können, wählen Sie **Regelsammlung hinzufügen** aus.
 
@@ -256,7 +259,7 @@ In dieser Aufgabe erstellen Sie zuerst Ihre Firewallrichtlinie und schützen dan
 
 1. Geben Sie unter **Ziel** die private IP-Adresse für **Srv-workload-02** ein, die Sie sich zuvor notiert haben (z. B. **10.1.1.4**).
 
-1. Klicken Sie auf **Hinzufügen**.
+1. Wählen Sie **Hinzufügen** aus.
 
     ![Auflisten von Regelsammlungen in der Firewallrichtlinie](../media/list-rule-collections-firewall-policy.png)
 
@@ -276,7 +279,7 @@ In dieser Aufgabe ordnen Sie die Firewallrichtlinie dem virtuellen Hub zu.
 1. Aktivieren Sie das Kontrollkästchen für **Policy-01**.
 1. Wählen Sie **Zuordnungen verwalten&gt;Hubs zuordnen** aus.
 1. Aktivieren Sie das Kontrollkästchen für **Hub-01**.
-1. Klicken Sie auf **Hinzufügen**.
+1. Wählen Sie **Hinzufügen** aus.
 1. Wenn die Richtlinie angefügt wurde, wählen Sie **Aktualisieren** aus. Die Zuordnung sollte angezeigt werden.
 
 ![Anzeigen der zugeordneten Firewallrichtlinie für den Hub](../media/associate-firewall-policy-with-hub-end.png)
@@ -292,7 +295,7 @@ In dieser Aufgabe stellen Sie sicher, dass Netzwerkdatenverkehr durch Ihre Firew
 1. Wählen Sie unter **Einstellungen** die Option **Sicherheitskonfiguration** aus.
 1. Wählen Sie unter **Internetdatenverkehr** die Option **Azure Firewall** aus.
 1. Wählen Sie unter **Privater Datenverkehr** die Option **Über Azure Firewall senden** aus.
-1. Klicken Sie auf **Speichern**. 
+1. Wählen Sie **Speichern**. 
 1. Der Erstellungsvorgang dauert ein paar Minuten.
 1. Stellen Sie nach Abschluss der Konfiguration sicher, dass unter **INTERNETDATENVERKEHR** und **PRIVATER DATENVERKEHR** für beide Hub-Spoke-Verbindungen die Angabe **Geschützt durch Azure Firewall** angezeigt wird.
 
@@ -311,13 +314,13 @@ In dieser Aufgabe testen Sie die Anwendungsregel, um zu bestätigen, dass sie wi
 
 1. Geben Sie im Feld **Benutzername** den Namen **TestUser** ein.
 
-1. Wählen Sie **Verbinden**.
+1. Wählen Sie **Verbinden** aus.
 
    ![RDP-Verbindung mit srv-workload-01](../media/rdp-srv-workload-01.png)
 
 1. Melden Sie sich im Dialogfeld **Anmeldeinformationen eingeben** beim virtuellen Servercomputer **Srv-workload-01** an, indem Sie das Kennwort verwenden, das Sie bei der Bereitstellung angegeben haben.
 
-1. Wählen Sie **OK** aus.
+1. Klickan Sie auf **OK**.
 
 1. Wählen Sie in der Zertifikatmeldung **Ja** aus.
 
@@ -351,7 +354,7 @@ In dieser Aufgabe testen Sie die Netzwerkregel, um zu bestätigen, dass sie wie 
 
 1. Melden Sie sich im Dialogfeld **Anmeldeinformationen eingeben** auf dem Server **Srv-workload-02** mit dem Benutzernamen **TestUser** und dem Kennwort an, das Sie bei der Bereitstellung angegeben haben.
 
-1. Wählen Sie **OK** aus.
+1. Klickan Sie auf **OK**.
 
 1. Wählen Sie in der Zertifikatmeldung **Ja** aus.
 
@@ -364,7 +367,7 @@ In dieser Aufgabe testen Sie die Netzwerkregel, um zu bestätigen, dass sie wie 
 
 ## Aufgabe 10: Bereinigen von Ressourcen 
 
->**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Kosten anfallen.
+>**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 

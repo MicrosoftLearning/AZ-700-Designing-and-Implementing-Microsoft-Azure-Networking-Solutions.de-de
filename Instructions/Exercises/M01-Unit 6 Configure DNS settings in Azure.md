@@ -9,6 +9,8 @@ Exercise:
 ## Übungsszenario 
 In dieser Lerneinheit konfigurieren Sie die DNS-Namensauflösung für Contoso Ltd. Sie erstellen eine private DNS-Zone mit dem Namen „contoso.com“, verknüpfen die VNets für Registrierung und Auflösung, erstellen anschließend zwei VMs und testen die Konfiguration.
 
+![Abbildung: DNS-Architektur.](../media/6-exercise-configure-domain-name-servers-configuration-azure.png)
+
 In dieser Übung führen Sie die folgenden Schritte aus:
 
 + Aufgabe 1: Erstellen einer privaten DNS-Zone
@@ -36,7 +38,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 | Grundlagen          | Resource group                         | ContosoResourceGroup |
 |                 | Name                                   | Contoso.com          |
 | Tags            | Keine Änderungen erforderlich                    |                      |
-| Überprüfen + erstellen | Überprüfen Sie Ihre Einstellungen, und klicken Sie auf „Erstellen“. |                      |
+| Bewerten + erstellen | Überprüfen Sie Ihre Einstellungen, und klicken Sie auf „Erstellen“. |                      |
 
 
 5. Warten Sie, bis die Bereitstellung abgeschlossen ist, und wählen Sie dann **Zu Ressource wechseln** aus.

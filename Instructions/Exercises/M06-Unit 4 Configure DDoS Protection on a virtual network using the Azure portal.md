@@ -8,6 +8,9 @@ Exercise:
 
 Da Sie für das Netzwerksicherheitsteam von Contoso verantwortlich sind, führen Sie einen simulierten DDoS-Angriff auf das virtuelle Netzwerk aus. Die folgenden Schritte führen sie durch das Erstellen eines virtuellen Netzwerks, das Konfigurieren von DDoS Protection und das Erstellen eines Angriffs, den Sie mithilfe von Telemetriedaten und Metriken beobachten und überwachen können.
 
+![Abbildung: DDoS-Architektur.](../media/4-exercise-configure-ddos-protection-virtual-network-using-azure-portal.png)
+
+
 In dieser Übung führen Sie die folgenden Schritte aus:
 
 + Aufgabe 1: Erstellen einer Ressourcengruppe
@@ -30,7 +33,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 1. Klicken Sie auf der Homepage des Azure-Portals auf **Ressourcengruppen**.
 
-1. Wählen Sie **Erstellen** aus. 
+1. Klicken Sie auf **Erstellen**. 
 
 1. Geben Sie auf der Registerkarte **Grundlagen** unter ** Ressourcengruppe** die Angabe **MyResourceGroup** ein.
 
@@ -52,7 +55,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 1. Geben Sie im Feld **Instanzname** den Namen **MyDdoSProtectionPlan** ein, und wählen Sie dann **Überprüfen + erstellen** aus.
 
-1. Wählen Sie **Erstellen** aus.
+1. Klicken Sie auf **Erstellen**.
 
  
 
@@ -96,7 +99,7 @@ Sie erstellen eine öffentliche IP-Adresse und richten dann in den nächsten Sch
 
 1. Geben Sie unter **DNS-Namensbezeichnung** den Namen **mypublicdnsxx** ein (wobei Sie „xx“ durch Ihre Initialen ersetzen, damit der Name eindeutig ist).
 
-1. Wählen Sie **Erstellen** aus.
+1. Klicken Sie auf **Erstellen**.
 
 1. Um die Telemetrie einzurichten, navigieren Sie zur Azure-Startseite und wählen Sie **Alle Ressourcen** aus.
 
@@ -156,7 +159,7 @@ In diesem Schritt erstellen Sie einen virtuellen Computer, weisen ihm eine öffe
 
    | **Einstellung**           | **Wert**                                                    |
    | --------------------- | ------------------------------------------------------------ |
-   | Subscription          | Wählen Sie Ihr Abonnement aus.                                     |
+   | Abonnement          | Wählen Sie Ihr Abonnement aus.                                     |
    | Resource group        | **MyResourceGroup**                                          |
    | Name des virtuellen Computers  | **MyVirtualMachine**                                         |
    | Region                | Ihre Region                                                  |
@@ -193,7 +196,7 @@ In diesem Schritt erstellen Sie einen virtuellen Computer, weisen ihm eine öffe
 
 1. Wählen Sie in der Liste **Öffentliche IP-Adresse** die Option **MyPublicIPAddress** aus.
 
-1. Klicken Sie auf **Speichern**.
+1. Wählen Sie **Speichern**.
 
    ![Ändern der öffentlichen IP-Adresse für die DDoS-VM](../media/change-public-ip-config-for-ddos-vm-new.png)
 
@@ -243,7 +246,7 @@ In diesem Schritt erstellen Sie einen virtuellen Computer, weisen ihm eine öffe
  
 ## Aufgabe 8: Bereinigen der Ressourcen
 
->**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Kosten anfallen.
+>**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 
