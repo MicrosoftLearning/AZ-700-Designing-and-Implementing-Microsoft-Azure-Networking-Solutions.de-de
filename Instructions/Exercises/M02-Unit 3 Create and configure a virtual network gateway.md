@@ -43,6 +43,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
    New-AzResourceGroup -Name $RGName -Location "eastus"
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
+ > **Hinweis:** Derzeit besteht ein Problem in der Region „Westeuropa, das Gatewaybereitstellungen beeinträchtigt. Als Abhilfemaßnahme wurde die Region „ManufacturingVnet“ für diese Bereitstellung in „Europa, Norden“ geändert. 
 
 ## Aufgabe 2: Erstellen von CoreServicesVM
 
@@ -167,7 +168,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
    | Grundlagen          | Projektdetails   | Subscription                                | Keine Änderungen erforderlich          |
    |                 |                   | ResourceGroup                               | ContosoResourceGroup         |
    |                 | Instanzdetails  | Name                                        | ManufacturingVnetGateway     |
-   |                 |                   | Region                                      | Europa, Westen                  |
+   |                 |                   | Region                                      | Nordeuropa                  |
    |                 |                   | Gatewaytyp                                | VPN                          |
    |                 |                   | VPN-Typ                                    | routenbasiert                  |
    |                 |                   | SKU                                         | VpnGw1                       |

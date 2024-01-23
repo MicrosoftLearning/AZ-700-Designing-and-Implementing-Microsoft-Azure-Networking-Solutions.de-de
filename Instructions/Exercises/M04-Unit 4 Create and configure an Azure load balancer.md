@@ -15,9 +15,8 @@ In dieser Übung erstellen Sie einen internen Lastenausgleich für die fiktive O
 
 Die Schritte zum Erstellen eines internen Lastenausgleichs sind denen, die Sie bereits in diesem Modul kennengelernt haben, um einen öffentlichen Lastenausgleich zu erstellen, sehr ähnlich. Der Hauptunterschied besteht darin, dass bei einem öffentlichen Lastenausgleich über eine öffentliche IP-Adresse auf das Front-End zugegriffen wird und Sie die Konnektivität von einem Host aus testen, der sich außerhalb Ihres virtuellen Netzwerks befindet, während bei einem internen Lastenausgleich das Front-End eine private IP-Adresse in Ihrem virtuellen Netzwerk ist, und Sie die Konnektivität von einem Host innerhalb desselben Netzwerks aus testen.
 
-Das folgende Diagramm veranschaulicht die Umgebung, die Sie in dieser Übung bereitstellen.
 
-![Diagramm eines internen Load Balancer Standard](../media/exercise-internal-standard-load-balancer-environment-diagram.png)
+![Diagramm eines internen Load Balancer Standard](../media/4-exercise-create-configure-azure-load-balancer.png)
 
  
 In dieser Übung führen Sie die folgenden Schritte aus:
@@ -42,7 +41,7 @@ In diesem Abschnitt erstellen Sie ein virtuelles Netzwerk und ein Subnetz.
 
    | **Einstellung**    | **Wert**                                  |
    | -------------- | ------------------------------------------ |
-   | Subscription   | Wählen Sie Ihr Abonnement aus.                   |
+   | Abonnement   | Wählen Sie Ihr Abonnement aus.                   |
    | Ressourcengruppe | Wählen Sie **Neu erstellen** Name: **IntLB-RG** aus. |
    | Name           | **IntLB-VNet**                             |
    | Region         | **(USA) USA, Osten**                           |
@@ -56,9 +55,9 @@ In diesem Abschnitt erstellen Sie ein virtuelles Netzwerk und ein Subnetz.
 
 8. Geben Sie im Bereich **Subnetz hinzufügen** den Subnetznamen **myBackendSubnet** und den Subnetzadressbereich **10.1.0.0/24** an.
 
-9. Klicken Sie auf **Hinzufügen**.
+9. Wählen Sie **Hinzufügen** aus.
 
-10. Wählen Sie **Subnetz hinzufügen** aus, und geben Sie den Subnetznamen **myFrontEndSubnet** und den Subnetzadressbereich **10.1.2.0/24** ein. Wählen Sie **Hinzufügen** aus.
+10. Wählen Sie **Subnetz hinzufügen** aus, und geben Sie den Subnetznamen **myFrontEndSubnet** und den Subnetzadressbereich **10.1.2.0/24** ein. Wählen Sie **Hinzufügen** aus
 
 11. Klicken Sie auf **Weiter: Sicherheit**.
 
@@ -81,7 +80,7 @@ In diesem Abschnitt erstellen Sie drei VMs, die sich in derselben Verfügbarkeit
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
  > **Hinweis:** Wenn Sie Cloud Shell zum ersten Mal öffnen, werden Sie möglicherweise aufgefordert, ein Speicherkonto zu erstellen. Klicken Sie auf **Speicher erstellen**.
-2. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien hochladen/herunterladen**, wählen Sie im Dropdownmenü **Hochladen** und laden Sie die folgenden Dateien nacheinander in das Cloud Shell-Basisverzeichnis hoch: azuredeploy.json, azuredeploy.parameters.vm1.json, azuredeploy.parameters.vm2.json und azuredeploy.parameters.vm3.json.
+2. Wählen Sie auf der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien hochladen/herunterladen** aus, wählen Sie im Dropdownmenü **Hochladen** aus, und laden Sie die folgenden Dateien einzeln in das Cloud Shell-Startverzeichnis hoch: azuredeploy.json und azuredeploy.parameters.json.
 
 3. Stellen Sie die folgenden ARM-Vorlagen bereit, um die für diese Übung erforderlichen VMs zu erstellen:
 
@@ -90,9 +89,7 @@ In diesem Abschnitt erstellen Sie drei VMs, die sich in derselben Verfügbarkeit
    ```powershell
    $RGName = "IntLB-RG"
    
-   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.vm1.json
-   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.vm2.json
-   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.vm3.json
+   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
 
 Es kann 5 bis 10 Minuten dauern, bis diese drei virtuellen Computer erstellt werden. Sie müssen nicht warten, bis dieser Auftrag abgeschlossen ist, sondern können bereits mit der nächsten Aufgabe fortfahren.
@@ -107,18 +104,19 @@ In diesem Abschnitt erstellen Sie einen internen Lastenausgleich der Standard-SK
 
 1. Suchen Sie auf der Ergebnisseite nach **Load Balancer** (denjenigen mit „Microsoft“ und „Azure-Dienst“ unter dem Namen), und wählen Sie ihn aus.
 
-1. Wählen Sie **Erstellen** aus.
+1. Klicken Sie auf **Erstellen**.
 
 1. Verwenden Sie auf der Registerkarte **Grundlagen** die Informationen aus der folgenden Tabelle, um den Lastenausgleich zu erstellen.
 
    | **Einstellung**           | **Wert**                |
    | --------------------- | ------------------------ |
-   | Subscription          | Wählen Sie Ihr Abonnement aus. |
+   | Abonnement          | Wählen Sie Ihr Abonnement aus. |
    | Resource group        | **IntLB-RG**             |
    | Name                  | **myIntLoadBalancer**    |
    | Region                | **(USA) USA, Osten**         |
-   | type                  | **Intern**             |
    | SKU                   | **Standard**             |
+   | Typ                  | **Intern**             |
+   | Tarif                  | **Regional**             |
 
 
 1. Wählen Sie **Weiter: Front-End-IP-Konfigurationen** aus.
@@ -161,7 +159,7 @@ Der Back-End-Adresspool enthält die IP-Adressen der virtuellen NICs, die mit de
 
 1. Aktivieren Sie die Kontrollkästchen für alle drei VMs (**myVM1**, **myVM2** und **myVM3**), und wählen Sie dann **Hinzufügen** aus.
 
-1. Klicken Sie auf **Hinzufügen**.
+1. Wählen Sie **Speichern**.
    ![Bild 7](../media/add-vms-backendpool.png)
    
 
@@ -180,10 +178,9 @@ Der Status Ihrer App wird vom Lastenausgleich mithilfe eines Integritätstests �
    | Port                | **80**            |
    | Pfad                | **/**             |
    | Intervall            | **15**            |
-   | Fehlerhafter Schwellenwert | **2**             |
 
 
-1. Klicken Sie auf **Hinzufügen**.
+1. Wählen Sie **Hinzufügen** aus.
    ![Bild 5](../media/create-healthprobe.png)
 
  
@@ -192,7 +189,7 @@ Der Status Ihrer App wird vom Lastenausgleich mithilfe eines Integritätstests �
 
 Mithilfe einer Load Balancer-Regel wird definiert, wie Datenverkehr auf die virtuellen Computer verteilt werden soll. Sie definieren die Front-End-IP-Konfiguration für den eingehenden Datenverkehr und den Back-End-IP-Pool für den Empfang des Datenverkehrs. Quell- und Zielport werden in der Regel definiert. Hier erstellen Sie eine Lastenausgleichsregel.
 
-1. Wählen Sie auf der Seite **Back-End-Pools** Ihres Lastenausgleichs unter **Einstellungen** die Option **Lastausgleichsregeln** und wählen Sie dann **Hinzufügen** aus.
+1. Wählen Sie unter **Einstellungen** die Option **Lastenausgleichsregeln** und dann **Hinzufügen** aus.
 
 1. Geben Sie auf der Seite **Lastenausgleichsregel hinzufügen** die Informationen aus der folgenden Tabelle ein.
 
@@ -201,17 +198,17 @@ Mithilfe einer Load Balancer-Regel wird definiert, wie Datenverkehr auf die virt
    | Name                   | **myHTTPRule**           |
    | IP-Version             | **IPv4**                 |
    | Front-End-IP-Adresse    | **LoadBalancerFrontEnd** |
+   | Back-End-Pool           | **myBackendPool**        |
    | Protokoll               | **TCP**                  |
    | Port                   | **80**                   |
    | Back-End-Port           | **80**                   |
-   | Back-End-Pool           | **myBackendPool**        |
    | Integritätstest           | **myHealthProbe**        |
    | Sitzungspersistenz    | **None**                 |
    | Leerlaufzeitüberschreitung (Minuten) | **15**                   |
    | Unverankerte IP            | **Deaktiviert**             |
 
 
-1. Klicken Sie auf **Hinzufügen**.
+1. Wählen Sie **Speichern**.
    ![Bild 6](../media/create-loadbalancerrule.png)
 
  
@@ -233,7 +230,7 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
 
    | **Einstellung**          | **Wert**                                    |
    | -------------------- | -------------------------------------------- |
-   | Subscription         | Wählen Sie Ihr Abonnement aus.                     |
+   | Abonnement         | Wählen Sie Ihr Abonnement aus.                     |
    | Resource group       | **IntLB-RG**                                 |
    | Name des virtuellen Computers | **myTestVM**                                 |
    | Region               | **(USA) USA, Osten**                             |
@@ -256,7 +253,7 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
    | Öffentliche IP-Adresse                                                    | Ändern Sie sie in **Keine**.            |
    | NIC-Netzwerksicherheitsgruppe                                   | **Erweitert**                  |
    | Konfigurieren von Netzwerksicherheitsgruppen                             | Wählen Sie die vorhandene Netzwerksicherheitsgruppe (**myNSG**) aus. |
-   | Optionen für den Lastenausgleich                                       | **None**                      |
+   | Optionen für den Lastenausgleich                                       | **Keine**                      |
 
 
 1. Klicken Sie auf **Überprüfen + erstellen**.
@@ -297,7 +294,7 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
 
 ## Bereinigen von Ressourcen
 
-   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Kosten anfallen.
+   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 

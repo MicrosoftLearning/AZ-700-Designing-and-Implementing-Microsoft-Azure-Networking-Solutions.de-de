@@ -9,6 +9,8 @@ Exercise:
 
 VNET-Dienstendpunkte ermöglichen es Ihnen, den Netzwerkzugriff auf einige Azure-Dienstressourcen auf ein Subnetz eines virtuellen Netzwerks einzuschränken. Sie können auch den Internetzugriff auf die Ressourcen entfernen. Dienstendpunkte ermöglichen eine direkte Verbindung zwischen Ihrem virtuellen Netzwerk und unterstützten Azure-Diensten, sodass Sie mithilfe des privaten Adressraums Ihres virtuellen Netzwerks auf die Azure-Dienste zugreifen können. Datenverkehr, der über Dienstendpunkte für Azure-Ressourcen bestimmt ist, verbleibt immer im Microsoft Azure-Backbonenetzwerk.
 
+![Diagramm der Architektur des Dienstendpunkts.](../media/5-exercise-restrict-network-paas-resources-virtual-network-service-endpoints.png)
+
 In dieser Übung führen Sie die folgenden Schritte aus:
 
 + Aufgabe 1: Erstellen eines virtuellen Netzwerks
@@ -39,7 +41,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
    | **Einstellung**    | **Wert**                                     |
    | -------------- | --------------------------------------------- |
-   | Subscription   | Wählen Sie Ihr Abonnement aus.                      |
+   | Abonnement   | Wählen Sie Ihr Abonnement aus.                      |
    | Resource group | (Neu) myResourceGroup                         |
    | Name           | CoreServicesVNet                              |
    | Standort       | Wählen Sie **USA, Osten** aus.                            |
@@ -99,7 +101,7 @@ Standardmäßig können alle virtuellen Computer in einem Subnetz mit allen Ress
 
    | **Einstellung**    | **Wert**                                                    |
    | -------------- | ------------------------------------------------------------ |
-   | Subscription   | Wählen Sie Ihr Abonnement aus.                                     |
+   | Abonnement   | Wählen Sie Ihr Abonnement aus.                                     |
    | Resource group | myResourceGroup                                              |
    | Name           | ContosoPrivateNSG                                            |
    | Standort       | Wählen Sie **USA, Osten** aus.                                           |
@@ -125,7 +127,7 @@ Standardmäßig können alle virtuellen Computer in einem Subnetz mit allen Ress
    | Zielportbereiche | *                         |
    | Protocol                | Any                       |
    | Aktion                  | Allow                     |
-   | Priority                | 100                       |
+   | Priorität                | 100                       |
    | Name                    | Allow-Storage-All         |
 
 1. Wählen Sie **Hinzufügen** aus:
@@ -167,8 +169,8 @@ Erstellen Sie eine Eingangssicherheitsregel, die RDP-Datenverkehr (Remote Deskto
 
    | **Einstellung**             | **Wert**                 |
    | ----------------------- | ------------------------- |
-   | `Source`                  | Alle                       |
-   | Source port ranges      | *                         |
+   | Quelle                  | Beliebig                       |
+   | Quellportbereiche      | *                         |
    | Destination             | Wählen Sie **VirtualNetwork** aus. |
    | Dienst                 | Benutzerdefiniert                    |
    | Zielportbereiche | 3389                      |
@@ -202,7 +204,7 @@ Die Schritte, die erforderlich sind, um den Netzwerkzugriff auf Ressourcen einzu
 
    | **Einstellung**    | **Wert**                                                    |
    | -------------- | ------------------------------------------------------------ |
-   | Subscription   | Wählen Sie Ihr Abonnement aus.                                     |
+   | Abonnement   | Wählen Sie Ihr Abonnement aus.                                     |
    | Resource group | myResourceGroup                                              |
    | Name           | Geben Sie „contosostoragexx“ ein (wobei „xx“ Ihre Initialen sind, um den Namen eindeutig zu machen) |
    | Leistung    | Standard StorageV2 (universell, Version 2)                      |
@@ -274,7 +276,7 @@ Zum Testen des Netzwerkzugriffs auf ein Speicherkonto stellen Sie einen virtuell
    ![Grafische Benutzeroberfläche, Anwendung, automatisch erstellte Beschreibung](../media/private-virtual-machine-connect.png)
 1. Nachdem Sie die Schaltfläche „Verbinden“ und „RDP“ ausgewählt haben, wählen Sie die Schaltfläche „RDP-Datei herunterladen“ aus. Eine RDP-Datei (Remotedesktopprotokoll) wird erstellt und auf Ihren Computer heruntergeladen.
 1. Öffnen Sie die heruntergeladene RDP-Datei. Wenn Sie dazu aufgefordert werden, wählen Sie „Verbinden“ aus. Geben Sie den Benutzernamen und das Kennwort ein, die Sie beim Erstellen des virtuellen Computers festgelegt haben. Unter Umständen müssen Sie auf Weitere Optionen und anschließend auf Anderes Konto verwenden klicken, um die Anmeldeinformationen anzugeben, die Sie beim Erstellen des virtuellen Computers eingegeben haben.
-1. Wählen Sie **OK** aus.
+1. Klickan Sie auf **OK**.
 1. Während des Anmeldevorgangs wird unter Umständen eine Zertifikatwarnung angezeigt. Wenn eine Warnung angezeigt wird, wählen Sie „Ja“ bzw. „Weiter“ aus, um mit dem Herstellen der Verbindung fortzufahren.
 1. Ordnen Sie auf dem virtuellen Computer „ContosoPrivate“ mithilfe von PowerShell die Azure-Dateifreigabe dem Laufwerk Z zu. Bevor Sie die folgenden Befehle ausführen, ersetzen Sie <storage-account-key>, <storage-account-name> (d. h. contosostoragexx) und my-file-share (d. h. marketing) durch Werte, die Sie angegeben und in der Aufgabe „Erstellen eines Speicherkontos“ abgerufen haben.
 
@@ -333,7 +335,7 @@ Ergebnisse: Sie haben dieses Lab nun abgeschlossen.
 
 ## Aufgabe 11: Bereinigen der Ressourcen
 
-   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Kosten anfallen.
+   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 

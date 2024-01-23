@@ -6,8 +6,10 @@ Exercise:
 
 # M02 – Lerneinheit 7: Erstellen eines Virtual WAN mithilfe des Azure-Portals
 
-
 In dieser Übung erstellen Sie ein Virtual WAN für Contoso.
+
+![Diagramm der WAN-Architektur des virtuellen Netzwerks.](../media/7-exercise-create-virtual-wan-by-using-azure-portal.png)
+
 
 In dieser Übung führen Sie die folgenden Schritte aus:
 
@@ -106,7 +108,7 @@ Glückwunsch! Sie haben ein Virtual WAN und einen Virtual WAN Hub erstellt und d
 
 ## Aufgabe 4: Bereinigen der Ressourcen
 
-   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Kosten anfallen.
+   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 
