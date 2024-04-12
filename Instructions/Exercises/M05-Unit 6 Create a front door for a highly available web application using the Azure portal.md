@@ -8,7 +8,7 @@ Exercise:
 
 # M05 – Lerneinheit 6: Erstellen einer Front Door-Instanz für eine hochverfügbare Webanwendung mithilfe des Azure-Portals
 
- 
+## Übungsszenario  
 
 In dieser Übung richten Sie eine Azure Front Door-Konfiguration ein, die zwei Instanzen einer Webanwendung, die in verschiedenen Azure-Regionen ausgeführt wird, in einem Pool zusammenführt. Diese Konfiguration leitet Datenverkehr an den nächstgelegenen Standort weiter, an dem die Anwendung ausgeführt wird. Die Webanwendung wird von Azure Front Door ständig überwacht. Sie verwenden automatisches Failover auf den nächsten verfügbaren Standort, wenn der nächstgelegene Standort nicht verfügbar ist. Die folgende Abbildung zeigt die Netzwerkkonfiguration:
 
@@ -23,8 +23,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 **Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20Front%20Door%20profile%20for%20a%20highly%20available%20web%20application)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
-
-#### Geschätzte Dauer: 30 Minuten
+### Geschätzte Dauer: 30 Minuten
 
 ## Aufgabe 1: Erstellen von zwei Instanzen einer Web-App
 
@@ -50,7 +49,7 @@ Für diese Übung sind zwei Instanzen einer Webanwendung erforderlich, die in ve
    | Windows-Plan     | Wählen Sie **Neu erstellen** aus, und geben Sie im Textfeld den Text myAppServicePlanCentralUS ein. |
    | Tarif    | Wählen Sie **Standard S1, 100 ACU insgesamt, 1,75 GB Arbeitsspeicher** aus.        |
 
-1. Wählen Sie **Überprüfen und erstellen** aus, überprüfen Sie die Zusammenfassung, und wählen Sie dann die Option **Erstellen** aus.   
+1. Wählen Sie **Überprüfen und erstellen** aus, überprüfen Sie die Zusammenfassung, und wählen Sie dann die Option **Erstellen** aus.
    ‎Es kann mehrere Minuten dauern, bis die Bereitstellung abgeschlossen ist.
 
 1. Erstellen Sie eine zweite Web-App. Suchen Sie auf der Startseite des Azure-Portals nach **WebApp**.
@@ -71,7 +70,7 @@ Für diese Übung sind zwei Instanzen einer Webanwendung erforderlich, die in ve
    | Windows-Plan     | Wählen Sie **Neu erstellen** aus, und geben Sie myAppServicePlanEastUS in das Textfeld ein. |
    | Pricing Plan (Tarif)     | Wählen Sie **Standard S1, 100 ACU insgesamt, 1,75 GB Arbeitsspeicher** aus.        |
 
-1. Wählen Sie **Überprüfen und erstellen** aus, überprüfen Sie die Zusammenfassung, und wählen Sie dann die Option **Erstellen** aus.   
+1. Wählen Sie **Überprüfen und erstellen** aus, überprüfen Sie die Zusammenfassung, und wählen Sie dann die Option **Erstellen** aus.
    ‎Es kann mehrere Minuten dauern, bis die Bereitstellung abgeschlossen ist.
 
 ## Aufgabe 2: Erstellen einer Front Door-Instanz für Ihre Anwendung
@@ -84,7 +83,6 @@ Konfigurieren Sie Azure Front Door zum Weiterleiten des Benutzerdatenverkehrs ba
 
 1. Geben Sie auf der Registerkarte Grundlagen die folgenden Informationen an, oder wählen Sie sie aus.
 
-
    | **Einstellung**             | **Wert**                                    |
    | ----------------------- | -------------------------------------------- |
    | Subscription            | Wählen Sie Ihr Abonnement aus.                    |
@@ -93,19 +91,18 @@ Konfigurieren Sie Azure Front Door zum Weiterleiten des Benutzerdatenverkehrs ba
    | Name                    | Geben Sie einen eindeutigen Namen in diesem Abonnement ein, z. B. „FrontDoor(IhreInitialen)“   |
    | Tarif                    | Standard   |
    | Endpunktname           | FDendpoint   |
-   | Ursprungstyp             | App Service| 
+   | Ursprungstyp             | App Service|
    | Urspungs-Hostname        | Der Name der Web-App, die Sie zuvor bereitgestellt haben |
-   
 
 1. Klicken Sie auf **Überprüfen und erstellen** und dann auf **Erstellen**.
 
 1. Warten Sie, bis die Ressource bereitgestellt wurde, und wählen Sie dann **Zur Ressource wechseln** aus.
 1. Suchen Sie auf der Front Door-Ressource im Blatt „Übersicht“ die **Ursprungsgruppen**, und wählen Sie die erstellte Ursprungsgruppe aus.
-1. Um die Ursprungsgruppe zu aktualisieren, wählen Sie in der Liste den Namen **default-origin-group** aus. Wählen Sie **Einen Ursprung hinzufügen** aus, und fügen Sie die zweite Web-App hinzu. Wählen Sie „Hinzufügen“ und anschließend „Aktualisieren“ aus. 
+1. Um die Ursprungsgruppe zu aktualisieren, wählen Sie in der Liste den Namen **default-origin-group** aus. Wählen Sie **Einen Ursprung hinzufügen** aus, und fügen Sie die zweite Web-App hinzu. Wählen Sie „Hinzufügen“ und anschließend „Aktualisieren“ aus.
 
 ## Aufgabe 3: Anzeigen von Azure Front Door in Aktion
 
-Nachdem Sie eine Front Door-Instanz erstellt haben, dauert es einige Minuten, bis die Konfiguration global bereitgestellt ist. Greifen Sie nach Abschluss des Vorgangs auf den von Ihnen erstellten Front-End-Host zu. 
+Nachdem Sie eine Front Door-Instanz erstellt haben, dauert es einige Minuten, bis die Konfiguration global bereitgestellt ist. Greifen Sie nach Abschluss des Vorgangs auf den von Ihnen erstellten Front-End-Host zu.
 
 1. Suchen Sie auf der Front Door-Ressource im Blatt „Übersicht“ den Endpunkt-Hostnamen, der für Ihren Endpunkt erstellt wird. Dies sollte „fdendpoint“ gefolgt von einem Bindestrich und einer zufälligen Zeichenfolge sein. Beispiel: **fdendpoint-fxa8c8hddhhgcrb9.z01.azurefd.net**. **Kopieren** Sie diesen FQDN.
 
@@ -114,7 +111,7 @@ Nachdem Sie eine Front Door-Instanz erstellt haben, dauert es einige Minuten, b
 
 1. Führen Sie die folgenden Schritte aus, um das sofortige globale Failover in Aktion zu testen:
 
-1. Wechseln Sie zum Azure-Portal, suchen Sie nach **App Services**, und wählen Sie diese Option aus. 
+1. Wechseln Sie zum Azure-Portal, suchen Sie nach **App Services**, und wählen Sie diese Option aus.
 
 1. Wählen Sie eine Ihrer Web-Apps aus, und wählen Sie dann **Beenden** und anschließend **Ja** zum Bestätigen aus.
 
@@ -131,10 +128,9 @@ Nachdem Sie eine Front Door-Instanz erstellt haben, dauert es einige Minuten, b
    ![Browser mit App Service-Fehlerseite](../media/web-apps-both-stopped.png)
 
    Glückwunsch! Sie haben eine Azure Front Door-Instanz konfiguriert und getestet.
-   
 
 ## Aufgabe 4: Bereinigen der Ressourcen
-   
+
    >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.

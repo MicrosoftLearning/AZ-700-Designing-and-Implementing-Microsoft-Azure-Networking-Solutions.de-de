@@ -7,18 +7,16 @@ Exercise:
 
 # M04 – Lerninhalt 4: Erstellen und Konfigurieren eines Azure-Lastenausgleichs
 
-In dieser Übung erstellen Sie einen internen Lastenausgleich für die fiktive Organisation Contoso Ltd. 
+In dieser Übung erstellen Sie einen internen Lastenausgleich für die fiktive Organisation Contoso Ltd.
 
 **Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
-#### Geschätzte Dauer: 60 Minuten (einschließlich ca. 45 Minuten Wartezeit für die Bereitstellung)
+### Geschätzte Dauer: 60 Minuten (einschließlich ca. 45 Minuten Wartezeit für die Bereitstellung)
 
 Die Schritte zum Erstellen eines internen Lastenausgleichs sind denen, die Sie bereits in diesem Modul kennengelernt haben, um einen öffentlichen Lastenausgleich zu erstellen, sehr ähnlich. Der Hauptunterschied besteht darin, dass bei einem öffentlichen Lastenausgleich über eine öffentliche IP-Adresse auf das Front-End zugegriffen wird und Sie die Konnektivität von einem Host aus testen, der sich außerhalb Ihres virtuellen Netzwerks befindet, während bei einem internen Lastenausgleich das Front-End eine private IP-Adresse in Ihrem virtuellen Netzwerk ist, und Sie die Konnektivität von einem Host innerhalb desselben Netzwerks aus testen.
 
-
 ![Diagramm eines internen Load Balancer Standard](../media/4-exercise-create-configure-azure-load-balancer.png)
 
- 
 In dieser Übung führen Sie die folgenden Schritte aus:
 
 + Aufgabe 1: Erstellen des virtuellen Netzwerks
@@ -30,7 +28,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 ## Aufgabe 1: Erstellen des virtuellen Netzwerks
 
 In diesem Abschnitt erstellen Sie ein virtuelles Netzwerk und ein Subnetz.
-   
+
 1. Melden Sie sich beim Azure-Portal an.
 
 2. Navigieren Sie auf der Homepage des Azure-Portals zur Suchleiste „Globale Suche“, suchen Sie nach **Virtuelle Netzwerke**, und wählen Sie virtuelle Netzwerke unter „Dienste“ aus.  ![Ergebnisse für „virtuelles Netzwerk“ aus der globalen Suche auf der Homepage des Azure-Portals](../media/global-search-bar.PNG)
@@ -45,7 +43,6 @@ In diesem Abschnitt erstellen Sie ein virtuelles Netzwerk und ein Subnetz.
    | Ressourcengruppe | Wählen Sie **Neu erstellen** Name: **IntLB-RG** aus. |
    | Name           | **IntLB-VNet**                             |
    | Region         | **(USA) USA, Osten**                           |
-
 
 5. Wählen Sie **Weiter: IP-Adressen** aus.
 
@@ -69,7 +66,6 @@ In diesem Abschnitt erstellen Sie ein virtuelles Netzwerk und ein Subnetz.
     | AzureBastionSubnet-Adressraum | **10.1.1.0/26**                               |
     | Öffentliche IP-Adresse                 | Wählen Sie **Neu erstellen** Name: **myBastionIP** aus. |
 
-
 13. Klicken Sie auf **Überprüfen + erstellen**.
 
 14. Klicken Sie auf **Erstellen**.
@@ -79,7 +75,9 @@ In diesem Abschnitt erstellen Sie ein virtuelles Netzwerk und ein Subnetz.
 In diesem Abschnitt erstellen Sie drei VMs, die sich in derselben Verfügbarkeitsgruppe für den Back-End-Pool des Lastenausgleichs befinden, fügen die VMs dem Back-End-Pool hinzu und installieren dann IIS auf den drei VMs, um den Lastenausgleich zu testen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
+
  > **Hinweis:** Wenn Sie Cloud Shell zum ersten Mal öffnen, werden Sie möglicherweise aufgefordert, ein Speicherkonto zu erstellen. Klicken Sie auf **Speicher erstellen**.
+
 2. Wählen Sie auf der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien hochladen/herunterladen** aus, wählen Sie im Dropdownmenü **Hochladen** aus, und laden Sie die folgenden Dateien einzeln in das Cloud Shell-Startverzeichnis hoch: azuredeploy.json und azuredeploy.parameters.json.
 
 3. Stellen Sie die folgenden ARM-Vorlagen bereit, um die für diese Übung erforderlichen VMs zu erstellen:
@@ -118,18 +116,16 @@ In diesem Abschnitt erstellen Sie einen internen Lastenausgleich der Standard-SK
    | Typ                  | **Intern**             |
    | Tarif                  | **Regional**             |
 
-
 1. Wählen Sie **Weiter: Front-End-IP-Konfigurationen** aus.
 1. Wählen Sie „Front-End-IP hinzufügen“ aus
 1. Geben Sie auf dem Blatt **Front-End-IP-Adresse hinzufügen** die Informationen aus der folgenden Tabelle ein, und wählen Sie **Hinzufügen** aus.
- 
+
    | **Einstellung**     | **Wert**                |
    | --------------- | ------------------------ |
    | Name            | **LoadBalancerFrontEnd** |
    | Virtuelles Netzwerk | **IntLB-VNet**           |
    | Subnet          | **myFrontEndSubnet**     |
    | Zuweisung      | **Dynamisch**              |
-
 
 1. Klicken Sie auf **Überprüfen + erstellen**.
 
@@ -154,14 +150,12 @@ Der Back-End-Adresspool enthält die IP-Adressen der virtuellen NICs, die mit de
    | Name            | **myBackendPool**    |
    | Virtuelles Netzwerk | **IntLB-VNet**       |
 
-
 1. Wählen Sie unter **Virtuelle Computer** die Option **Hinzufügen** aus.
 
 1. Aktivieren Sie die Kontrollkästchen für alle drei VMs (**myVM1**, **myVM2** und **myVM3**), und wählen Sie dann **Hinzufügen** aus.
 
 1. Wählen Sie **Speichern**.
    ![Bild 7](../media/add-vms-backendpool.png)
-   
 
 ### Erstellen eines Integritätstests
 
@@ -179,11 +173,8 @@ Der Status Ihrer App wird vom Lastenausgleich mithilfe eines Integritätstests �
    | Pfad                | **/**             |
    | Intervall            | **15**            |
 
-
 1. Wählen Sie **Hinzufügen** aus.
    ![Bild 5](../media/create-healthprobe.png)
-
- 
 
 ### Erstellen einer Load Balancer-Regel
 
@@ -207,16 +198,8 @@ Mithilfe einer Load Balancer-Regel wird definiert, wie Datenverkehr auf die virt
    | Leerlaufzeitüberschreitung (Minuten) | **15**                   |
    | Unverankerte IP            | **Deaktiviert**             |
 
-
 1. Wählen Sie **Speichern**.
    ![Bild 6](../media/create-loadbalancerrule.png)
-
- 
-
-
- 
-
- 
 
 ## Aufgabe 5: Testen des Lastenausgleichs
 
@@ -241,8 +224,7 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
    | Kennwort             | **Bereitstellen eines sicheren Kennworts**                |
    | Kennwort bestätigen     | **Bereitstellen eines sicheren Kennworts**                |
 
-
-1. Wählen Sie **Weiter: Datenträger** und dann **Weiter: Netzwerk** aus. 
+1. Wählen Sie **Weiter: Datenträger** und dann **Weiter: Netzwerk** aus.
 
 1. Verwenden Sie auf der Registerkarte **Netzwerk** die Informationen aus der folgenden Tabelle, um Netzwerkeinstellungen zu konfigurieren.
 
@@ -254,7 +236,6 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
    | NIC-Netzwerksicherheitsgruppe                                   | **Erweitert**                  |
    | Konfigurieren von Netzwerksicherheitsgruppen                             | Wählen Sie die vorhandene Netzwerksicherheitsgruppe (**myNSG**) aus. |
    | Optionen für den Lastenausgleich                                       | **Keine**                      |
-
 
 1. Klicken Sie auf **Überprüfen + erstellen**.
 

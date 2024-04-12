@@ -6,8 +6,9 @@ Exercise:
 
 # M08 – Lerneinheit 3: Überwachen einer Lastenausgleichsressource mit Azure Monitor
 
+## Übungsszenario
 
-In dieser Übung erstellen Sie einen internen Lastenausgleich für die fiktive Organisation Contoso Ltd. Anschließend erstellen Sie einen Log Analytics-Arbeitsbereich und zeigen mithilfe von Azure Monitor Insights Informationen zu dem internen Lastenausgleich an. Sie zeigen die Ansicht der funktionalen Abhängigkeiten und dann detaillierte Metriken für die Lastenausgleichsressource sowie Ressourcenintegritätsinformationen für den Lastenausgleich an. Abschließend konfigurieren Sie die Diagnoseeinstellungen des Lastenausgleichs, um Metriken an den von Ihnen erstellten Log Analytics-Arbeitsbereich zu senden. 
+In dieser Übung erstellen Sie einen internen Lastenausgleich für die fiktive Organisation Contoso Ltd. Anschließend erstellen Sie einen Log Analytics-Arbeitsbereich und zeigen mithilfe von Azure Monitor Insights Informationen zu dem internen Lastenausgleich an. Sie zeigen die Ansicht der funktionalen Abhängigkeiten und dann detaillierte Metriken für die Lastenausgleichsressource sowie Ressourcenintegritätsinformationen für den Lastenausgleich an. Abschließend konfigurieren Sie die Diagnoseeinstellungen des Lastenausgleichs, um Metriken an den von Ihnen erstellten Log Analytics-Arbeitsbereich zu senden.
 
 Das folgende Diagramm veranschaulicht die Umgebung, die Sie in dieser Übung bereitstellen.
 
@@ -30,14 +31,12 @@ Das folgende Diagramm veranschaulicht die Umgebung, die Sie in dieser Übung ber
 + Aufgabe 13: Konfigurieren von Diagnoseeinstellungen
 + Aufgabe 14: Bereinigen der Ressourcen
 
-
 **Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Monitor%20a%20load%20balancer%20resource%20using%20Azure%20Monitor)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
-
 > [!Note]  
-> Sie können geringfügige Unterschiede zwischen den Anweisungen und der Azure-Portal Schnittstelle feststellen, aber das Kernkonzept ist identisch. 
+> Sie können geringfügige Unterschiede zwischen den Anweisungen und der Azure-Portal Schnittstelle feststellen, aber das Kernkonzept ist identisch.
 
-#### Geschätzte Dauer: 55 Minuten
+### Geschätzte Dauer: 55 Minuten
 
 ## Aufgabe 1: Erstellen des virtuellen Netzwerks
 
@@ -88,14 +87,13 @@ In diesem Abschnitt erstellen Sie ein virtuelles Netzwerk und ein Subnetz.
 
 In diesem Abschnitt erstellen Sie einen internen Lastenausgleich der Standard-SKU. Wir erstellen in der Übung anstelle eines Lastenausgleichs der Basic-SKU einen Lastenausgleich der Standard-SKU, weil für spätere Übungen eine Standard-SKU-Version des Lastenausgleichs erforderlich ist.
 
-1.  Geben Sie auf der Azure-Homepage **Load Balancer** in das Suchfeld ein. 
-1.  Wählen Sie **Load Balancer erstellen** aus.
-1.  Verwenden Sie auf der Registerkarte **Grundlagen** die Informationen aus der folgenden Tabelle, um den Lastenausgleich zu erstellen.
-    
+1. Geben Sie auf der Azure-Homepage **Load Balancer** in das Suchfeld ein.
+1. Wählen Sie **Load Balancer erstellen** aus.
+1. Verwenden Sie auf der Registerkarte **Grundlagen** die Informationen aus der folgenden Tabelle, um den Lastenausgleich zu erstellen.
 
    | **Einstellung**           | **Wert**                |
    | --------------------- | ------------------------ |
-   | Registerkarte „Grundlagen“            |                          | 
+   | Registerkarte „Grundlagen“            |                          |
    | Subscription          | Wählen Sie Ihr Abonnement aus. |
    | Resource group        | **IntLB-RG**             |
    | Name                  | **myIntLoadBalancer**    |
@@ -108,12 +106,9 @@ In diesem Abschnitt erstellen Sie einen internen Lastenausgleich der Standard-SK
    | Subnet                | **myBackendSubnet**      |
    | IP-Adresszuweisung | **Dynamisch**              |
 
-
 1. Klicken Sie auf **Überprüfen + erstellen**.
 
-
 1. Klicken Sie auf **Erstellen**.
-
 
 ## Aufgabe 3: Erstellen eines Back-End-Pools
 
@@ -135,8 +130,6 @@ Der Back-End-Adresspool enthält die IP-Adressen der virtuellen NICs, die mit de
 
    ![Anzeigen des im Lastenausgleich erstellten Back-End-Pools](../media/create-backendpool.png)
 
-   
-
 ## Aufgabe 4: Erstellen eines Integritätstests
 
 Der Status Ihrer App wird vom Lastenausgleich mithilfe eines Integritätstests überwacht. Abhängig von der Reaktion auf Integritätsüberprüfungen werden der Load Balancer-Instanz durch den Integritätstest virtuelle Computer hinzugefügt oder daraus entfernt. Hier erstellen Sie wie folgt einen Integritätstest zur Überwachung der Integrität der virtuellen Computer.
@@ -156,8 +149,6 @@ Der Status Ihrer App wird vom Lastenausgleich mithilfe eines Integritätstests �
 1. Wählen Sie **Hinzufügen** aus.
 
    ![Anzeigen des im Lastenausgleich erstellten Integritätstests](../media/create-healthprobe.png)
-
-
 
 ## Aufgabe 5: Erstellen einer Lastenausgleichsregel
 
@@ -187,11 +178,12 @@ Mithilfe einer Load Balancer-Regel wird definiert, wie Datenverkehr auf die virt
 
 ## Aufgabe 6: Erstellen von Back-End-Servern
 
-
 In diesem Abschnitt erstellen Sie drei VMs für den Back-End-Pool des Lastenausgleichs, fügen die VMs dem Back-End-Pool hinzu und installieren dann IIS auf den drei VMs, um den Lastenausgleich zu testen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
+
  > **Hinweis:** Wenn Sie Cloud Shell zum ersten Mal öffnen, werden Sie möglicherweise aufgefordert, ein Speicherkonto zu erstellen. Klicken Sie auf **Speicher erstellen**.
+
 1. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien hochladen/herunterladen**, wählen Sie im Dropdownmenü die Option **Hochladen** und laden Sie die folgenden Dateien **azuredeploy.json** und **azuredeploy.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M08** in das Cloud Shell-Basisverzeichnis hoch.
 
 1. Stellen Sie die folgenden ARM-Vorlagen bereit, um das virtuelle Netzwerk, die Subnetze und die VMs zu erstellen, die für diese Übung erforderlich sind:
@@ -204,7 +196,7 @@ In diesem Abschnitt erstellen Sie drei VMs für den Back-End-Pool des Lastenausg
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
   
-    > **Hinweis:** Dies wird einige Minuten in Anspruch nehmen. 
+    > **Hinweis:** Dies wird einige Minuten in Anspruch nehmen.
 
 ## Aufgabe 7: Hinzufügen von VMs zum Back-End-Pool
 
@@ -222,8 +214,6 @@ In diesem Abschnitt erstellen Sie drei VMs für den Back-End-Pool des Lastenausg
 
    ![Anzeigen von VMs, die dem Back-End-Pool im Lastenausgleich hinzugefügt wurden](../media/add-vms-backendpool.png)
 
- 
-
 ## Aufgabe 8: Testen des Lastenausgleichs
 
 In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausgleich.
@@ -231,9 +221,9 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
 ### Erstellen einer Test-VM
 
 > [!Note]  
-> Sie können geringfügige Unterschiede zwischen den Anweisungen und der Azure-Portal Schnittstelle feststellen, aber das Kernkonzept ist identisch. 
+> Sie können geringfügige Unterschiede zwischen den Anweisungen und der Azure-Portal Schnittstelle feststellen, aber das Kernkonzept ist identisch.
 
-1. Geben Sie auf Startseite des Azure-Portals bei der globalen Suche **Virtuelle Computer** ein, und wählen Sie unter „Dienste“ die Option „Virtuelle Computer“ aus. 
+1. Geben Sie auf Startseite des Azure-Portals bei der globalen Suche **Virtuelle Computer** ein, und wählen Sie unter „Dienste“ die Option „Virtuelle Computer“ aus.
 
 1. Wählen Sie **+ Erstellen; + Virtueller Computer** auf der Registerkarte **Grundlagen** aus, und verwenden Sie die Informationen in der Tabelle unten, um die erste VM zu erstellen.
 
@@ -250,7 +240,7 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
    | Kennwort             | **Bereitstellen eines sicheren Kennworts**                |
    | Kennwort bestätigen     | **Bereitstellen eines sicheren Kennworts**                |
 
-1. Wählen Sie **Weiter: Datenträger** und dann **Weiter: Netzwerk** aus. 
+1. Wählen Sie **Weiter: Datenträger** und dann **Weiter: Netzwerk** aus.
 
 1. Verwenden Sie auf der Registerkarte **Netzwerk** die Informationen aus der folgenden Tabelle, um Netzwerkeinstellungen zu konfigurieren.
 
@@ -306,7 +296,7 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
 
    ![Zugreifen auf Log Analytics-Arbeitsbereiche über die Startseite des Azure-Portals](../media/log-analytics-workspace-1.png)
 
-1. Klicken Sie auf **Erstellen**. 
+1. Klicken Sie auf **Erstellen**.
 
 1. Verwenden Sie auf der Seite **Log Analytics-Arbeitsbereich erstellen** auf der Registerkarte **Grundlagen** die Informationen aus der folgenden Tabelle, um den Arbeitsbereich zu erstellen.
 
@@ -320,8 +310,6 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
 1. Wählen Sie **Überprüfen + erstellen** und dann **Erstellen** aus.
 
    ![Liste der Log Analytics-Arbeitsbereiche](../media/log-analytics-workspace-2.png)
-
-
 
 ## Aufgabe 10: Verwenden der Ansicht der funktionalen Abhängigkeiten
 
@@ -337,11 +325,11 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
 
 1. Verwenden Sie die Schaltflächen **Vergrößern (+)** und **Verkleinern (-)** in der rechten unteren Ecke der Seite, um das Topologiediagramm zu vergrößern bzw. zu verkleinern (alternativ können Sie das Mausrad verwenden, sofern vorhanden). Sie können auch das Topologiediagramm auf der Seite ziehen, um es zu verschieben.
 
-1. Zeigen Sie im Diagramm auf die Komponente **LoadBalancerFrontEnd** und dann auf die Komponente **MyBackendPool**. 
+1. Zeigen Sie im Diagramm auf die Komponente **LoadBalancerFrontEnd** und dann auf die Komponente **MyBackendPool**.
 
 1. Beachten Sie, dass Sie mithilfe der Links in den Popupfenstern Informationen zu diesen Lastenausgleichskomponenten anzeigen und die entsprechenden Blätter im Azure-Portal öffnen können.
 
-1. Um eine Kopie des Topologiediagramms als SVG-Datei herunterzuladen, wählen Sie **Topologie herunterladen** aus, und speichern Sie die Datei im Ordner **Downloads**. 
+1. Um eine Kopie des Topologiediagramms als SVG-Datei herunterzuladen, wählen Sie **Topologie herunterladen** aus, und speichern Sie die Datei im Ordner **Downloads**.
 
 1. Wählen Sie in der rechten oberen Ecke **Metriken anzeigen** aus, um den Bereich „Metriken“ auf der rechten Seite des Bildschirms erneut zu öffnen.
     ![Ansicht der funktionalen Abhängigkeiten in Azure Monitor Network Insights. Die Schaltfläche „Metriken anzeigen“ ist hervorgehoben](../media/network-insights-functional-dependency-view-3.png)
@@ -349,8 +337,6 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
 1. Der Bereich „Metriken“ bietet in Form von Balken- und Liniendiagrammen eine Übersicht über einige wichtige Metriken für die Lastenausgleichsressource.
 
     ![Azure Monitor Network Insights: Ansicht grundlegender Metriken](../media/network-insights-basicmetrics-view.png)
-
- 
 
 ## Aufgabe 11: Anzeigen detaillierter Metriken
 
@@ -368,11 +354,9 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
 1. Wenn Sie auf einige der Datenpunkte in den Diagrammen klicken, ändern sich die angezeigten Werte in den genauen Wert zu diesem Zeitpunkt.
    ![Azure Monitor Network Insights: Ansicht detaillierter Metriken – Registerkarte „Datendurchsatz“](../media/network-insights-detailedmetrics-3.png)
 
-1. Wählen Sie die Registerkarte **Flowverteilung** aus, und scrollen Sie auf der Seite nach unten, um die Diagramme im Abschnitt **VM-Datenflusserstellung und -Netzwerkdatenverkehr** anzuzeigen. 
+1. Wählen Sie die Registerkarte **Flowverteilung** aus, und scrollen Sie auf der Seite nach unten, um die Diagramme im Abschnitt **VM-Datenflusserstellung und -Netzwerkdatenverkehr** anzuzeigen.
 
    ![Azure Monitor Network Insights: Ansicht detaillierter Metriken – Diagramme zu VM-Datenflusserstellung und -Netzwerkdatenverkehr](../media/network-insights-detailedmetrics-4.png)
-
- 
 
 ## Aufgabe 12: Anzeigen der Ressourcenintegrität
 
@@ -391,8 +375,6 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
 1. Auf der Seite **Ressourcenintegrität** werden alle größeren Verfügbarkeitsprobleme bei Ihrer Lastenausgleichsressource angegeben. Wenn im Abschnitt **Integritätsverlauf** Ereignisse vorhanden sind, können Sie das Integritätsereignis erweitern, um weitere Details zum Ereignis anzuzeigen. Sie können die Details des Ereignisses sogar zur späteren Überprüfung und Berichterstellung als PDF-Datei speichern.
 
    ![Ansicht „Dienstintegrität > Ressourcenintegrität“](../media/resource-health-2.png)
-
- 
 
 ## Aufgabe 13: Konfigurieren von Diagnoseeinstellungen
 
@@ -413,8 +395,6 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
 1. Wählen Sie **Speichern**.
 
    ![Seite „Diagnoseeinstellung“ für Lastenausgleich](../media/diagnostic-settings-2.png)
-
- 
 
 ## Aufgabe 14: Bereinigen der Ressourcen
 

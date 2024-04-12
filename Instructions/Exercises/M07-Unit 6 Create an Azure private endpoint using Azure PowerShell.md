@@ -6,14 +6,16 @@ Exercise:
 
 # M07 – Lerneinheit 6: Erstellen eines privaten Azure-Endpunkts mit Azure PowerShell
 
-Beginnen Sie mit Azure Private Link, indem Sie einen privaten Endpunkt verwenden, um eine Verbindung mit einer Azure-Web-App herzustellen. Es gibt viele Möglichkeiten zum Erstellen von Endpunkten, einschließlich Portal, CLI, PowerShell usw. 
+## Übungsszenario
+
+Beginnen Sie mit Azure Private Link, indem Sie einen privaten Endpunkt verwenden, um eine Verbindung mit einer Azure-Web-App herzustellen. Es gibt viele Möglichkeiten zum Erstellen von Endpunkten, einschließlich Portal, CLI, PowerShell usw.
 
 ![Diagramm: Architektur eines privaten Endpunkts](../media/6-exercise-create-azure-private-endpoint-using-azure-powershell.png)
 
 
 **Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20an%20Azure%20private%20endpoint%20using%20Azure%20PowerShell)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
-#### Geschätzte Dauer: 45 Minuten
+### Geschätzte Dauer: 45 Minuten
 
 Sie erstellen einen privaten Endpunkt für eine Azure-Web-App und stellen einen virtuellen Computer bereit, um die private Verbindung zu testen.
 
@@ -35,13 +37,13 @@ Wenn Sie sich dafür entscheiden, PowerShell lokal zu installieren und zu verwen
 
 In dieser Übung führen Sie die folgenden Schritte aus:
 
-+ Aufgabe 1: Erstellen einer Ressourcengruppe
-+ Aufgabe 2: Erstellen eines virtuellen Netzwerks und eines Bastion-Hosts
-+ Aufgabe 3: Erstellen eines virtuellen Testcomputers
-+ Aufgabe 4: Erstellen eines privaten Endpunkts
-+ Aufgabe 5: Konfigurieren der privaten DNS-Zone
-+ Aufgabe 6: Testen der Konnektivität mit dem privaten Endpunkt
-+ Aufgabe 7: Bereinigen der Ressourcen
+- Aufgabe 1: Erstellen einer Ressourcengruppe
+- Aufgabe 2: Erstellen eines virtuellen Netzwerks und eines Bastion-Hosts
+- Aufgabe 3: Erstellen eines virtuellen Testcomputers
+- Aufgabe 4: Erstellen eines privaten Endpunkts
+- Aufgabe 5: Konfigurieren der privaten DNS-Zone
+- Aufgabe 6: Testen der Konnektivität mit dem privaten Endpunkt
+- Aufgabe 7: Bereinigen der Ressourcen
 
 ## Aufgabe 1: Erstellen einer Ressourcengruppe und Bereitstellen der erforderlichen Web-App
 
@@ -52,6 +54,7 @@ Erstellen Sie mit [New-AzResourceGroup](https://docs.microsoft.com/en-us/powersh
 ```PowerShell
 New-AzResourceGroup -Name 'CreatePrivateEndpointQS-rg' -Location 'eastus'
 ```
+
 Stellen Sie die folgenden ARM-Vorlagen bereit, um die für diese Übung benötigte Azure Web-App mit PremiumV2-Tarif zu erstellen:
 
    ```powershell
@@ -59,6 +62,7 @@ Stellen Sie die folgenden ARM-Vorlagen bereit, um die für diese Übung benötig
    
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile template.json -TemplateParameterFile parameters.json
    ```
+
 Wenn Sie eine Fehlermeldung erhalten (z. B. beim Einsehen des Bereitstellungsstatus im Portal) wie „Eine Website mit dem angegebenen Namen GEN-UNIQUE ist bereits vorhanden“, beachten Sie bitte die oben genannten Voraussetzungen für die Bearbeitung der Vorlage.
 
 ## Aufgabe 2: Erstellen eines virtuellen Netzwerks und eines Bastion-Hosts
@@ -74,8 +78,6 @@ Erstellen Sie ein virtuelles Netzwerk und einen Bastion-Host mit:
 - New-AzPublicIpAddress
 
 - New-AzBastion
-
- 
 
 ```PowerShell
 ## Create backend subnet config. ##
@@ -138,9 +140,6 @@ $parameters3 = @{
 
 New-AzBastion @parameters3
 ```
-
-
-
 
 ## Aufgabe 3: Erstellen eines virtuellen Testcomputers
 
@@ -226,9 +225,6 @@ New-AzVM -ResourceGroupName 'CreatePrivateEndpointQS-rg' -Location 'eastus' -VM 
 
 ```
 
-
-
-
 Azure stellt eine kurzlebige IP-Adresse für Azure Virtual Machines-Instanzen bereit, denen keine öffentliche IP-Adresse zugewiesen ist oder die sich im Back-End-Pool einer Azure Load Balancer-Instanz vom Typ „Basic“ befinden. Der Mechanismus für kurzlebige IP-Adressen stellt eine ausgehende IP-Adresse bereit, die nicht konfigurierbar ist.
 
 Die kurzlebige IP-Adresse wird deaktiviert, wenn dem virtuellen Computer eine öffentliche IP-Adresse zugewiesen wird oder wenn der virtuelle Computer im Back-End-Pool eines Load Balancer Standard-Instanz mit oder ohne Ausgangsregeln platziert wird. Wird dem Subnetz des virtuellen Computers eine Gatewayressource vom Typ Azure Virtual Network NAT zugewiesen, wird die kurzlebige IP-Adresse deaktiviert.
@@ -242,8 +238,6 @@ In diesem Abschnitt erstellen Sie den privaten Endpunkt und die Verbindung mithi
 - New-AzPrivateLinkServiceConnection
 
 - New-AzPrivateEndpoint
-
- 
 
 ```PowerShell
 ## Place web app into variable. This assumes that only one web app exists in the resource group. ##
@@ -292,9 +286,6 @@ $parameters2 = @{
 
 New-AzPrivateEndpoint @parameters2 
 ```
-
-
-
 
 ## Aufgabe 5: Konfigurieren der privaten DNS-Zone
 
@@ -370,7 +361,6 @@ $parameters4 = @{
 New-AzPrivateDnsZoneGroup @parameters4 
 ```
 
-
 ## Aufgabe 6: Testen der Konnektivität mit dem privaten Endpunkt
 
 In diesem Abschnitt verwenden Sie den virtuellen Computer, den Sie im vorherigen Schritt erstellt haben, um über den privaten Endpunkt eine Verbindung mit der Web-App herzustellen.
@@ -407,13 +397,12 @@ In diesem Abschnitt verwenden Sie den virtuellen Computer, den Sie im vorherigen
   Aliases: mywebapp8675.azurewebsites.net 
   ```  
 
-
 Als Name der Web-App wird die private IP-Adresse **10.0.0.5** zurückgegeben. Diese Adresse befindet sich in dem Subnetz des virtuellen Netzwerks, das Sie zuvor erstellt haben.
 
 1. Öffnen Sie in der Bastionhostverbindung mit **myVM** den Internet Explorer.
 1. Geben Sie die URL Ihrer Web-App, **https://&lt;your-webapp-name&gt;.azurewebsites.net**, ein.
 1. Sie erhalten die Standard-Web-App-Seite, wenn Ihre Anwendung noch nicht bereitgestellt wurde: ![Screenshot der Seite in Azure, die anzeigt, dass ein App-Dienst eingerichtet ist und ausgeführt wird](../media/web-app-default-page.png)
-1. Trennen Sie die Verbindung zu **myVM**. 
+1. Trennen Sie die Verbindung zu **myVM**.
 
 ## Aufgabe 7: Bereinigen der Ressourcen
 
@@ -422,8 +411,3 @@ Wenn Sie die Verwendung des privaten Endpunkts und des virtuellen Computers been
 ```PowerShell
 Remove-AzResourceGroup -Name CreatePrivateEndpointQS-rg -Force -AsJob
 ```
-
-
-
-
-
