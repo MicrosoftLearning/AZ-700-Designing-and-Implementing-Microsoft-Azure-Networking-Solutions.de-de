@@ -6,6 +6,7 @@ Exercise:
 
 # M07 – Lerneinheit 5: Einschränken des Netzwerkzugriffs auf PaaS-Ressourcen mit VNET-Dienstendpunkten
 
+## Übungsszenario
 
 VNET-Dienstendpunkte ermöglichen es Ihnen, den Netzwerkzugriff auf einige Azure-Dienstressourcen auf ein Subnetz eines virtuellen Netzwerks einzuschränken. Sie können auch den Internetzugriff auf die Ressourcen entfernen. Dienstendpunkte ermöglichen eine direkte Verbindung zwischen Ihrem virtuellen Netzwerk und unterstützten Azure-Diensten, sodass Sie mithilfe des privaten Adressraums Ihres virtuellen Netzwerks auf die Azure-Dienste zugreifen können. Datenverkehr, der über Dienstendpunkte für Azure-Ressourcen bestimmt ist, verbleibt immer im Microsoft Azure-Backbonenetzwerk.
 
@@ -16,7 +17,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 1: Erstellen eines virtuellen Netzwerks
 + Aufgabe 2: Aktivieren eines Dienstendpunkts
 + Aufgabe 3: Einschränken des Netzwerkzugriffs für ein Subnetz
-+ Aufgabe 4: Hinzufügen weiterer Ausgangsregeln 
++ Aufgabe 4: Hinzufügen weiterer Ausgangsregeln
 + Aufgabe 5: Zulassen des Zugriffs für RDP-Verbindungen
 + Aufgabe 6: Einschränken des Netzwerkzugriffs auf eine Ressource
 + Aufgabe 7: Erstellen einer Dateifreigabe im Speicherkonto
@@ -27,7 +28,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 **Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Restrict%20network%20access%20to%20PaaS%20resources%20with%20virtual%20network%20service%20endpoints)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
-#### Geschätzte Dauer: 35 Minuten
+### Geschätzte Dauer: 35 Minuten
 
 ## Aufgabe 1: Erstellen eines virtuellen Netzwerks
 
@@ -62,7 +63,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
    | DDoS-Netzwerkschutz | Deaktiviert  |
    | Firewall                | Disabled  |
 
-1. Klicken Sie auf **Überprüfen + erstellen**. Nachdem die Ressource überprüft wurde, wählen Sie **Erstellen** aus. 
+1. Klicken Sie auf **Überprüfen + erstellen**. Nachdem die Ressource überprüft wurde, wählen Sie **Erstellen** aus.
 
 ## Aufgabe 2: Aktivieren eines Dienstendpunkts
 
@@ -86,18 +87,15 @@ Sie sollten jetzt zwei Subnetze konfiguriert haben:
 
 ![Grafische Benutzeroberfläche, Text, Anwendung, E-Mail, automatisch erstellte Beschreibung](../media/configured-subnets.png)
 
- 
-
 ## Aufgabe 3: Einschränken des Netzwerkzugriffs für ein Subnetz
 
 Standardmäßig können alle virtuellen Computer in einem Subnetz mit allen Ressourcen kommunizieren. Sie können die Kommunikation von und mit allen Ressourcen in einem Subnetz einschränken, indem Sie eine Netzwerksicherheitsgruppe erstellen und dem Subnetz zuordnen.
 
 1. Geben Sie oben im Portal im Feld **Ressourcen, Dienste und Dokumente suchen** den Suchbegriff **Sicherheitsgruppe** ein. Wenn **Netzwerksicherheitsgruppen** in den Suchergebnissen angezeigt werden, wählen Sie diesen Eintrag aus.
 
-1. Wählen Sie unter „Netzwerksicherheitsgruppen“ die Option **+ Erstellen** aus. 
+1. Wählen Sie unter „Netzwerksicherheitsgruppen“ die Option **+ Erstellen** aus.
 
-1. Geben Sie die folgenden Informationen ein, oder wählen Sie sie aus: 
-
+1. Geben Sie die folgenden Informationen ein, oder wählen Sie sie aus:
 
    | **Einstellung**    | **Wert**                                                    |
    | -------------- | ------------------------------------------------------------ |
@@ -132,10 +130,9 @@ Standardmäßig können alle virtuellen Computer in einem Subnetz mit allen Ress
 
 1. Wählen Sie **Hinzufügen** aus:
 
+## Aufgabe 4: Hinzufügen weiterer Ausgangsregeln
 
-## Aufgabe 4: Hinzufügen weiterer Ausgangsregeln 
-
-Erstellen Sie eine weitere Ausgangssicherheitsregel, die Kommunikation mit dem Internet verweigert. Diese Regel überschreibt eine Standardregel in allen Netzwerksicherheitsgruppen, die ausgehende Internetkommunikation zulässt. 
+Erstellen Sie eine weitere Ausgangssicherheitsregel, die Kommunikation mit dem Internet verweigert. Diese Regel überschreibt eine Standardregel in allen Netzwerksicherheitsgruppen, die ausgehende Internetkommunikation zulässt.
 
 1. Wählen Sie unter **Sicherheitsregeln für ausgehenden Datenverkehr** die Option **+ Hinzufügen** aus.
 
@@ -200,7 +197,6 @@ Die Schritte, die erforderlich sind, um den Netzwerkzugriff auf Ressourcen einzu
 1. Wählen Sie „+Erstellen“ aus.
 
 1. Geben Sie die folgenden Informationen ein, oder wählen Sie sie aus, und übernehmen Sie die übrigen Standardeinstellungen:
-
 
    | **Einstellung**    | **Wert**                                                    |
    | -------------- | ------------------------------------------------------------ |
@@ -269,7 +265,6 @@ Zum Testen des Netzwerkzugriffs auf ein Speicherkonto stellen Sie einen virtuell
   
 1. Wenn die Bereitstellung abgeschlossen ist, wechseln Sie zur Startseite des Azure-Portals und wählen **Virtuelle Computer** aus.
 
-
 ## Aufgabe 10: Bestätigen des Zugriffs auf das Speicherkonto
 
 1. Sobald die Erstellung des virtuellen Computers „ContosoPrivate“ abgeschlossen ist, öffnen Sie das Blatt für den virtuellen Computer, indem Sie „Zu Ressource wechseln“ auswählen. Wählen Sie die Schaltfläche „Verbinden“ und dann „RDP“ aus.
@@ -279,7 +274,6 @@ Zum Testen des Netzwerkzugriffs auf ein Speicherkonto stellen Sie einen virtuell
 1. Klickan Sie auf **OK**.
 1. Während des Anmeldevorgangs wird unter Umständen eine Zertifikatwarnung angezeigt. Wenn eine Warnung angezeigt wird, wählen Sie „Ja“ bzw. „Weiter“ aus, um mit dem Herstellen der Verbindung fortzufahren.
 1. Ordnen Sie auf dem virtuellen Computer „ContosoPrivate“ mithilfe von PowerShell die Azure-Dateifreigabe dem Laufwerk Z zu. Bevor Sie die folgenden Befehle ausführen, ersetzen Sie <storage-account-key>, <storage-account-name> (d. h. contosostoragexx) und my-file-share (d. h. marketing) durch Werte, die Sie angegeben und in der Aufgabe „Erstellen eines Speicherkontos“ abgerufen haben.
-
 
 ```azurecli
 $acctKey = ConvertTo-SecureString -String "<storage-account-key>" -AsPlainText -Force
@@ -296,7 +290,6 @@ Die Azure-Dateifreigabe wurde dem Laufwerk Z erfolgreich zugeordnet.
 
  Pingen von bing.com
 
-
 Sie erhalten keine Antworten, da die dem Subnetz „Private“ zugeordnete Netzwerksicherheitsgruppe keinen ausgehenden Zugriff auf das Internet zulässt.
 
 1. Schließen Sie die Remotedesktopsitzung für den virtuellen Computer „ContosoPrivate“.
@@ -308,12 +301,12 @@ Sie erhalten keine Antworten, da die dem Subnetz „Private“ zugeordnete Netzw
 1. Wenn **ContosoPublic** in den Suchergebnissen angezeigt wird, wählen Sie den Eintrag aus.
 
 1. Führen Sie für den virtuellen Computer „ContosoPublic“ die Schritte 1-6 in der Aufgabe „Bestätigen des Zugriffs auf das Speicherkonto“ aus.  
-     
+
    ‎Nach einer kurzen Wartezeit erhalten Sie den Fehler „New-PSDrive: Zugriff verweigert“. Der Zugriff wird verweigert, da der virtuelle Computer „ContosoPublic“ im Subnetz „Public“ bereitgestellt ist. Das Subnetz Public verfügt nicht über einen Dienstendpunkt, der für Azure Storage aktiviert ist. Das Speicherkonto lässt Netzwerkzugriff nur über das Subnetz Private, nicht jedoch über das Subnetz Public zu.
 
 1. Bestätigen Sie über eine Eingabeaufforderung, dass der virtuelle Computer über eine ausgehende Verbindung mit dem Internet verfügt:
 
- Pingen von bing.com    
+ Pingen von bing.com
 
 1. Schließen Sie die Remotedesktopsitzung für den virtuellen Computer „ContosoPublic“.
 

@@ -6,7 +6,8 @@ Exercise:
 
 # M01 – Lerneinheit 6: Konfigurieren von DNS-Einstellungen in Azure
 
-## Übungsszenario 
+## Übungsszenario
+
 In dieser Lerneinheit konfigurieren Sie die DNS-Namensauflösung für Contoso Ltd. Sie erstellen eine private DNS-Zone mit dem Namen „contoso.com“, verknüpfen die VNets für Registrierung und Auflösung, erstellen anschließend zwei VMs und testen die Konfiguration.
 
 ![Abbildung: DNS-Architektur.](../media/6-exercise-configure-domain-name-servers-configuration-azure.png)
@@ -20,7 +21,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 **Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20DNS%20settings%20in%20Azure)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
-#### Geschätzte Dauer: 25 Minuten
+### Geschätzte Dauer: 25 Minuten
 
 ## Aufgabe 1: Erstellen einer privaten DNS-Zone
 
@@ -39,7 +40,6 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 |                 | Name                                   | Contoso.com          |
 | Tags            | Keine Änderungen erforderlich                    |                      |
 | Bewerten + erstellen | Überprüfen Sie Ihre Einstellungen, und klicken Sie auf „Erstellen“. |                      |
-
 
 5. Warten Sie, bis die Bereitstellung abgeschlossen ist, und wählen Sie dann **Zu Ressource wechseln** aus.
 
@@ -63,12 +63,11 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 | Automatische Registrierung aktivieren            | Ausgewählt                                |
 | Überprüfen Sie Ihre Einstellungen, und klicken Sie auf „OK“. |                                         |
 
-
 4. Wählen Sie **Aktualisieren** aus.
 
 5. Vergewissern Sie sich, dass „CoreServicesVnetLink“ erstellt wurde und die automatische Registrierung aktiviert ist.
 
-6. Wiederholen Sie die Schritte 2–5 für „ManufacturingVnet“ unter Verwendung der Informationen in der folgenden Tabelle: 
+6. Wiederholen Sie die Schritte 2–5 für „ManufacturingVnet“ unter Verwendung der Informationen in der folgenden Tabelle:
 
 | **Option**                          | **Wert**                                |
 | ----------------------------------- | ---------------------------------------- |
@@ -78,12 +77,11 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 | Automatische Registrierung aktivieren            | Ausgewählt                                 |
 | Überprüfen Sie Ihre Einstellungen, und klicken Sie auf „OK“. |                                          |
 
-
 7. Wählen Sie **Aktualisieren** aus.
 
 8. Vergewissern Sie sich, dass „ManufacturingVnetLink“ erstellt wurde und die automatische Registrierung aktiviert ist.
 
-9. Wiederholen Sie die Schritte 2–5 für „ResearchVnet“ unter Verwendung der Informationen in der folgenden Tabelle: 
+9. Wiederholen Sie die Schritte 2–5 für „ResearchVnet“ unter Verwendung der Informationen in der folgenden Tabelle:
 
 | **Option**                          | **Wert**                           |
 | ----------------------------------- | ----------------------------------- |
@@ -93,19 +91,16 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 | Automatische Registrierung aktivieren            | Ausgewählt                            |
 | Überprüfen Sie Ihre Einstellungen, und klicken Sie auf „OK“. |                                     |
 
-
 10. Wählen Sie **Aktualisieren** aus.
 
 11. Vergewissern Sie sich, dass „ResearchVnetLink“ erstellt wurde und die automatische Registrierung aktiviert ist.
 
- 
-
-##  Aufgabe 3: Erstellen von VMs zum Testen der Konfiguration
+## Aufgabe 3: Erstellen von VMs zum Testen der Konfiguration
 
 In diesem Abschnitt erstellen Sie zwei Test-VMs, um die Konfiguration der privaten DNS-Zone zu testen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
-    
+
     > **Hinweis:** Wenn Sie Cloud Shell zum ersten Mal öffnen, werden Sie möglicherweise aufgefordert, ein Speicherkonto zu erstellen. Klicken Sie auf **Speicher erstellen**.
 
 2. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien hochladen/herunterladen**, wählen Sie im Dropdownmenü die Option **Hochladen** und laden Sie die folgenden Dateien **azuredeploy.json** und **azuredeploy.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M01** in das Cloud Shell-Basisverzeichnis hoch.
@@ -124,8 +119,6 @@ In diesem Abschnitt erstellen Sie zwei Test-VMs, um die Konfiguration der privat
 
 5. Stellen Sie sicher, dass beide VMs erstellt wurden.
 
- 
-
 ## Aufgabe 4: Überprüfen des Vorhandenseins von Einträgen in der DNS-Zone
 
 1. Wählen Sie auf der Startseite des Azure-Portals **Private DNS-Zonen** aus.
@@ -136,11 +129,7 @@ In diesem Abschnitt erstellen Sie zwei Test-VMs, um die Konfiguration der privat
 
 ![DNS-Zone „contoso.com“ mit Anzeige der automatisch registrierten Hosteinträge (A)](../media/contoso_com-dns-zone.png)
 
- 
-
 4. Notieren Sie sich die Namen und IP-Adressen der VMs.
-
- 
 
 ### Herstellen einer Verbindung mit den Test-VMs unter Verwendung von RDP
 
@@ -173,6 +162,5 @@ In diesem Abschnitt erstellen Sie zwei Test-VMs, um die Konfiguration der privat
 1. Überprüfen Sie, ob der FQDN zu der IP-Adresse aufgelöst wird, die Sie in der privaten DNS-Zone notiert haben. Beim Ping selbst zu einem Timeout, da Windows Defender Firewall auf den VMs aktiviert ist.
 
 1. Alternativ können Sie den Befehl „nslooku TestVM2.contoso.com“ eingeben und überprüfen, ob Sie einen erfolgreichen Namensauflösungsdatensatz für VM2 erhalten.
- 
 
-Herzlichen Glückwunsch! Sie haben eine private DNS-Zone erstellt, eine Verknüpfung für Namensauflösung und automatische Registrierung hinzugefügt und die Namensauflösung in Ihrer Konfiguration getestet. 
+Herzlichen Glückwunsch! Sie haben eine private DNS-Zone erstellt, eine Verknüpfung für Namensauflösung und automatische Registrierung hinzugefügt und die Namensauflösung in Ihrer Konfiguration getestet.

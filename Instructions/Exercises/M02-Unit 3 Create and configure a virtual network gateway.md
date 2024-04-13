@@ -7,7 +7,9 @@ Exercise:
 
 # M02 – Lerneinheit 3: Erstellen und Konfigurieren eines Gateways des virtuellen Netzwerks
 
-In dieser Übung konfigurieren Sie ein Gateway für virtuelle Netzwerke, um das Contoso Core Services-VNet und das Fertigungs-VNet zu verbinden. 
+## Übungsszenario
+
+In dieser Übung konfigurieren Sie ein Gateway für virtuelle Netzwerke, um das Contoso Core Services-VNet und das Fertigungs-VNet zu verbinden.
 
 ![Abbildung eines VNet-Gateways](../media/3-exercise-create-configure-local-network-gateway.png)
 
@@ -20,19 +22,21 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 5: Testen der Verbindung zwischen den VMs
 + Aufgabe 6: Erstellen des CoreServicesVnet-Gateways
 + Aufgabe 7: Erstellen des ManufacturingVnet-Gateways
-+ Aufgabe 8: Verbinden von CoreServicesVnet mit ManufacturingVnet 
++ Aufgabe 8: Verbinden von CoreServicesVnet mit ManufacturingVnet
 + Aufgabe 9: Verbinden von ManufacturingVnet mit CoreServicesVnet
-+ Aufgabe 10: Überprüfen, ob die Verbindungen hergestellt werden 
++ Aufgabe 10: Überprüfen, ob die Verbindungen hergestellt werden
 + Aufgabe 11: Testen der Verbindung zwischen den VMs
 
 **Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20a%20virtual%20network%20gateway)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
-#### Geschätzte Dauer: 70 Minuten (einschließlich ca. 45 Minuten Wartezeit bei der Bereitstellung)
+### Geschätzte Dauer: 70 Minuten (einschließlich ca. 45 Minuten Wartezeit bei der Bereitstellung)
 
 ## Aufgabe 1: Erstellen von CoreServicesVnet und ManufacturingVnet
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
+
  > **Hinweis:** Wenn Sie Cloud Shell zum ersten Mal öffnen, werden Sie möglicherweise aufgefordert, ein Speicherkonto zu erstellen. Klicken Sie auf **Speicher erstellen**.
+
 1. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien hochladen/herunterladen**, wählen Sie im Dropdownmenü die Option **Hochladen** und laden Sie die folgenden Dateien **azuredeploy.json** und **azuredeploy.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M02** in das Cloud Shell-Basisverzeichnis hoch.
 
 1. Stellen Sie die folgenden ARM-Vorlagen bereit, um das virtuelle Netzwerk und die Subnetze zu erstellen, die für diese Übung erforderlich sind:
@@ -43,7 +47,8 @@ In dieser Übung führen Sie die folgenden Schritte aus:
    New-AzResourceGroup -Name $RGName -Location "eastus"
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
- > **Hinweis:** Derzeit besteht ein Problem in der Region „Westeuropa, das Gatewaybereitstellungen beeinträchtigt. Als Abhilfemaßnahme wurde die Region „ManufacturingVnet“ für diese Bereitstellung in „Europa, Norden“ geändert. 
+
+ > **Hinweis:** Derzeit besteht ein Problem in der Region „Westeuropa, das Gatewaybereitstellungen beeinträchtigt. Als Abhilfemaßnahme wurde die Region „ManufacturingVnet“ für diese Bereitstellung in „Europa, Norden“ geändert.
 
 ## Aufgabe 2: Erstellen von CoreServicesVM
 
@@ -85,7 +90,6 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 1. Überprüfen Sie, ob der virtuelle Computer erstellt wurde.
 
-
 ## Aufgabe 4: Herstellen einer Verbindung mit den VMs unter Verwendung von RDP
 
 1. Wählen Sie auf der Startseite des Azure-Portals die Option **Virtuelle Computer** aus.
@@ -103,9 +107,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 1. Wählen Sie für beide VMs unter **Wählen Sie die Datenschutzeinstellungen für Ihr Gerät aus** die Option **Akzeptieren** aus.
 1. Wählen Sie für beide VMs unter **Netzwerke** die Option **Ja** aus.
 1. Öffnen Sie auf **CoreServicesVM** PowerShell, und führen Sie den folgenden Befehl aus: ipconfig.
-1. Notieren Sie die IPv4-Adresse. 
-
- 
+1. Notieren Sie die IPv4-Adresse.
 
 ## Aufgabe 5: Testen der Verbindung zwischen den VMs
 
@@ -121,9 +123,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
    ![Test-NetConnection fehlgeschlagen.](../media/test-netconnection-fail.png)
 
- 
-
-##  Aufgabe 6: Erstellen des CoreServicesVnet Gateway
+## Aufgabe 6: Erstellen des CoreServicesVnet Gateway
 
 1. Geben Sie unter **Ressourcen, Dienste und Dokumente durchsuchen (G+/)****Gateway für virtuelle Netzwerke** ein, und wählen Sie dann **Gateways für virtuelle Netzwerke** aus den Ergebnissen aus.
    ![Suchen Sie im Azure-Portal nach „Gateway für virtuelle Netzwerke“.](../media/virtual-network-gateway-search.png)
@@ -151,9 +151,9 @@ In dieser Übung führen Sie die folgenden Schritte aus:
    |                 |                   | Configure BGP (BGP konfigurieren)                               | Deaktiviert                     |
    | Überprüfen + erstellen |                   | Überprüfen Sie die Einstellungen, und wählen Sie **Erstellen** aus. |                              |
 
-   > [!NOTE] 
+   > [!NOTE]
    >
-   > Die Erstellung eines Gateways für das virtuelle Netzwerk kann bis zu 45 Minuten dauern. 
+   > Die Erstellung eines Gateways für das virtuelle Netzwerk kann bis zu 45 Minuten dauern.
 
 ## Aufgabe 7: Erstellen des ManufacturingVnet Gateway
 
@@ -181,14 +181,12 @@ In dieser Übung führen Sie die folgenden Schritte aus:
    |                 |                   | Aktiv/Aktiv-Modus aktivieren                   | Disabled                     |
    |                 |                   | Configure BGP (BGP konfigurieren)                               | Deaktiviert                     |
    | Überprüfen + erstellen |                   | Überprüfen Sie die Einstellungen, und wählen Sie **Erstellen** aus. |                              |
-   
+
    > [!NOTE]
    >
-   > Die Erstellung eines Gateways für das virtuelle Netzwerk kann bis zu 45 Minuten dauern. 
+   > Die Erstellung eines Gateways für das virtuelle Netzwerk kann bis zu 45 Minuten dauern.
 
- 
-
-## Aufgabe 8: Verbinden von CoreServicesVnet mit ManufacturingVnet 
+## Aufgabe 8: Verbinden von CoreServicesVnet mit ManufacturingVnet
 
 1. Geben Sie unter **Ressourcen, Dienste und Dokumente durchsuchen (G+/)****Gateway für virtuelle Netzwerke** ein, und wählen Sie dann **Gateways für virtuelle Netzwerke** aus den Ergebnissen aus.
 
@@ -217,7 +215,6 @@ In dieser Übung führen Sie die folgenden Schritte aus:
    | Standort                       | USA, Osten                           |
 
 1. Wählen Sie **OK** aus, um die Verbindung zu erstellen.
-   
 
 ## Aufgabe 9: Verbinden von ManufacturingVnet mit CoreServicesVnet
 
@@ -245,15 +242,13 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 1. Wählen Sie **OK** aus, um die Verbindung zu erstellen.
 
-## Aufgabe 10: Überprüfen, ob die Verbindungen stehen 
+## Aufgabe 10: Überprüfen, ob die Verbindungen stehen
 
 1. Geben Sie unter **Ressourcen, Dienste und Dokumente durchsuchen (G+/)****Verbindungen** ein, und wählen Sie dann **Verbindungen** aus den Ergebnissen aus.
 
-1. Warten Sie, bis der Status beider Verbindungen auf **Verbunden** steht. Möglicherweise müssen Sie Ihren Bildschirm aktualisieren. 
+1. Warten Sie, bis der Status beider Verbindungen auf **Verbunden** steht. Möglicherweise müssen Sie Ihren Bildschirm aktualisieren.
 
    ![VPN Gateway-Verbindungen erfolgreich erstellt.](../media/connections-status-connected.png)
-
- 
 
 ## Aufgabe 11: Testen der Verbindung zwischen den VMs
 

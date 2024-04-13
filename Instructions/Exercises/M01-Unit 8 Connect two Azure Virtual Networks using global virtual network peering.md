@@ -5,8 +5,9 @@ Exercise:
 ---
 # M01 – Lerneinheit 8: Verbinden von zwei virtuellen Azure-Netzwerken mithilfe des globalen Peerings virtueller Netzwerke
 
-## Übungsszenario 
-In dieser Lerneinheit konfigurieren Sie die Konnektivität zwischen „CoreServicesVnet“ und „ManufacturingVnet“, indem Sie Peerings zum Zulassen von Datenverkehr hinzufügen. 
+## Übungsszenario
+
+In dieser Lerneinheit konfigurieren Sie die Konnektivität zwischen „CoreServicesVnet“ und „ManufacturingVnet“, indem Sie Peerings zum Zulassen von Datenverkehr hinzufügen.
 
 ![Abbildung: Peering virtueller Netzwerke.](../media/8-exercise-connect-two-azure-virtual-networks-global.png)
 
@@ -21,7 +22,7 @@ Inhalt dieser Einheit:
 
 **Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
-#### Geschätzte Dauer: 20 Minuten
+### Geschätzte Dauer: 20 Minuten
 
 ## Aufgabe 1: Erstellen einer virtuellen Maschine zum Testen der Konfiguration
 
@@ -80,9 +81,7 @@ In diesem Abschnitt erstellen Sie eine Test-VM im VNet für die Fertigung, um zu
 
 1. Öffnen Sie auf TestVM1 eine PowerShell-Eingabeaufforderung, und führen Sie den folgenden Befehl aus: ipconfig
 
-1. Notieren Sie die IPv4-Adresse. 
-
- 
+1. Notieren Sie die IPv4-Adresse.
 
 ## Aufgabe 3: Testen der Verbindung zwischen den VMs
 
@@ -94,10 +93,7 @@ In diesem Abschnitt erstellen Sie eine Test-VM im VNet für die Fertigung, um zu
     Test-NetConnection 10.20.20.4 -port 3389
     ```
 
-
 1. Die Testverbindung sollte fehlschlagen, und es wird ein ähnliches Ergebnis wie das folgende angezeigt: ![PowerShell-Fenster mit Fehleranzeige für Befehl „Test-NetConnection 10.20.20.4 -port 3389“](../media/test-netconnection-fail.png)
-
- 
 
 ## Aufgabe 4: Erstellen von VNet-Peerings zwischen CoreServicesVnet und ManufacturingVnet
 
@@ -135,24 +131,19 @@ In diesem Abschnitt erstellen Sie eine Test-VM im VNet für die Fertigung, um zu
 
 1. Wählen Sie unter „Virtuelle Netzwerke“ den Eintrag **ManufacturingVnet** aus, und überprüfen Sie, ob das **Peering ManufacturingVnet-to-CoreServicesVnet** aufgeführt ist.
 
- 
-
 ## Aufgabe 5: Testen der Verbindung zwischen den VMs
 
 1. Öffnen Sie auf der ManufacturingVM eine PowerShell-Eingabeaufforderung.
 
-1. Stellen Sie mithilfe des folgenden Befehls sicher, dass jetzt eine Verbindung mit TestVM1 im CoreServicesVnet besteht. 
+1. Stellen Sie mithilfe des folgenden Befehls sicher, dass jetzt eine Verbindung mit TestVM1 im CoreServicesVnet besteht.
 
    ```powershell
     Test-NetConnection 10.20.20.4 -port 3389
     ```
 
-
 1. Die Testverbindung sollte erfolgreich sein, und es wird ein ähnliches Ergebnis wie das folgende angezeigt: ![PowerShell-Fenster mit Erfolgsmeldung „TcpTestSucceeded: True“ für Befehl „Test-NetConnection 10.20.20.4 -port 3389“](../media/test-connection-succeeded.png)
 
- 
-
-Herzlichen Glückwunsch! Sie haben die Konnektivität zwischen den VNets erfolgreich konfiguriert, indem Sie Peerings hinzugefügt haben. 
+Herzlichen Glückwunsch! Sie haben die Konnektivität zwischen den VNets erfolgreich konfiguriert, indem Sie Peerings hinzugefügt haben.
 
 ## Aufgabe 6: Bereinigen der Ressourcen
 
