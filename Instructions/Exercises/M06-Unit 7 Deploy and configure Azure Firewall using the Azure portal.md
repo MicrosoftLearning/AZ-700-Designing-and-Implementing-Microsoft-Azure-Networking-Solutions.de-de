@@ -6,6 +6,8 @@ Exercise:
 
 # M06 – Lerneinheit 7: Bereitstellen und Konfigurieren der Azure Firewall über das Azure-Portal
 
+## Übungsszenario
+
 Als Teil des Netzwerksicherheitsteams von Contoso besteht Ihre nächste Aufgabe darin, Firewallregeln zum Zulassen/Verweigern des Zugriffs auf bestimmte Websites zu erstellen. Die folgenden Schritte führen Sie durch das Erstellen einer Ressourcengruppe, eines virtuellen Netzwerks und von Subnetzen sowie eines virtuellen Computers als vorbereitende Aufgaben für die Umgebung, das Bereitstellen einer Firewall und einer Firewallrichtlinie, das Konfigurieren von Standardrouten und Anwendungs-, Netzwerk- und DNAT-Regeln und schließlich das Testen der Firewall.
 
 ![Abbildung: Architektur des virtuellen Netzwerks mit Azure Firewall](../media/7-exercise-deploy-configure-azure-firewall-using-azure-portal.png)
@@ -26,8 +28,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 **Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20and%20configure%20Azure%20Firewall%20using%20the%20Azure%20portal)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
-
-#### Geschätzte Dauer: 60 Minuten.
+### Geschätzte Dauer: 60 Minuten.
 
 ## Aufgabe 1: Erstellen einer Ressourcengruppe
 
@@ -37,7 +38,7 @@ In dieser Aufgabe erstellen Sie eine neue Ressourcengruppe.
 
 1. Klicken Sie auf der Homepage des Azure-Portals auf **Ressourcengruppen**.
 
-1. Klicken Sie auf **Erstellen**. 
+1. Klicken Sie auf **Erstellen**.
 
 1. Geben Sie auf der Registerkarte **Grundlagen** unter ** Ressourcengruppe** die Angabe **Test-FW-RG** ein.
 
@@ -48,8 +49,6 @@ In dieser Aufgabe erstellen Sie eine neue Ressourcengruppe.
 1. Klicken Sie auf **Überprüfen + erstellen**.
 
 1. Klicken Sie auf **Erstellen**.
-
- 
 
 ## Aufgabe 2: Erstellen eines virtuellen Netzwerks und von Subnetzen
 
@@ -65,7 +64,7 @@ In dieser Aufgabe erstellen Sie ein einzelnes virtuelles Netzwerk mit zwei Subne
 
    ![Erstellen eines virtuellen Netzwerks: Registerkarte „Grundlagen“](../media/create-vnet-basics-for-azure-firewall.png)
 
-1. Klicken Sie auf **Weiter: IP-Adressen**. Geben Sie den IPv4-Adressraum „10.0.0.0/16“ ein, falls nicht bereits vorhanden. 
+1. Klicken Sie auf **Weiter: IP-Adressen**. Geben Sie den IPv4-Adressraum „10.0.0.0/16“ ein, falls nicht bereits vorhanden.
 
 1. Wählen Sie unter **Subnetzname** das Wort **Standard** aus.
 
@@ -77,9 +76,8 @@ In dieser Aufgabe erstellen Sie ein einzelnes virtuelles Netzwerk mit zwei Subne
 
 1. Wählen Sie **Subnetz hinzufügen** aus, um ein weiteres Subnetz zu erstellen, das den Workloadserver hosten soll, den Sie in Kürze erstellen.
 
-
     ![Subnetz hinzufügen](../media/add-workload-subnet.png)
-    
+
 1. Ändern Sie im Dialogfeld **Subnetz bearbeiten** den Namen in **Workload-SN**.
 
 1. Ändern Sie den **Subnetzadressbereich** in **10.0.2.0/24**.
@@ -89,8 +87,6 @@ In dieser Aufgabe erstellen Sie ein einzelnes virtuelles Netzwerk mit zwei Subne
 1. Klicken Sie auf **Überprüfen + erstellen**.
 
 1. Klicken Sie auf **Erstellen**.
-
- 
 
 ## Aufgabe 3: Erstellen eines virtuellen Computers
 
@@ -117,7 +113,6 @@ In dieser Aufgabe erstellen Sie den virtuellen Workloadcomputer und platzieren i
 1. Nachdem die Bereitstellung des virtuellen Computers abgeschlossen wurde, wählen Sie **Zu Ressource wechseln** aus.
 
 1. Notieren Sie sich auf der Seite **Übersicht** von **Srv-Work** rechts auf der Seite unter **Netzwerk** die **Private IP-Adresse** für diese VM (z. B. **10.0.2.4**).
- 
 
 ## Aufgabe 4: Bereitstellen der Firewall und der Firewallrichtlinie
 
@@ -146,7 +141,6 @@ In dieser Aufgabe stellen Sie die Firewall im virtuellen Netzwerk mit einer konf
    | Virtuelles Netzwerk          | **Test-FW-VN**                           |
    | Öffentliche IP-Adresse        | Wählen Sie **Neue hinzufügen** aus.<br />Name: **fw-pip** |
 
-
    ![Hinzufügen einer öffentlichen IP-Adresse zur Firewall](../media/assign-public-ip-to-firewall.png)
 
 1. Überprüfen Sie alle Einstellungen, um sicherzustellen, dass sie mit dem Screenshot unten übereinstimmen.
@@ -165,8 +159,6 @@ In dieser Aufgabe stellen Sie die Firewall im virtuellen Netzwerk mit einer konf
 
 1. Notieren Sie sich die Adresse unter **IP-Adresse** für die Konfiguration der öffentlichen IP-Adresse **fw-pip** (z. B. **20.90.136.51**).
 
- 
-
 ## Aufgabe 5: Erstellen einer Standardroute
 
 In dieser Aufgabe konfigurieren Sie die ausgehende Standardroute für das Subnetz „Workload-SN“ so, dass sie die Firewall durchläuft.
@@ -184,7 +176,6 @@ In dieser Aufgabe konfigurieren Sie die ausgehende Standardroute für das Subnet
    | Region                   | Ihre Region              |
    | Name                     | **Firewall-route**       |
    | Gatewayrouten verteilen | **Ja**                  |
-
 
 1. Klicken Sie auf **Überprüfen + erstellen**.
 
@@ -216,11 +207,9 @@ In dieser Aufgabe konfigurieren Sie die ausgehende Standardroute für das Subnet
 
     ![Hinzufügen einer Firewallroute](../media/add-firewall-route.png)
 
- 
-
 ## Aufgabe 6: Konfigurieren einer Anwendungsregel
 
-In dieser Aufgabe fügen Sie eine Anwendungsregel hinzu, die ausgehenden Zugriff auf www.google.com ermöglicht.
+In dieser Aufgabe fügen Sie eine Anwendungsregel hinzu, die ausgehenden Zugriff auf <www.google.com> ermöglicht.
 
 1. Wählen Sie auf der Startseite des Azure-Portals **Alle Ressourcen** aus.
 
@@ -245,14 +234,11 @@ In dieser Aufgabe fügen Sie eine Anwendungsregel hinzu, die ausgehenden Zugriff
    | `Source`                 | **10.0.2.0/24**                           |
    | Protokoll               | **http,https**                            |
    | Zieltyp       | **FQDN**                                  |
-   | Destination            | **www.google.com**                        |
-
+   | Destination            | **<www.google.com>**                        |
 
    ![Hinzufügen einer Anwendungsregelsammlung](../media/add-an-application-rule-for-firewall.png)
 
 1. Wählen Sie **Hinzufügen** aus.
-
- 
 
 ## Aufgabe 7: Konfigurieren einer Netzwerkregel
 
@@ -280,12 +266,9 @@ In dieser Aufgabe fügen Sie eine Netzwerkregel hinzu, die ausgehenden Zugriff a
    | Zieltyp       | **IP-Adresse**                                               |
    | Destination            | **209.244.0.3, 209.244.0.4**<br />Dies sind öffentliche DNS-Server, die von CenturyLink betrieben werden. |
 
-
     ![Hinzufügen einer Netzwerkregelsammlung](../media/add-a-network-rule-for-firewall.png)
 
 1. Wählen Sie **Hinzufügen** aus.
-
- 
 
 ## Aufgabe 8: Konfigurieren einer NAT-Zielregel (DNAT)
 
@@ -314,12 +297,9 @@ In dieser Aufgabe fügen Sie eine DNAT-Regel hinzu, mit der Sie einen Remotedesk
    | Übersetzte Adresse    | Geben Sie die private IP-Adresse von **Srv-Work** ein, die Sie sich zuvor notiert haben.<br />**beispielsweise 10.0.2.4** |
    | Übersetzter Port       | **3389**                                                     |
 
-
-        ![Add a DNAT rule collection](../media/add-a-dnat-rule.png)
+  ![Hinzufügen einer DNAT-Regelsammlung](../media/add-a-dnat-rule.png)
 
 1. Wählen Sie **Hinzufügen** aus.
-
- 
 
 ## Aufgabe 9: Ändern der primären und sekundären DNS-Adresse für die Netzwerkschnittstelle des Servers
 
@@ -345,8 +325,6 @@ In dieser Übung konfigurieren Sie in dieser Aufgabe zu Testzwecken die primäre
 
 1. Starten Sie den virtuellen Computer **Srv-Work** neu.
 
- 
-
 ## Aufgabe 10: Testen der Firewall
 
 In dieser letzten Aufgabe testen Sie die Firewall, um sicherzustellen, dass die Regeln ordnungsgemäß konfiguriert sind und wie erwartet funktionieren. Mit dieser Konfiguration können Sie eine Remotedesktopverbindung mit dem virtuellen Computer“Srv-Work“ über die Firewall über die öffentliche IP-Adresse der Firewall herstellen.
@@ -367,7 +345,7 @@ In dieser letzten Aufgabe testen Sie die Firewall, um sicherzustellen, dass die 
 
 1. Wählen Sie in der Zertifikatmeldung **Ja** aus.
 
-1. Navigieren Sie in Internet Explorer zu **https://www.google.com**.
+1. Navigieren Sie in Internet Explorer zu **<https://www.google.com>**.
 
 1. Wählen Sie im Dialogfeld **Sicherheitswarnung** die Option **OK** aus.
 
@@ -377,14 +355,13 @@ In dieser letzten Aufgabe testen Sie die Firewall, um sicherzustellen, dass die 
 
     ![RDP-Sitzung auf dem Server „Srv-Work“ – Browser auf google.com](../media/remote-desktop-connection-2.png)
 
-1. Navigieren Sie zu **https://www.microsoft.com**.
+1. Navigieren Sie zu **<https://www.microsoft.com>**.
 
 1. Sie sollten durch die Firewall blockiert werden.
 
     ![RDP-Sitzung auf dem Server „Srv-Work“ – Browser für microsoft.com blockiert](../media/remote-desktop-connection-3.png)
 
- 
-## Aufgabe 11: Bereinigen der Ressourcen 
+## Aufgabe 11: Bereinigen der Ressourcen
 
 >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 

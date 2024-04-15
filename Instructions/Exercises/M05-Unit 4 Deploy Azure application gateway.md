@@ -5,7 +5,8 @@ Exercise:
 ---
 
 # M05 – Lerneinheit 4: Bereitstellen eines Azure Application Gateway
- 
+
+## Übungsszenario
 
 In dieser Übung verwenden Sie das Azure-Portal, um ein Anwendungsgateway zu erstellen. Anschließend testen Sie es, um sicherzustellen, dass es ordnungsgemäß funktioniert.
 
@@ -14,7 +15,7 @@ In dieser Übung verwenden Sie das Azure-Portal, um ein Anwendungsgateway zu ers
 
 >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
-#### Geschätzte Dauer: 25 Minuten
+### Geschätzte Dauer: 25 Minuten
 
 Das Anwendungsgateway leitet den Webdatenverkehr Ihrer Anwendungen an bestimmte Ressourcen in einem Back-End-Pool weiter. Sie weisen den Ports Listener zu, erstellen Regeln und fügen Ressourcen zu einem Back-End-Pool hinzu. Der Einfachheit halber wird in diesem Artikel ein einfaches Setup mit einer öffentlichen Front-End-IP-Adresse, einem grundlegenden Listener zum Hosten einer einzelnen Website auf diesem Anwendungsgateway, einer Routingregel für grundlegende Anforderungen und zwei virtuellen Computern im Back-End-Pool verwendet.
 
@@ -27,13 +28,12 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 3: Hinzufügen von Back-End-Servern zum Back-End-Pool
 + Aufgabe 4: Testen der Application Gateway-Instanz
 
-
 ## Aufgabe 1: Erstellen einer Application Gateway-Instanz
 
 1. Melden Sie sich mit Ihrem Azure-Konto beim [Azure-Portal](https://portal.azure.com/) an.
 
 1. Geben Sie auf einer beliebigen Seite im Azure-Portal unter **Ressourcen, Dienste und Dokumente durchsuchen (G+/)** „application gateway“ ein, und wählen Sie dann aus den Ergebnissen **Anwendungsgateways** aus.
-    ![Azure-Portal-Suche nach „application gateway“](../media/search-application-gateway.png)    
+    ![Azure-Portal-Suche nach „application gateway“](../media/search-application-gateway.png)
 
 1. Wählen Sie auf der Seite „Anwendungsgateways“ die Option **+ Erstellen** aus.
 
@@ -128,7 +128,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 1. Überprüfen Sie die Einstellungen auf der **Registerkarte Überprüfen und erstellen**.
 
-1. Wählen Sie **Erstellen** aus, um das virtuelle Netzwerk, die öffentliche IP-Adresse und das Anwendungsgateway zu erstellen. 
+1. Wählen Sie **Erstellen** aus, um das virtuelle Netzwerk, die öffentliche IP-Adresse und das Anwendungsgateway zu erstellen.
 
 Die Erstellung des Anwendungsgateways in Azure kann einige Minuten in Anspruch nehmen. Warten Sie, bis die Bereitstellung erfolgreich abgeschlossen ist, bevor Sie mit dem nächsten Abschnitt fortfahren.
 
@@ -162,11 +162,11 @@ Die Erstellung des Anwendungsgateways in Azure kann einige Minuten in Anspruch n
 
 1. Wählen Sie auf der Seite „Back-End-Pool bearbeiten“ unter **Back-End-Ziele** unter **Zieltyp**die Option **Virtueller Computer** aus.
 
-1. Wählen Sie unter **Ziel** die Option **Back-EndVM1** aus. 
+1. Wählen Sie unter **Ziel** die Option **Back-EndVM1** aus.
 
 1. Wählen Sie unter **Zieltyp** die Option **Virtueller Computer** aus.
 
-1. Wählen Sie unter **Ziel** die Option **Back-EndVM2** aus. 
+1. Wählen Sie unter **Ziel** die Option **Back-EndVM2** aus.
 
    ![Azure-Portal: Hinzufügen von Ziel-Back-Ends zum Back-End-Pool](../media/edit-backend-pool.png)
 
@@ -178,9 +178,9 @@ Warten Sie, bis die Bereitstellung abgeschlossen ist, bevor Sie mit dem nächste
 
 IIS ist für die Erstellung des Anwendungsgateways zwar nicht erforderlich, wird in dieser Übung aber installiert, um die erfolgreiche Erstellung des Anwendungsgateways durch Azure zu überprüfen.
 
-### Testen des Anwendungsgateways mit IIS:
+### Testen des Anwendungsgateways mit IIS
 
-1. Suchen Sie auf der Seite **Übersicht** des Anwendungsgateways nach der öffentlichen IP-Adresse für das Anwendungsgateway. 
+1. Suchen Sie auf der Seite **Übersicht** des Anwendungsgateways nach der öffentlichen IP-Adresse für das Anwendungsgateway.
 
    ![Azure-Portal: Nachschlagen der öffentlichen IP-Adresse des Front-Ends ](../media/app-gw-public-ip.png)
 
