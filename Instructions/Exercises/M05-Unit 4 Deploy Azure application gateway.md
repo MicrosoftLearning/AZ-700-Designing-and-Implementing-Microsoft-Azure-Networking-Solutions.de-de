@@ -134,8 +134,11 @@ Die Erstellung des Anwendungsgateways in Azure kann einige Minuten in Anspruch n
 
 ## Aufgabe 2: Erstellen von virtuellen Computern
 
-1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
- > **Hinweis:** Wenn Sie Cloud Shell zum ersten Mal öffnen, werden Sie möglicherweise aufgefordert, ein Speicherkonto zu erstellen. Klicken Sie auf **Speicher erstellen**.
+1. Wählen Sie im Azure-Portal das Cloud Shell-Symbol (oben rechts). Konfigurieren Sie die Shell bei Bedarf.  
+    + Wählen Sie **PowerShell** aus.
+    + Wählen Sie **Kein Speicherkonto erforderlich** und Ihr **Abonnement** aus und klicken Sie dann auf **Anwenden**.
+    + Warten Sie, bis das Terminal erstellt wurde und eine Eingabeaufforderung angezeigt wird.
+      
 1. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien hochladen/herunterladen**, wählen Sie im Dropdownmenü die Option **Hochladen** und laden Sie die folgenden Dateien **backend.json** und **backend.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M05** in das Cloud Shell-Basisverzeichnis hoch.
 
 1. Stellen Sie die folgenden ARM-Vorlagen bereit, um die für diese Übung erforderlichen VMs zu erstellen:

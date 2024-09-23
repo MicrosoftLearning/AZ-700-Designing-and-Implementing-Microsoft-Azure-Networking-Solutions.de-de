@@ -33,9 +33,10 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 ## Aufgabe 1: Erstellen von CoreServicesVnet und ManufacturingVnet
 
-1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
-
- > **Hinweis:** Wenn Sie Cloud Shell zum ersten Mal öffnen, werden Sie möglicherweise aufgefordert, ein Speicherkonto zu erstellen. Klicken Sie auf **Speicher erstellen**.
+1. Wählen Sie im Azure-Portal das Cloud Shell-Symbol (oben rechts). Konfigurieren Sie die Shell bei Bedarf.  
+    + Wählen Sie **PowerShell** aus.
+    + Wählen Sie **Kein Speicherkonto erforderlich** und Ihr **Abonnement** aus und klicken Sie dann auf **Anwenden**.
+    + Warten Sie, bis das Terminal erstellt wurde und eine Eingabeaufforderung angezeigt wird. 
 
 1. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien hochladen/herunterladen**, wählen Sie im Dropdownmenü die Option **Hochladen** und laden Sie die folgenden Dateien **azuredeploy.json** und **azuredeploy.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M02** in das Cloud Shell-Basisverzeichnis hoch.
 
@@ -244,7 +245,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 ## Aufgabe 10: Überprüfen, ob die Verbindungen stehen
 
-1. Geben Sie unter **Ressourcen, Dienste und Dokumente durchsuchen (G+/)****Verbindungen** ein, und wählen Sie dann **Verbindungen** aus den Ergebnissen aus.
+1. Geben Sie unter **Ressourcen, Dienste und Dokumente suchen (G+/)** **VPN** ein und wählen Sie dann **Verbindungen** aus den Ergebnissen aus.
 
 1. Warten Sie, bis der Status beider Verbindungen auf **Verbunden** steht. Möglicherweise müssen Sie Ihren Bildschirm aktualisieren.
 

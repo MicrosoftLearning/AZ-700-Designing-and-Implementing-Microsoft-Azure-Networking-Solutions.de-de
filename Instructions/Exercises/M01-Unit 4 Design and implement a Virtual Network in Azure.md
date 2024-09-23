@@ -3,6 +3,7 @@ Exercise:
   title: "M01 – Lerneinheit\_4: Entwerfen und Implementieren eines virtuellen Netzwerks in Azure"
   module: Module 01 - Introduction to Azure Virtual Networks
 ---
+
 # M01 – Lerneinheit 4: Entwerfen und Implementieren eines virtuellen Netzwerks in Azure
 
 ## Übungsszenario
@@ -56,104 +57,105 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 1. Gehen Sie zum [Azure-Portal](https://portal.azure.com/).
 
-2. Wählen Sie auf der Startseite unter **Azure-Dienste** die Option **Ressourcengruppen** aus.  
+1. Wählen Sie auf der Startseite unter **Azure-Dienste** die Option **Ressourcengruppen** aus.  
 
-3. Wählen Sie unter „Ressourcengruppen“ die Option **+ Erstellen** aus.
+1. Wählen Sie unter „Ressourcengruppen“ die Option **+ Erstellen** aus.
 
-4. Verwenden Sie die Informationen in der folgenden Tabelle zum Erstellen der Ressourcengruppe:
+1. Verwenden Sie die Informationen in der folgenden Tabelle zum Erstellen der Ressourcengruppe:
 
-| **Tab**         | **Option**                                 | **Wert**            |
-| --------------- | ------------------------------------------ | -------------------- |
-| Grundlagen          | Resource group                             | ContosoResourceGroup |
-|                 | Region                                     | (US) USA, Osten         |
-| Tags            | Keine Änderungen erforderlich                        |                      |
-| Bewerten + erstellen | Überprüfen Sie Ihre Einstellungen, und wählen Sie **Erstellen** aus. |                      |
+   | **Tab**         | **Option**                                 | **Wert**            |
+   | --------------- | ------------------------------------------ | -------------------- |
+   | Grundlagen          | Resource group                             | ContosoResourceGroup |
+   |                 | Region                                     | (US) USA, Osten         |
+   | Tags            | Keine Änderungen erforderlich                        |                      |
+   | Bewerten + erstellen | Überprüfen Sie Ihre Einstellungen, und wählen Sie **Erstellen** aus. |                      |
 
-5. Überprüfen Sie unter „Ressourcengruppen“, ob **ContosoResourceGroup** in der Liste angezeigt wird.
+1. Überprüfen Sie unter „Ressourcengruppen“, ob **ContosoResourceGroup** in der Liste angezeigt wird.
 
 ## Aufgabe 2: Erstellen des virtuellen Netzwerks „CoreServicesVnet“ und der zugehörigen Subnetze
 
 1. Navigieren Sie auf der Homepage des Azure-Portals zur Suchleiste „Globale Suche“, suchen Sie nach **Virtuelle Netzwerke**, und wählen Sie virtuelle Netzwerke unter „Dienste“ aus.  ![Ergebnisse für „virtuelles Netzwerk“ aus der globalen Suche auf der Homepage des Azure-Portals](../media/global-search-bar.PNG)
-2. Wählen Sie auf der Seite „Virtuelle Netzwerke“ die Option **Erstellen** aus.  ![Assistent zum Erstellen eines virtuellen Netzwerks](../media/create-virtual-network.png)
-3. Verwenden Sie die Informationen in der folgenden Tabelle zum Erstellen des virtuellen Netzwerks „CoreServicesVnet“:  
-   Entfernen oder überschreiben Sie den Standard-IP-Adressraum.![IP-Adresskonfiguration für die Bereitstellung virtueller Azure-Netzwerke ](../media/default-vnet-ip-address-range-annotated.png)
 
-| **Tab**      | **Option**         | **Wert**            |
-| ------------ | ------------------ | -------------------- |
-| Grundlagen       | Ressourcengruppe     | ContosoResourceGroup |
-|              | Name               | CoreServicesVnet     |
-|              | Region             | (US) USA, Osten         |
-| IP-Adressen | IPv4-Adressraum | 10.20.0.0/16         |
+1. Wählen Sie auf der Seite „Virtuelle Netzwerke“ die Option **Erstellen** aus.  ![Assistent zum Erstellen eines virtuellen Netzwerks](../media/create-virtual-network.png)
+1. Verwenden Sie die Informationen in der folgenden Tabelle zum Erstellen des virtuellen Netzwerks „CoreServicesVnet“:  
+   Entfernen oder überschreiben Sie den Standard-IP-Adressraum. ![IP-Adresskonfiguration für die Bereitstellung virtueller Azure-Netzwerke ](../media/default-vnet-ip-address-range-annotated.png)
 
- 4. Verwenden Sie die Informationen in der folgenden Tabelle zum Erstellen der Subnetze für „CoreServicesVnet“:
+   | **Tab**      | **Option**         | **Wert**            |
+   | ------------ | ------------------ | -------------------- |
+   | Grundlagen       | Ressourcengruppe     | ContosoResourceGroup |
+   |              | Name               | CoreServicesVnet     |
+   |              | Region             | (US) USA, Osten         |
+   | IP-Adressen | IPv4-Adressraum | 10.20.0.0/16         |
 
- 5. Wählen Sie **+ Subnetz hinzufügen** aus, um mit dem Erstellen der einzelnen Subnetze zu beginnen. Klicken Sie auf **Hinzufügen**, um die Erstellung der einzelnen Subnetze abzuschließen.
+1. Verwenden Sie die Informationen in der folgenden Tabelle zum Erstellen der Subnetze für „CoreServicesVnet“:
 
-| **Subnetz**             | **Option**           | **Wert**              |
-| ---------------------- | -------------------- | ---------------------- |
-| GatewaySubnet          | Subnetzname          | GatewaySubnet          |
-|                        | Subnetzadressbereich | 10.20.0.0/27           |
-| SharedServicesSubnet   | Subnetzname          | SharedServicesSubnet   |
-|                        | Subnetzadressbereich | 10.20.10.0/24          |
-| DatabaseSubnet         | Subnetzname          | DatabaseSubnet         |
-|                        | Subnetzadressbereich | 10.20.20.0/24          |
-| PublicWebServiceSubnet | Subnetzname          | PublicWebServiceSubnet |
-|                        | Subnetzadressbereich | 10.20.30.0/24          |
+1. Wählen Sie **+ Subnetz hinzufügen** aus, um mit dem Erstellen der einzelnen Subnetze zu beginnen. Klicken Sie auf **Hinzufügen**, um die Erstellung der einzelnen Subnetze abzuschließen.
 
- 6. Um die Erstellung von „CoreServicesVnet“ und der zugehörigen Subnetze abzuschließen, wählen Sie **Überprüfen + erstellen** aus.
+   | **Subnetz**             | **Option**           | **Wert**              |
+   | ---------------------- | -------------------- | ---------------------- |
+   | GatewaySubnet          | Subnetzname          | GatewaySubnet          |
+   |                        | Subnetzadressbereich | 10.20.0.0/27           |
+   | SharedServicesSubnet   | Subnetzname          | SharedServicesSubnet   |
+   |                        | Subnetzadressbereich | 10.20.10.0/24          |
+   | DatabaseSubnet         | Subnetzname          | DatabaseSubnet         |
+   |                        | Subnetzadressbereich | 10.20.20.0/24          |
+   | PublicWebServiceSubnet | Subnetzname          | PublicWebServiceSubnet |
+   |                        | Subnetzadressbereich | 10.20.30.0/24          |
 
- 7. Vergewissern Sie sich, dass Ihre Konfiguration erfolgreich überprüft wurde, und klicken Sie dann auf **Erstellen**.
+1. Um die Erstellung von „CoreServicesVnet“ und der zugehörigen Subnetze abzuschließen, wählen Sie **Überprüfen + erstellen** aus.
 
- 8. Wiederholen Sie die Schritte 1–8 für jedes VNet basierend auf den folgenden Tabellen.  
+1. Vergewissern Sie sich, dass Ihre Konfiguration erfolgreich überprüft wurde, und klicken Sie dann auf **Erstellen**.
+
+1. Wiederholen Sie die Schritte 1–8 für jedes VNet basierend auf den folgenden Tabellen.  
 
 ## Aufgabe 3: Erstellen des virtuellen Netzwerks „ManufacturingVnet“ und der zugehörigen Subnetze
 
-| **Tab**      | **Option**         | **Wert**            |
-| ------------ | ------------------ | -------------------- |
-| Grundlagen       | Ressourcengruppe     | ContosoResourceGroup |
-|              | Name               | ManufacturingVnet    |
-|              | Region             | (Europa) Europa, Westen |
-| IP-Adressen | IPv4-Adressraum | 10.30.0.0/16         |
+   | **Tab**      | **Option**         | **Wert**            |
+   | ------------ | ------------------ | -------------------- |
+   | Grundlagen       | Ressourcengruppe     | ContosoResourceGroup |
+   |              | Name               | ManufacturingVnet    |
+   |              | Region             | (Europa) Europa, Westen |
+   | IP-Adressen | IPv4-Adressraum | 10.30.0.0/16         |
 
-| **Subnetz**                | **Option**           | **Wert**                 |
-| ------------------------- | -------------------- | ------------------------- |
-| ManufacturingSystemSubnet | Subnetzname          | ManufacturingSystemSubnet |
-|                           | Subnetzadressbereich | 10.30.10.0/24             |
-| SensorSubnet1             | Subnetzname          | SensorSubnet1             |
-|                           | Subnetzadressbereich | 10.30.20.0/24             |
-| SensorSubnet2             | Subnetzname          | SensorSubnet2             |
-|                           | Subnetzadressbereich | 10.30.21.0/24             |
-| SensorSubnet3             | Subnetzname          | SensorSubnet3             |
-|                           | Subnetzadressbereich | 10.30.22.0/24             |
+   | **Subnetz**                | **Option**           | **Wert**                 |
+   | ------------------------- | -------------------- | ------------------------- |
+   | ManufacturingSystemSubnet | Subnetzname          | ManufacturingSystemSubnet |
+   |                           | Subnetzadressbereich | 10.30.10.0/24             |
+   | SensorSubnet1             | Subnetzname          | SensorSubnet1             |
+   |                           | Subnetzadressbereich | 10.30.20.0/24             |
+   | SensorSubnet2             | Subnetzname          | SensorSubnet2             |
+   |                           | Subnetzadressbereich | 10.30.21.0/24             |
+   | SensorSubnet3             | Subnetzname          | SensorSubnet3             |
+   |                           | Subnetzadressbereich | 10.30.22.0/24             |
 
 ## Aufgabe 4: Erstellen des virtuellen Netzwerks „ResearchVnet“ und der zugehörigen Subnetze
 
-| **Tab**      | **Option**         | **Wert**            |
-| ------------ | ------------------ | -------------------- |
-| Grundlagen       | Ressourcengruppe     | ContosoResourceGroup |
-|              | Name               | ResearchVnet         |
-|              | Region             | Asien, Südosten       |
-| IP-Adressen | IPv4-Adressraum | 10.40.0.0/16         |
+   | **Tab**      | **Option**         | **Wert**            |
+   | ------------ | ------------------ | -------------------- |
+   | Grundlagen       | Ressourcengruppe     | ContosoResourceGroup |
+   |              | Name               | ResearchVnet         |
+   |              | Region             | Asien, Südosten       |
+   | IP-Adressen | IPv4-Adressraum | 10.40.0.0/16         |
 
-| **Subnetz**           | **Option**           | **Wert**            |
-| -------------------- | -------------------- | -------------------- |
-| ResearchSystemSubnet | Subnetzname          | ResearchSystemSubnet |
-|                      | Subnetzadressbereich | 10.40.0.0/24         |
+   | **Subnetz**           | **Option**           | **Wert**            |
+   | -------------------- | -------------------- | -------------------- |
+   | ResearchSystemSubnet | Subnetzname          | ResearchSystemSubnet |
+   |                      | Subnetzadressbereich | 10.40.0.0/24         |
 
 ## Aufgabe 5: Überprüfen der Erstellung von VNets und Subnetzen
 
 1. Wählen Sie auf der Startseite des Azure-Portals **Alle Ressourcen** aus.
 
-2. Überprüfen Sie, ob „CoreServicesVnet“, „ManufacturingVnet“ und „ResearchVnet“ aufgeführt werden.
+1. Überprüfen Sie, ob „CoreServicesVnet“, „ManufacturingVnet“ und „ResearchVnet“ aufgeführt werden.
 
-3. Wählen Sie **CoreServicesVnet** aus.
+1. Wählen Sie **CoreServicesVnet** aus.
 
-4. Wählen Sie in „CoreServicesVnet“ unter **Einstellungen** die Option **Subnetze** aus.
+1. Wählen Sie in „CoreServicesVnet“ unter **Einstellungen** die Option **Subnetze** aus.
 
-5. Überprüfen Sie unter „CoreServicesVnet | Subnetze“, ob die von Ihnen erstellten Subnetze aufgeführt werden und die IP-Adressbereiche korrekt sind.
+1. Überprüfen Sie unter „CoreServicesVnet \| Subnetze“, ob die von Ihnen erstellten Subnetze aufgeführt werden und die IP-Adressbereiche korrekt sind.
 
    ![Liste der Subnetze in „CoreServicesVnet“](../media/verify-subnets-annotated.png)
 
-6. Wiederholen Sie die Schritte 3–5 für jedes VNet.
+1. Wiederholen Sie die Schritte 3–5 für jedes VNet.
 
 Herzlichen Glückwunsch! Sie haben erfolgreich eine Ressourcengruppe, drei VNets und die zugehörigen Subnetze erstellt.

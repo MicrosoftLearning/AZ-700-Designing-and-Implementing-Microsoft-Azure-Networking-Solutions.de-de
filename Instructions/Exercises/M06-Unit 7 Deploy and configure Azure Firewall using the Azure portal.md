@@ -92,7 +92,10 @@ In dieser Aufgabe erstellen Sie ein einzelnes virtuelles Netzwerk mit zwei Subne
 
 In dieser Aufgabe erstellen Sie den virtuellen Workloadcomputer und platzieren ihn im zuvor erstellten Subnetz „Workload-SN“.
 
-1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
+1. Wählen Sie im Azure-Portal das Cloud Shell-Symbol (oben rechts). Konfigurieren Sie die Shell bei Bedarf.  
+    + Wählen Sie **PowerShell** aus.
+    + Wählen Sie **Kein Speicherkonto erforderlich** und Ihr **Abonnement** aus und klicken Sie dann auf **Anwenden**.
+    + Warten Sie, bis das Terminal erstellt wurde und eine Eingabeaufforderung angezeigt wird. 
 
 1. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien hochladen/herunterladen**, wählen Sie im Dropdownmenü die Option **Hochladen** und laden Sie die folgenden Dateien **firewall.json** und **firewall.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M06** in das Cloud Shell-Basisverzeichnis hoch.
 

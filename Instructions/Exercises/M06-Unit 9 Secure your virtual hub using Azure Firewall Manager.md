@@ -135,7 +135,10 @@ In dieser Aufgabe verbinden Sie die virtuellen Hub-and-Spoke-Netzwerke. Dies wir
 
 ## Aufgabe 4: Bereitstellen der Server
 
-1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
+1. Wählen Sie im Azure-Portal das Cloud Shell-Symbol (oben rechts). Konfigurieren Sie die Shell bei Bedarf.  
+    + Wählen Sie **PowerShell** aus.
+    + Wählen Sie **Kein Speicherkonto erforderlich** und Ihr **Abonnement** aus und klicken Sie dann auf **Anwenden**.
+    + Warten Sie, bis das Terminal erstellt wurde und eine Eingabeaufforderung angezeigt wird. 
 
 1. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien hochladen/herunterladen**, wählen Sie im Dropdownmenü **Hochladen** und laden Sie die folgenden Dateien **FirewallManager.json** und **FirewallManager.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M06** in das Cloud Shell-Basisverzeichnis hoch.
 
