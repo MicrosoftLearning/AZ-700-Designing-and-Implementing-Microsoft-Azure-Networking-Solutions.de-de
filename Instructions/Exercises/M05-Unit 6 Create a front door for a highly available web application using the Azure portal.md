@@ -47,7 +47,7 @@ Für diese Übung sind zwei Instanzen einer Webanwendung erforderlich, die in ve
    | Betriebssystem | Wählen Sie **Windows** aus.                                          |
    | Region           | Wählen Sie **USA, Mitte** aus.                                       |
    | Windows-Plan     | Wählen Sie **Neu erstellen** aus, und geben Sie im Textfeld den Text myAppServicePlanCentralUS ein. |
-   | Tarif    | Wählen Sie **Standard S1, 100 ACU insgesamt, 1,75 GB Arbeitsspeicher** aus.        |
+   | Pricing Plan (Tarif)    | Wählen Sie **Standard S1, 100 ACU insgesamt, 1,75 GB Arbeitsspeicher** aus.        |
 
 1. Wählen Sie **Überprüfen und erstellen** aus, überprüfen Sie die Zusammenfassung, und wählen Sie dann die Option **Erstellen** aus.
    ‎Es kann mehrere Minuten dauern, bis die Bereitstellung abgeschlossen ist.
