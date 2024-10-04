@@ -73,6 +73,8 @@ Für diese Übung sind zwei Instanzen einer Webanwendung erforderlich, die in ve
 1. Wählen Sie **Überprüfen und erstellen** aus, überprüfen Sie die Zusammenfassung, und wählen Sie dann die Option **Erstellen** aus.
    ‎Es kann mehrere Minuten dauern, bis die Bereitstellung abgeschlossen ist.
 
+**Hinweis:** Wenn Sie einen Bereitstellungsfehler erhalten, lesen Sie die Benachrichtigung sorgfältig. Wenn der Fehler die Verfügbarkeit der Region aufgrund von Kontingenten betrifft, versuchen Sie, zu einer anderen Region zu wechseln. 
+
 ## Aufgabe 2: Erstellen einer Front Door-Instanz für Ihre Anwendung
 
 Konfigurieren Sie Azure Front Door zum Weiterleiten des Benutzerdatenverkehrs basierend auf der geringsten Wartezeit zwischen den beiden Web-App-Servern. Fügen Sie zunächst einen Front-End-Host für Azure Front Door hinzu.
