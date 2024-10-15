@@ -2,7 +2,7 @@
 
 ## Willkommen
 
-- **[Link zu Übungen (HTML-Format)](https://microsoftlearning.github.io/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/)**
+- **[Link zu Übungen und Demonstrationen (HTML-Format)](https://microsoftlearning.github.io/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/)**
 - **Sind Sie ein MCT?** – Lesen Sie unser [GitHub-Benutzerhandbuch für MCTs](https://microsoftlearning.github.io/MCT-User-Guide/).
 - Eine Vorschau dieses Kurses in einem Format für eigenverantwortliches Arbeiten finden Sie in **[unseren interaktiven Labsimulationen](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulations%20-%20Designing%20and%20implementing%20Microsoft%20Azure%20networking%20solutions)** . Möglicherweise liegen geringfügige Unterschiede zwischen den interaktiven Simulationen und den gehosteten Labs vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
@@ -10,7 +10,7 @@
 
 - Um diesen Kurs zu unterstützen, müssen wir häufige Änderungen an den Kursinhalten vornehmen, um sie an die verwendeten Azure-Dienste anzupassen.  Wir veröffentlichen die Labanweisungen und Labdateien auf GitHub, um offene Beiträge zwischen den Kursautoren und MCTs zu ermöglichen und die Inhalte an aktuelle Änderungen in der Azure-Plattform anzupassen.
 
-- Wir hoffen, dass sich daraus ein beispielloses Gefühl der Zusammenarbeit in den Labs ergibt. Wenn sich Azure ändert und Ihnen dies bei einem Live-Vortrag auffällt, können Sie direkt im Lab-Quellcode eine Verbesserung vornehmen.  Helfen Sie Ihren MCT-Kollegen.
+- Wir hoffen, dass sich daraus ein beispielloses Gefühl der Zusammenarbeit in den Labs ergibt. Wenn sich Azure ändert und Ihnen dies bei einem Live-Vortrag auffällt, können Sie direkt im Lab-Quellcode eine Verbesserung vornehmen.  Helfen Sie Ihren MCTs.
 
 ## Wie kann ich diese Dateien in Bezug auf die freigegebenen MOC-Dateien verwenden?
 
