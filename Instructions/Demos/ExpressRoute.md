@@ -1,14 +1,18 @@
 ---
 demo:
   module: Module 03 - Design and implement Azure ExpressRoute
-  title: Modul 03 – ExpressRoute
+  title: ExpressRoute (Modul 03)
 ---
 ## ExpressRoute
 
 In dieser Demonstration wird die ExpressRoute-Konfiguration überprüft.
 
-**Referenz:**[Schnellstart: Erstellen und Ändern einer ExpressRoute-Verbindung](https://learn.microsoft.com/azure/expressroute/expressroute-howto-circuit-portal-resource-manager)
+**Simulation:**[Konfigurieren und ExpressRoute-Gateway](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20an%20ExpressRoute%20gateway)
 
-**Referenz:**[Tutorial: Einrichten einer privaten Verbindung zwischen einer lokalen Umgebung und einem virtuellen Azure-Netzwerk mithilfe von ExpressRoute](https://learn.microsoft.com/azure/expressroute/configure-expressroute-private-peering)
+**Simulation:**[Bestimmung einer ExpressRoute-Leitung](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Provision%20an%20ExpressRoute%20circuit)
 
-**Referenz:**[Simulation: Konfigurieren von ExpressRoute](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20an%20ExpressRoute%20gateway)
+ **Referenz:**[ Schnellstart: Erstellen und Ändern von ExpressRoute-Leitungen](https://learn.microsoft.com/azure/expressroute/expressroute-howto-circuit-portal-resource-manager)
+
+**Referenz:**[ Tutorial: Herstellen einer privaten Verbindung von einem lokalen Netzwerk zu einem virtuellen Azure-Netzwerk mit ExpressRoute](https://learn.microsoft.com/azure/expressroute/configure-expressroute-private-peering)
+
+**Referenz:**[Simulation: ExpressRoute konfigurieren](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20an%20ExpressRoute%20gateway)

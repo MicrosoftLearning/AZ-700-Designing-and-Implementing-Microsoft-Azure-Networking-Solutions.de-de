@@ -1,6 +1,6 @@
 ---
 demo:
-  title: Routen zu gemeinsam genutzten Diensten
+  title: Mod 02 – Route zu den Shared Services
   module: Module 02 - Design and implement hybrid networking
 ---
 Erwägen Sie, dies für die Kursteilnehmer zu demonstrieren: 

@@ -1,7 +1,7 @@
 ---
 demo:
   module: Module 01 - Introduction to Azure Virtual Networks
-  title: Modul 01 – Benutzerdefinierte Routen
+  title: Benutzerdefinierte Routen (Modul 01)
 ---
 ## Konfigurieren von Netzwerkrouting und Endpunkten
 

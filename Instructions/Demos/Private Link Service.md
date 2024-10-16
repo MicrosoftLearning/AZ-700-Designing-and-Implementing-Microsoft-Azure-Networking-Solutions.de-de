@@ -1,9 +1,11 @@
 ---
 demo:
-  title: "Mod 07 – Private\_Link-Dienst"
-  module: Module 07 - Design and implement private access to Azure Services
+  title: Private Link-Service (Modul 07)
+  module: 'Demo: Design and implement private access to Azure Services'
 ---
-Schnellstart – Erstellen eines Private Link-Diensts über das Azure-Portal | Microsoft-Dokumentation – https://learn.microsoft.com/azure/private-link/create-private-link-service-portal
+In dieser Demoüberprüfung wird die Private Link-Konfiguration überprüft. 
 
-Schnellstart – Erstellen eines privaten Endpunkts mit dem Azure-Portal | Microsoft Docs https://learn.microsoft.com/azure/private-link/create-private-endpoint-portal
+**Referenz:**[Schnellstart – Erstellen eines Private Link-Services über das Azure-Portal](https://learn.microsoft.com/azure/private-link/create-private-link-service-portal)
+
+**Referenz:**[Schnellstart – Erstellen eines privaten Endpunkts über das Azure-Portal](https://learn.microsoft.com/azure/private-link/create-private-endpoint-portal)
 

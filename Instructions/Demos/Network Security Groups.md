@@ -1,6 +1,6 @@
 ---
 demo:
-  title: Mod 06 – Netzwerksicherheitsgruppen
+  title: Netzwerksicherheitsgruppen (Modul 06)
   module: Module 06 - Design and Implement Network Security
 ---
 ## Konfigurieren von Netzwerksicherheitsgruppen

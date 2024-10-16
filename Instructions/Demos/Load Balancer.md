@@ -1,11 +1,13 @@
 ---
 demo:
-  title: Load Balancer
-  module: 'Module 04 - Load balancing non-HTTPS traffic '
+  module: Module 04 - Load balancing non-HTTPS traffic
+  title: Lastenausgleich (Modul 04)
 ---
 ## Konfigurieren von Azure Load Balancer
 
 In dieser Demonstration erfahren Sie, wie Sie einen öffentlichen Lastenausgleich erstellen. 
+
+**Simulation:**[Erstellen und Konfigurieren eines Azure Load Balancer](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer)
 
 **Referenz:** [Schnellstart: Erstellen eines öffentlichen Lastenausgleichs für den Lastenausgleich virtueller Computer über das Azure-Portal](https://learn.microsoft.com/azure/load-balancer/quickstart-load-balancer-standard-public-portal)
 
