@@ -38,7 +38,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
     + Wählen Sie **Kein Speicherkonto erforderlich** und Ihr **Abonnement** aus und klicken Sie dann auf **Anwenden**.
     + Warten Sie, bis das Terminal erstellt wurde und eine Eingabeaufforderung angezeigt wird. 
 
-1. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien hochladen/herunterladen**, wählen Sie im Dropdownmenü die Option **Hochladen** und laden Sie die folgenden Dateien **azuredeploy.json** und **azuredeploy.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M02** in das Cloud Shell-Basisverzeichnis hoch.
+1. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien verwalten** aus, wählen Sie im Dropdownmenü **Hochladen** aus und laden Sie die Dateien **azuredeploy.json** und **azuredeploy.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M02** in das Cloud Shell-Basisverzeichnis hoch.
 
 1. Stellen Sie die folgenden ARM-Vorlagen bereit, um das virtuelle Netzwerk und die Subnetze zu erstellen, die für diese Übung erforderlich sind:
 
@@ -55,7 +55,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 
-1. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien hochladen/herunterladen**, wählen Sie im Dropdownmenü die Option **Hochladen** und laden Sie die folgenden Dateien **CoreServicesVMazuredeploy.json** und **CoreServicesVMazuredeploy.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M02** in das Cloud Shell-Basisverzeichnis hoch.
+1. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien verwalten** aus, wählen Sie im Dropdownmenü **Hochladen** aus, und laden Sie die Dateien **CoreServicesVMazuredeploy.json** und **CoreServicesVMazuredeploy.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M02** in das Cloud Shell-Basisverzeichnis hoch.
 
 1. Stellen Sie die folgenden ARM-Vorlagen bereit, um die für diese Übung erforderlichen VMs zu erstellen:
 
@@ -75,7 +75,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 
-1. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien hochladen/herunterladen**, wählen Sie im Dropdownmenü die Option **Hochladen** und laden Sie die folgenden Dateien **ManufacturingVMazuredeploy.json** und **ManufacturingVMazuredeploy.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M02** in das Cloud Shell-Basisverzeichnis hoch.
+1. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien verwalten** aus, wählen Sie im Dropdownmenü **Hochladen** aus, und laden Sie die folgenden Dateien **ManufacturingVMazuredeploy.json** und **ManufacturingVMazuredeploy.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M02** in das Cloud Shell-Basisverzeichnis hoch.
 
 1. Stellen Sie die folgenden ARM-Vorlagen bereit, um die für diese Übung erforderlichen VMs zu erstellen:
 

@@ -47,7 +47,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 ## Aufgabe 2: Verknüpfen des Subnetzes für automatische Registrierung
 
-1. Klicken Sie in „contoso.com“ unter **Einstellungen** auf **VNet-Verknüpfungen**.
+1. Wählen Sie in „contoso.com“ unter **DNS-Verwaltung** den Eintrag **Verknüpfungen virtueller Netzwerke** aus.
 
 1. Wählen Sie unter „contoso.com \| VNet-Verknüpfungen“ die Option **+ Hinzufügen** aus.
 
@@ -104,7 +104,7 @@ In diesem Abschnitt erstellen Sie zwei Test-VMs, um die Konfiguration der privat
     + Wählen Sie **Kein Speicherkonto erforderlich** und Ihr **Abonnement** aus und klicken Sie dann auf **Anwenden**.
     + Warten Sie, bis das Terminal erstellt wurde und eine Eingabeaufforderung angezeigt wird. 
 
-1. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien hochladen/herunterladen**, wählen Sie im Dropdownmenü die Option **Hochladen** und laden Sie die folgenden Dateien **azuredeploy.json** und **azuredeploy.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M01** in das Cloud Shell-Basisverzeichnis hoch.
+1. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien verwalten** aus, wählen Sie im Dropdownmenü **Hochladen** aus und laden Sie die Dateien **azuredeploy.json** und **azuredeploy.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M01** in das Cloud Shell-Basisverzeichnis hoch.
 
 1. Stellen Sie die folgenden ARM-Vorlagen bereit, um die für diese Übung erforderlichen VMs zu erstellen:
 
