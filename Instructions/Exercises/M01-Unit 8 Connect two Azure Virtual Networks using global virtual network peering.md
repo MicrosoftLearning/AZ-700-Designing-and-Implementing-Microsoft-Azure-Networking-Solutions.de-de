@@ -36,7 +36,7 @@ In diesem Abschnitt erstellen Sie eine Test-VM im VNet für die Fertigung, um zu
     + Wählen Sie **Kein Speicherkonto erforderlich** und Ihr **Abonnement** aus und klicken Sie dann auf **Anwenden**.
     + Warten Sie, bis das Terminal erstellt wurde und eine Eingabeaufforderung angezeigt wird. 
 
-1. Klicken Sie in der Symbolleiste des Cloud Shell-Bereichs auf das Symbol **Dateien verwalten**, wählen Sie im Dropdownmenü **Hochladen** aus, und laden Sie die Dateien **ManufacturingVMazuredeploy.json** und **ManufacturingVMazuredeploy.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M01** in das Cloud Shell-Basisverzeichnis hoch.
+1. Wählen Sie in der Symbolleiste des Bereichs „Cloud Shell" das Symbol **Dateien verwalten**, wählen Sie im Dropdown-Menü **Hochladen** und laden Sie die folgenden Dateien **ManufacturingVMazuredeploy.json** und **ManufacturingVMazuredeploy.parameters.json** in das Startverzeichnis der Cloud Shell aus dem Quellordner **F:\Allfiles\Exercises\M01** hoch.
 
 1. Stellen Sie die folgenden ARM-Vorlagen bereit, um die für diese Übung erforderlichen VMs zu erstellen:
 
@@ -107,7 +107,7 @@ In diesem Abschnitt erstellen Sie eine Test-VM im VNet für die Fertigung, um zu
 
 1. Wählen Sie in „CoreServicesVnet \| Peerings“ die Option **+ Hinzufügen** aus.
 
-1. Erstellen Sie das Peering anhand dieser Informationen. Wählen Sie abschließend **Hinzufügen** aus. 
+1. Verwenden Sie diese Informationen, um das Peering zu erstellen. Wählen Sie abschließend **Hinzufügen** aus. 
 
    **Zusammenfassung zu virtuellen Remotenetzwerken**
 
@@ -120,8 +120,8 @@ In diesem Abschnitt erstellen Sie eine Test-VM im VNet für die Fertigung, um zu
    
    | **Option**                                    | **Wert**                             |
    | ------------------------------------ | --------------------------------------------- | 
-   | ManufacturingVNet den Zugriff auf CoreServicesVNet erlauben | Aktiviert |
-   |Zulassen, dass ManufacturingVNet weitergeleiteten Datenverkehr von CoreServicesVNet empfangen kann | Aktiviert |
+   | Erlauben Sie 'ManufacturingVnet' den Zugriff auf 'CoreServicesVnet' | Aktiviert |
+   |ManufacturingVnet“ soll weitergeleiteten Verkehr von ‚CoreServicesVnet‘ empfangen | Aktiviert |
  
     **Lokales virtuelles Netzwerk: Zusammenfassung**
 
@@ -133,12 +133,12 @@ In diesem Abschnitt erstellen Sie eine Test-VM im VNet für die Fertigung, um zu
    
     | **Option**                                    | **Wert**                             |
     | ------------------------------------ | --------------------------------------------- | 
-    | Für CoreServicesVnet den Zugriff auf ManufacturingVnet gestatten | Aktiviert
-    | Zulassen, dass CoreServicesVNet weitergeleiteten Datenverkehr von ManufacturingVNet empfangen kann | Aktiviert |
+    | Erlauben Sie 'CoreServicesVnet' den Zugriff auf 'ManufacturingVnet' | Aktiviert
+    | Erlauben Sie, dass 'CoreServicesVnet' weitergeleiteten Verkehr von 'ManufacturingVnet' empfängt | Aktiviert |
  
-1. Überprüfen Sie in „CoreServicesVnet \| Peerings“, ob das Peering **CoreServicesVnet-to-ManufacturingVnet** aufgeführt ist.
+1. Überprüfen Sie in „CoreServicesVnet" \| Peerings, dass das **CoreServicesVnet-to-ManufacturingVnet** Peering **Verbunden** ist.
 
-1. Wählen Sie unter „Virtuelle Netzwerke“ den Eintrag **ManufacturingVnet** aus, und überprüfen Sie, ob das **Peering ManufacturingVnet-to-CoreServicesVnet** aufgeführt ist.
+1. Wählen Sie unter „Virtuelle Netzwerke" die Option **ManufacturingVnet**, und überprüfen Sie, ob das Peering **ManufacturingVnet-to-CoreServicesVnet** **Verbunden** ist.
 
 ## Aufgabe 5: Testen der Verbindung zwischen den VMs
 

@@ -38,7 +38,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
     + Wählen Sie **Kein Speicherkonto erforderlich** und Ihr **Abonnement** aus und klicken Sie dann auf **Anwenden**.
     + Warten Sie, bis das Terminal erstellt wurde und eine Eingabeaufforderung angezeigt wird. 
 
-1. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien verwalten** aus, wählen Sie im Dropdownmenü **Hochladen** aus und laden Sie die Dateien **azuredeploy.json** und **azuredeploy.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M02** in das Cloud Shell-Basisverzeichnis hoch.
+1. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien verwalten**, wählen Sie im Dropdown-Menü **Hochladen** und laden Sie die folgenden Dateien **azuredeploy.json** und **azuredeploy.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M02** in das Startverzeichnis der Cloud Shell hoch
 
 1. Stellen Sie die folgenden ARM-Vorlagen bereit, um das virtuelle Netzwerk und die Subnetze zu erstellen, die für diese Übung erforderlich sind:
 
@@ -55,7 +55,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 
-1. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien verwalten** aus, wählen Sie im Dropdownmenü **Hochladen** aus, und laden Sie die Dateien **CoreServicesVMazuredeploy.json** und **CoreServicesVMazuredeploy.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M02** in das Cloud Shell-Basisverzeichnis hoch.
+1. Wählen Sie in der Symbolleiste des Bereichs Cloud Shell das Symbol **Dateien verwalten**, wählen Sie im Dropdown-Menü **Hochladen** und laden Sie die folgenden Dateien **CoreServicesVMazuredeploy. json** und **CoreServicesVMazuredeploy.parameters.json** nacheinander in das Startverzeichnis der Cloud Shell aus dem Ordner **F:\Allfiles\Exercises\M02**.
 
 1. Stellen Sie die folgenden ARM-Vorlagen bereit, um die für diese Übung erforderlichen VMs zu erstellen:
 
@@ -75,7 +75,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 
-1. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien verwalten** aus, wählen Sie im Dropdownmenü **Hochladen** aus, und laden Sie die folgenden Dateien **ManufacturingVMazuredeploy.json** und **ManufacturingVMazuredeploy.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M02** in das Cloud Shell-Basisverzeichnis hoch.
+1. Wählen Sie in der Symbolleiste des Bereichs Cloud Shell das Symbol **Dateien verwalten**, wählen Sie im Dropdown-Menü **Hochladen** und laden Sie die folgenden Dateien **ManufacturingVMazuredeploy. json** und **ManufacturingVMazuredeploy.parameters.json** nacheinander in das Startverzeichnis der Cloud Shell aus dem Ordner **F:\Allfiles\Exercises\M02**.
 
 1. Stellen Sie die folgenden ARM-Vorlagen bereit, um die für diese Übung erforderlichen VMs zu erstellen:
 
@@ -154,15 +154,32 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
    > [!NOTE]
    >
-   > Die Erstellung eines Gateways für das virtuelle Netzwerk kann bis zu 45 Minuten dauern.
+   > Die Erstellung eines virtuellen Netzwerk-Gateways kann bis zu 15 - 30 Minuten dauern. Sie brauchen nicht zu warten, bis die Bereitstellung abgeschlossen ist. Fahren Sie mit der Erstellung des nächsten Gateways fort. 
 
-## Aufgabe 7: Erstellen des ManufacturingVnet Gateway
+## Aufgabe 7: Erstellen des ManufacturingVnet-Gateways
+
+### Erstellen des GatewaySubnetzes
+
+**Hinweis:** Die Vorlage hat das GatewaySubnet für das CoreServicesVnet erstellt. Hier erstellen Sie das Subnetz manuell. 
+
+1. Suchen Sie das **ManufacturingVnet** und wählen Sie es aus.
+
+1. Wählen Sie im Blatt **Einstellungen** die Option **Subnetze** und dann **+ Subnetz**. 
+
+    | Parameter | Wert |
+    | --------------- | ----------------- | 
+    | Subnetzzweck | **VNet-Gateway** |
+    | Größe | **/27 (32 Adressen)** |
+
+1. Wählen Sie **Hinzufügen**. 
+
+### Erstellen des Gateways für das lokale Netzwerk
 
 1. Geben Sie unter **Ressourcen, Dienste und Dokumente durchsuchen (G+/)****Gateway für virtuelle Netzwerke** ein, und wählen Sie dann **Gateways für virtuelle Netzwerke** aus den Ergebnissen aus.
 
 1. Wählen Sie unter Gateways für virtuelle Netzwerke die Option **+ Erstellen** aus.
 
-1. Verwenden Sie die Informationen in der folgenden Tabelle, um das Gateway für virtuelle Netzwerke zu erstellen.
+1. Verwenden Sie diese Informationen und die Registerkarte **Einstellungen**, um das virtuelle Netzwerk-Gateway zu erstellen. 
 
    | **TAB**         | **Bereich**       | **Option**                                  | **Wert**                    |
    | --------------- | ----------------- | ------------------------------------------- | ---------------------------- |
@@ -185,7 +202,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
    > [!NOTE]
    >
-   > Die Erstellung eines Gateways für das virtuelle Netzwerk kann bis zu 45 Minuten dauern.
+   > Die Erstellung eines virtuellen Netzwerk-Gateways kann bis zu 15 - 30 Minuten dauern.
 
 ## Aufgabe 8: Verbinden von CoreServicesVnet mit ManufacturingVnet
 
@@ -199,12 +216,14 @@ In dieser Übung führen Sie die folgenden Schritte aus:
    >
    >  Sie können diese Konfiguration erst abschließen, wenn die Gateways für virtuelle Netzwerke vollständig bereitgestellt wurden.
 
-1. Verwenden Sie die Informationen in der folgenden Tabelle zum Erstellen der Verbindung:
+1. Verwenden Sie diese Informationen und die Registerkarte **Einstellungen**, um das virtuelle Netzwerk-Gateway zu erstellen. 
+
 
    | **Option**                     | **Wert**                         |
    | ------------------------------ | --------------------------------- |
    | Name                           | CoreServicesGW-to-ManufacturingGW |
    | Verbindungstyp                | VNet-zu-VNet                      |
+   | Region                         | USA, Osten                           |
    | Erstes Gateway für virtuelle Netzwerke  | CoreServicesVnetGateway           |
    | Zweites Gateway für virtuelle Netzwerke | ManufacturingVnetGateway          |
    | Gemeinsam verwendeter Schlüssel (PSK)               | abc123                            |
@@ -213,9 +232,9 @@ In dieser Übung führen Sie die folgenden Schritte aus:
    | IKE-Protokoll                   | IKEv2                             |
    | Subscription                   | Keine Änderungen erforderlich               |
    | Resource group                 | Keine Änderungen erforderlich               |
-   | Standort                       | USA, Osten                           |
 
-1. Wählen Sie **OK** aus, um die Verbindung zu erstellen.
+
+1. Um die Verbindung zu erstellen, wählen Sie **Überprüfen + Erstellen** und dann **Erstellen**.
 
 ## Aufgabe 9: Verbinden von ManufacturingVnet mit CoreServicesVnet
 
@@ -231,6 +250,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
    | ------------------------------ | --------------------------------- |
    | Name                           | ManufacturingGW-to-CoreServicesGW |
    | Verbindungstyp                | VNet-zu-VNet                      |
+   | Location                       | Europa, Westen                       |
    | Erstes Gateway für virtuelle Netzwerke  | ManufacturingVnetGateway          |
    | Zweites Gateway für virtuelle Netzwerke | CoreServicesVnetGateway           |
    | Gemeinsam verwendeter Schlüssel (PSK)               | abc123                            |
@@ -239,9 +259,9 @@ In dieser Übung führen Sie die folgenden Schritte aus:
    | IKE-Protokoll                   | IKEv2                             |
    | Subscription                   | Keine Änderungen erforderlich               |
    | Resource group                 | Keine Änderungen erforderlich               |
-   | Standort                       | Europa, Westen                       |
 
-1. Wählen Sie **OK** aus, um die Verbindung zu erstellen.
+
+1. Um die Verbindung zu erstellen, wählen Sie **Überprüfen + Erstellen** und dann **Erstellen**.
 
 ## Aufgabe 10: Überprüfen, ob die Verbindungen stehen
 
