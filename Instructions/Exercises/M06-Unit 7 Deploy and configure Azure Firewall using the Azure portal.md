@@ -97,7 +97,7 @@ In dieser Aufgabe erstellen Sie den virtuellen Workloadcomputer und platzieren i
     + Wählen Sie **Kein Speicherkonto erforderlich** und Ihr **Abonnement** aus und klicken Sie dann auf **Anwenden**.
     + Warten Sie, bis das Terminal erstellt wurde und eine Eingabeaufforderung angezeigt wird. 
 
-1. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien hochladen/herunterladen**, wählen Sie im Dropdownmenü die Option **Hochladen** und laden Sie die folgenden Dateien **firewall.json** und **firewall.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M06** in das Cloud Shell-Basisverzeichnis hoch.
+1. Klicken Sie in der Symbolleiste des Cloud Shell-Bereichs auf Symbol **Dateien verwalten**, wählen Sie im Dropdownmenü **Hochladen** aus, und laden Sie die Dateien **firewall.json** und **firewall.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M06** in das Cloud Shell-Basisverzeichnis hoch.
 
 1. Stellen Sie die folgenden ARM-Vorlagen bereit, um die für diese Übung erforderliche VM zu erstellen:
 

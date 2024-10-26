@@ -31,7 +31,7 @@ Private Endpunkte können für verschiedene Arten von Azure-Diensten (z. B. Azu
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 
-1. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien hochladen/herunterladen**, wählen Sie im Dropdownmenü **Hochladen** und laden Sie die folgenden Dateien **template.json** und **parameters.json** nacheinander in das Cloud Shell-Basisverzeichnis hoch.
+1. Klicken Sie in der Symbolleiste des Cloud Shell-Bereichs auf das Symbol **Dateien verwalten**, wählen Sie im Dropdownmenü **Hochladen** aus, und laden Sie die Dateien **template.json** und **parameters.json** nacheinander in das Cloud Shell-Basisverzeichnis hoch.
 
 Wenn Sie sich dafür entscheiden, PowerShell lokal zu installieren und zu verwenden, ist für dieses Beispiel mindestens Version 5.4.1 des Azure PowerShell-Moduls erforderlich. Führen Sie ```Get-Module -ListAvailable Az``` aus, um die installierte Version zu ermitteln. Wenn Sie ein Upgrade ausführen müssen, finden Sie unter [Installieren des Azure PowerShell-Moduls](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps) Informationen dazu. Wenn Sie PowerShell lokal ausführen, müssen Sie auch ```Connect-AzAccount``` ausführen, um eine Verbindung mit Azure herzustellen.
 
