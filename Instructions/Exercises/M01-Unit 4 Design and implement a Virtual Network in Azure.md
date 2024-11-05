@@ -157,5 +157,26 @@ In dieser Übung führen Sie die folgenden Schritte aus:
    ![Liste der Subnetze in „CoreServicesVnet“](../media/verify-subnets-annotated.png)
 
 1. Wiederholen Sie die Schritte 3–5 für jedes VNet.
+   
+## Erweitern Ihrer Lernerfahrung mit Copilot
 
-Herzlichen Glückwunsch! Sie haben erfolgreich eine Ressourcengruppe, drei VNets und die zugehörigen Subnetze erstellt.
+Copilot kann Sie beim Erlernen der Verwendung von Azure-Skripttools unterstützen. Copilot kann Sie auch in Bereichen unterstützen, die nicht im Lab behandelt werden oder in denen Sie weitere Informationen benötigen. Öffnen Sie einen Edge-Browser, und wählen Sie „Copilot“ (rechts oben) aus, oder navigieren Sie zu *copilot.microsoft.com*. Nehmen Sie sich einige Minuten Zeit, um diese Prompts auszuprobieren.
++ Können Sie ein Beispiel dafür geben, wie die IP-Adresse 10.30.0.0/16 in einem realen Szenario verwendet wird?
++ Wie lautet der Azure PowerShell-Befehl, um ein virtuelles Netzwerk namens CoreServicesVnet in der Region East (US) zu erstellen. Das virtuelle Netzwerk sollte den IP-Adressraum 10.20.0.0/16 verwenden.
++ Wie lautet der Azure CLI-Befehl, um ein virtuelles Netzwerk namens ManufacturingVnet in der Region Westeuropa zu erstellen. Das virtuelle Netzwerk sollte den IP-Adressraum 10.30.0.0/16 verwenden.
+
+## Weiterlernen im eigenen Tempo
+
++ [Entwerfen Sie ein IP-Adressierungsschema für Ihren Azure-Einsatz](https://learn.microsoft.com/en-us/training/modules/design-ip-addressing-for-azure/). In diesem Modul lernen Sie die öffentlichen und privaten IP-Adressierungsmöglichkeiten von virtuellen Azure-Netzwerken kennen.
++ [Einführung in Azure Virtual Network](https://learn.microsoft.com/en-us/training/modules/introduction-to-azure-virtual-networks/): In diesem Modul erfahren Sie, wie Sie Azure-Netzwerkdienste entwerfen und implementieren. Sie erfahren mehr über virtuelle Netzwerke, öffentliche und private IPs, DNS, virtuelles Netzwerk-Peering, Routing und Azure Virtual NAT.
+
+## Wichtige Erkenntnisse
+
++ Azure Virtual Network ist ein Dienst, der den Grundbaustein für Ihr privates Netzwerk in Azure bereitstellt. Eine Instanz des Diensts (ein virtuelles Netzwerk) ermöglicht zahlreichen Azure-Ressourcentypen die sichere Kommunikation untereinander sowie mit dem Internet und lokalen Netzwerken. Stellen Sie sicher, dass sich Adressräume nicht überschneiden. Stellen Sie sicher, dass der Adressraum Ihres virtuellen Netzwerks (CIDR-Block) sich nicht mit anderen Netzwerkbereichen Ihrer Organisation überschneidet.
++ Alle Azure-Ressourcen in einem virtuellen Netzwerk werden in Subnetzen innerhalb des Netzwerks bereitgestellt. Mit Subnetzen können Sie das virtuelle Netzwerk in ein oder mehrere Subnetze unterteilen und jedem Subnetz einen Teil des Adressraums des virtuellen Netzwerks zuweisen. Die Subnetze sollten nicht den gesamten Adressraum des virtuellen Netzwerks ausmachen. Planen Sie voraus, und reservieren Sie Adressraum für die Zukunft.
+
+
+
+
+
+

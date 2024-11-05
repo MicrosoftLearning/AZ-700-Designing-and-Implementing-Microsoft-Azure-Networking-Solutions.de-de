@@ -20,7 +20,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 1: Erstellen und Bereitstellen einer ExpressRoute-Leitung
 + Aufgabe 2: Abrufen des Dienstschlüssels
 + Aufgabe 3: Aufheben der Bereitstellung einer ExpressRoute-Leitung
-+ Aufgabe 4: Bereinigen der Ressourcen
+
 
 ## Aufgabe 1: Erstellen und Bereitstellen einer ExpressRoute-Leitung
 
@@ -110,13 +110,13 @@ Wenn der Bereitstellungsstatus des ExpressRoute-Leitungsdienstanbieters **Bereit
 >
 > Wenn der Dienstanbieter die Bereitstellung der Verbindung aufgehoben hat (Bereitstellungsstatus des Dienstanbieters lautet „Not provisioned“ (Nicht bereitgestellt)), können Sie die Verbindung löschen. Damit wird die Abrechnung für die Verbindung beendet.
 
-## Aufgabe 4: Bereinigen der Ressourcen
+## Bereinigen von Ressourcen
 
 Sie können Ihre ExpressRoute-Verbindung löschen. Wählen Sie hierzu das Symbol **Löschen**. Sorgen Sie dafür, dass der Bereitstellungsstatus Nicht bereitgestellt lautet, bevor Sie fortfahren.
 
 ![Azure-Portal – Löschen einer ExpressRoute-Leitung](../media/expressroute-circuit-delete.png)
 
-   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
+>**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 
@@ -127,4 +127,23 @@ Sie können Ihre ExpressRoute-Verbindung löschen. Wählen Sie hierzu das Symbol
    Remove-AzResourceGroup -Name 'ExpressRouteResourceGroup' -Force -AsJob
    ```
 
-   >**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+>**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+
+## Erweitern Ihrer Lernerfahrung mit Copilot
+
+Copilot kann Sie beim Erlernen der Verwendung von Azure-Skripttools unterstützen. Copilot kann Sie auch in Bereichen unterstützen, die nicht im Lab behandelt werden oder in denen Sie weitere Informationen benötigen. Öffnen Sie einen Edge-Browser, und wählen Sie „Copilot“ (rechts oben) aus, oder navigieren Sie zu *copilot.microsoft.com*. Nehmen Sie sich einige Minuten Zeit, um diese Prompts auszuprobieren.
++ Welche Serviceanbieter sind für Azure ExpressRoute verfügbar?
++ Was sind die häufigsten Konfigurationsprobleme mit Azure ExpressRoute? Was sollte ich tun, wenn ich dieses Problem habe?
+
+## Weiterlernen im eigenen Tempo
+
++ [Einführung in Azure ExpressRoute](https://learn.microsoft.com/training/modules/intro-to-azure-expressroute/). In diesem Modul erfahren Sie, was Azure ExpressRoute ist und welche Funktionen es bietet.
++ [Entwerfen und implementieren Sie ExpressRoute](https://learn.microsoft.com/training/modules/design-implement-azure-expressroute/). In diesem Modul lernen Sie, wie Sie Azure ExpressRoute, ExpressRoute Global Reach und ExpressRoute FastPath entwerfen und implementieren.
+
+## Wichtige Erkenntnisse
+
+Herzlichen Glückwunsch zum erfolgreichen Abschluss des Labs. Hier sind die wichtigsten Erkenntnisse für dieses Lab. 
++ Azure ExpressRoute ermöglicht es Unternehmen, ihre lokalen Netzwerke direkt mit den Clouds Microsoft Azure und Microsoft 365 zu verbinden. Azure ExpressRoute verwendet eine dedizierte Verbindung mit hoher Bandbreite, die von einem Microsoft-Partner bereitgestellt wird.
++ Microsoft garantiert für dedizierte ExpressRoute-Verbindungen eine Verfügbarkeit von mindestens 99,95 %. Die Verbindung ist privat und läuft über eine Standleitung. Dritte können den Datenverkehr nicht abfangen.
++ Sie können eine Verbindung zwischen Ihrem lokalen Netzwerk und der Microsoft-Cloud auf vier verschiedene Arten erstellen: CloudExchange-Zusammenstellung, Point-to-Point-Ethernet-Verbindung, Any-to-Any-Verbindung (IPVPN) und ExpressRoute Direct.
++ Die ExpressRoute-Funktionen werden durch die SKU bestimmt: Lokal, Standard und Premuium. 

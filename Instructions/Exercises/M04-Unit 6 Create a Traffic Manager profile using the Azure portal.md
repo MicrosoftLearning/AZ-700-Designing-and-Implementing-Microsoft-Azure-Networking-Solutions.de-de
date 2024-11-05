@@ -28,7 +28,6 @@ Das folgende Diagramm veranschaulicht ungefähr die Umgebung, die Sie in dieser 
 + Aufgabe 2: Erstellen eines Traffic Manager-Profils
 + Aufgabe 3: Hinzufügen von Traffic Manager-Endpunkten
 + Aufgabe 4: Testen des Traffic Manager-Profils
-+ Aufgabe 5: Bereinigen von Ressourcen
 
 ## Aufgabe 1: Erstellen der Web-Apps
 
@@ -171,9 +170,9 @@ In diesem Abschnitt überprüfen Sie den DNS-Namen Ihres Traffic Manager-Profils
 
 1. Vergewissern Sie sich, dass die Web-App weiterhin reagiert. Da der primäre Endpunkt nicht verfügbar war, wurde der Datenverkehr stattdessen an den Failoverendpunkt weitergeleitet, um die Funktion der Website aufrechtzuerhalten.
 
-## Aufgabe 5: Bereinigen von Ressourcen
+## Bereinigen von Ressourcen
 
-   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
+>**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 
@@ -186,4 +185,23 @@ In diesem Abschnitt überprüfen Sie den DNS-Namen Ihres Traffic Manager-Profils
 
    ```
 
-    >**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+>**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+
+## Erweitern Ihrer Lernerfahrung mit Copilot
+
+Copilot kann Sie beim Erlernen der Verwendung von Azure-Skripttools unterstützen. Copilot kann Sie auch in Bereichen unterstützen, die nicht im Lab behandelt werden oder in denen Sie weitere Informationen benötigen. Öffnen Sie einen Edge-Browser, und wählen Sie „Copilot“ (rechts oben) aus, oder navigieren Sie zu *copilot.microsoft.com*. Nehmen Sie sich einige Minuten Zeit, um diese Prompts auszuprobieren.
++ Was sind die wichtigsten Schritte zur Konfiguration von Azure Traffic Manager?
++ Vergleichen Sie, wann Sie Azure Load Balancer und wann Sie Azure Traffic Manager verwenden sollten.
++ Erklären Sie die Traffic Manager Routing-Profile und wann sie verwendet werden sollten.
+
+## Weiterlernen im eigenen Tempo
+
++ [Steigern Sie Ihre Serviceverfügbarkeit und Datenlokalisierung durch den Einsatz von Azure Traffic Manager](https://learn.microsoft.com/training/modules/distribute-load-with-traffic-manager/). In diesem Modul lernen Sie, wie Sie den Traffic Manager zur dynamischen Verteilung des Netzwerkverkehrs einsetzen.
++ [Lastenausgleich für Nicht-HTTP(S)-Datenverkehr in Azure](https://learn.microsoft.com/training/modules/load-balancing-non-https-traffic-azure/) In diesem Modul lernen Sie den Azure Traffic Manager und die Implementierung von Routing-Methoden kennen. 
+
+## Wichtige Erkenntnisse
+
+Herzlichen Glückwunsch zum erfolgreichen Abschluss des Labs. Hier sind die wichtigsten Erkenntnisse für dieses Lab. 
++ Azure Traffic Manager ist ein auf DNS basierender Lastenausgleichsdienst. Dieser Dienst ermöglicht die Verteilung des Datenverkehrs an Ihre öffentlichen Anwendungen in den globalen Azure-Regionen.
++ Traffic Manager verfügt über sechs Traffic-Routing-Methoden, mit denen Sie steuern können, wie Traffic Manager auswählt, welcher Endpunkt den Traffic von jedem Endbenutzer erhalten soll. Wie viele können Sie nennen?
++ Sie können Traffic Manager-Profile schachteln, um die Vorteile mehrerer Datenverkehrsrouting-Methoden zu kombinieren. Mit geschachtelten Profilen können Sie das Standardverhalten von Traffic Manager überschreiben, um größere und komplexere Anwendungsbereitstellungen zu unterstützen.

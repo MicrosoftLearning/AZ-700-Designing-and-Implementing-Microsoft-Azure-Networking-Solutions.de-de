@@ -19,7 +19,6 @@ Inhalt dieser Einheit:
 + Aufgabe 3: Testen der Verbindung zwischen den VMs
 + Aufgabe 4: Erstellen von VNet-Peerings zwischen CoreServicesVnet und ManufacturingVnet
 + Aufgabe 5: Testen der Verbindung zwischen den VMs
-+ Aufgabe 6: Bereinigen der Ressourcen
 
 **Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
@@ -152,9 +151,8 @@ In diesem Abschnitt erstellen Sie eine Test-VM im VNet für die Fertigung, um zu
 
 1. Die Testverbindung sollte erfolgreich sein, und es wird ein ähnliches Ergebnis wie das folgende angezeigt: ![PowerShell-Fenster mit Erfolgsmeldung „TcpTestSucceeded: True“ für Befehl „Test-NetConnection 10.20.20.4 -port 3389“](../media/test-connection-succeeded.png)
 
-Herzlichen Glückwunsch! Sie haben die Konnektivität zwischen den VNets erfolgreich konfiguriert, indem Sie Peerings hinzugefügt haben.
 
-## Aufgabe 6: Bereinigen der Ressourcen
+## Bereinigen von Ressourcen
 
    >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
@@ -165,5 +163,26 @@ Herzlichen Glückwunsch! Sie haben die Konnektivität zwischen den VNets erfolgr
    ```powershell
    Remove-AzResourceGroup -Name 'ContosoResourceGroup' -Force -AsJob
    ```
-
    >**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+   
+## Erweitern Ihrer Lernerfahrung mit Copilot
+
+Copilot kann Sie beim Erlernen der Verwendung von Azure-Skripttools unterstützen. Copilot kann Sie auch in Bereichen unterstützen, die nicht im Lab behandelt werden oder in denen Sie weitere Informationen benötigen. Öffnen Sie einen Edge-Browser, und wählen Sie „Copilot“ (rechts oben) aus, oder navigieren Sie zu *copilot.microsoft.com*. Nehmen Sie sich einige Minuten Zeit, um diese Prompts auszuprobieren.
++ Was sind die häufigsten Fehler bei der Konfiguration von Azure Virtual Network Peering?
++ Wenn ich in Azure Vnet1 mit Vnet2 peere und dann Vnet2 mit Vnet3, wird dann Vnet1 mit Vnet3 gepeert?
++ Können Firewalls und Gateways das Peering des virtuellen Azure-Netzwerks beeinträchtigen?
+
+
+## Weiterlernen im eigenen Tempo
+
++ [Einführung in Azure Virtual Network](https://learn.microsoft.com/training/modules/introduction-to-azure-virtual-networks/): In diesem Modul erfahren Sie, wie Sie Azure-Netzwerkdienste entwerfen und implementieren. Sie erfahren mehr über virtuelle Netzwerke, öffentliche und private IPs, DNS, virtuelles Netzwerk-Peering, Routing und Azure Virtual NAT.
++ [Verteilen von Diensten in virtuellen Azure-Netzwerken und Integrieren dieser Dienste über Peering virtueller Netzwerke](https://learn.microsoft.com/training/modules/integrate-vnets-with-vnet-peering/): In diesem Modul lernen Sie, wie Sie virtuelles Netzwerk-Peering konfigurieren.
+
+## Wichtige Erkenntnisse
+
+Herzlichen Glückwunsch zum erfolgreichen Abschluss des Labs. Hier sind die wichtigsten Erkenntnisse für dieses Lab. 
+
++ Das Peering virtueller Netzwerke ermöglicht das nahtlose Verbinden zweier virtueller Azure-Netzwerke. Die virtuellen Netzwerke werden für Verbindungszwecke als einzelnes Element angezeigt.
++ Azure unterstützt die Verbindung von virtuellen Netzwerken innerhalb der gleichen Azure-Region und über Azure-Regionen hinweg (global).
++ Der Datenverkehr zwischen virtuellen Computern in mittels Peering verknüpften virtuellen Netzwerken wird nicht über ein Gateway oder das öffentliche Internet, sondern direkt über die Microsoft-Backbone-Infrastruktur geleitet.
++ Sie können die Größe des Adressraums der virtuellen Azure-Netzwerke mit Peering ändern, ohne dass Ausfallzeiten für den aktuellen Adressraum mit Peering auftreten.

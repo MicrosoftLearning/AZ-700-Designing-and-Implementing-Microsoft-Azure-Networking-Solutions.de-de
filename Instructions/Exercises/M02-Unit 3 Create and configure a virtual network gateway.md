@@ -168,7 +168,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
     | Parameter | Wert |
     | --------------- | ----------------- | 
-    | Subnetzzweck | **VNet-Gateway** |
+    | Subnetzzweck | **Gateway für virtuelle Netzwerke** |
     | Größe | **/27 (32 Adressen)** |
 
 1. Wählen Sie **Hinzufügen**. 
@@ -287,4 +287,26 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 1. Schließen Sie die Fenster der Remotedesktopverbindung.
 
-Herzlichen Glückwunsch! Sie haben eine VNet-zu-VNet-Verbindung mithilfe eines Gateways für virtuelle Netzwerke konfiguriert.
+## Erweitern Ihrer Lernerfahrung mit Copilot
+
+Copilot kann Sie beim Erlernen der Verwendung von Azure-Skripttools unterstützen. Copilot kann Sie auch in Bereichen unterstützen, die nicht im Lab behandelt werden oder in denen Sie weitere Informationen benötigen. Öffnen Sie einen Edge-Browser, und wählen Sie „Copilot“ (rechts oben) aus, oder navigieren Sie zu *copilot.microsoft.com*. Nehmen Sie sich einige Minuten Zeit, um diese Prompts auszuprobieren.
++ Was sind die wichtigsten Arten von Azure VPN-Gateways und warum sollten Sie jeden Typ verwenden?
++ Welche Faktoren sollte ich bei der Auswahl der Azure VPN-Gateway-Skulptur berücksichtigen? Beispiele angeben.
++ Sind mit den Azure VPN-Gateways Kosten verbunden?
+
+
+## Weiterlernen im eigenen Tempo
+
++ [Verbinden Sie Ihr lokales Netzwerk mit Azure über VPN Gateway](https://learn.microsoft.com/training/modules/connect-on-premises-network-with-vpn-gateway/). In diesem Modul lernen Sie, wie Sie VPN-Gateways über die CLI bereitstellen.
++ [Fehlerbehebung bei VPN-Gateways in Microsoft Azure](https://learn.microsoft.com/training/modules/troubleshoot-vpn-gateways/). In diesem Modul lernen Sie, wie Sie Site-to-Site- und Point-to-Site-VPNs überwachen und Fehler beheben können.
+
+## Wichtige Erkenntnisse
+
+Herzlichen Glückwunsch zum erfolgreichen Abschluss des Labs. Hier sind die wichtigsten Erkenntnisse für dieses Lab. 
+
++ Azure VPN Gateway ist ein Dienst, der eine sichere Verbindung zwischen Ihren lokalen Netzwerken und den virtuellen Azure-Netzwerken herstellt.
++ Site-to-Site (S2S)-Verbindungen verbinden Ihr lokales Netzwerk mit einem virtuellen Azure-Netzwerk unter Verwendung von IPsec/IKE-VPN-Tunneln. Ideal für hybride Cloud-Szenarien.
++ Point-to-Site (P2S) Verbindungen verbinden einzelne Clients von entfernten Standorten aus mit einem virtuellen Azure-Netzwerk. Zu den VPN-Protokollen gehören OpenVPN, IKEv2 oder SSTP. Nützlich für Remotearbeitskräfte.
++ VNet-to-VNet-Verbindungen verbinden zwei oder mehr virtuelle Azure-Netzwerke über IPsec/IKE-VPN-Tunnel. Geeignet für den Einsatz in mehreren Regionen oder mehreren V-Netzen.
++ Die verschiedenen VPN Gateway-SKUs bieten ein unterschiedliches Maß an Leistung, Durchsatz und Funktionen. 
+

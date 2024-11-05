@@ -6,7 +6,7 @@ layout: home
 
 # Inhaltsverzeichnis
 
-Erforderliche Übungsdateien können [HIER](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/archive/master.zip) HERUNTERGELADEN werden
+Die erforderlichen Übungsdateien können [HIER HERUNTERGELADEN](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/archive/master.zip) werden.
 
 Scrollen Sie nach unten für Demonstrationen. 
 
