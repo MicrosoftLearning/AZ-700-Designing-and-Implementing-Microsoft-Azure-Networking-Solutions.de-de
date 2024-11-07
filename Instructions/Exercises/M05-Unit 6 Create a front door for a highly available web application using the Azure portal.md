@@ -19,7 +19,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 1: Erstellen von zwei Instanzen einer Web-App
 + Aufgabe 2: Erstellen einer Front Door-Instanz für Ihre Anwendung
 + Aufgabe 3: Anzeigen von Azure Front Door in Aktion
-+ Aufgabe 4: Bereinigen der Ressourcen
+
 
 **Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20Front%20Door%20profile%20for%20a%20highly%20available%20web%20application)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
@@ -131,9 +131,9 @@ Nachdem Sie eine Front Door-Instanz erstellt haben, dauert es einige Minuten, b
 
    Glückwunsch! Sie haben eine Azure Front Door-Instanz konfiguriert und getestet.
 
-## Aufgabe 4: Bereinigen der Ressourcen
+## Bereinigen von Ressourcen
 
-   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
+>**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 
@@ -145,4 +145,24 @@ Nachdem Sie eine Front Door-Instanz erstellt haben, dauert es einige Minuten, b
 
    ```
 
-    >**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+>**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+
+## Erweitern Ihrer Lernerfahrung mit Copilot
+
+Copilot kann Sie beim Erlernen der Verwendung von Azure-Skripttools unterstützen. Copilot kann Sie auch in Bereichen unterstützen, die nicht im Lab behandelt werden oder in denen Sie weitere Informationen benötigen. Öffnen Sie einen Edge-Browser, und wählen Sie „Copilot“ (rechts oben) aus, oder navigieren Sie zu *copilot.microsoft.com*. Nehmen Sie sich einige Minuten Zeit, um diese Prompts auszuprobieren.
++ Was sind die Unterschiede zwischen Azure Application Gateway und Azure Front Door? Geben Sie Beispiele an, in denen ich jedes Produkt verwenden würde.
++ Stellen Sie eine Checkliste bereit, die Sie beim Konfigurieren von Azure Front Door tun müssen.
++ Was ist ein Ursprung in Azure Front Door und wie unterscheidet er sich von einem Endpunkt?
+
+
+## Weiterlernen im eigenen Tempo
+
++ [Einführung in Azure Front Door](https://learn.microsoft.com/training/modules/intro-to-azure-front-door/). In diesem Modul lernen Sie, wie Azure Front Door Ihre Anwendungen schützen kann.
++ [Führen Sie einen Lastenausgleich für Ihren Webdienst-Datenverkehr mit Front Door durch](https://learn.microsoft.com/training/modules/create-first-azure-front-door/). In diesem Modul erfahren Sie, wie Sie Azure Front Door erstellen und konfigurieren. 
+
+## Wichtige Erkenntnisse
+
+Herzlichen Glückwunsch zum erfolgreichen Abschluss des Labs. Hier sind die wichtigsten Erkenntnisse für dieses Lab. 
++ Azure Front Door ist ein cloudbasierter Dienst, der Ihre Anwendungen überall auf der ganzen Welt bereitstellt. 
++ Azure Front Door nutzt die Ebene 7 des Lastenausgleichs, um den Datenverkehr über mehrere Regionen und Endpunkte zu verteilen.
++ Azure Front Door unterstützt unterschiedliche Traffic-Routing-Methoden, um zu ermitteln, wie Ihr HTTP/HTTPS-Traffic verteilt wird. Die Routing-Methoden sind: Latenz, Priorität, gewichtet und Sitzungsaffinität. 

@@ -21,7 +21,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 5: Konfigurieren von DDoS-Diagnoseprotokollen
 + Aufgabe 6: Konfigurieren von DDoS-Warnungen
 + Aufgabe 7: Testen mit Simulationspartnern
-+ Aufgabe 8: Bereinigen der Ressourcen
+
 
 **Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20Azure%20DDoS%20Protection%20on%20a%20virtual%20network)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
@@ -228,7 +228,7 @@ In diesem Schritt erstellen Sie einen virtuellen Computer, weisen ihm eine öffe
 
    ![Metriken, die eine Ressource bei einem DDoS-Angriff zeigen](../media/metrics-showing-resource-under-attack.png)
 
-## Aufgabe 8: Bereinigen der Ressourcen
+## Bereinigen von Ressourcen
 
 >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
@@ -240,4 +240,26 @@ In diesem Schritt erstellen Sie einen virtuellen Computer, weisen ihm eine öffe
    Remove-AzResourceGroup -Name 'MyResourceGroup' -Force -AsJob
    ```
 
-    >**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+>**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+
+## Erweitern Ihrer Lernerfahrung mit Copilot
+
+Copilot kann Sie beim Erlernen der Verwendung von Azure-Skripttools unterstützen. Copilot kann Sie auch in Bereichen unterstützen, die nicht im Lab behandelt werden oder in denen Sie weitere Informationen benötigen. Öffnen Sie einen Edge-Browser, und wählen Sie „Copilot“ (rechts oben) aus, oder navigieren Sie zu *copilot.microsoft.com*. Nehmen Sie sich einige Minuten Zeit, um diese Prompts auszuprobieren.
++ Was sind DDoS-Angriffe? Wie werden DDoS-Angriffe kategorisiert und gibt es Gegenstrategien?
++ Stellen Sie eine Tabelle bereit, die die beiden verschiedenen Azure DDoS Protection-Stufen zusammenfasst.
++ Welche Azure-Ressourcen können durch DDoS Protection geschützt werden?
+
+
+## Weiterlernen im eigenen Tempo
+
++ [Einführung in Azure DDoS Protection](https://learn.microsoft.com/training/modules/introduction-azure-ddos-protection/). In diesem Modul bewerten Sie Azure DDoS Protection, seine Funktionen und Architekturoptionen.
++ [Entwerfen und Implementieren von Netzwerksicherheit](https://learn.microsoft.com/training/modules/design-implement-network-security-monitoring/). In diesem Modul erfahren Sie mehr über Azure DDoS Protection und stellen diese bereit.
+
+  
+## Wichtige Erkenntnisse
+
+Herzlichen Glückwunsch zum erfolgreichen Abschluss des Labs. Hier sind die wichtigsten Erkenntnisse für dieses Lab. 
++ Ein DDoS-Angriff ist ein schädlicher Versuch, die Ressourcen einer Anwendung zu überlasten und die Anwendung für berechtigte Benutzende nicht mehr verfügbar zu machen. 
++ Azure DDoS Protection wehrt DDoS-Angriffe ab. Er wird automatisch optimiert, um Ihre spezifischen Azure-Ressourcen in einem virtuellen Netzwerk zu schützen. 
++ Zu den Funktionen von Azure DDoS Proectection gehören: ständige Überwachung des Datenverkehrs, adaptive Optimierung in Echtzeit sowie Telemetrie und Warnungen.  
++ Azure DDoS Protection unterstützt zwei Tariftypen, DDoS-IP-Schutz und DDoS-Netzwerkschutz.
