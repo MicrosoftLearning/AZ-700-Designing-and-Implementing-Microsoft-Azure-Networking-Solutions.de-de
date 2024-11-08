@@ -29,7 +29,7 @@ Das folgende Diagramm veranschaulicht die Umgebung, die Sie in dieser Übung ber
 + Aufgabe 11: Anzeigen detaillierter Metriken
 + Aufgabe 12: Anzeigen der Ressourcenintegrität
 + Aufgabe 13: Konfigurieren von Diagnoseeinstellungen
-+ Aufgabe 14: Bereinigen der Ressourcen
+
 
 **Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Monitor%20a%20load%20balancer%20resource%20using%20Azure%20Monitor)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
@@ -397,7 +397,7 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
 
    ![Seite „Diagnoseeinstellung“ für Lastenausgleich](../media/diagnostic-settings-2.png)
 
-## Aufgabe 14: Bereinigen der Ressourcen
+## Bereinigen von Ressourcen
 
    >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
@@ -409,4 +409,26 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
    Remove-AzResourceGroup -Name 'IntLB-RG' -Force -AsJob
    ```
 
-    >**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+>**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+    
+## Erweitern Ihrer Lernerfahrung mit Copilot
+
+Copilot kann Sie beim Erlernen der Verwendung von Azure-Skripttools unterstützen. Copilot kann Sie auch in Bereichen unterstützen, die nicht im Lab behandelt werden oder in denen Sie weitere Informationen benötigen. Öffnen Sie einen Edge-Browser, und wählen Sie „Copilot“ (rechts oben) aus, oder navigieren Sie zu *copilot.microsoft.com*. Nehmen Sie sich einige Minuten Zeit, um diese Prompts auszuprobieren.
++ Fassen Sie die Azure-Tools zusammen, die für die Überwachung virtueller Netzwerke zur Verfügung stehen.
++ Welche Überwachungstools für Azure Network Watcher gibt es?
+
+## Weiterlernen im eigenen Tempo
+
++ [Einführung in Azure Monitor](https://learn.microsoft.com/training/modules/intro-to-azure-monitor/). In diesem Modul erfahren Sie, wie Sie Azure Monitor verwenden, um Einblicke in die Leistung und den Betrieb Ihrer Azure-Ressourcen bereitzustellen.
++ [Verwenden von Netzwerküberwachungstools zum Überwachen der gesamten Azure-Netzwerkinfrastruktur und zur Problembehandlung](https://learn.microsoft.com/training/modules/troubleshoot-azure-network-infrastructure/). In diesem Modul erfahren Sie, wie Sie mithilfe von Tools, Diagnosen und Protokollen von Azure Network Watcher Netzwerkprobleme in Ihrer Azure-Infrastruktur finden und beheben können.
+
+## Wichtige Erkenntnisse
+
+Herzlichen Glückwunsch zum erfolgreichen Abschluss des Labs. Hier sind die wichtigsten Erkenntnisse für dieses Lab. 
+
++ Azure Monitor bietet Features und Tools zum Erfassen, Verwalten und Analysieren von IT-Daten aus all Ihren Azure-, anderen Cloud- und lokalen Ressourcen.
++ Metriken sind quantitative Messungen, die Momentaufnahmen der Anwendungs- oder Ressourcenleistung zeigen. Metriken sind in der Regel numerische Werte, die im Zeitverlauf gemessen werden können.
++ Protokolle sind Textdatensätze von Ereignissen, Aktionen und Nachrichten, die in einer Ressource oder Anwendung auftreten. 
++ Azure Monitor Insights, Visualisierungen und Dashboards können Überwachungsinformationen über Ihre Anwendungen abrufen und übertragen.
++ Warnungen informieren Sie über kritische Zustände und können Korrekturmaßnahmen einleiten. Die Regeln für Warnungen können auf Metrik- oder Protokolldaten basieren. 
+    

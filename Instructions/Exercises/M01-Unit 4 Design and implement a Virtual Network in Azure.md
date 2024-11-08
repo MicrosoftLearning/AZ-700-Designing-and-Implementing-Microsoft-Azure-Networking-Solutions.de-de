@@ -167,8 +167,8 @@ Copilot kann Sie beim Erlernen der Verwendung von Azure-Skripttools unterstütze
 
 ## Weiterlernen im eigenen Tempo
 
-+ [Entwerfen Sie ein IP-Adressierungsschema für Ihren Azure-Einsatz](https://learn.microsoft.com/en-us/training/modules/design-ip-addressing-for-azure/). In diesem Modul lernen Sie die öffentlichen und privaten IP-Adressierungsmöglichkeiten von virtuellen Azure-Netzwerken kennen.
-+ [Einführung in Azure Virtual Network](https://learn.microsoft.com/en-us/training/modules/introduction-to-azure-virtual-networks/): In diesem Modul erfahren Sie, wie Sie Azure-Netzwerkdienste entwerfen und implementieren. Sie erfahren mehr über virtuelle Netzwerke, öffentliche und private IPs, DNS, virtuelles Netzwerk-Peering, Routing und Azure Virtual NAT.
++ [Entwerfen Sie ein IP-Adressierungsschema für Ihren Azure-Einsatz](https://learn.microsoft.com/training/modules/design-ip-addressing-for-azure/). In diesem Modul lernen Sie die öffentlichen und privaten IP-Adressierungsmöglichkeiten von virtuellen Azure-Netzwerken kennen.
++ [Einführung in Azure Virtual Network](https://learn.microsoft.com/training/modules/introduction-to-azure-virtual-networks/): In diesem Modul erfahren Sie, wie Sie Azure-Netzwerkdienste entwerfen und implementieren. Sie erfahren mehr über virtuelle Netzwerke, öffentliche und private IPs, DNS, virtuelles Netzwerk-Peering, Routing und Azure Virtual NAT.
 
 ## Wichtige Erkenntnisse
 

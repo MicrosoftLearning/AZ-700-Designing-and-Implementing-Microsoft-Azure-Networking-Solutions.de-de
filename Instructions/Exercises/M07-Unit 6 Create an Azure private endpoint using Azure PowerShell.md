@@ -43,7 +43,6 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 - Aufgabe 4: Erstellen eines privaten Endpunkts
 - Aufgabe 5: Konfigurieren der privaten DNS-Zone
 - Aufgabe 6: Testen der Konnektivität mit dem privaten Endpunkt
-- Aufgabe 7: Bereinigen der Ressourcen
 
 ## Aufgabe 1: Erstellen einer Ressourcengruppe und Bereitstellen der erforderlichen Web-App
 
@@ -401,13 +400,29 @@ Als Name der Web-App wird die private IP-Adresse **10.0.0.5** zurückgegeben. Di
 
 1. Öffnen Sie in der Bastionhostverbindung mit **myVM** den Internet Explorer.
 1. Geben Sie die URL Ihrer Web-App, **https://&lt;your-webapp-name&gt;.azurewebsites.net**, ein.
-1. Sie erhalten die Standard-Web-App-Seite, wenn Ihre Anwendung noch nicht bereitgestellt wurde: ![Screenshot der Seite in Azure, die anzeigt, dass ein App-Dienst eingerichtet ist und ausgeführt wird](../media/web-app-default-page.png)
+1. Sie erhalten die Standardseite für Web-Apps, wenn Ihre App noch nicht bereitgestellt wurde: ![Screenshot der Seite in Azure, die anzeigt, dass ein App-Dienst eingerichtet ist und läuft](../media/web-app-default-page.png)
 1. Trennen Sie die Verbindung zu **myVM**.
 
-## Aufgabe 7: Bereinigen der Ressourcen
+## Bereinigen von Ressourcen
 
 Wenn Sie die Verwendung des privaten Endpunkts und des virtuellen Computers beendet haben, verwenden Sie [Remove-AzResourceGroup](https://docs.microsoft.com/en-us/powershell/module/az.resources/remove-azresourcegroup), um die Ressourcengruppe und alle darin enthaltenen Ressourcen zu löschen:
 
 ```PowerShell
 Remove-AzResourceGroup -Name CreatePrivateEndpointQS-rg -Force -AsJob
 ```
+
+## Erweitern Ihrer Lernerfahrung mit Copilot
+
+Copilot kann Sie beim Erlernen der Verwendung von Azure-Skripttools unterstützen. Copilot kann Sie auch in Bereichen unterstützen, die nicht im Lab behandelt werden oder in denen Sie weitere Informationen benötigen. Öffnen Sie einen Edge-Browser, und wählen Sie „Copilot“ (rechts oben) aus, oder navigieren Sie zu *copilot.microsoft.com*. Nehmen Sie sich einige Minuten Zeit, um diese Prompts auszuprobieren.
++ Stellen Sie ein Beispiel dafür bereit, wann ein privater Endpunkt anstelle eines Dienstendpunkts verwendet werden sollte.
++ Wie kann ich die Fehlerbehebung bei Verbindungsproblemen zwischen privaten Endpunkten durchführen?
+
+## Weiterlernen im eigenen Tempo
+
++ [Einführung in Azure Private Link](https://learn.microsoft.com/training/modules/introduction-azure-private-link/). In diesem Modul lernen Sie, wie Azure Private Link die private Konnektivität zu Azure-Diensten aktiviert, einschließlich seiner Funktionen, seiner Funktionsweise und seiner Anwendungsfälle.
++ [Entwerfen und Implementieren des privaten Zugriffs auf Azure-Dienste](https://learn.microsoft.com/en-us/training/modules/design-implement-private-access-to-azure-services/): In diesem Modul lernen Sie, den privaten Zugang zu Azure-Diensten mit Azure Private Link und virtuellen Netzwerkdienst-Endpunkten zu entwerfen und zu implementieren.
+
+## Wichtige Erkenntnisse
+
++ Mit Azure Private Link können Sie über einen privaten Endpunkt in Ihrem virtuellen Netzwerk auf Azure-PaaS-Dienste (beispielsweise Azure Storage und SQL-Datenbank) sowie auf in Azure gehostete kundeneigene Dienste/Partnerdienste zugreifen.
++ Ein privater Endpunkt ist eine Netzwerkschnittstelle, die eine private IP-Adresse aus Ihrem virtuellen Netzwerk verwendet. Diese Netzwerkschnittstelle bietet eine private und sichere Verbindung zwischen Ihnen und einem von Azure Private Link unterstützten Dienst. 
