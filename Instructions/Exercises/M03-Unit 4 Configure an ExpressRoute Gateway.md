@@ -62,9 +62,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 1. Vergewissern Sie sich, dass das VNet erfolgreich überprüft wurde, und wählen Sie dann **Erstellen** aus.
 
-> [!Note]  
->
-> Wenn Sie ein virtuelles Dual-Stack-Netzwerk verwenden und planen, IPv6-basiertes privates Peering über ExpressRoute zu nutzen, wählen Sie „IP6-Adressraum hinzufügen“ aus und geben Sie die Werte für den IPv6-Adressbereich ein.
+>**Hinweis:** Wenn Sie ein virtuelles Dual-Stack-Netzwerk verwenden und planen, IPv6-basiertes privates Peering über ExpressRoute zu nutzen, wählen Sie „IP6-Adressraum hinzufügen“ aus und geben Sie Werte für den IPv6-Adressbereich ein.
 
 ## Aufgabe 2: Erstellen des virtuellen Netzwerkgateways
 
@@ -87,7 +85,6 @@ In dieser Übung führen Sie die folgenden Schritte aus:
    | **Öffentliche IP-Adresse**     |                            |
    | Öffentliche IP-Adresse         | Neu erstellen                 |
    | Name der öffentlichen IP-Adresse    | CoreServicesVnetGateway-IP |
-   | SKU der öffentlichen IP-Adresse     | Basic                      |
    | Zuweisung                | Nicht konfigurierbar           |
 
 1. Klicken Sie auf **Überprüfen + erstellen**.
@@ -96,8 +93,25 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 1. Wählen Sie nach Abschluss der Bereitstellung die Option **Zu Ressourcengruppe wechseln** aus.
 
-> [!Note]
->
-> Das Bereitstellen eines Gateways kann bis zu 45 Minuten in Anspruch nehmen.
+>**Hinweis:** Die Bereitstellung eines Gateways kann bis zu 45 Minuten dauern.
 
-Glückwunsch! Sie haben erfolgreich ein virtuelles Netzwerk, ein Gatewaysubnetz und ein ExpressRoute-Gateway erstellt.
+
+## Erweitern Ihrer Lernerfahrung mit Copilot
+
+Copilot kann Sie beim Erlernen der Verwendung von Azure-Skripttools unterstützen. Copilot kann Sie auch in Bereichen unterstützen, die nicht im Lab behandelt werden oder in denen Sie weitere Informationen benötigen. Öffnen Sie einen Edge-Browser, und wählen Sie „Copilot“ (rechts oben) aus, oder navigieren Sie zu *copilot.microsoft.com*. Nehmen Sie sich einige Minuten Zeit, um diese Prompts auszuprobieren.
++ Wie unterscheidet sich Azure ExpressRoute von Virtual WAN? Können Sie die Technologien gemeinsam nutzen? Bereitstellen von Beispielen.
++ Was sollte ich bei der Wahl zwischen einem ExpressRoute-Anbietermodell und ExpressRoute Direct beachten?
++ Erstellen Sie eine Tabelle, die die Azure ExpressRoute SKU und ihre Funktionen zusammenfasst.
+
+## Weiterlernen im eigenen Tempo
+
++ [Einführung in Azure ExpressRoute](https://learn.microsoft.com/training/modules/intro-to-azure-expressroute/). In diesem Modul erfahren Sie, was Azure ExpressRoute ist und welche Funktionen es bietet.
++ [Entwerfen und implementieren Sie ExpressRoute](https://learn.microsoft.com/training/modules/design-implement-azure-expressroute/). In diesem Modul lernen Sie, wie Sie Azure ExpressRoute, ExpressRoute Global Reach und ExpressRoute FastPath entwerfen und implementieren.
+
+## Wichtige Erkenntnisse
+
+Herzlichen Glückwunsch zum erfolgreichen Abschluss des Labs. Hier sind die wichtigsten Erkenntnisse für dieses Lab. 
++ Azure ExpressRoute ermöglicht es Unternehmen, ihre lokalen Netzwerke direkt mit den Clouds Microsoft Azure und Microsoft 365 zu verbinden. Azure ExpressRoute verwendet eine dedizierte Verbindung mit hoher Bandbreite, die von einem Microsoft-Partner bereitgestellt wird.
++ Microsoft garantiert für dedizierte ExpressRoute-Verbindungen eine Verfügbarkeit von mindestens 99,95 %. Die Verbindung ist privat und läuft über eine Standleitung. Dritte können den Datenverkehr nicht abfangen.
++ Sie können eine Verbindung zwischen Ihrem lokalen Netzwerk und der Microsoft-Cloud auf vier verschiedene Arten erstellen: CloudExchange-Zusammenstellung, Point-to-Point-Ethernet-Verbindung, Any-to-Any-Verbindung (IPVPN) und ExpressRoute Direct.
++ Die ExpressRoute-Funktionen werden durch die SKU bestimmt: Lokal, Standard und Premuium. 

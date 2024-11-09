@@ -24,7 +24,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 8: Einschränken des Netzwerkzugriffs auf ein Subnetz
 + Aufgabe 9: Erstellen von virtuellen Computern
 + Aufgabe 10: Bestätigen des Zugriffs auf das Speicherkonto
-+ Aufgabe 11: Bereinigen der Ressourcen
+
 
 **Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Restrict%20network%20access%20to%20PaaS%20resources%20with%20virtual%20network%20service%20endpoints)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
@@ -329,9 +329,9 @@ Sie erhalten keine Antworten, da die dem Subnetz „Private“ zugeordnete Netzw
 
 Ergebnisse: Sie haben dieses Lab nun abgeschlossen.
 
-## Aufgabe 11: Bereinigen der Ressourcen
+## Bereinigen von Ressourcen
 
-   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
+>**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 
@@ -341,4 +341,21 @@ Ergebnisse: Sie haben dieses Lab nun abgeschlossen.
    Remove-AzResourceGroup -Name 'myResourceGroup' -Force -AsJob
    ```
 
-    >**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+>**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+
+## Erweitern Ihrer Lernerfahrung mit Copilot
+
+Copilot kann Sie beim Erlernen der Verwendung von Azure-Skripttools unterstützen. Copilot kann Sie auch in Bereichen unterstützen, die nicht im Lab behandelt werden oder in denen Sie weitere Informationen benötigen. Öffnen Sie einen Edge-Browser, und wählen Sie „Copilot“ (rechts oben) aus, oder navigieren Sie zu *copilot.microsoft.com*. Nehmen Sie sich einige Minuten Zeit, um diese Prompts auszuprobieren.
++ Worin besteht der Unterschied zwischen Azure-Service-Endpunkten und privaten Endpunkten?
++ Welche Azure-Dienste können Service-Endpunkte verwenden?
++ Welche Schritte sind erforderlich, um den Zugriff auf Azure Storage mithilfe von Dienstendpunkten einzuschränken?
+
+## Weiterlernen im eigenen Tempo
+
++ [Schützen und Isolieren des Zugriffs auf Azure-Ressourcen mithilfe von Netzwerksicherheitsgruppen und Dienstendpunkten.](https://learn.microsoft.com/training/modules/secure-and-isolate-with-nsg-and-service-endpoints/) In diesem Modul erfahren Sie, wie Sie virtuelle Netzwerkdienst-Endpunkte nutzen können, um den Netzwerkdatenverkehr zu und von Azure-Diensten zu steuern.
+
+## Wichtige Erkenntnisse
++ Virtuelle Dienstendpunkte des Netzwerks erweitern Ihren privaten Adressraum in Azure, indem sie eine direkte Verbindung zu Ihren Azure-Diensten bereitstellen.
++ Mit Dienstendpunkten können Sie Ihre Azure-Ressourcen mit Ihrem virtuellen Netzwerk schützen. Der Dienstdatenverkehr verläuft weiterhin über den Azure-Backbone und nicht über das Internet.
++ Azure-Dienstendpunkte sind für viele Dienste verfügbar, wie z. B.: Azure Storage, Azure SQL Datenbank, und Azure Cosmos DB.
++ Virtuelle Dienstendpunkte im Netzwerk sind standardmäßig nicht von lokalen Netzwerken aus zugänglich. Sie müssen NAT-IP-Adressen verwenden, um über ein lokales Netzwerk auf Ressourcen zuzugreifen.

@@ -17,7 +17,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 1: Erstellen eines virtuellen WAN
 + Aufgabe 2: Erstellen eines Hubs mithilfe des Azure-Portals
 + Aufgabe 3: Verbinden eines VNet mit dem virtuellen Hub
-+ Aufgabe 4: Bereinigen der Ressourcen
+
 
 **Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20virtual%20WAN%20using%20the%20Azure%20portal)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
@@ -101,11 +101,9 @@ Ein Hub enthält Gateways für Verbindungen vom Typ „Site-to-Site“, „Expre
 
 1. Wählen Sie **Erstellen** aus.
 
-Glückwunsch! Sie haben ein Virtual WAN und einen Virtual WAN Hub erstellt und das ResearchVNet mit dem Hub verbunden.
+## Bereinigen von Ressourcen
 
-## Aufgabe 4: Bereinigen der Ressourcen
-
-   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
+>**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 
@@ -115,4 +113,34 @@ Glückwunsch! Sie haben ein Virtual WAN und einen Virtual WAN Hub erstellt und d
    Remove-AzResourceGroup -Name 'ContosoResourceGroup' -Force -AsJob
    ```
 
-    >**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+>**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+
+## Erweitern Ihrer Lernerfahrung mit Copilot
+
+Copilot kann Sie beim Erlernen der Verwendung von Azure-Skripttools unterstützen. Copilot kann Sie auch in Bereichen unterstützen, die nicht im Lab behandelt werden oder in denen Sie weitere Informationen benötigen. Öffnen Sie einen Edge-Browser, und wählen Sie „Copilot“ (rechts oben) aus, oder navigieren Sie zu *copilot.microsoft.com*. Nehmen Sie sich einige Minuten Zeit, um diese Prompts auszuprobieren.
++ Welche Art von Netzwerkarchitektur verwendet Azure VWAN?
++ Was sind die Unterschiede zwischen Azure VWAN Basic und Standard? Bereitstellen von Beispielen.
++ Kann ein Azure VWAN mit Skripting-Tools erstellt werden?
+
+## Weiterlernen im eigenen Tempo
+
++ [Einführung in Azure Virtual WAN](https://learn.microsoft.com/training/modules/introduction-azure-virtual-wan/). In diesem Modul lernen Sie die Funktionen und Merkmale von Azure Virtual WAN kennen. 
++ [Entwerfen und implementieren Sie hybride Netzwerke](https://learn.microsoft.com/training/modules/design-implement-hybrid-networking/). In diesem Modul lernen Sie, wie Sie Azure Virtual WAN entwerfen und implementieren.
+
+## Wichtige Erkenntnisse
+
+Herzlichen Glückwunsch zum erfolgreichen Abschluss des Labs. Hier sind die wichtigsten Erkenntnisse für dieses Lab. 
+
++ Azure Virtual WAN ist ein Netzwerkdienst, der viele Netzwerk-, Sicherheits- und Routingfunktionen auf einer einzigen Bedienoberfläche vereint
++ Die virtuelle WAN-Architektur ist eine Hub-and-Spoke-Architektur mit integrierter Skalierung und Leistung für Zweigstellen, Benutzende, ExpressRoute-Schaltungen und virtuelle Netzwerke.
++ Es gibt drei Hauptanwendungsfälle für virtuelles WAN: Standort zu Standort, Punkt zu Standort und ExpressRoute. 
++ Es gibt zwei Arten von virtuellen WANs: Basic (nur Site-to-Site VPN) und Standard.
+
+
+
+
+
+
+
+
+

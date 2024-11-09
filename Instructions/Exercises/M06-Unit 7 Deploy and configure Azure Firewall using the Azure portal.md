@@ -24,7 +24,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 8: Konfigurieren einer NAT-Zielregel (DNAT)
 + Aufgabe 9: Ändern der primären und sekundären DNS-Adresse für die Netzwerkschnittstelle des Servers
 + Aufgabe 10: Testen der Firewall
-+ Aufgabe 11: Bereinigen der Ressourcen
+
 
 **Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20and%20configure%20Azure%20Firewall%20using%20the%20Azure%20portal)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
@@ -364,7 +364,7 @@ In dieser letzten Aufgabe testen Sie die Firewall, um sicherzustellen, dass die 
 
     ![RDP-Sitzung auf dem Server „Srv-Work“ – Browser für microsoft.com blockiert](../media/remote-desktop-connection-3.png)
 
-## Aufgabe 11: Bereinigen der Ressourcen
+## Bereinigen von Ressourcen
 
 >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
@@ -376,4 +376,24 @@ In dieser letzten Aufgabe testen Sie die Firewall, um sicherzustellen, dass die 
    Remove-AzResourceGroup -Name 'Test-FW-RG' -Force -AsJob
    ```
 
-    >**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+>**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+
+## Erweitern Ihrer Lernerfahrung mit Copilot
+
+Copilot kann Sie beim Erlernen der Verwendung von Azure-Skripttools unterstützen. Copilot kann Sie auch in Bereichen unterstützen, die nicht im Lab behandelt werden oder in denen Sie weitere Informationen benötigen. Öffnen Sie einen Edge-Browser, und wählen Sie „Copilot“ (rechts oben) aus, oder navigieren Sie zu *copilot.microsoft.com*. Nehmen Sie sich einige Minuten Zeit, um diese Prompts auszuprobieren.
++ Bereitstellen von drei gängigen Anwendungsszenarien für Firewalls. 
++ Stellen Sie eine Tabelle bereit, in der die Funktionen der Azure Firewall SKUs verglichen werden.
++ Beschreiben Sie die drei Typen von Regeln, die Sie für eine Azure-Firewall erstellen können.
+
+## Weiterlernen im eigenen Tempo
+
++ [Einführung in Azure Firewall](https://learn.microsoft.com/training/modules/introduction-azure-firewall/). In diesem Modul lernen Sie, wie Azure Firewall die virtuellen Netzwerkressourcen von Azure schützt, einschließlich Funktionen, Regeln und Bereitstellungsoptionen.
++ [Einführung in Azure Firewall Manager](https://learn.microsoft.com/training/modules/intro-to-azure-firewall-manager/). In diesem Modul lernen Sie, wie Azure Firewall Manager eine zentrale Sicherheitsrichtlinie und Routenverwaltung für cloudbasierte Sicherheitsperimeter bereitstellt.
+
+## Wichtige Erkenntnisse
+
+Herzlichen Glückwunsch zum erfolgreichen Abschluss des Labs. Hier sind die wichtigsten Erkenntnisse für dieses Lab. 
++ Eine Firewall ist ein Netzwerksicherheitsfeature, das zwischen einem vertrauenswürdigen und einem nicht vertrauenswürdigen Netzwerk wie dem Internet liegt. Die Firewall hat die Aufgabe, den Netzwerkverkehr zu analysieren und dann zuzulassen oder zu verweigern.
++ Azure Firewall ist ein cloudbasierter Firewalldienst. In den meisten Konfigurationen wird Azure Firewall innerhalb eines virtuellen Hub-Netzwerks bereitgestellt. Der Verkehr zu und von den virtuellen Spoke-Netzwerken und dem lokalen Netzwerk wird über die Firewall geleitet.
++ Firewall-Regeln überwachen den Netzwerkverkehr. Azure Firewall hat drei Typen von Regeln: Anwendung, Netzwerk und NAT. 
++ Azure Firewall wird in drei SKUs angeboten: Standard, Premium und Basic.

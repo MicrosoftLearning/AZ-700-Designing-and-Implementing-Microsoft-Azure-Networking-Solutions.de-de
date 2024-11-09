@@ -164,4 +164,22 @@ In diesem Abschnitt erstellen Sie zwei Test-VMs, um die Konfiguration der privat
 
 1. Alternativ können Sie den Befehl „nslooku TestVM2.contoso.com“ eingeben und überprüfen, ob Sie einen erfolgreichen Namensauflösungsdatensatz für VM2 erhalten.
 
-Herzlichen Glückwunsch! Sie haben eine private DNS-Zone erstellt, eine Verknüpfung für Namensauflösung und automatische Registrierung hinzugefügt und die Namensauflösung in Ihrer Konfiguration getestet.
+## Erweitern Ihrer Lernerfahrung mit Copilot
+
+Copilot kann Sie beim Erlernen der Verwendung von Azure-Skripttools unterstützen. Copilot kann Sie auch in Bereichen unterstützen, die nicht im Lab behandelt werden oder in denen Sie weitere Informationen benötigen. Öffnen Sie einen Edge-Browser, und wählen Sie „Copilot“ (rechts oben) aus, oder navigieren Sie zu *copilot.microsoft.com*. Nehmen Sie sich einige Minuten Zeit, um diese Prompts auszuprobieren.
++ Was ist der Unterschied zwischen Azure DNS und Azure Private DNS? Geben Sie Beispiele für die Verwendung von Azure Private DNS.
++ Welchen Zweck hat die automatische Registrierung bei der Erstellung einer Azure DNS-Zone?
+
+## Weiterlernen im eigenen Tempo
+
++ [Einführung in Azure DNS](https://learn.microsoft.com/training/modules/intro-to-azure-dns/) In diesem Modul wird erläutert, was Azure DNS ist, wie es funktioniert und wann Sie Azure DNS als Lösung verwenden sollten, um die Anforderungen Ihrer Organisation zu erfüllen.
++ [Hosten Ihrer Domäne in Azure DNS.](https://learn.microsoft.com/training/modules/host-domain-azure-dns/) In diesem Modul erstellen Sie eine DNS-Zone und DNS-Einträge, um die Domain einer IP-Adresse zuzuordnen. Sie testen auch, ob der Domänenname auf Ihrem Webserver aufgelöst werden kann.
+
+## Wichtige Erkenntnisse
+
+Herzlichen Glückwunsch zum erfolgreichen Abschluss des Labs. Hier sind die wichtigsten Erkenntnisse für dieses Lab. 
+
++ Azure DNS ist ein Clouddienst, mit dem Sie DNS-Domänen (Domain Name System) hosten und verwalten können, die auch als DNS-Zonen bezeichnet werden. 
++ Öffentliche Azure DNS-Zonen hosten Daten zu Domänennamenszonen für Einträge, die von jedem Host im Internet aufgelöst werden sollen.
++ Azure Private DNS-Zonen ermöglichen Ihnen die Konfiguration eines privaten DNS-Zonen-Namensraums für private Azure-Ressourcen.
++ Eine DNS-Zone ist eine Sammlung von DNS-Einträgen. DNS-Einträge liefern Informationen über die Domäne.

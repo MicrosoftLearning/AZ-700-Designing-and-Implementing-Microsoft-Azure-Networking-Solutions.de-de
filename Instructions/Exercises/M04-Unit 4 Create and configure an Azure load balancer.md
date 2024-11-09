@@ -276,7 +276,7 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
 
 ## Bereinigen von Ressourcen
 
-   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
+>**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 
@@ -286,4 +286,25 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
    Remove-AzResourceGroup -Name 'IntLB-RG' -Force -AsJob
    ```
 
-    >**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+>**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+
+## Erweitern Ihrer Lernerfahrung mit Copilot
+
+Copilot kann Sie beim Erlernen der Verwendung von Azure-Skripttools unterstützen. Copilot kann Sie auch in Bereichen unterstützen, die nicht im Lab behandelt werden oder in denen Sie weitere Informationen benötigen. Öffnen Sie einen Edge-Browser, und wählen Sie „Copilot“ (rechts oben) aus, oder navigieren Sie zu *copilot.microsoft.com*. Nehmen Sie sich einige Minuten Zeit, um diese Prompts auszuprobieren.
++ Wie unterscheiden sich die öffentlichen und privaten Azure Load Balancer? Geben Sie für jeden Typ ein Beispielszenario an.
++ Stellen Sie eine Tabelle bereit, in der die Azure Load Balancer Basis- und Standard-SKUs verglichen werden.
++ Wie entscheidet der Azure Load Balancer über die Verarbeitung eingehender Anfragen?
+
+
+## Weiterlernen im eigenen Tempo
++ [Einführung in Azure Load Balancer](https://learn.microsoft.com/training/modules/intro-to-azure-load-balancer/) In diesem Modul wird erläutert, was Azure Load Balancer ist, wie er funktioniert und wann Sie Load Balancer als Lösung verwenden sollten, um die Anforderungen Ihrer Organisation zu erfüllen.
++ [Fehlerbehebung bei der eingehenden Netzwerkkonnektivität für Azure Load Balancer](https://learn.microsoft.com/en-us/training/modules/troubleshoot-inbound-connectivity-azure-load-balancer/). In diesem Modul identifizieren und beheben Sie häufige Probleme mit der eingehenden Konnektivität von Azure Load Balancer.
+
+## Wichtige Erkenntnisse
+
+Herzlichen Glückwunsch zum erfolgreichen Abschluss des Labs. Hier sind die wichtigsten Erkenntnisse für dieses Lab. 
++ Lastenausgleich bezieht sich auf die effiziente Verteilung des eingehenden Netzwerkverkehrs auf eine Gruppe von Back-End-Servern oder -Ressourcen.
++ Azure Load Balancer verteilt eingehende Datenströme vom Frontend des Load Balancers auf Backend-Pool-Instanzen. Diese Ströme werden entsprechend der konfigurierten Lastausgleichsregeln und der Gesundheitsproben verteilt. Bei den Back-End-Pool-Instanzen kann es sich um virtuelle Azure-Maschinen (VMs) oder Skalierungsgruppen für virtuelle Computer handeln.
++ Azure bietet sowohl öffentliche als auch private Load Balancer. Öffentliche Load Balancer sind ideal für Anwendungen, die ins Internet gehen, für ausgehende Verbindungen und für Webanwendungen. Private Load Balancer sind besser für interne Anwendungen, Back-End-Dienste und hybride Szenarien geeignet.
+
+
