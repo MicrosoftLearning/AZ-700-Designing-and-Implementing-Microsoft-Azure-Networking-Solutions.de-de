@@ -173,7 +173,7 @@ Copilot kann Sie beim Erlernen der Verwendung von Azure-Skripttools unterstütze
 ## Wichtige Erkenntnisse
 
 + Azure Virtual Network ist ein Dienst, der den Grundbaustein für Ihr privates Netzwerk in Azure bereitstellt. Eine Instanz des Diensts (ein virtuelles Netzwerk) ermöglicht zahlreichen Azure-Ressourcentypen die sichere Kommunikation untereinander sowie mit dem Internet und lokalen Netzwerken. Stellen Sie sicher, dass sich Adressräume nicht überschneiden. Stellen Sie sicher, dass der Adressraum Ihres virtuellen Netzwerks (CIDR-Block) sich nicht mit anderen Netzwerkbereichen Ihrer Organisation überschneidet.
-+ Alle Azure-Ressourcen in einem virtuellen Netzwerk werden in Subnetzen innerhalb des Netzwerks bereitgestellt. Mit Subnetzen können Sie das virtuelle Netzwerk in ein oder mehrere Subnetze unterteilen und jedem Subnetz einen Teil des Adressraums des virtuellen Netzwerks zuweisen. Die Subnetze sollten nicht den gesamten Adressraum des virtuellen Netzwerks ausmachen. Planen Sie voraus, und reservieren Sie Adressraum für die Zukunft.
++ Alle Azure-Ressourcen in einem virtuellen Netzwerk werden in Subnetzen innerhalb des virtuellen Netzwerks bereitgestellt. Mit Subnetzen können Sie das virtuelle Netzwerk in ein oder mehrere Subnetze unterteilen und jedem Subnetz einen Teil des Adressraums des virtuellen Netzwerks zuweisen. Die Subnetze sollten nicht den gesamten Adressraum des virtuellen Netzwerks ausmachen. Planen Sie voraus, und reservieren Sie Adressraum für die Zukunft.
 
 
 
