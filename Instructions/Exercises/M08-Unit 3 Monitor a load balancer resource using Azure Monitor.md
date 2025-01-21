@@ -31,7 +31,7 @@ Das folgende Diagramm veranschaulicht die Umgebung, die Sie in dieser Übung ber
 + Aufgabe 13: Konfigurieren von Diagnoseeinstellungen
 
 
-**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Monitor%20a%20load%20balancer%20resource%20using%20Azure%20Monitor)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
+   >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Monitor%20a%20load%20balancer%20resource%20using%20Azure%20Monitor)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
 > [!Note]  
 > Sie können geringfügige Unterschiede zwischen den Anweisungen und der Azure-Portal Schnittstelle feststellen, aber das Kernkonzept ist identisch.
@@ -88,7 +88,9 @@ In diesem Abschnitt erstellen Sie ein virtuelles Netzwerk und ein Subnetz.
 In diesem Abschnitt erstellen Sie einen internen Lastenausgleich der Standard-SKU. Wir erstellen in der Übung anstelle eines Lastenausgleichs der Basic-SKU einen Lastenausgleich der Standard-SKU, weil für spätere Übungen eine Standard-SKU-Version des Lastenausgleichs erforderlich ist.
 
 1. Geben Sie auf der Azure-Homepage **Load Balancer** in das Suchfeld ein.
+
 1. Wählen Sie **Load Balancer erstellen** aus.
+
 1. Verwenden Sie auf der Registerkarte **Grundlagen** die Informationen aus der folgenden Tabelle, um den Lastenausgleich zu erstellen.
 
    | **Einstellung**           | **Wert**                |
@@ -221,8 +223,7 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
 
 ### Erstellen einer Test-VM
 
-> [!Note]  
-> Sie können geringfügige Unterschiede zwischen den Anweisungen und der Azure-Portal Schnittstelle feststellen, aber das Kernkonzept ist identisch.
+   >**Hinweis**: Möglicherweise stellen Sie geringfügige Unterschiede zwischen den Anweisungen und der Azure-Portal Schnittstelle fest, aber das Kernkonzept ist identisch.
 
 1. Geben Sie auf Startseite des Azure-Portals bei der globalen Suche **Virtuelle Computer** ein, und wählen Sie unter „Dienste“ die Option „Virtuelle Computer“ aus.
 
@@ -235,8 +236,9 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
    | Name des virtuellen Computers | **myTestVM**                                 |
    | Region               | **(USA) USA, Westen**                             |
    | Verfügbarkeitsoptionen | **Keine Infrastrukturredundanz erforderlich**    |
-   | Image                | **Windows Server 2019 Datacenter, Gen1**   |
-   | Size                 | **Standard_DS2_v3 – 2 vCPU, 8 GiB Arbeitsspeicher** |
+   | Sicherheitstyp        | **Standard**                                 |
+   | Abbildung                | **Alle Bilder anzeigen** --> **Datacenter für Windows Server 2019**  |
+   | Größe                 | **Standard_DS2_v3 – 2 vCPU, 8 GiB Arbeitsspeicher** |
    | Username             | **TestUser**                                 |
    | Kennwort             | **Bereitstellen eines sicheren Kennworts**                |
    | Kennwort bestätigen     | **Bereitstellen eines sicheren Kennworts**                |
@@ -399,7 +401,7 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
 
 ## Bereinigen von Ressourcen
 
-   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
+>**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 
