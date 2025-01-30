@@ -9,7 +9,7 @@ Exercise:
 
 In dieser Übung erstellen Sie einen internen Lastenausgleich für die fiktive Organisation Contoso Ltd.
 
-**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
+   >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
 ### Geschätzte Dauer: 60 Minuten (einschließlich ca. 45 Minuten Wartezeit für die Bereitstellung)
 
@@ -83,7 +83,7 @@ In diesem Abschnitt erstellen Sie drei VMs, die sich in derselben Verfügbarkeit
 
 3. Stellen Sie die folgenden ARM-Vorlagen bereit, um die für diese Übung erforderlichen VMs zu erstellen:
 
->**Hinweis**: Sie werden aufgefordert, ein Administratorkennwort anzugeben.
+   >**Hinweis**: Sie werden aufgefordert, ein Administratorkennwort anzugeben.
 
    ```powershell
    $RGName = "IntLB-RG"
@@ -118,7 +118,9 @@ In diesem Abschnitt erstellen Sie einen internen Lastenausgleich der Standard-SK
    | Tarif                  | **Regional**             |
 
 1. Wählen Sie **Weiter: Front-End-IP-Konfigurationen** aus.
+   
 1. Wählen Sie „Front-End-IP hinzufügen“ aus
+
 1. Geben Sie auf dem Blatt **Front-End-IP-Adresse hinzufügen** die Informationen aus der folgenden Tabelle ein, und wählen Sie **Hinzufügen** aus.
 
    | **Einstellung**     | **Wert**                |
@@ -276,7 +278,7 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
 
 ## Bereinigen von Ressourcen
 
->**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
+   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 
@@ -286,7 +288,7 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
    Remove-AzResourceGroup -Name 'IntLB-RG' -Force -AsJob
    ```
 
->**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+   >**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
 
 ## Erweitern Ihrer Lernerfahrung mit Copilot
 

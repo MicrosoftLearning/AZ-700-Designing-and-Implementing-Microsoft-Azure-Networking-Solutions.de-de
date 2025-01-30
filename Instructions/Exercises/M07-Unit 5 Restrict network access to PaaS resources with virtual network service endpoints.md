@@ -26,7 +26,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 10: Bestätigen des Zugriffs auf das Speicherkonto
 
 
-**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Restrict%20network%20access%20to%20PaaS%20resources%20with%20virtual%20network%20service%20endpoints)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
+   >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Restrict%20network%20access%20to%20PaaS%20resources%20with%20virtual%20network%20service%20endpoints)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
 ### Geschätzte Dauer: 35 Minuten
 
@@ -123,7 +123,7 @@ Standardmäßig können alle virtuellen Computer in einem Subnetz mit allen Ress
    | Zieldiensttag | Wählen Sie **Storage** aus.        |
    | Dienst                 | Benutzerdefiniert                    |
    | Zielportbereiche | *                         |
-   | Protocol                | Any                       |
+   | Protocol                | Alle                       |
    | Aktion                  | Allow                     |
    | Priorität                | 100                       |
    | Name                    | Allow-Storage-All         |
@@ -147,7 +147,7 @@ Erstellen Sie eine weitere Ausgangssicherheitsregel, die Kommunikation mit dem I
    | Zieldiensttag | Wählen Sie **Internet** aus.       |
    | Dienst                 | Benutzerdefiniert                    |
    | Zielportbereiche | *                         |
-   | Protocol                | Any                       |
+   | Protocol                | Alle                       |
    | Aktion                  | Deny (Verweigern)                      |
    | Priority                | 110                       |
    | Name                    | Deny-Internet-All         |
@@ -171,7 +171,7 @@ Erstellen Sie eine Eingangssicherheitsregel, die RDP-Datenverkehr (Remote Deskto
    | Destination             | Wählen Sie **VirtualNetwork** aus. |
    | Dienst                 | Benutzerdefiniert                    |
    | Zielportbereiche | 3389                      |
-   | Protocol                | Any                       |
+   | Protocol                | Alle                       |
    | Aktion                  | Allow                     |
    | Priority                | 120                       |
    | Name                    | Allow-RDP-All             |
@@ -325,7 +325,7 @@ Sie erhalten keine Antworten, da die dem Subnetz „Private“ zugeordnete Netzw
 
  Der Zugriff wird verweigert, da sich Ihr Computer nicht im Subnetz „Private“ des Netzwerks „CoreServicesVNet“ befindet.
 
-> **Warnung**: Bevor Sie fortfahren, sollten Sie alle Ressourcen entfernen, die Sie für dieses Lab verwendet haben. Wählen Sie dazu im Azure-Portal „Ressourcengruppen“ aus. Wählen Sie alle Ressourcengruppen aus, die Sie erstellt haben. Wählen Sie auf dem Blatt „Ressourcengruppe“ die Option „Ressourcengruppe löschen“ aus, geben Sie den Namen der Ressourcengruppe ein, und wählen Sie dann „Löschen“ aus. Wiederholen Sie den Vorgang für alle weiteren Ressourcengruppen, die Sie möglicherweise erstellt haben. Wenn Sie diese Aufgabe nicht ausführen, kann das zu Problemen mit anderen Labs führen.
+   >**Warnung**: Bevor Sie fortfahren, sollten Sie alle Ressourcen entfernen, die Sie für dieses Lab verwendet haben. Wählen Sie dazu im Azure-Portal „Ressourcengruppen“ aus. Wählen Sie alle Ressourcengruppen aus, die Sie erstellt haben. Wählen Sie auf dem Blatt „Ressourcengruppe“ die Option „Ressourcengruppe löschen“ aus, geben Sie den Namen der Ressourcengruppe ein, und wählen Sie dann „Löschen“ aus. Wiederholen Sie den Vorgang für alle weiteren Ressourcengruppen, die Sie möglicherweise erstellt haben. Wenn Sie diese Aufgabe nicht ausführen, kann das zu Problemen mit anderen Labs führen.
 
 Ergebnisse: Sie haben dieses Lab nun abgeschlossen.
 
@@ -341,7 +341,7 @@ Ergebnisse: Sie haben dieses Lab nun abgeschlossen.
    Remove-AzResourceGroup -Name 'myResourceGroup' -Force -AsJob
    ```
 
->**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+   >**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
 
 ## Erweitern Ihrer Lernerfahrung mit Copilot
 

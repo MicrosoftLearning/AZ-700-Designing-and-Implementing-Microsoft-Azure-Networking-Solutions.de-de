@@ -9,7 +9,7 @@ Exercise:
 
 In dieser Übung erstellen Sie eine ExpressRoute-Leitung mithilfe des Azure-Portals und des Azure Resource Manager-Bereitstellungsmodells.
 
-**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Provision%20an%20ExpressRoute%20circuit)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
+   >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Provision%20an%20ExpressRoute%20circuit)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
 ### Geschätzte Dauer: 15 Minuten
 
@@ -26,9 +26,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 1. Navigieren Sie in einem Browser zum [Azure-Portal](https://portal.azure.com/) , und melden Sie sich mit Ihrem Azure-Konto an.
 
-   > [!Important]
-   >
-   > Ihre ExpressRoute-Verbindung wird von dem Moment an berechnet, in dem ein Dienstschlüssel ausgegeben wird. Stellen Sie sicher, dass Sie diesen Vorgang ausführen, sobald der Konnektivitätsanbieter dazu bereit ist, die Verbindung bereitzustellen.
+   >**Wichtig**: Ihre ExpressRoute-Leitung wird von dem Moment an berechnet, in dem ein Dienstschlüssel ausgegeben wird. Stellen Sie sicher, dass Sie diesen Vorgang ausführen, sobald der Konnektivitätsanbieter dazu bereit ist, die Verbindung bereitzustellen.
 
 1. Wählen Sie im Menü des Azure-Portals die Option **+ Ressource erstellen** aus. Wählen Sie **Netzwerk** und dann **ExpressRoute** aus, wie in der folgenden Abbildung dargestellt. Wenn ExpressRoute nicht in der Liste angezeigt wird, verwenden Sie **Marketplace durchsuchen**, um danach zu suchen:
 
@@ -55,9 +53,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 + **SKU** bestimmt, ob ein ExpressRoute Local-, ExpressRoute Standard- oder ExpressRoute Premium-Add-On aktiviert wird. Sie können **Local** für die Local-SKU, **Standard** für die Standard-SKU oder **Premium** für das Premium-Add-On angeben. Sie können die SKU ändern, um das Premium-Add-On zu aktivieren.
 
-> [!Important]
->
-> Es ist nicht möglich, die SKU von Standard/Premium in Local zu ändern.
+   >**Wichtig**: Es ist nicht möglich, die SKU von Standard/Premium in Local zu ändern.
 
 + **Abrechnungsmodell** bestimmt den Abrechnungstyp. Sie können **Taktung** für einen Volumentarif und **Unbegrenzt** für einen Tarif mit Datenflatrate auswählen. Sie können den Abrechnungstyp von **Taktung** in **Unbegrenzt** ändern.
 
@@ -104,11 +100,7 @@ Glückwunsch! Sie haben eine ExpressRoute-Leitung erstellt und den Dienstschlüs
 
 Wenn der Bereitstellungsstatus des ExpressRoute-Leitungsdienstanbieters **Bereitstellung** oder **Bereitgestellt** lautet, arbeiten Sie mit Ihrem Dienstanbieter zusammen, um die Leitungsbereitstellung auf Anbieterseite aufzuheben. Microsoft kann weiterhin Ressourcen reservieren und Ihnen Kosten in Rechnung stellen, bis der Dienstanbieter die Bereitstellung der Leitung beendet und Microsoft benachrichtigt.
 
-> [!Note]
->
-> Sie müssen die Verknüpfung aller virtuellen Netzwerke mit der ExpressRoute-Verbindung vor dem Aufheben der Bereitstellung aufheben. Falls dieser Vorgang nicht erfolgreich ist, überprüfen Sie, ob noch virtuelle Netzwerke mit der Verbindung verknüpft sind.
->
-> Wenn der Dienstanbieter die Bereitstellung der Verbindung aufgehoben hat (Bereitstellungsstatus des Dienstanbieters lautet „Not provisioned“ (Nicht bereitgestellt)), können Sie die Verbindung löschen. Damit wird die Abrechnung für die Verbindung beendet.
+   >**Hinweis**: Sie müssen die Verknüpfung aller virtuellen Netzwerke mit der ExpressRoute-Leitung vor dem Aufheben der Bereitstellung aufheben. Falls dieser Vorgang nicht erfolgreich ist, überprüfen Sie, ob noch virtuelle Netzwerke mit der Verbindung verknüpft sind. Wenn der Dienstanbieter die Bereitstellung der Verbindung aufgehoben hat (Bereitstellungsstatus des Dienstanbieters lautet „Not provisioned“ (Nicht bereitgestellt)), können Sie die Verbindung löschen. Damit wird die Abrechnung für die Verbindung beendet.
 
 ## Bereinigen von Ressourcen
 
@@ -116,7 +108,7 @@ Sie können Ihre ExpressRoute-Verbindung löschen. Wählen Sie hierzu das Symbol
 
 ![Azure-Portal – Löschen einer ExpressRoute-Leitung](../media/expressroute-circuit-delete.png)
 
->**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
+   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 
@@ -127,7 +119,7 @@ Sie können Ihre ExpressRoute-Verbindung löschen. Wählen Sie hierzu das Symbol
    Remove-AzResourceGroup -Name 'ExpressRouteResourceGroup' -Force -AsJob
    ```
 
->**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+   >**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
 
 ## Erweitern Ihrer Lernerfahrung mit Copilot
 

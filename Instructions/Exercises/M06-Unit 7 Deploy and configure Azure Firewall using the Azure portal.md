@@ -26,7 +26,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 10: Testen der Firewall
 
 
-**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20and%20configure%20Azure%20Firewall%20using%20the%20Azure%20portal)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
+   >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20and%20configure%20Azure%20Firewall%20using%20the%20Azure%20portal)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
 ### Geschätzte Dauer: 60 Minuten.
 
@@ -113,8 +113,6 @@ In dieser Aufgabe erstellen Sie den virtuellen Workloadcomputer und platzieren i
 
 1. Überprüfen Sie, ob der virtuelle Computer erstellt wurde.
 
-1. Nachdem die Bereitstellung des virtuellen Computers abgeschlossen wurde, wählen Sie **Zu Ressource wechseln** aus.
-
 1. Notieren Sie sich auf der Seite **Übersicht** von **Srv-Work** rechts auf der Seite unter **Netzwerk** die **Private IP-Adresse** für diese VM (z. B. **10.0.2.4**).
 
 ## Aufgabe 4: Bereitstellen der Firewall und der Firewallrichtlinie
@@ -146,13 +144,15 @@ In dieser Aufgabe stellen Sie die Firewall im virtuellen Netzwerk mit einer konf
 
    ![Hinzufügen einer öffentlichen IP-Adresse zur Firewall](../media/assign-public-ip-to-firewall.png)
 
-1. Überprüfen Sie alle Einstellungen, um sicherzustellen, dass sie mit dem Screenshot unten übereinstimmen.
+1. Wir verwenden den Firewall Manager nicht, deaktivieren Sie daher das Kontrollkästchen für **Aktivieren der Firewallverwaltungs-NIC**. 
+
+1. Überprüfen Sie Ihre Einstellungen. 
 
    ![Erstellen einer Firewall – Überprüfen der Einstellungen](../media/review-all-configurations-for-firewall.png)
 
-1. Klicken Sie auf **Überprüfen + erstellen**.
+1. Fahren Sie mit **Überprüfen + erstellen** und dann mit **Erstellen** fort.
 
-1. Wählen Sie **Erstellen** aus, und warten Sie, bis die Firewallbereitstellung abgeschlossen ist.
+1. Warten Sie, bis die Bereitstellung der Firewall abgeschlossen ist.
 
 1. Wenn die Bereitstellung der Firewall abgeschlossen ist, wählen Sie **Zu Ressource wechseln** aus.
 
@@ -366,7 +366,7 @@ In dieser letzten Aufgabe testen Sie die Firewall, um sicherzustellen, dass die 
 
 ## Bereinigen von Ressourcen
 
->**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
+   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 
@@ -376,7 +376,7 @@ In dieser letzten Aufgabe testen Sie die Firewall, um sicherzustellen, dass die 
    Remove-AzResourceGroup -Name 'Test-FW-RG' -Force -AsJob
    ```
 
->**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+   >**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
 
 ## Erweitern Ihrer Lernerfahrung mit Copilot
 
