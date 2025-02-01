@@ -12,7 +12,7 @@ Nun können Sie virtuelle Netzwerke im Azure-Portal bereitstellen.
 
 Betrachten wir als Beispiel das fiktive Unternehmen Contoso Ltd, das dabei ist, seine Infrastruktur und Anwendungen zu Azure zu migrieren. In Ihrer Rolle als Netzwerktechniker müssen Sie drei virtuelle Netzwerke und Subnetze planen und implementieren, um Ressourcen in diesen virtuellen Netzwerken zu unterstützen.
 
-**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Design%20and%20implement%20a%20virtual%20network%20in%20Azure)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
+   >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Design%20and%20implement%20a%20virtual%20network%20in%20Azure)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
 ### Geschätzte Dauer: 20 Minuten
 
@@ -77,6 +77,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 1. Navigieren Sie auf der Homepage des Azure-Portals zur Suchleiste „Globale Suche“, suchen Sie nach **Virtuelle Netzwerke**, und wählen Sie virtuelle Netzwerke unter „Dienste“ aus.  ![Ergebnisse für „virtuelles Netzwerk“ aus der globalen Suche auf der Homepage des Azure-Portals](../media/global-search-bar.PNG)
 
 1. Wählen Sie auf der Seite „Virtuelle Netzwerke“ die Option **Erstellen** aus.  ![Assistent zum Erstellen eines virtuellen Netzwerks](../media/create-virtual-network.png)
+   
 1. Verwenden Sie die Informationen in der folgenden Tabelle zum Erstellen des virtuellen Netzwerks „CoreServicesVnet“:  
    Entfernen oder überschreiben Sie den Standard-IP-Adressraum. ![IP-Adresskonfiguration für die Bereitstellung virtueller Azure-Netzwerke ](../media/default-vnet-ip-address-range-annotated.png)
 

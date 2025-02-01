@@ -11,6 +11,8 @@ Exercise:
 
 In dieser Übung konfigurieren Sie ein Gateway für virtuelle Netzwerke, um das Contoso Core Services-VNet und das Fertigungs-VNet zu verbinden.
 
+   >**Wichtig:** Sehen Sie sich dieses Design genau an. Haben Sie bemerkt, dass sich CoreServicesSubnet mit GatewaySubnet überlappt? Es ist eine bewährte Methode, diese Subnetze zu trennen, um potenzielle Konnektivitätsprobleme zu vermeiden. 
+
 ![Abbildung eines VNet-Gateways](../media/3-exercise-create-configure-local-network-gateway.png)
 
 In dieser Übung führen Sie die folgenden Schritte aus:
@@ -27,7 +29,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 10: Überprüfen, ob die Verbindungen hergestellt werden
 + Aufgabe 11: Testen der Verbindung zwischen den VMs
 
-**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20a%20virtual%20network%20gateway)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
+>**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20a%20virtual%20network%20gateway)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
 ### Geschätzte Dauer: 70 Minuten (einschließlich ca. 45 Minuten Wartezeit bei der Bereitstellung)
 
@@ -49,7 +51,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
 
- > **Hinweis:** Derzeit besteht ein Problem in der Region „Westeuropa, das Gatewaybereitstellungen beeinträchtigt. Als Abhilfemaßnahme wurde die Region „ManufacturingVnet“ für diese Bereitstellung in „Europa, Norden“ geändert.
+   >**Hinweis:** Derzeit besteht ein Problem in der Region „Westeuropa, das Gatewaybereitstellungen beeinträchtigt. Als Abhilfemaßnahme wurde die Region „ManufacturingVnet“ für diese Bereitstellung in „Europa, Norden“ geändert.
 
 ## Aufgabe 2: Erstellen von CoreServicesVM
 
@@ -94,20 +96,35 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 ## Aufgabe 4: Herstellen einer Verbindung mit den VMs unter Verwendung von RDP
 
 1. Wählen Sie auf der Startseite des Azure-Portals die Option **Virtuelle Computer** aus.
+
 1. Wählen Sie **ManufacturingVM** aus.
-1. Wählen Sie unter **ManufacturingVM** die Option **Verbinden &gt; RDP** aus.
-1. Wählen Sie unter **ManufacturingVM | Verbinden**, die Option **RDP-Datei herunterladen** aus.
+
+1. Wählen Sie unter **ManufacturingVM** die Option **Verbinden** und dann **RDP** aus.
+
+1. Wählen Sie **RDP-Datei herunterladen** aus.
+
 1. Speichern Sie die RDP-Datei auf Ihrem Desktop.
+
 1. Stellen Sie eine Verbindung zu **ManufacturingVM** her, indem Sie die RDP-Datei, den Benutzernamen **TestUser** und das Kennwort verwenden, das Sie bei der Bereitstellung angegeben haben. Minimieren Sie nach der Verbindung die RDP-Sitzung.
+
 1. Wählen Sie auf der Startseite des Azure-Portals die Option **Virtuelle Computer** aus.
+
 1. Wählen Sie **CoreServicesVM** aus.
-1. Wählen Sie auf **CoreServicesVM** die Option **Verbinden &gt; RDP** aus.
-1. Wählen Sie auf **CoreServicesVM | Verbinden** die Option **RDP-Datei herunterladen** aus.
+
+1. Wählen Sie unter **CoreServicesVM** die Option **Verbinden** und dann **RDP** aus.
+
+1. Wählen Sie **RDP-Datei herunterladen** aus.
+
 1. Speichern Sie die RDP-Datei auf Ihrem Desktop.
+
 1. Stellen Sie eine Verbindung zu **CoreServicesVM** her, indem Sie die RDP-Datei, den Benutzernamen **TestUser** und das Kennwort verwenden, das Sie bei der Bereitstellung angegeben haben.
+
 1. Wählen Sie für beide VMs unter **Wählen Sie die Datenschutzeinstellungen für Ihr Gerät aus** die Option **Akzeptieren** aus.
+
 1. Wählen Sie für beide VMs unter **Netzwerke** die Option **Ja** aus.
+
 1. Öffnen Sie auf **CoreServicesVM** PowerShell, und führen Sie den folgenden Befehl aus: ipconfig.
+
 1. Notieren Sie die IPv4-Adresse.
 
 ## Aufgabe 5: Testen der Verbindung zwischen den VMs
@@ -152,21 +169,19 @@ In dieser Übung führen Sie die folgenden Schritte aus:
    |                 |                   | Configure BGP (BGP konfigurieren)                               | Deaktiviert                     |
    | Überprüfen + erstellen |                   | Überprüfen Sie die Einstellungen, und wählen Sie **Erstellen** aus. |                              |
 
-   > [!NOTE]
-   >
-   > Die Erstellung eines virtuellen Netzwerk-Gateways kann bis zu 15 - 30 Minuten dauern. Sie brauchen nicht zu warten, bis die Bereitstellung abgeschlossen ist. Fahren Sie mit der Erstellung des nächsten Gateways fort. 
+   >**Hinweis**: Die Erstellung eines Gateways für virtuelle Netzwerke kann 15 bis 30 Minuten dauern. Sie brauchen nicht zu warten, bis die Bereitstellung abgeschlossen ist. Fahren Sie mit der Erstellung des nächsten Gateways fort. 
 
 ## Aufgabe 7: Erstellen des ManufacturingVnet-Gateways
 
 ### Erstellen des GatewaySubnetzes
 
-**Hinweis:** Die Vorlage hat das GatewaySubnet für das CoreServicesVnet erstellt. Hier erstellen Sie das Subnetz manuell. 
+   >**Hinweis:** Die Vorlage hat das GatewaySubnet für das CoreServicesVnet erstellt. Hier erstellen Sie das Subnetz manuell. 
 
 1. Suchen Sie das **ManufacturingVnet** und wählen Sie es aus.
 
 1. Wählen Sie im Blatt **Einstellungen** die Option **Subnetze** und dann **+ Subnetz**. 
 
-    | Parameter | Wert |
+    | Parameter | value |
     | --------------- | ----------------- | 
     | Subnetzzweck | **Gateway für virtuelle Netzwerke** |
     | Größe | **/27 (32 Adressen)** |
@@ -200,9 +215,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
    |                 |                   | Configure BGP (BGP konfigurieren)                               | Deaktiviert                     |
    | Überprüfen + erstellen |                   | Überprüfen Sie die Einstellungen, und wählen Sie **Erstellen** aus. |                              |
 
-   > [!NOTE]
-   >
-   > Die Erstellung eines virtuellen Netzwerk-Gateways kann bis zu 15 - 30 Minuten dauern.
+   >**Hinweis**: Die Erstellung eines Gateways für virtuelle Netzwerke kann 15 bis 30 Minuten dauern.
 
 ## Aufgabe 8: Verbinden von CoreServicesVnet mit ManufacturingVnet
 
@@ -212,9 +225,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 1. Wählen Sie in CoreServicesGateway die Option **Verbindungen** und dann **+ Hinzufügen** aus.
 
-   > [!NOTE]
-   >
-   >  Sie können diese Konfiguration erst abschließen, wenn die Gateways für virtuelle Netzwerke vollständig bereitgestellt wurden.
+   >**Hinweis**: Sie können diese Konfiguration erst abschließen, wenn die Gateways für virtuelle Netzwerke vollständig bereitgestellt wurden.
 
 1. Verwenden Sie diese Informationen und die Registerkarte **Einstellungen**, um das virtuelle Netzwerk-Gateway zu erstellen. 
 

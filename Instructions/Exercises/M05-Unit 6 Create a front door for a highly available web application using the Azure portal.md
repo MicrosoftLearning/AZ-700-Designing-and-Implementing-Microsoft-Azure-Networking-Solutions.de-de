@@ -21,7 +21,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 3: Anzeigen von Azure Front Door in Aktion
 
 
-**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20Front%20Door%20profile%20for%20a%20highly%20available%20web%20application)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
+   >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20Front%20Door%20profile%20for%20a%20highly%20available%20web%20application)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
 ### Geschätzte Dauer: 30 Minuten
 
@@ -73,7 +73,7 @@ Für diese Übung sind zwei Instanzen einer Webanwendung erforderlich, die in ve
 1. Wählen Sie **Überprüfen und erstellen** aus, überprüfen Sie die Zusammenfassung, und wählen Sie dann die Option **Erstellen** aus.
    ‎Es kann mehrere Minuten dauern, bis die Bereitstellung abgeschlossen ist.
 
-**Hinweis:** Wenn Sie einen Bereitstellungsfehler erhalten, lesen Sie die Benachrichtigung sorgfältig. Wenn der Fehler die Verfügbarkeit der Region aufgrund von Kontingenten betrifft, versuchen Sie, zu einer anderen Region zu wechseln. 
+   >**Hinweis:** Wenn Sie einen Bereitstellungsfehler erhalten, lesen Sie die Benachrichtigung sorgfältig. Wenn der Fehler die Verfügbarkeit der Region aufgrund von Kontingenten betrifft, versuchen Sie, zu einer anderen Region zu wechseln. 
 
 ## Aufgabe 2: Erstellen einer Front Door-Instanz für Ihre Anwendung
 
@@ -99,7 +99,9 @@ Konfigurieren Sie Azure Front Door zum Weiterleiten des Benutzerdatenverkehrs ba
 1. Klicken Sie auf **Überprüfen und erstellen** und dann auf **Erstellen**.
 
 1. Warten Sie, bis die Ressource bereitgestellt wurde, und wählen Sie dann **Zur Ressource wechseln** aus.
+
 1. Suchen Sie auf der Front Door-Ressource im Blatt „Übersicht“ die **Ursprungsgruppen**, und wählen Sie die erstellte Ursprungsgruppe aus.
+
 1. Um die Ursprungsgruppe zu aktualisieren, wählen Sie in der Liste den Namen **default-origin-group** aus. Wählen Sie **Einen Ursprung hinzufügen** aus, und fügen Sie die zweite Web-App hinzu. Wählen Sie „Hinzufügen“ und anschließend „Aktualisieren“ aus.
 
 ## Aufgabe 3: Anzeigen von Azure Front Door in Aktion
@@ -133,7 +135,7 @@ Nachdem Sie eine Front Door-Instanz erstellt haben, dauert es einige Minuten, b
 
 ## Bereinigen von Ressourcen
 
->**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
+   >**Hinweis**: Denken Sie daran, alle neu erstellten Azure-Ressourcen zu entfernen, die Sie nicht mehr verwenden. Durch das Entfernen nicht verwendeter Ressourcen wird sichergestellt, dass keine unerwarteten Gebühren anfallen.
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
 
@@ -145,7 +147,7 @@ Nachdem Sie eine Front Door-Instanz erstellt haben, dauert es einige Minuten, b
 
    ```
 
->**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+   >**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
 
 ## Erweitern Ihrer Lernerfahrung mit Copilot
 

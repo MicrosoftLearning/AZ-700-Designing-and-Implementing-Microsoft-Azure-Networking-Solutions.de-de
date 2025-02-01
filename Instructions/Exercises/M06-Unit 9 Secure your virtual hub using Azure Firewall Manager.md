@@ -14,7 +14,7 @@ In dieser Übung erstellen Sie das virtuelle Spoke-Netzwerk und einen geschützt
 ![Abbildung: Architektur des virtuellen Netzwerks mit einem sicheren Hub](../media/9-exercise-secure-your-virtual-hub-using-azure-firewall-manager.png)
 
 
-**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Secure%20your%20virtual%20hub%20using%20Azure%20Firewall%20Manager)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
+   >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Secure%20your%20virtual%20hub%20using%20Azure%20Firewall%20Manager)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
 ## Erstellen einer Hub-Spoke-Architektur
 
@@ -40,19 +40,32 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 In dieser Aufgabe erstellen Sie die beiden virtuellen Spoke-Netzwerke, die jeweils ein Subnetz enthalten, das Ihre Workloadserver hostet.
 
 1. Geben Sie auf der Startseite des Azure-Portals in das Suchfeld **Virtuelles Netzwerk** ein, und wählen Sie **Virtuelles Netzwerk**, wenn diese Option angezeigt wird.
-2. Klicken Sie auf **Erstellen**.
-3. Wählen Sie unter **Ressourcengruppe** die Option **Neue erstellen** aus, geben Sie **fw-manager-rg** als Namen ein, und wählen Sie dann **OK** aus.
-4. Geben unter **Name** den Namen **Spoke-01** ein.
-5. Wählen Sie unter **Region** Ihre Region aus.
-6. Klicken Sie auf **Weiter: IP-Adressen**.
-7. Geben Sie unter **IPv4-Adressraum** die Angabe **10.0.0.0/16** ein.
-8. **Löschen** Sie alle anderen hier aufgeführten Adressräume, **z. B. 10.1.0.0/16**.
-9. Wählen Sie unter **Subnetzname** das Wort **Standard** aus.
-10. Ändern Sie im Dialogfeld **Subnetz bearbeiten** den Namen in **Workload-01-SN**.
-11. Ändern Sie den **Subnetzadressbereich** in **10.0.1.0/24**.
-12. Wählen Sie **Speichern**.
-13. Klicken Sie auf **Überprüfen + erstellen**.
-14. Klicken Sie auf **Erstellen**.
+
+1. Klicken Sie auf **Erstellen**.
+
+1. Wählen Sie unter **Ressourcengruppe** die Option **Neue erstellen** aus, geben Sie **fw-manager-rg** als Namen ein, und wählen Sie dann **OK** aus.
+
+1. Geben unter **Name** den Namen **Spoke-01** ein.
+
+1. Wählen Sie unter **Region** Ihre Region aus.
+
+1. Klicken Sie auf **Weiter: IP-Adressen**.
+
+1. Geben Sie unter **IPv4-Adressraum** die Angabe **10.0.0.0/16** ein.
+
+1. **Löschen** Sie alle anderen hier aufgeführten Adressräume, **z. B. 10.1.0.0/16**.
+
+1. Wählen Sie unter **Subnetzname** das Wort **Standard** aus.
+
+1. Ändern Sie im Dialogfeld **Subnetz bearbeiten** den Namen in **Workload-01-SN**.
+
+1. Ändern Sie den **Subnetzadressbereich** in **10.0.1.0/24**.
+
+1. Wählen Sie **Speichern**.
+
+1. Klicken Sie auf **Überprüfen + erstellen**.
+
+1. Klicken Sie auf **Erstellen**.
 
 Wiederholen Sie die Schritte 1 bis 14 oben, um ein weiteres ähnliches virtuelles Netzwerk und Subnetz zu erstellen, verwenden Sie aber die folgenden Informationen:
 
@@ -68,32 +81,32 @@ In dieser Aufgabe erstellen Sie Ihren geschützten virtuellen Hub mithilfe von F
 
 1. Wählen Sie auf der Startseite des Azure-Portals **Alle Dienste** aus.
 
-2. Geben Sie im Suchfeld **firewall manager** ein, und wählen Sie **Firewall Manager** aus, wenn diese Option angezeigt wird.
+1. Geben Sie im Suchfeld **firewall manager** ein, und wählen Sie **Firewall Manager** aus, wenn diese Option angezeigt wird.
 
-3. Wählen Sie auf der Seite **Firewall Manager** auf der Übersichtsseite die Option **Geschützte virtuelle Hubs anzeigen**.
+1. Wählen Sie auf der Seite **Firewall Manager** auf der Übersichtsseite die Option **Geschützte virtuelle Hubs anzeigen**.
 
-4. Wählen Sie auf der Seite **Virtuelle Hubs** die Option **Neuen geschützten virtuellen Hub erstellen** aus.
+1. Wählen Sie auf der Seite **Virtuelle Hubs** die Option **Neuen geschützten virtuellen Hub erstellen** aus.
 
-5. Wählen Sie unter **Ressourcengruppe** die Ressourcengruppe **fw-manager-rg** aus.
+1. Wählen Sie unter **Ressourcengruppe** die Ressourcengruppe **fw-manager-rg** aus.
 
-6. Wählen Sie als **Region** Ihre Region aus.
+1. Wählen Sie als **Region** Ihre Region aus.
 
-7. Geben Sie unter **Name des geschützten virtuellen Hubs** den Namen **Hub-01** ein.
+1. Geben Sie unter **Name des geschützten virtuellen Hubs** den Namen **Hub-01** ein.
 
-8. Geben Sie unter **Hubadressraum** die Angabe **10.2.0.0/16** ein.
+1. Geben Sie unter **Hubadressraum** die Angabe **10.2.0.0/16** ein.
 
-9. Wählen Sie **Neues vWAN** aus.
+1. Wählen Sie **Neues vWAN** aus.
 
-10. Geben Sie unter **Virtual WAN-Name** den Namen **Vwan-01** ein.
+1. Geben Sie unter **Virtual WAN-Name** den Namen **Vwan-01** ein.
 
-11. Klicken Sie auf **Weiter: Azure Firewall** aus.
+1. Klicken Sie auf **Weiter: Azure Firewall** aus.
     ![Erstellen eines neuen geschützten virtuellen Hubs: Registerkarte „Grundlagen“](../media/create-new-secured-virtual-hub-1.png)
 
-12. Klicken Sie auf **Weiter: Sicherheitspartneranbieter**.
+1. Klicken Sie auf **Weiter: Sicherheitspartneranbieter**.
 
-13. Klicken Sie auf **Weiter: Überprüfen + erstellen**.
+1. Klicken Sie auf **Weiter: Überprüfen + erstellen**.
 
-14. Klicken Sie auf **Erstellen**.
+1. Klicken Sie auf **Erstellen**.
 
     > **[!NOTE]**
     >
@@ -103,35 +116,44 @@ In dieser Aufgabe erstellen Sie Ihren geschützten virtuellen Hub mithilfe von F
 
     ![Erstellen eines neuen geschützten virtuellen Hubs: Registerkarte „Überprüfen und erstellen“](../media/create-new-secured-virtual-hub-2.png)
 
-15. Wählen Sie nach Abschluss der Bereitstellung auf der Homepage des Azure-Portals **Alle Dienste** aus.
+1. Wählen Sie nach Abschluss der Bereitstellung auf der Homepage des Azure-Portals **Alle Dienste** aus.
 
-16. Geben Sie im Suchfeld **firewall manager** ein, und wählen Sie **Firewall Manager** aus, wenn diese Option angezeigt wird.
+1. Geben Sie im Suchfeld **firewall manager** ein, und wählen Sie **Firewall Manager** aus, wenn diese Option angezeigt wird.
 
-17. Wählen Sie auf der Seite **Firewall Manager** die Option **Virtuelle Hubs** aus.
+1. Wählen Sie auf der Seite **Firewall Manager** die Option **Virtuelle Hubs** aus.
 
-18. Wählen Sie **Hub-01** aus.
+1. Wählen Sie **Hub-01** aus.
 
-19. Wählen Sie **Öffentliche IP-Konfiguration** aus.
+1. Wählen Sie **Öffentliche IP-Konfiguration** aus.
 
-20. Notieren Sie sich die öffentliche IP-Adresse (z. B. **51.143.226.18**), die Sie später verwenden.
+1. Notieren Sie sich die öffentliche IP-Adresse (z. B. **51.143.226.18**), die Sie später verwenden.
 
 ## Aufgabe 3: Verbinden der virtuellen Hub-and-Spoke-Netzwerke
 
 In dieser Aufgabe verbinden Sie die virtuellen Hub-and-Spoke-Netzwerke. Dies wird häufig als „Peering“ bezeichnet.
 
 1. Wählen Sie auf der Homepage des Azure-Portals **Ressourcengruppen** aus.
-2. Wählen Sie die Ressourcengruppe **fw-manager-rg** und anschließend das virtuelle WAN **Vwan-01** aus.
-3. Wählen Sie unter **Konnektivität** die Option **Virtuelle Netzwerkverbindungen** aus.
-4. Wählen Sie **Verbindung hinzufügen** aus.
-5. Geben Sie unter **Verbindungsname** den Namen **hub-spoke-01** ein.
-6. Wählen Sie unter **Hubs** die Option **Hub-01** aus.
-7. Wählen Sie unter **Ressourcengruppe** die Ressourcengruppe **fw-manager-rg** aus.
-8. Wählen Sie unter **Virtuelles Netzwerk** die Option **Spoke-01** aus.
-9. Klicken Sie auf **Erstellen**.
-   ![Hinzufügen einer Hub-and-Spoke-Verbindung mit dem virtuellen WAN: Spoke 1](../media/connect-hub-spoke-vnet-1.png)
-10. Wiederholen Sie die oben genannten Schritte 4 bis 9, um eine weitere ähnliche Verbindung zu erstellen, verwenden Sie aber den Verbindungsnamen **hub-spoke-02**, um das virtuelle Netzwerk **Spoke-02** zu verbinden.
 
-![Hinzufügen einer Hub-and-Spoke-Verbindung mit dem virtuellen WAN: Spoke 2](../media/connect-hub-spoke-vnet-2.png)
+1. Wählen Sie die Ressourcengruppe **fw-manager-rg** und anschließend das virtuelle WAN **Vwan-01** aus.
+
+1. Wählen Sie unter **Konnektivität** die Option **Virtuelle Netzwerkverbindungen** aus.
+
+1. Wählen Sie **Verbindung hinzufügen** aus.
+
+1. Geben Sie unter **Verbindungsname** den Namen **hub-spoke-01** ein.
+
+1. Wählen Sie unter **Hubs** die Option **Hub-01** aus.
+
+1. Wählen Sie unter **Ressourcengruppe** die Ressourcengruppe **fw-manager-rg** aus.
+
+1. Wählen Sie unter **Virtuelles Netzwerk** die Option **Spoke-01** aus.
+
+1. Klicken Sie auf **Erstellen**.
+   ![Hinzufügen einer Hub-and-Spoke-Verbindung mit dem virtuellen WAN: Spoke 1](../media/connect-hub-spoke-vnet-1.png)
+
+1. Wiederholen Sie die oben genannten Schritte 4 bis 9, um eine weitere ähnliche Verbindung zu erstellen, verwenden Sie aber den Verbindungsnamen **hub-spoke-02**, um das virtuelle Netzwerk **Spoke-02** zu verbinden.
+
+    ![Hinzufügen einer Hub-and-Spoke-Verbindung mit dem virtuellen WAN: Spoke 2](../media/connect-hub-spoke-vnet-2.png)
 
 ## Aufgabe 4: Bereitstellen der Server
 
@@ -277,11 +299,17 @@ In dieser Aufgabe ordnen Sie die Firewallrichtlinie dem virtuellen Hub zu.
 
 1. Wählen Sie auf der Homepage des Azure-Portals **Firewall Manager** aus.
    + Wenn das Firewall Manager-Symbol nicht auf der Homepage angezeigt wird, wählen Sie **Alle Dienste** aus. Geben Sie dann im Suchfeld **firewall manager** ein, und wählen Sie **Firewall Manager** aus, wenn diese Option angezeigt wird.
+
 1. Wählen Sie in **Firewall Manager** unter **Sicherheit** die Option **Azure Firewall-Richtlinien** aus.
+
 1. Aktivieren Sie das Kontrollkästchen für **Policy-01**.
+
 1. Wählen Sie **Zuordnungen verwalten&gt;Hubs zuordnen** aus.
+
 1. Aktivieren Sie das Kontrollkästchen für **Hub-01**.
+
 1. Wählen Sie **Hinzufügen** aus.
+
 1. Wenn die Richtlinie angefügt wurde, wählen Sie **Aktualisieren** aus. Die Zuordnung sollte angezeigt werden.
 
 ![Anzeigen der zugeordneten Firewallrichtlinie für den Hub](../media/associate-firewall-policy-with-hub-end.png)
@@ -375,4 +403,4 @@ In dieser Aufgabe testen Sie die Netzwerkregel, um zu bestätigen, dass sie wie 
    Remove-AzResourceGroup -Name 'fw-manager-rg' -Force -AsJob
    ```
 
-    >**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.
+   >**Hinweis**: Der Befehl wird (wie über den Parameter „-AsJob“ festgelegt) asynchron ausgeführt. Dies bedeutet, dass Sie zwar direkt im Anschluss einen weiteren PowerShell-Befehl in derselben PowerShell-Sitzung ausführen können, es jedoch einige Minuten dauert, bis die Ressourcengruppen tatsächlich entfernt werden.

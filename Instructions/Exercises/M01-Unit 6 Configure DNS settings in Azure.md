@@ -19,7 +19,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 3: Erstellen von VMs zum Testen der Konfiguration
 + Aufgabe 4: Überprüfen des Vorhandenseins von Einträgen in der DNS-Zone
 
-**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20DNS%20settings%20in%20Azure)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
+   >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20DNS%20settings%20in%20Azure)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
 ### Geschätzte Dauer: 25 Minuten
 
@@ -108,7 +108,7 @@ In diesem Abschnitt erstellen Sie zwei Test-VMs, um die Konfiguration der privat
 
 1. Stellen Sie die folgenden ARM-Vorlagen bereit, um die für diese Übung erforderlichen VMs zu erstellen:
 
-    >**Hinweis**: Sie werden aufgefordert, ein Administratorkennwort anzugeben.
+   >**Hinweis**: Sie werden aufgefordert, ein Administratorkennwort anzugeben.
 
    ```powershell
    $RGName = "ContosoResourceGroup"

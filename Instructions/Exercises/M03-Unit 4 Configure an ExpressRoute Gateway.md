@@ -11,7 +11,7 @@ Exercise:
 
 Wenn Sie Ihr virtuelles Azure-Netzwerk und Ihr lokales Netzwerk über ExpressRoute verbinden möchten, müssen Sie ein virtuelles Netzwerkgateway erstellen. Ein Gateway für virtuelle Netzwerke dient zwei Zwecken: dem Austausch von IP-Routen zwischen den Netzwerken und der Weiterleitung des Netzwerkdatenverkehrs.
 
-**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20an%20ExpressRoute%20gateway)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
+   >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20an%20ExpressRoute%20gateway)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
 ### Geschätzte Dauer: 60 Minuten (einschließlich ca. 45 Minuten Wartezeit für die Bereitstellung)
 
@@ -62,7 +62,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 1. Vergewissern Sie sich, dass das VNet erfolgreich überprüft wurde, und wählen Sie dann **Erstellen** aus.
 
->**Hinweis:** Wenn Sie ein virtuelles Dual-Stack-Netzwerk verwenden und planen, IPv6-basiertes privates Peering über ExpressRoute zu nutzen, wählen Sie „IP6-Adressraum hinzufügen“ aus und geben Sie Werte für den IPv6-Adressbereich ein.
+   >**Hinweis:** Wenn Sie ein virtuelles Dual-Stack-Netzwerk verwenden und planen, IPv6-basiertes privates Peering über ExpressRoute zu nutzen, wählen Sie „IP6-Adressraum hinzufügen“ aus und geben Sie Werte für den IPv6-Adressbereich ein.
 
 ## Aufgabe 2: Erstellen des virtuellen Netzwerkgateways
 
@@ -93,7 +93,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 1. Wählen Sie nach Abschluss der Bereitstellung die Option **Zu Ressourcengruppe wechseln** aus.
 
->**Hinweis:** Die Bereitstellung eines Gateways kann bis zu 45 Minuten dauern.
+   >**Hinweis:** Die Bereitstellung eines Gateways kann bis zu 45 Minuten dauern.
 
 
 ## Erweitern Ihrer Lernerfahrung mit Copilot
