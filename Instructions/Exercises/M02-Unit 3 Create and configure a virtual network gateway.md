@@ -11,8 +11,6 @@ Exercise:
 
 In dieser Übung konfigurieren Sie ein Gateway für virtuelle Netzwerke, um das Contoso Core Services-VNet und das Fertigungs-VNet zu verbinden.
 
-   >**Wichtig:** Sehen Sie sich dieses Design genau an. Haben Sie bemerkt, dass sich CoreServicesSubnet mit GatewaySubnet überlappt? Es ist eine bewährte Methode, diese Subnetze zu trennen, um potenzielle Konnektivitätsprobleme zu vermeiden. 
-
 ![Abbildung eines VNet-Gateways](../media/3-exercise-create-configure-local-network-gateway.png)
 
 In dieser Übung führen Sie die folgenden Schritte aus:
@@ -50,9 +48,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
    New-AzResourceGroup -Name $RGName -Location "eastus"
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
-
-   >**Hinweis:** Derzeit besteht ein Problem in der Region „Westeuropa, das Gatewaybereitstellungen beeinträchtigt. Als Abhilfemaßnahme wurde die Region „ManufacturingVnet“ für diese Bereitstellung in „Europa, Norden“ geändert.
-
+   
 ## Aufgabe 2: Erstellen von CoreServicesVM
 
 1. Öffnen Sie im Azure-Portal im Bereich **Cloud Shell** die **PowerShell**-Sitzung.
@@ -157,7 +153,6 @@ In dieser Übung führen Sie die folgenden Schritte aus:
    |                 | Instanzdetails  | Name                                        | CoreServicesVnetGateway      |
    |                 |                   | Region                                      | USA, Osten                      |
    |                 |                   | Gatewaytyp                                | VPN                          |
-   |                 |                   | VPN-Typ                                    | routenbasiert                  |
    |                 |                   | SKU                                         | VpnGw1                       |
    |                 |                   | Generation                                  | Generation 1                  |
    |                 |                   | Virtuelles Netzwerk                             | CoreServicesVnet             |
@@ -201,13 +196,12 @@ In dieser Übung führen Sie die folgenden Schritte aus:
    | Grundlagen          | Projektdetails   | Subscription                                | Keine Änderungen erforderlich          |
    |                 |                   | ResourceGroup                               | ContosoResourceGroup         |
    |                 | Instanzdetails  | Name                                        | ManufacturingVnetGateway     |
-   |                 |                   | Region                                      | Nordeuropa                  |
+   |                 |                   | Region                                      | Nordeuropa                 |
    |                 |                   | Gatewaytyp                                | VPN                          |
-   |                 |                   | VPN-Typ                                    | routenbasiert                  |
    |                 |                   | SKU                                         | VpnGw1                       |
    |                 |                   | Generation                                  | Generation 1                  |
    |                 |                   | Virtuelles Netzwerk                             | ManufacturingVnet            |
-   |                 |                   | Subnet                                      | GatewaySubnet (10.30.0.0/27) |
+   |                 |                   | Subnet                                      | GatewaySubnet |
    |                 |                   | Typ der öffentlichen IP-Adresse                      | Standard                     |
    |                 | Öffentliche IP-Adresse | Öffentliche IP-Adresse                           | Neu erstellen                   |
    |                 |                   | Name der öffentlichen IP-Adresse                      | ManufacturingVnetGateway-ip  |
@@ -261,7 +255,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
    | ------------------------------ | --------------------------------- |
    | Name                           | ManufacturingGW-to-CoreServicesGW |
    | Verbindungstyp                | VNet-zu-VNet                      |
-   | Location                       | Europa, Westen                       |
+   | Location                       | Nordeuropa                      |
    | Erstes Gateway für virtuelle Netzwerke  | ManufacturingVnetGateway          |
    | Zweites Gateway für virtuelle Netzwerke | CoreServicesVnetGateway           |
    | Gemeinsam verwendeter Schlüssel (PSK)               | abc123                            |
