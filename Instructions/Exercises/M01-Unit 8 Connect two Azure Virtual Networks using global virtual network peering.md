@@ -26,7 +26,7 @@ Inhalt dieser Einheit:
 
 ## Aufgabe 1: Erstellen einer virtuellen Maschine zum Testen der Konfiguration
 
-In diesem Abschnitt erstellen Sie eine Test-VM im VNet für die Fertigung, um zu testen, ob Sie über „ManufacturingVnet“ auf Ressourcen in einem anderen virtuellen Azure-Netzwerk zugreifen können.
+In diesem Abschnitt erstellen Sie eine Test-VM im VNet, um zu testen, ob Sie über Ihr VNet auf Ressourcen in einem anderen virtuellen Azure-Netzwerk zugreifen können.
 
 ### Erstellen von „ManufacturingVM“
 
@@ -112,7 +112,7 @@ In diesem Abschnitt erstellen Sie eine Test-VM im VNet für die Fertigung, um zu
 
    | **Option**                                    | **Wert**                             |
    | ------------------------------------ | --------------------------------------------- | 
-   | Name des Peeringlinks    | `CoreServicesVnet-to-ManufacturingVnet` |
+   | Name des Peeringlinks    | `ManufacturingVnet-to-CoreServicesVnet` |
    | Virtuelles Netzwerk | ManufacturingVnet |
 
     **Einstellungen für das Peering virtueller Remotenetzwerke**
