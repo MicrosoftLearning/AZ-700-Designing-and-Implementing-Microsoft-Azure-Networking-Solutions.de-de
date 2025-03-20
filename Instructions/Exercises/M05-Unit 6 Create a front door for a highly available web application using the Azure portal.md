@@ -43,7 +43,7 @@ Für diese Übung sind zwei Instanzen einer Webanwendung erforderlich, die in ve
    | Resource group   | Wählen Sie die Ressourcengruppe „ContosoResourceGroup“ aus               |
    | Name             | Geben Sie unter Name einen eindeutigen Namen für Ihre Web-App ein. In diesem Beispiel wird WebAppContoso-1 verwendet. |
    | Veröffentlichen          | Wählen Sie **Code** aus.                                             |
-   | Laufzeitstapel    | Wählen Sie **.NET 6 (LTS)** aus.                                     |
+   | Runtimestapel    | Wählen Sie **.NET 8 (LTS)** aus.                                     |
    | Betriebssystem | Wählen Sie **Windows** aus.                                          |
    | Region           | Wählen Sie **USA, Mitte** aus.                                       |
    | Windows-Plan     | Wählen Sie **Neu erstellen** aus, und geben Sie im Textfeld den Text myAppServicePlanCentralUS ein. |
@@ -64,7 +64,7 @@ Für diese Übung sind zwei Instanzen einer Webanwendung erforderlich, die in ve
    | Resource group   | Wählen Sie die Ressourcengruppe „ContosoResourceGroup“ aus               |
    | Name             | Geben Sie unter Name einen eindeutigen Namen für Ihre Web-App ein. In diesem Beispiel wird WebAppContoso-2 verwendet. |
    | Veröffentlichen          | Wählen Sie **Code** aus.                                             |
-   | Laufzeitstapel    | Wählen Sie **.NET 6 (LTS)** aus.                                     |
+   | Runtimestapel    | Wählen Sie **.NET 8 (LTS)** aus.                                     |
    | Betriebssystem | Wählen Sie **Windows** aus.                                          |
    | Region           | Wählen Sie **USA, Osten** aus.                                          |
    | Windows-Plan     | Wählen Sie **Neu erstellen** aus, und geben Sie myAppServicePlanEastUS in das Textfeld ein. |
