@@ -49,10 +49,12 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 1. Verwenden Sie im Bereich „Subnetz hinzufügen“ die Informationen in der folgenden Tabelle, um das Subnetz zu erstellen:
 
-   | **Einstellung**                  | **Wert**     |
-   | ---------------------------- | ------------- |
-   | Name des Gatewaysubnetzes          | GatewaySubnet |
-   | Adressraum des Gatewaysubnetzes | 10.20.0.0/27  |
+   | **Einstellung**                  | **Wert**               |
+   | ---------------------------- | ----------------------- |
+   | Subnetzzweck               | Gateway für virtuelle Netzwerke |
+   | Adressraum des Gatewaysubnetzes | 10.20.0.0/27            |
+
+Beachten Sie, dass der Subnetzname automatisch ausgefüllt wird.
 
 1. Wählen Sie dann **Hinzufügen** aus.
 

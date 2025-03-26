@@ -92,16 +92,17 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 1. Wählen Sie **+ Subnetz hinzufügen** aus, um mit dem Erstellen der einzelnen Subnetze zu beginnen. Klicken Sie auf **Hinzufügen**, um die Erstellung der einzelnen Subnetze abzuschließen.
 
-   | **Subnetz**             | **Option**           | **Wert**              |
-   | ---------------------- | -------------------- | ---------------------- |
-   | GatewaySubnet          | Subnetzname          | GatewaySubnet          |
-   |                        | Subnetzadressbereich | 10.20.0.0/27           |
-   | SharedServicesSubnet   | Subnetzname          | SharedServicesSubnet   |
-   |                        | Subnetzadressbereich | 10.20.10.0/24          |
-   | DatabaseSubnet         | Subnetzname          | DatabaseSubnet         |
-   |                        | Subnetzadressbereich | 10.20.20.0/24          |
-   | PublicWebServiceSubnet | Subnetzname          | PublicWebServiceSubnet |
-   |                        | Subnetzadressbereich | 10.20.30.0/24          |
+   | **Subnetz**             | **Option**           | **Wert**               |
+   | ---------------------- | -------------------- | ----------------------- |
+   | GatewaySubnet          | Subnetzzweck       | Gateway für virtuelle Netzwerke |
+   |                        | Subnetzname          | GatewaySubnet           |
+   |                        | Subnetzadressbereich | 10.20.0.0/27            |
+   | SharedServicesSubnet   | Subnetzname          | SharedServicesSubnet    |
+   |                        | Subnetzadressbereich | 10.20.10.0/24           |
+   | DatabaseSubnet         | Subnetzname          | DatabaseSubnet          |
+   |                        | Subnetzadressbereich | 10.20.20.0/24           |
+   | PublicWebServiceSubnet | Subnetzname          | PublicWebServiceSubnet  |
+   |                        | Subnetzadressbereich | 10.20.30.0/24           |
 
 1. Um die Erstellung von „CoreServicesVnet“ und der zugehörigen Subnetze abzuschließen, wählen Sie **Überprüfen + erstellen** aus.
 
