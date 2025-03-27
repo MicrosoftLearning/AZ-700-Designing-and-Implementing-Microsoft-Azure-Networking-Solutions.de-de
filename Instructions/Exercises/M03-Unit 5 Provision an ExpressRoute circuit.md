@@ -32,9 +32,9 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
    ![Azure-Portal – Menü „ExpressRoute-Leitung erstellen“](../media/create-expressroute-circuit-menu.png)
 
-1. Geben Sie auf der Seite **Create ExpressRoute** (ExpressRoute erstellen) für **Ressourcengruppe**, **Region** und **Name** der Verbindung folgende Werte an: ExpressRouteResourceGroup, East US 2, TestERCircuit. Wählen Sie anschließend **Weiter: Konfiguration &gt;** aus.
+1. Auf der Seite **ExpressRoute erstellen** geben Sie die **Ressourcengruppe** als ExpressRouteResourceGroup an. Wählen Sie dann **Standard-Resilienz** für **Resilienz** aus.
 
-1. Achten Sie beim Ausfüllen der Werte auf dieser Seite darauf, dass Sie für dieses Beispiel die richtige SKU-Ebene (**Standard**), das Abrechnungsmodell für die Datenmessung (**Taktung**), den Provider (**Equinix**), den Peeringstandort (**Seattle**) und die Bandbreite (**50Mbps**) angeben.
+1. Stellen unter ***Verbindungsdetails** sicher, dass Sie die richtige Region (**USA, Osten 2**), den Verbindungsnamen (**TestERCircuit**), den Peering-Standort (**Seattle**), Provider (**Equinix**), Bandbreite (**50 Mbps**), SKU-Tier (**Standard**) und Abrechnungsmodell für die Datenmessung (**Gemessen**) angeben.
 
 1. Klicken Sie auf **Überprüfen + erstellen**.
 

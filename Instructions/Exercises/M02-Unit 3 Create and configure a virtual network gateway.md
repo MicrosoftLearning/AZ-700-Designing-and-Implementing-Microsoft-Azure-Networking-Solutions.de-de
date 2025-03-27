@@ -201,7 +201,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
    |                 |                   | SKU                                         | VpnGw1                       |
    |                 |                   | Generation                                  | Generation 1                  |
    |                 |                   | Virtuelles Netzwerk                             | ManufacturingVnet            |
-   |                 |                   | Subnet                                      | GatewaySubnet |
+   |                 |                   | Subnet                                      | GatewaySubnet (10.30.0.0/27) |
    |                 |                   | Typ der öffentlichen IP-Adresse                      | Standard                     |
    |                 | Öffentliche IP-Adresse | Öffentliche IP-Adresse                           | Neu erstellen                   |
    |                 |                   | Name der öffentlichen IP-Adresse                      | ManufacturingVnetGateway-ip  |
