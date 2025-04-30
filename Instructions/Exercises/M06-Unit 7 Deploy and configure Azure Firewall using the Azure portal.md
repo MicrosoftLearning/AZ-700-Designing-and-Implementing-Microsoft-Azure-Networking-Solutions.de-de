@@ -218,7 +218,7 @@ In dieser Aufgabe fügen Sie eine Anwendungsregel hinzu, die ausgehenden Zugriff
 
 1. Wählen Sie in der Liste der Ressourcen Ihre Firewallrichtlinie **fw-test-pol** aus.
 
-1. Wählen Sie unter **Einstellungen** die Option **Anwendungsregeln** aus.
+1. Wählen Sie unter **Regeln** die Option **Anwendungsregeln**.
 
 1. Wählen Sie **Regelsammlung hinzufügen** aus.
 
@@ -247,7 +247,7 @@ In dieser Aufgabe fügen Sie eine Anwendungsregel hinzu, die ausgehenden Zugriff
 
 In dieser Aufgabe fügen Sie eine Netzwerkregel hinzu, die ausgehenden Zugriff auf zwei IP-Adressen an Port 53 (DNS) zulässt.
 
-1. Wählen Sie auf der Seite **fw-test-pol** unter **Einstellungen** die Option **Netzwerkregeln** aus.
+1. Wählen Sie auf der Seite **fw-test-pol** unter **Regeln** die Option **Netzwerkregeln**.
 
 1. Wählen Sie **Regelsammlung hinzufügen** aus.
 
@@ -277,7 +277,7 @@ In dieser Aufgabe fügen Sie eine Netzwerkregel hinzu, die ausgehenden Zugriff a
 
 In dieser Aufgabe fügen Sie eine DNAT-Regel hinzu, mit der Sie einen Remotedesktop über die Firewall mit der VM „Srv-Work“ verbinden können.
 
-1. Wählen Sie auf der Seite **fw-test-pol** unter **Einstellungen** die Option **DNAT-Regeln** aus.
+1. Wählen Sie auf der Seite **fw-test-pol** unter **Regeln** die Option **DNAT-Regeln** aus.
 
 1. Wählen Sie **Regelsammlung hinzufügen** aus.
 

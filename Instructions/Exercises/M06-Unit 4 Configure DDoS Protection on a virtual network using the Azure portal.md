@@ -214,19 +214,9 @@ In diesem Schritt erstellen Sie einen virtuellen Computer, weisen ihm eine öffe
 
 ## Aufgabe 7: Testen mit Simulationspartnern
 
-1. Überprüfung der [Azure DDoS-Simulationstestrichtlinie](https://learn.microsoft.com/azure/ddos-protection/test-through-simulations#azure-ddos-simulation-testing-policy)
+1. Überprüfen Sie die [Azure DDoS-Simulationstest-Richtlinie](https://learn.microsoft.com/en-us/azure/ddos-protection/test-through-simulations#configure-a-ddos-attack-simulation). 
 
-1. Konfigurieren Sie einen DDoS-Testangriff mithilfe eines genehmigten Testpartners. Wenn Sie BreakingPoint Cloud zum Testen verwenden, verwenden Sie die Einstellungen im Screenshot unten (Sie müssen möglicherweise die Testgröße von 100.000 PPS mit dem Testkonto auswählen), aber geben Sie die IP-Adresse Ihrer eigenen **MyPublicIPAddress**-Ressource im Feld **Ziel-IP-Adresse** an (z. B. **51.140.137.219**) ![DDOSAttack](https://user-images.githubusercontent.com/46939028/138599420-58bef33a-2597-4fa2-919f-bf1614037bc3.JPG)
-
-1. Wählen Sie auf der Startseite des Azure-Portals **Alle Ressourcen** aus.
-
-1. Wählen Sie in der Ressourcenliste Ihre **MyPublicIPAddress**-Ressource und dann unter **Überwachung** die Option **Metriken** aus.
-
-1. Wählen Sie im Feld **Metrik** die Option **DDoS-Angriff** aus der Liste aus.
-
-1. Jetzt können Sie den DDoS-Angriff sehen, wie er passiert ist. Beachten Sie, dass es zehn Minuten dauern kann, bis die Ergebnisse angezeigt werden.
-
-   ![Metriken, die eine Ressource bei einem DDoS-Angriff zeigen](../media/metrics-showing-resource-under-attack.png)
+1. Beachten Sie, dass es mehrere Testpartner gibt. Konfigurieren Sie während der Zeit eine DDoS-Angriffssimulation. Für BreakingPoint Cloud müssen Sie zuerst ein BreakingPoint Cloud-Kontoerstellen.
 
 ## Bereinigen von Ressourcen
 
