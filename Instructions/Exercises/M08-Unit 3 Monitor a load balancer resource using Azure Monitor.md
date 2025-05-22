@@ -187,7 +187,9 @@ In diesem Abschnitt erstellen Sie drei VMs für den Back-End-Pool des Lastenausg
     + Wählen Sie **Kein Speicherkonto erforderlich** und Ihr **Abonnement** aus und klicken Sie dann auf **Anwenden**.
     + Warten Sie, bis das Terminal erstellt wurde und eine Eingabeaufforderung angezeigt wird. 
 
-1. Klicken Sie in der Symbolleiste des Cloud Shell-Bereichs auf das Symbol **Dateien verwalten**, wählen Sie im Dropdownmenü **Hochladen** aus, und laden Sie die Dateien **azuredeploy.json** und **azuredeploy.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M08** in das Cloud Shell-Basisverzeichnis hoch.
+1. Wählen Sie in der Symbolleiste des Cloud Shell-Fensters das Symbol **Dateien verwalten** aus, wählen Sie im Dropdownmenü die Option **Hochladen** und laden Sie die folgenden Dateien **azuredeploy.json** und **azuredeploy.parameters.json** in das Basisverzeichnis von Cloud Shell hoch.
+
+    > **Hinweis:** Wenn Sie in Ihrem eigenen Abonnement arbeiten, sind die [Vorlagendateien](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises) im GitHub-Lab-Repository verfügbar.
 
 1. Stellen Sie die folgenden ARM-Vorlagen bereit, um das virtuelle Netzwerk, die Subnetze und die VMs zu erstellen, die für diese Übung erforderlich sind:
 
