@@ -79,9 +79,11 @@ In diesem Abschnitt erstellen Sie drei VMs, die sich in derselben Verfügbarkeit
     + Wählen Sie **Kein Speicherkonto erforderlich** und Ihr **Abonnement** aus und klicken Sie dann auf **Anwenden**.
     + Warten Sie, bis das Terminal erstellt wurde und eine Eingabeaufforderung angezeigt wird. 
 
-2. Wählen Sie auf der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien hochladen/herunterladen** aus, wählen Sie im Dropdownmenü **Hochladen** aus, und laden Sie die folgenden Dateien einzeln in das Cloud Shell-Startverzeichnis hoch: azuredeploy.json und azuredeploy.parameters.json.
+2. Wählen Sie in der Symbolleiste des Cloud Shell-Fensters das Symbol **Dateien hochladen/herunterladen** aus, wählen Sie im Dropdownmenü die Option **Hochladen** aus und laden Sie die folgenden Dateien azuredeploy.json und azuredeploy.parameters.json in das Cloud Shell-Stammverzeichnis hoch.
 
-3. Stellen Sie die folgenden ARM-Vorlagen bereit, um die für diese Übung erforderlichen VMs zu erstellen:
+    > **Hinweis:** Wenn Sie in Ihrem eigenen Abonnement arbeiten, sind die [Vorlagendateien](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises) im GitHub-Lab-Repository verfügbar.
+
+4. Stellen Sie die folgenden ARM-Vorlagen bereit, um die für diese Übung erforderlichen VMs zu erstellen:
 
    >**Hinweis**: Sie werden aufgefordert, ein Administratorkennwort anzugeben.
 

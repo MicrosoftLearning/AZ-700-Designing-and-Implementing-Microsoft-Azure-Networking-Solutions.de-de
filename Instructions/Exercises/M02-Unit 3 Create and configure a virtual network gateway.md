@@ -38,7 +38,9 @@ In dieser Übung führen Sie die folgenden Schritte aus:
     + Wählen Sie **Kein Speicherkonto erforderlich** und Ihr **Abonnement** aus und klicken Sie dann auf **Anwenden**.
     + Warten Sie, bis das Terminal erstellt wurde und eine Eingabeaufforderung angezeigt wird. 
 
-1. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs das Symbol **Dateien verwalten**, wählen Sie im Dropdown-Menü **Hochladen** und laden Sie die folgenden Dateien **azuredeploy.json** und **azuredeploy.parameters.json** nacheinander aus dem Quellordner **F:\Allfiles\Exercises\M02** in das Startverzeichnis der Cloud Shell hoch
+1. Wählen Sie in der Symbolleiste des Cloud Shell-Fensters das Symbol **Dateien verwalten** aus, wählen Sie im Dropdownmenü die Option **Hochladen** und laden Sie die folgenden Dateien **azuredeploy.json** und **azuredeploy.parameters.json** in das Basisverzeichnis von Cloud Shell hoch.
+
+        Note:: If you are working in your own subscription the [template files](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises) are available in the GitHub lab repository.
 
 1. Stellen Sie die folgenden ARM-Vorlagen bereit, um das virtuelle Netzwerk und die Subnetze zu erstellen, die für diese Übung erforderlich sind:
 
@@ -201,7 +203,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
    |                 |                   | SKU                                         | VpnGw1                       |
    |                 |                   | Generation                                  | Generation 1                  |
    |                 |                   | Virtuelles Netzwerk                             | ManufacturingVnet            |
-   |                 |                   | Subnet                                      | GatewaySubnet (10.30.0.0/27) |
+   |                 |                   | Subnet                                      | GatewaySubnet |
    |                 |                   | Typ der öffentlichen IP-Adresse                      | Standard                     |
    |                 | Öffentliche IP-Adresse | Öffentliche IP-Adresse                           | Neu erstellen                   |
    |                 |                   | Name der öffentlichen IP-Adresse                      | ManufacturingVnetGateway-ip  |

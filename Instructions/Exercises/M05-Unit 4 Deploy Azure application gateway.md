@@ -147,7 +147,9 @@ In dieser Übung führen Sie die folgenden Schritte aus:
     + Wählen Sie **Kein Speicherkonto erforderlich** und Ihr **Abonnement** aus und klicken Sie dann auf **Anwenden**.
     + Warten Sie, bis das Terminal erstellt wurde und eine Eingabeaufforderung angezeigt wird.
       
-1. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs **Dateien verwalten** und dann **Hochladen** aus. Laden Sie die folgenden Dateien hoch: **backend.json**, **backend.parameters.json** und **install-iis.ps1**. Die Dateien stehen im Verzeichnis **\Allfiles\Exercises\M05** zum Download bereit.
+1. Wählen Sie in der Symbolleiste des Cloud Shell-Bereichs **Dateien verwalten** und dann **Hochladen** aus. Laden Sie die folgenden Dateien hoch: **backend.json**, **backend.parameters.json** und **install-iis.ps1**.
+
+    >**Hinweis:** Wenn Sie in Ihrem eigenen Abonnement arbeiten, sind die [Vorlagendateien](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises) im GitHub-Lab-Repository verfügbar.
 
 1. Stellen Sie die folgenden ARM-Vorlagen bereit, um die für diese Übung erforderlichen VMs zu erstellen:
 
@@ -254,6 +256,6 @@ Copilot kann Sie beim Erlernen der Verwendung von Azure-Skripttools unterstütze
 ## Wichtige Erkenntnisse
 
 Herzlichen Glückwunsch zum erfolgreichen Abschluss des Labs. Hier sind die wichtigsten Erkenntnisse für dieses Lab. 
-+ Azure Application Gateway ist ein Lastenausgleich für Webdatenverkehr auf Schicht 7, mit dem Sie eingehenden Datenverkehr für Ihre Webanwendungen verwalten können.
++ Azure Application Gateway ist ein Lastenausgleich für Webdatenverkehr auf Schicht 7, mit dem Sie eingehenden Datenverkehr für Ihre Webanwendungen verwalten können.
 + Application Gateway kann Routingentscheidungen auf der Grundlage zusätzlicher Attribute einer HTTP-Anforderung treffen. Beispiele für solche Attribute wären etwa der URI-Pfad oder Hostheader.
 + Verwenden Sie Application Gateway für Anwendungen, die in einer einzigen Region gehostet werden und wenn Sie URL-basiertes Routing benötigen. 

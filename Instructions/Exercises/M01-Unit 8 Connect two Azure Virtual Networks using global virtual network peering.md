@@ -35,7 +35,9 @@ In diesem Abschnitt erstellen Sie eine Test-VM im VNet, um zu testen, ob Sie üb
     + Wählen Sie **Kein Speicherkonto erforderlich** und Ihr **Abonnement** aus und klicken Sie dann auf **Anwenden**.
     + Warten Sie, bis das Terminal erstellt wurde und eine Eingabeaufforderung angezeigt wird. 
 
-1. Wählen Sie in der Symbolleiste des Bereichs „Cloud Shell" das Symbol **Dateien verwalten**, wählen Sie im Dropdown-Menü **Hochladen** und laden Sie die folgenden Dateien **ManufacturingVMazuredeploy.json** und **ManufacturingVMazuredeploy.parameters.json** in das Startverzeichnis der Cloud Shell aus dem Quellordner **F:\Allfiles\Exercises\M01** hoch.
+1. Wählen Sie in der Symbolleiste des Cloud Shell-Fensters das Symbol **Dateien verwalten** aus, wählen Sie im Dropdownmenü die Option **Hochladen** und laden Sie die folgenden Dateien hoch: **ManufacturingVMazuredeploy.json** und **ManufacturingVMazuredeploy.parameters.json**.
+
+    >**Hinweis:** Wenn Sie in Ihrem eigenen Abonnement arbeiten, sind die [Vorlagendateien](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises) im GitHub-Lab-Repository verfügbar.
 
 1. Stellen Sie die folgenden ARM-Vorlagen bereit, um die für diese Übung erforderlichen VMs zu erstellen:
 
