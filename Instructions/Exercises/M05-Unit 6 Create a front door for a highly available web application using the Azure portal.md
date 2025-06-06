@@ -14,14 +14,17 @@ In dieser Übung richten Sie eine Azure Front Door-Konfiguration ein, die zwei I
 
 ![Netzwerkkonfiguration für Azure Front Door.](../media/6-exercise-create-front-door-for-highly-available.png)
 
+### Stellenqualifikationen
+
 In dieser Übung führen Sie die folgenden Schritte aus:
 
 + Aufgabe 1: Erstellen von zwei Instanzen einer Web-App
 + Aufgabe 2: Erstellen einer Front Door-Instanz für Ihre Anwendung
 + Aufgabe 3: Anzeigen von Azure Front Door in Aktion
 
+### Interaktive Labsimulationen
 
-   >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20a%20Front%20Door%20profile%20for%20a%20highly%20available%20web%20application)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
+>**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
 
 ### Geschätzte Dauer: 30 Minuten
 
@@ -43,7 +46,7 @@ Für diese Übung sind zwei Instanzen einer Webanwendung erforderlich, die in ve
    | Resource group   | Wählen Sie die Ressourcengruppe „ContosoResourceGroup“ aus               |
    | Name             | Geben Sie unter Name einen eindeutigen Namen für Ihre Web-App ein. In diesem Beispiel wird WebAppContoso-1 verwendet. |
    | Veröffentlichen          | Wählen Sie **Code** aus.                                             |
-   | Laufzeitstapel    | Wählen Sie **.NET 6 (LTS)** aus.                                     |
+   | Runtimestapel    | Wählen Sie **.NET 8 (LTS)** aus.                                     |
    | Betriebssystem | Wählen Sie **Windows** aus.                                          |
    | Region           | Wählen Sie **USA, Mitte** aus.                                       |
    | Windows-Plan     | Wählen Sie **Neu erstellen** aus, und geben Sie im Textfeld den Text myAppServicePlanCentralUS ein. |
@@ -64,7 +67,7 @@ Für diese Übung sind zwei Instanzen einer Webanwendung erforderlich, die in ve
    | Resource group   | Wählen Sie die Ressourcengruppe „ContosoResourceGroup“ aus               |
    | Name             | Geben Sie unter Name einen eindeutigen Namen für Ihre Web-App ein. In diesem Beispiel wird WebAppContoso-2 verwendet. |
    | Veröffentlichen          | Wählen Sie **Code** aus.                                             |
-   | Laufzeitstapel    | Wählen Sie **.NET 6 (LTS)** aus.                                     |
+   | Runtimestapel    | Wählen Sie **.NET 8 (LTS)** aus.                                     |
    | Betriebssystem | Wählen Sie **Windows** aus.                                          |
    | Region           | Wählen Sie **USA, Osten** aus.                                          |
    | Windows-Plan     | Wählen Sie **Neu erstellen** aus, und geben Sie myAppServicePlanEastUS in das Textfeld ein. |

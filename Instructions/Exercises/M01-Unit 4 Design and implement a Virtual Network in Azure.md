@@ -12,7 +12,9 @@ Nun können Sie virtuelle Netzwerke im Azure-Portal bereitstellen.
 
 Betrachten wir als Beispiel das fiktive Unternehmen Contoso Ltd, das dabei ist, seine Infrastruktur und Anwendungen zu Azure zu migrieren. In Ihrer Rolle als Netzwerktechniker müssen Sie drei virtuelle Netzwerke und Subnetze planen und implementieren, um Ressourcen in diesen virtuellen Netzwerken zu unterstützen.
 
-   >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Design%20and%20implement%20a%20virtual%20network%20in%20Azure)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
+### Interaktive Labsimulationen
+
+>**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
 
 ### Geschätzte Dauer: 20 Minuten
 
@@ -44,6 +46,8 @@ Sie erstellen die folgenden Ressourcen:
 |                     |                |                                   | ResearchSystemSubnet      | 10.40.0.0/24  |
 
 Diese virtuellen Netzwerke und Subnetze sind auf eine Weise strukturiert, die vorhandene Ressourcen unterstützt, und gleichzeitig das geplante Wachstum ermöglicht. Erstellen Sie diese virtuellen Netzwerke und Subnetze als Grundlage für Ihre Netzwerkinfrastruktur.
+
+### Stellenqualifikationen
 
 In dieser Übung führen Sie die folgenden Schritte aus:
 

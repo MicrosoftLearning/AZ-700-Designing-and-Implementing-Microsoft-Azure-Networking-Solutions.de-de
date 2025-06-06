@@ -12,6 +12,8 @@ Als Teil des Netzwerksicherheitsteams von Contoso besteht Ihre nächste Aufgabe 
 
 ![Abbildung: Architektur des virtuellen Netzwerks mit Azure Firewall](../media/7-exercise-deploy-configure-azure-firewall-using-azure-portal.png)
 
+### Stellenqualifikationen
+
 In dieser Übung führen Sie die folgenden Schritte aus:
 
 + Aufgabe 1: Erstellen einer Ressourcengruppe
@@ -25,8 +27,9 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 9: Ändern der primären und sekundären DNS-Adresse für die Netzwerkschnittstelle des Servers
 + Aufgabe 10: Testen der Firewall
 
+### Interaktive Labsimulationen
 
-   >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20and%20configure%20Azure%20Firewall%20using%20the%20Azure%20portal)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
+>**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
 
 ### Geschätzte Dauer: 60 Minuten.
 

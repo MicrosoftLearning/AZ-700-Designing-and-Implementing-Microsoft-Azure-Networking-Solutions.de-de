@@ -13,6 +13,8 @@ In dieser Übung konfigurieren Sie ein Gateway für virtuelle Netzwerke, um das 
 
 ![Abbildung eines VNet-Gateways](../media/3-exercise-create-configure-local-network-gateway.png)
 
+### Stellenqualifikationen
+
 In dieser Übung führen Sie die folgenden Schritte aus:
 
 + Aufgabe 1: Erstellen von CoreServicesVnet und ManufacturingVnet
@@ -27,7 +29,9 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 10: Überprüfen, ob die Verbindungen hergestellt werden
 + Aufgabe 11: Testen der Verbindung zwischen den VMs
 
->**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20a%20virtual%20network%20gateway)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
+### Interaktive Labsimulationen
+
+>**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
 
 ### Geschätzte Dauer: 70 Minuten (einschließlich ca. 45 Minuten Wartezeit bei der Bereitstellung)
 
