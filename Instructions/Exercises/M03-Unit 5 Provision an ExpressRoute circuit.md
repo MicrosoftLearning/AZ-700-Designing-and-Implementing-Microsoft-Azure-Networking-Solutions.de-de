@@ -9,11 +9,15 @@ Exercise:
 
 In dieser Übung erstellen Sie eine ExpressRoute-Leitung mithilfe des Azure-Portals und des Azure Resource Manager-Bereitstellungsmodells.
 
-   >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Provision%20an%20ExpressRoute%20circuit)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
+### Interaktive Labsimulationen
+
+>**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
 
 ### Geschätzte Dauer: 15 Minuten
 
 ![Diagramm: Layout der ExpressRoute-Leitung für die Übung](../media/5-exercise-provision-expressroute-circuit.png)
+
+### Stellenqualifikationen
 
 In dieser Übung führen Sie die folgenden Schritte aus:
 
@@ -28,11 +32,9 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
    >**Wichtig**: Ihre ExpressRoute-Leitung wird von dem Moment an berechnet, in dem ein Dienstschlüssel ausgegeben wird. Stellen Sie sicher, dass Sie diesen Vorgang ausführen, sobald der Konnektivitätsanbieter dazu bereit ist, die Verbindung bereitzustellen.
 
-1. Wählen Sie im Menü des Azure-Portals die Option **+ Ressource erstellen** aus. Wählen Sie **Netzwerk** und dann **ExpressRoute** aus, wie in der folgenden Abbildung dargestellt. Wenn ExpressRoute nicht in der Liste angezeigt wird, verwenden Sie **Marketplace durchsuchen**, um danach zu suchen:
+1. Suchen Sie im Azure-Portal den Menüeintrag **ExpressRoute-Schaltkreise**, und wählen Sie ihn aus.
 
-   ![Azure-Portal – Menü „ExpressRoute-Leitung erstellen“](../media/create-expressroute-circuit-menu.png)
-
-1. Auf der Seite **ExpressRoute erstellen** geben Sie die **Ressourcengruppe** als ExpressRouteResourceGroup an. Wählen Sie dann **Standard-Resilienz** für **Resilienz** aus.
+1. Geben Sie auf der Seite **ExpressRoute erstellen** die **Ressourcengruppe** als `ExpressRouteResourceGroup` an. Wählen Sie dann **Standardresilienz** für **Resilienz** aus.
 
 1. Stellen unter ***Verbindungsdetails** sicher, dass Sie die richtige Region (**USA, Osten 2**), den Verbindungsnamen (**TestERCircuit**), den Peering-Standort (**Seattle**), Provider (**Equinix**), Bandbreite (**50 Mbps**), SKU-Tier (**Standard**) und Abrechnungsmodell für die Datenmessung (**Gemessen**) angeben.
 

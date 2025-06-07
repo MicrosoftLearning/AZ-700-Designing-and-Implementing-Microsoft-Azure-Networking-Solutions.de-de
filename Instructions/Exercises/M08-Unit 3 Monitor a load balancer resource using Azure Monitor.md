@@ -14,6 +14,8 @@ Das folgende Diagramm veranschaulicht die Umgebung, die Sie in dieser Übung ber
 
 ![Diagramm zur Veranschaulichung der Lastenausgleichsarchitektur, die in der Übung erstellt wird – einschließlich Lastenausgleich, VNet, Subnetz, Bastion-Subnet und VMs](../media/3-exercise-monitor-load-balancer-resource-using-azure-monitor.png)
 
+### Stellenqualifikationen
+
  In dieser Übung führen Sie die folgenden Schritte aus:
 
 + Aufgabe 1: Erstellen des virtuellen Netzwerks
@@ -30,11 +32,9 @@ Das folgende Diagramm veranschaulicht die Umgebung, die Sie in dieser Übung ber
 + Aufgabe 12: Anzeigen der Ressourcenintegrität
 + Aufgabe 13: Konfigurieren von Diagnoseeinstellungen
 
+### Interaktive Labsimulationen
 
-   >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Monitor%20a%20load%20balancer%20resource%20using%20Azure%20Monitor)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
-
-> [!Note]  
-> Sie können geringfügige Unterschiede zwischen den Anweisungen und der Azure-Portal Schnittstelle feststellen, aber das Kernkonzept ist identisch.
+>**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
 
 ### Geschätzte Dauer: 55 Minuten
 

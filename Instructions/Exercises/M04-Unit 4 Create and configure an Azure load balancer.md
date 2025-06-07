@@ -9,13 +9,17 @@ Exercise:
 
 In dieser Übung erstellen Sie einen internen Lastenausgleich für die fiktive Organisation Contoso Ltd.
 
-   >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20an%20Azure%20load%20balancer)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
+### Interaktive Labsimulationen
+
+>**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
 
 ### Geschätzte Dauer: 60 Minuten (einschließlich ca. 45 Minuten Wartezeit für die Bereitstellung)
 
 Die Schritte zum Erstellen eines internen Lastenausgleichs sind denen, die Sie bereits in diesem Modul kennengelernt haben, um einen öffentlichen Lastenausgleich zu erstellen, sehr ähnlich. Der Hauptunterschied besteht darin, dass bei einem öffentlichen Lastenausgleich über eine öffentliche IP-Adresse auf das Front-End zugegriffen wird und Sie die Konnektivität von einem Host aus testen, der sich außerhalb Ihres virtuellen Netzwerks befindet, während bei einem internen Lastenausgleich das Front-End eine private IP-Adresse in Ihrem virtuellen Netzwerk ist, und Sie die Konnektivität von einem Host innerhalb desselben Netzwerks aus testen.
 
 ![Diagramm eines internen Load Balancer Standard](../media/4-exercise-create-configure-azure-load-balancer.png)
+
+### Stellenqualifikationen
 
 In dieser Übung führen Sie die folgenden Schritte aus:
 
@@ -44,27 +48,26 @@ In diesem Abschnitt erstellen Sie ein virtuelles Netzwerk und ein Subnetz.
    | Name           | **IntLB-VNet**                             |
    | Region         | **(USA) USA, Osten**                           |
 
-5. Wählen Sie **Weiter: IP-Adressen** aus.
+5. Wählen Sie **Weiter** aus (dies führt Sie zur Registerkarte „Sicherheit“).
 
-6. Entfernen Sie auf der Registerkarte **IP-Adressen** im Feld **IPv4-Adressraum** den Standardwert, und geben Sie **10.1.0.0/16** ein.
+6. Wählen Sie unter **Azure Bastion** die Option **Azure Bastion aktivieren** aus, und geben Sie dann die Informationen aus der folgenden Tabelle ein.
 
-7. Wählen Sie auf der Registerkarte **IP-Adressen** die Option **+ Subnetz hinzufügen** aus.
+    | **Einstellung**                   | **Wert**                                                    |
+    | ----------------------------- | ------------------------------------------------------------ |
+    | Hostname                     | **myBastionHost**                                            |
+    | Öffentliche IP-Adresse             | Wählen Sie **Öffentliche IP-Adresse erstellen** aus – Name: **myBastionIP** |
 
-8. Geben Sie im Bereich **Subnetz hinzufügen** den Subnetznamen **myBackendSubnet** und den Subnetzadressbereich **10.1.0.0/24** an.
+7. Wählen Sie **Weiter** aus (dies führt Sie zur Registerkarte „IP-Adressen“).
 
-9. Wählen Sie **Hinzufügen** aus.
+8. Entfernen Sie auf der Registerkarte **IP-Adressen** im Feld **IPv4-Adressraum** den Standardwert, und geben Sie **10.1.0.0/16** ein.
 
-10. Wählen Sie **Subnetz hinzufügen** aus, und geben Sie den Subnetznamen **myFrontEndSubnet** und den Subnetzadressbereich **10.1.2.0/24** ein. Wählen Sie **Hinzufügen** aus
+9. Wählen Sie auf der Registerkarte **IP-Adressen** die Option **+ Subnetz hinzufügen** aus.
 
-11. Klicken Sie auf **Weiter: Sicherheit**.
+10. Geben Sie im Bereich **Subnetz hinzufügen** den Subnetznamen **myBackendSubnet** und den Subnetzadressbereich **10.1.0.0/24** an. Wählen Sie **Hinzufügen** aus.
 
-12. Wählen Sie unter **BastionHost** die Option **Aktivieren** aus, und geben Sie dann die Informationen aus der folgenden Tabelle ein.
+11. Wählen Sie erneut **Subnetz hinzufügen** aus, und geben Sie den Subnetznamen **myFrontEndSubnet** und den Subnetzadressbereich **10.1.2.0/24** ein. Wählen Sie **Hinzufügen** aus.
 
-    | **Einstellung**                       | **Wert**                                     |
-    | --------------------------------- | --------------------------------------------- |
-    | Bastion-Name                      | **myBastionHost**                             |
-    | AzureBastionSubnet-Adressraum | **10.1.1.0/26**                               |
-    | Öffentliche IP-Adresse                 | Wählen Sie **Neu erstellen** Name: **myBastionIP** aus. |
+12. Wählen Sie in der Benachrichtigung zu Azure Bastion **Azure Bastion-Subnetz hinzufügen** aus
 
 13. Klicken Sie auf **Überprüfen + erstellen**.
 

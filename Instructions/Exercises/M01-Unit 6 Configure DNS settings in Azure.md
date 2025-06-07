@@ -12,6 +12,7 @@ In dieser Lerneinheit konfigurieren Sie die DNS-Namensauflösung für Contoso Lt
 
 ![Abbildung: DNS-Architektur.](../media/6-exercise-configure-domain-name-servers-configuration-azure.png)
 
+### Stellenqualifikationen
 In dieser Übung führen Sie die folgenden Schritte aus:
 
 + Aufgabe 1: Erstellen einer privaten DNS-Zone
@@ -19,7 +20,9 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 3: Erstellen von VMs zum Testen der Konfiguration
 + Aufgabe 4: Überprüfen des Vorhandenseins von Einträgen in der DNS-Zone
 
-   >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Configure%20DNS%20settings%20in%20Azure)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
+### Interaktive Labsimulationen
+
+>**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
 
 ### Geschätzte Dauer: 25 Minuten
 

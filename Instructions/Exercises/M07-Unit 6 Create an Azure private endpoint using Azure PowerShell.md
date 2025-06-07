@@ -12,8 +12,9 @@ Beginnen Sie mit Azure Private Link, indem Sie einen privaten Endpunkt verwenden
 
 ![Diagramm: Architektur eines privaten Endpunkts](../media/6-exercise-create-azure-private-endpoint-using-azure-powershell.png)
 
+### Interaktive Labsimulationen
 
-   >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20an%20Azure%20private%20endpoint%20using%20Azure%20PowerShell)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
+>**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
 
 ### Geschätzte Dauer: 45 Minuten
 
@@ -36,6 +37,8 @@ Private Endpunkte können für verschiedene Arten von Azure-Diensten (z. B. Azu
     > **Hinweis:** Wenn Sie in Ihrem eigenen Abonnement arbeiten, sind die [Vorlagendateien](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises) im GitHub-Lab-Repository verfügbar.
 
 Wenn Sie sich dafür entscheiden, PowerShell lokal zu installieren und zu verwenden, ist für dieses Beispiel mindestens Version 5.4.1 des Azure PowerShell-Moduls erforderlich. Führen Sie ```Get-Module -ListAvailable Az``` aus, um die installierte Version zu ermitteln. Wenn Sie ein Upgrade ausführen müssen, finden Sie unter [Installieren des Azure PowerShell-Moduls](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps) Informationen dazu. Wenn Sie PowerShell lokal ausführen, müssen Sie auch ```Connect-AzAccount``` ausführen, um eine Verbindung mit Azure herzustellen.
+
+### Stellenqualifikationen
 
 In dieser Übung führen Sie die folgenden Schritte aus:
 

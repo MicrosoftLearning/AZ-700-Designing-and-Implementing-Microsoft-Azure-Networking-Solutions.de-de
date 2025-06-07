@@ -12,6 +12,8 @@ VNET-Dienstendpunkte ermöglichen es Ihnen, den Netzwerkzugriff auf einige Azure
 
 ![Diagramm der Architektur des Dienstendpunkts.](../media/5-exercise-restrict-network-paas-resources-virtual-network-service-endpoints.png)
 
+### Stellenqualifikationen
+
 In dieser Übung führen Sie die folgenden Schritte aus:
 
 + Aufgabe 1: Erstellen eines virtuellen Netzwerks
@@ -26,7 +28,9 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 10: Bestätigen des Zugriffs auf das Speicherkonto
 
 
-   >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Restrict%20network%20access%20to%20PaaS%20resources%20with%20virtual%20network%20service%20endpoints)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
+### Interaktive Labsimulationen
+
+>**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
 
 ### Geschätzte Dauer: 35 Minuten
 
