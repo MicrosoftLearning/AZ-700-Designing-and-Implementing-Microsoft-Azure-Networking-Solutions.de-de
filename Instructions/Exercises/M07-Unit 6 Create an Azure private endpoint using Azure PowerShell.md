@@ -4,7 +4,9 @@ Exercise:
   module: Module 07 - Design and implement private access to Azure Services
 ---
 
-# M07 – Lerneinheit 6: Erstellen eines privaten Azure-Endpunkts mit Azure PowerShell
+# M07 – Lerneinheit 6: Erstellen eines privaten Azure-Endpunkts mit Azure PowerShell (optional)
+
+> **Hinweis**: Dieses Lab ist optional. Das vorherige Lab, *Einschränken des Netzwerkzugriffs auf PaaS-Ressourcen mit VNet-Dienstendpunkten*, behandelt diese Funktion. In Zukunft wird dieses Lab eingestellt. 
 
 ## Übungsszenario
 
@@ -144,6 +146,7 @@ $parameters3 = @{
 }
 
 New-AzBastion @parameters3
+
 ```
 
 ## Aufgabe 3: Erstellen eines virtuellen Testcomputers
