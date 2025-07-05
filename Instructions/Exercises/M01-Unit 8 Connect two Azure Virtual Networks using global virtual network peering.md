@@ -134,7 +134,7 @@ In diesem Abschnitt erstellen Sie eine Test-VM im VNet, um zu testen, ob Sie üb
     | ------------------------------------ | --------------------------------------------- | 
     | Name des Peeringlinks | `CoreServicesVnet-to-ManufacturingVnet` |
  
-    **Einstellungen für das Peering virtueller Remotenetzwerke**
+    **Einstellungen für das Peering lokaler virtueller Netzwerke**
    
     | **Option**                                    | **Wert**                             |
     | ------------------------------------ | --------------------------------------------- | 
