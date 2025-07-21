@@ -5,9 +5,7 @@ demo:
 ---
 ## Konfigurieren des VNet-Peerings
 
-**Hinweis:** Für diese Demo benötigen Sie zwei virtuelle Netzwerke.
-
-**Simulation:**[Verbinden zweier virtueller Netzwerke mithilfe von Azure Peering](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Connect%20two%20Azure%20virtual%20networks%20using%20global%20virtual%20network%20peering)
+**Hinweis:**  Für diese Demo benötigen Sie zwei virtuelle Netzwerke.
 
 **Referenz:** [Herstellen von Verbindungen zwischen virtuellen Netzwerken mittels VNet-Peering – Tutorial](https://docs.microsoft.com/azure/virtual-network/tutorial-connect-virtual-networks-portal)
 

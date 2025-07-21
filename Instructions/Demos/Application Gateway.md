@@ -7,8 +7,6 @@ demo:
 
 In dieser Demonstration lernen Sie, wie Sie eine Azure Application Gateway-Instanz erstellen. 
 
-**Simulation:**[ Bereitstellen eines Azure Application Gateway](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Deploy%20Azure%20Application%20Gateway)
-
 **Referenz:** [Schnellstart: Weiterleiten von Webdatenverkehr per Azure Application Gateway – Azure-Portal](https://learn.microsoft.com/azure/application-gateway/quick-create-portal)
 
 **Referenz**: [End-to-End-Verschlüsselung des Netzwerkdatenverkehrs mit Azure Application Gateway](https://github.com/MicrosoftDocs/mslearn-end-to-end-encryption-with-app-gateway)

@@ -9,8 +9,6 @@ In dieser Demo erstellen Sie virtuelle Netzwerke.
 
 **Referenz:** [Schnellstart: Erstellen eines virtuellen Netzwerks – Azure-Portal](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
 
-**Simulation:**[Konfigurieren virtueller Netzwerke](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Design%20and%20implement%20a%20virtual%20network%20in%20Azure)
-
 ## Erstellen eines virtuellen Netzwerks im Portal
 
 1.  Melden Sie sich beim Azure-Portal an, und suchen Sie nach  **Virtuelle Netzwerke**.
