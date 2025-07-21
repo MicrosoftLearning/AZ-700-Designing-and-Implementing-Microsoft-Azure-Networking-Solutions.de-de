@@ -4,8 +4,6 @@ demo:
   module: Module 02 - Design and implement hybrid networking
 ---
 
-**Simulation:**[Erstellen und Konfigurieren eines Gateway für virtuelle Netzwerke](https://mslabs.cloudguides.com/guides/AZ-700%20Lab%20Simulation%20-%20Create%20and%20configure%20a%20virtual%20network%20gateway)
-
 In dieser Dem untersuchen wir Gateways für virtuelle Netzwerke.
 
 **Hinweis:**  Diese Demonstration funktioniert am besten mit zwei virtuellen Netzwerken mit Subnetzen.
