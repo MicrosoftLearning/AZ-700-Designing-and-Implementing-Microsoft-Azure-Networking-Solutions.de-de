@@ -45,64 +45,63 @@ In dieser Aufgabe erstellen Sie die beiden virtuellen Spoke-Netzwerke, die jewei
 
 1. Klicken Sie auf **Erstellen**.
 
-1. Wählen Sie unter **Ressourcengruppe** die Option **Neue erstellen** aus, geben Sie **fw-manager-rg** als Namen ein, und wählen Sie dann **OK** aus.
+1. Wählen Sie unter **Ressourcengruppe** die Option **Neu erstellen** aus, geben Sie `fw-manager-rg` als Namen ein, und wählen Sie dann **OK** aus.
 
-1. Geben unter **Name** den Namen **Spoke-01** ein.
+1. Geben Sie unter **Name**`Spoke-01` ein.
 
 1. Wählen Sie unter **Region** Ihre Region aus.
 
-1. Klicken Sie auf **Weiter: IP-Adressen**.
+1. Wählen Sie **Weiter** aus. Überprüfen Sie die Registerkarte **Sicherheit**, nehmen Sie aber keine Änderungen vor. 
 
-1. Geben Sie unter **IPv4-Adressraum** die Angabe **10.0.0.0/16** ein.
+1. Wählen Sie **Weiter** aus, und gehen Sie zur Registerkarte **IP-Adressen**.
 
-1. **Löschen** Sie alle anderen hier aufgeführten Adressräume, **z. B. 10.1.0.0/16**.
+1. Wählen Sie **Adressraum löschen** und dann **IPv4-Adressraum hinzufügen** aus. 
 
-1. Wählen Sie unter **Subnetzname** das Wort **Standard** aus.
+1. Überprüfen Sie, ob der IP-Adressraum **10.0.0.0/16** lautet.
 
-1. Ändern Sie im Dialogfeld **Subnetz bearbeiten** den Namen in **Workload-01-SN**.
+1. Wählen Sie **Subnetz hinzufügen** aus. 
 
-1. Ändern Sie den **Subnetzadressbereich** in **10.0.1.0/24**.
+1. Ändern Sie den **Subnetznamen** in `Workload-01-SN`.
 
-1. Wählen Sie **Speichern**.
+1. Ändern Sie die **Startadresse** in `10.0.1.0`.
+
+1. Wählen Sie **Hinzufügen**.
 
 1. Klicken Sie auf **Überprüfen + erstellen**.
 
 1. Klicken Sie auf **Erstellen**.
 
-Wiederholen Sie die Schritte 1 bis 14 oben, um ein weiteres ähnliches virtuelles Netzwerk und Subnetz zu erstellen, verwenden Sie aber die folgenden Informationen:
+Wiederholen Sie die Schritte 1 bis 14 oben, um ein weiteres ähnliches virtuelles Netzwerk und Subnetz zu erstellen, verwenden Sie aber die folgenden Informationen. Sie müssen nicht warten, bis die Bereitstellung für das erste virtuelle Netzwerk abgeschlossen ist. 
 
 + Ressourcengruppe: **fw-manager-rg** (vorhandene auswählen)
-+ Name: **Spoke-02**
++ Name des virtuellen Netzwerks: `Spoke-02`
 + Adressraum: **10.1.0.0/16** (löschen Sie alle anderen aufgelisteten Adressräume)
-+ Subnetzname: **Workload-02-SN**
++ Subnetzname: `Workload-02-SN`
 + Subnetzadressbereich: **10.1.1.0/24**
 
 ## Aufgabe 2: Erstellen des geschützten virtuellen Hubs
 
 In dieser Aufgabe erstellen Sie Ihren geschützten virtuellen Hub mithilfe von Firewall Manager.
 
-1. Wählen Sie auf der Startseite des Azure-Portals **Alle Dienste** aus.
+1. Suchen Sie im Portal nach `firewall manager`, und wählen Sie dann **Netzwerksicherheit:Stichwort: Firewall Manager** aus.
+   
+1. Wählen Sie auf dem Blatt **Ressourcen schützen** die Option **Virtuelle Hubs** aus.
 
-1. Geben Sie im Suchfeld **firewall manager** ein, und wählen Sie **Firewall Manager** aus, wenn diese Option angezeigt wird.
-
-1. Wählen Sie auf der Seite **Firewall Manager** auf der Übersichtsseite die Option **Geschützte virtuelle Hubs anzeigen**.
-
-1. Wählen Sie auf der Seite **Virtuelle Hubs** die Option **Neuen geschützten virtuellen Hub erstellen** aus.
+1. Wählen Sie **Neuen geschützten virtuellen Hub erstellen**.
 
 1. Wählen Sie unter **Ressourcengruppe** die Ressourcengruppe **fw-manager-rg** aus.
 
 1. Wählen Sie als **Region** Ihre Region aus.
 
-1. Geben Sie unter **Name des geschützten virtuellen Hubs** den Namen **Hub-01** ein.
+1. Geben Sie unter **Name des geschützten virtuellen Hubs** den Namen `Hub-01` ein.
 
-1. Geben Sie unter **Hubadressraum** die Angabe **10.2.0.0/16** ein.
+1. Geben Sie unter **Hubadressraum** den Adressraum `10.2.0.0/16` ein.
 
-1. Wählen Sie **Neues vWAN** aus.
+1. Stellen Sie sicher, dass **Neues vWAN** ausgewählt ist.
 
-1. Geben Sie unter **Virtual WAN-Name** den Namen **Vwan-01** ein.
+1. Geben Sie unter **Name des virtuellen WAN** den Namen `Vwan-01` ein.
 
 1. Klicken Sie auf **Weiter: Azure Firewall** aus.
-    ![Erstellen eines neuen geschützten virtuellen Hubs: Registerkarte „Grundlagen“](../media/create-new-secured-virtual-hub-1.png)
 
 1. Klicken Sie auf **Weiter: Sicherheitspartneranbieter**.
 
@@ -110,17 +109,11 @@ In dieser Aufgabe erstellen Sie Ihren geschützten virtuellen Hub mithilfe von F
 
 1. Klicken Sie auf **Erstellen**.
 
-    > **[!NOTE]**
-    >
-    > Der Vorgang der Bereitstellung kann bis zu 30 Minuten in Anspruch nehmen.
+    > Hinweis: Der Vorgang der Bereitstellung kann bis zu 30 Minuten in Anspruch nehmen.
 
-    
+1. Warten Sie, bis die Bereitstellung abgeschlossen ist. 
 
-    ![Erstellen eines neuen geschützten virtuellen Hubs: Registerkarte „Überprüfen und erstellen“](../media/create-new-secured-virtual-hub-2.png)
-
-1. Wählen Sie nach Abschluss der Bereitstellung auf der Homepage des Azure-Portals **Alle Dienste** aus.
-
-1. Geben Sie im Suchfeld **firewall manager** ein, und wählen Sie **Firewall Manager** aus, wenn diese Option angezeigt wird.
+1. Suchen Sie im Portal nach `firewall manager`, und wählen Sie dann **Netzwerksicherheit:Stichwort: Firewall Manager** aus.
 
 1. Wählen Sie auf der Seite **Firewall Manager** die Option **Virtuelle Hubs** aus.
 
@@ -134,15 +127,15 @@ In dieser Aufgabe erstellen Sie Ihren geschützten virtuellen Hub mithilfe von F
 
 In dieser Aufgabe verbinden Sie die virtuellen Hub-and-Spoke-Netzwerke. Dies wird häufig als „Peering“ bezeichnet.
 
-1. Wählen Sie auf der Homepage des Azure-Portals **Ressourcengruppen** aus.
-
-1. Wählen Sie die Ressourcengruppe **fw-manager-rg** und anschließend das virtuelle WAN **Vwan-01** aus.
+1. Wählen Sie **Zu Ressourcengruppe wechseln** aus.
+2. 
+1. Suchen Sie im Portal nach dem virtuellen WAN **Vwan-01**, und wählen Sie es aus.
 
 1. Wählen Sie unter **Konnektivität** die Option **Virtuelle Netzwerkverbindungen** aus.
 
 1. Wählen Sie **Verbindung hinzufügen** aus.
 
-1. Geben Sie unter **Verbindungsname** den Namen **hub-spoke-01** ein.
+1. Geben Sie unter **Verbindungsname** den Namen `hub-spoke-01` ein.
 
 1. Wählen Sie unter **Hubs** die Option **Hub-01** aus.
 
@@ -151,12 +144,11 @@ In dieser Aufgabe verbinden Sie die virtuellen Hub-and-Spoke-Netzwerke. Dies wir
 1. Wählen Sie unter **Virtuelles Netzwerk** die Option **Spoke-01** aus.
 
 1. Klicken Sie auf **Erstellen**.
-   ![Hinzufügen einer Hub-and-Spoke-Verbindung mit dem virtuellen WAN: Spoke 1](../media/connect-hub-spoke-vnet-1.png)
 
-1. Wiederholen Sie die oben genannten Schritte 4 bis 9, um eine weitere ähnliche Verbindung zu erstellen, verwenden Sie aber den Verbindungsnamen **hub-spoke-02**, um das virtuelle Netzwerk **Spoke-02** zu verbinden.
+1. Wiederholen Sie die oben genannten Schritte 4 bis 9, um eine weitere ähnliche Verbindung zu erstellen, verwenden Sie aber den Verbindungsnamen `hub-spoke-02`, um das virtuelle Netzwerk **Spoke-02** zu verbinden.
 
-    ![Hinzufügen einer Hub-and-Spoke-Verbindung mit dem virtuellen WAN: Spoke 2](../media/connect-hub-spoke-vnet-2.png)
-
+1. **Aktualisieren** Sie die Seite mit VNET-Verbindungen, und stellen Sie sicher, dass Sie über zwei virtuelle Netzwerke verfügen: Spoke-01 und Spoke-02.\
+   
 ## Aufgabe 4: Bereitstellen der Server
 
 1. Wählen Sie im Azure-Portal das Cloud Shell-Symbol (oben rechts). Konfigurieren Sie die Shell bei Bedarf.  
@@ -182,36 +174,35 @@ In dieser Aufgabe verbinden Sie die virtuellen Hub-and-Spoke-Netzwerke. Dies wir
 
 1. Notieren Sie sich auf der Seite **Übersicht** von **Srv-workload-01** im rechten Bereich unter dem Abschnitt **Netzwerk** die **Private IP-Adresse** (z. B. **10.0.1.4**).
 
-1. Notieren Sie sich auf der Seite **Übersicht** von **Srv-workload-02** im rechten Bereich unter dem Abschnitt **Netzwerk** die **Private IP-Adresse** (z. B. **10.1.1.4**).
+1. Notieren Sie sich auf der Seite **Übersicht** von **Srv-workload-02** im rechten Bereich unter dem Abschnitt **Netzwerk** den Wert für **Private IP-Adresse** (z. B. **10.1.0.4**).
 
 ## Aufgabe 5: Erstellen einer Firewallrichtlinie und Schützen Ihres Hubs
 
 In dieser Aufgabe erstellen Sie zuerst Ihre Firewallrichtlinie und schützen dann Ihren Hub. Die Firewallrichtlinie definiert Regelsammlungen für die Weiterleitung von Datenverkehr an mindestens einen geschützten virtuellen Hub.
 
-1. Wählen Sie auf der Homepage des Azure-Portals **Firewall Manager** aus.
-   + Wenn das Firewall Manager-Symbol nicht auf der Homepage angezeigt wird, wählen Sie **Alle Dienste** aus. Geben Sie dann im Suchfeld **firewall manager** ein, und wählen Sie **Firewall Manager** aus, wenn diese Option angezeigt wird.
+1. Suchen Sie im Portal nach `firewall manager`, und wählen Sie dann **Netzwerksicherheit:Stichwort: Firewall Manager** aus.
 
-1. Wählen Sie in **Firewall Manager** auf der Übersichtsseite die Option **Azure Firewall-Richtlinien anzeigen** aus.
+1. Wählen Sie auf dem Blatt **Firewall Manager** die Option **Azure Firewall-Richtlinien** aus.
 
-1. Wählen Sie die Option **Azure-Firewallrichtlinie erstellen** aus.
+1. Klicken Sie auf **Erstellen**.
 
 1. Wählen Sie unter **Ressourcengruppe** die Option **fw-manager-rg** aus.
 
-5. Geben Sie unter **Richtliniendetails** unter **Name** die Angabe **Policy-01** ein.
+5. Geben Sie unter **Richtliniendetails** unter **Name** den Namen `Policy-01` ein.
 
 1. Wählen Sie unter **Region** Ihre Region aus.
 
 1. Wählen Sie **Standard** als **Richtlinienebene** aus.
 
-1. Wählen Sie **Weiter: DNS-Einstellungen** aus.
+1. Wählen Sie **Weiter: DNS-Einstellungen** aus. Überprüfen Sie die Angaben, nehmen Sie jedoch keine Änderungen vor. 
 
-1. Wählen Sie **Weiter: TLS-Überprüfung (Vorschau)** aus.
+1. Klicken Sie auf **Weiter: TLS-Überprüfung**. Überprüfen Sie die Angaben, nehmen Sie jedoch keine Änderungen vor. 
 
 1. Wählen Sie **Weiter: Regeln** aus.
 
 1. Wählen Sie auf der Registerkarte **Regeln** die Option **Regelsammlung hinzufügen** aus.
 
-1. Geben Sie auf der Seite **Regelsammlung hinzufügen** unter **Name** die Angabe **App-RC-01** ein.
+1. Geben Sie auf der Seite **Regelsammlung hinzufügen** unter **Name** den Namen `App-RC-01` ein.
 
 1. Wählen Sie unter **Regelsammlungstyp** die Option **Anwendung** aus.
 
@@ -219,31 +210,29 @@ In dieser Aufgabe erstellen Sie zuerst Ihre Firewallrichtlinie und schützen dan
 
 1. Vergewissern Sie sich, dass die **Regelsammlungsaktion** auf **Zulassen** festgelegt ist.
 
-1. Geben Sie unter **Regeln** unter **Name** den Namen **Allow-msft** ein.
+1. Geben Sie unter **Regeln** unter **Name** den Namen `Allow-msft` ein.
 
 1. Wählen Sie unter **Quellentyp** die Option **IP-Adresse** aus.
 
 1. Geben Sie unter **Quelle** „*“ ein.
 
-1. Geben Sie unter **Protokoll** die Angabe **http,https** ein.
+1. Geben Sie unter **Protokoll** das Protokoll `http,https` ein.
 
 1. Vergewissern Sie sich, dass **Zieltyp** auf **FQDN** festgelegt ist.
 
-1. Geben Sie unter **Ziel** die Zeichenfolge ***.microsoft.com** ein.
+1. Geben Sie unter **Ziel** den Wert `*.microsoft.com` ein.
 
-1. Wählen Sie **Hinzufügen** aus.
-
-    ![Hinzufügen der Anwendungsregelsammlung zur Firewallrichtlinie](../media/add-rule-collection-firewall-policy-1.png)
+1. Wählen Sie **Hinzufügen**.
 
 1. Um eine DNAT-Regel hinzuzufügen, damit Sie einen Remotedesktop mit der VM „Srv-workload-01“ verbinden können, wählen Sie **Regelsammlung hinzufügen** aus.
 
-1. Geben Sie unter **Name** den Namen **dnat-rdp** ein.
+1. Geben Sie unter **Name**`dnat-rdp` ein.
 
 1. Wählen Sie unter **Regelsammlungstyp** die Option **DNAT** aus.
 
 1. Geben Sie unter **Priorität**den Wert **100** ein.
 
-1. Geben Sie unter **Regeln** unter **Name** den Namen **Allow-rdp** ein.
+1. Geben Sie unter **Regeln** unter **Name** den Namen `Allow-rdp` ein.
 
 1. Wählen Sie unter **Quellentyp** die Option **IP-Adresse** aus.
 
@@ -251,11 +240,11 @@ In dieser Aufgabe erstellen Sie zuerst Ihre Firewallrichtlinie und schützen dan
 
 1. Wählen Sie für **Protokoll** die Option **TCP** aus.
 
-1. Geben Sie unter **Zielports** den Wert **3389** ein.
+1. Geben Sie unter **Zielports** den Wert `3389` ein.
 
-1. Wählen Sie unter **Zieltyp** die Option **IP-Adresse** aus.
+1. Geben Sie unter **Ziel-IP-Adresse** die öffentliche IP-Adresse des virtuellen Firewallhubs ein, die Sie sich zuvor notiert haben (z. B. **51.143.226.18**).
 
-1. Geben Sie unter **Ziel** die öffentliche IP-Adresse des virtuellen Firewallhubs ein, die Sie sich zuvor notiert haben (z. B. **51.143.226.18**).
+1. Wählen Sie unter **Übersetzter Typ** die Option **IP-Adresse** aus.
 
 1. Geben Sie unter **Übersetzte Adresse** die private IP-Adresse für **Srv-workload-01** ein, die Sie sich zuvor notiert haben (z. B. **10.0.1.4**).
 
@@ -265,7 +254,7 @@ In dieser Aufgabe erstellen Sie zuerst Ihre Firewallrichtlinie und schützen dan
 
 1. Um eine Netzwerkregel hinzuzufügen, damit Sie einen Remotedesktop von der VM „Srv-workload-01“ mit der VM „Srv-workload-02“ verbinden können, wählen Sie **Regelsammlung hinzufügen** aus.
 
-1. Geben Sie unter **Name** den Namen **vnet-rdp** ein.
+1. Geben Sie unter **Name**`vnet-rdp` ein.
 
 1. Wählen Sie unter **Regelsammlungstyp** die Option **Netzwerk** aus.
 
@@ -273,7 +262,7 @@ In dieser Aufgabe erstellen Sie zuerst Ihre Firewallrichtlinie und schützen dan
 
 1. Wählen Sie unter **Regelsammlungsaktion** die Option **Zulassen** aus.
 
-1. Geben Sie unter **Regeln** unter **Name** den Namen **Allow-vnet** ein.
+1. Geben Sie unter **Regeln** unter **Name** den Namen `Allow-vnet` ein.
 
 1. Wählen Sie unter **Quellentyp** die Option **IP-Adresse** aus.
 
@@ -285,11 +274,9 @@ In dieser Aufgabe erstellen Sie zuerst Ihre Firewallrichtlinie und schützen dan
 
 1. Wählen Sie unter **Zieltyp** die Option **IP-Adresse** aus.
 
-1. Geben Sie unter **Ziel** die private IP-Adresse für **Srv-workload-02** ein, die Sie sich zuvor notiert haben (z. B. **10.1.1.4**).
+1. Geben Sie unter **Ziel** die private IP-Adresse für **Srv-workload-02** ein, die Sie sich zuvor notiert haben (z. B. **10.1.0.4**).
 
-1. Wählen Sie **Hinzufügen** aus.
-
-    ![Auflisten von Regelsammlungen in der Firewallrichtlinie](../media/list-rule-collections-firewall-policy.png)
+1. Wählen Sie **Hinzufügen**.
 
 1. Sie sollten nun drei Regelsammlungen aufgelistet werden.
 
@@ -301,8 +288,7 @@ In dieser Aufgabe erstellen Sie zuerst Ihre Firewallrichtlinie und schützen dan
 
 In dieser Aufgabe ordnen Sie die Firewallrichtlinie dem virtuellen Hub zu.
 
-1. Wählen Sie auf der Homepage des Azure-Portals **Firewall Manager** aus.
-   + Wenn das Firewall Manager-Symbol nicht auf der Homepage angezeigt wird, wählen Sie **Alle Dienste** aus. Geben Sie dann im Suchfeld **firewall manager** ein, und wählen Sie **Firewall Manager** aus, wenn diese Option angezeigt wird.
+1. Suchen Sie im Portal nach `firewall manager`, und wählen Sie dann **Netzwerksicherheit:Stichwort: Firewall Manager** aus.
 
 1. Wählen Sie in **Firewall Manager** unter **Sicherheit** die Option **Azure Firewall-Richtlinien** aus.
 
@@ -315,8 +301,6 @@ In dieser Aufgabe ordnen Sie die Firewallrichtlinie dem virtuellen Hub zu.
 1. Wählen Sie **Hinzufügen** aus.
 
 1. Wenn die Richtlinie angefügt wurde, wählen Sie **Aktualisieren** aus. Die Zuordnung sollte angezeigt werden.
-
-![Anzeigen der zugeordneten Firewallrichtlinie für den Hub](../media/associate-firewall-policy-with-hub-end.png)
 
 ## Aufgabe 7: Weiterleiten von Datenverkehr an Ihren Hub
 
