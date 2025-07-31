@@ -15,7 +15,9 @@ In dieser Übung erstellen Sie das virtuelle Spoke-Netzwerk und einen geschützt
 
 ### Interaktive Labsimulationen
 
->**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
+**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
+
+
 ## Erstellen einer Hub-Spoke-Architektur
 
 In diesem Teil der Übung erstellen Sie die virtuellen Spoke-Netzwerke und Subnetze, in denen Sie die Workloadserver platzieren. Anschließend erstellen Sie den geschützten virtuellen Hub und verbinden die virtuellen Hub-and-Spoke-Netzwerke .
@@ -41,13 +43,13 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 In dieser Aufgabe erstellen Sie die beiden virtuellen Spoke-Netzwerke, die jeweils ein Subnetz enthalten, das Ihre Workloadserver hostet.
 
-1. Geben Sie auf der Startseite des Azure-Portals in das Suchfeld **Virtuelles Netzwerk** ein, und wählen Sie **Virtuelles Netzwerk**, wenn diese Option angezeigt wird.
+1. Suchen Sie im Azure-Portal nach `Virtual Networks` und wählen Sie es aus.
 
 1. Klicken Sie auf **Erstellen**.
 
 1. Wählen Sie unter **Ressourcengruppe** die Option **Neu erstellen** aus, geben Sie `fw-manager-rg` als Namen ein, und wählen Sie dann **OK** aus.
 
-1. Geben Sie unter **Name**`Spoke-01` ein.
+1. Geben Sie unter **Name des virtuellen Netzwerks** `Spoke-01` ein.
 
 1. Wählen Sie unter **Region** Ihre Region aus.
 
@@ -71,13 +73,13 @@ In dieser Aufgabe erstellen Sie die beiden virtuellen Spoke-Netzwerke, die jewei
 
 1. Klicken Sie auf **Erstellen**.
 
-Wiederholen Sie die Schritte 1 bis 14 oben, um ein weiteres ähnliches virtuelles Netzwerk und Subnetz zu erstellen, verwenden Sie aber die folgenden Informationen. Sie müssen nicht warten, bis die Bereitstellung für das erste virtuelle Netzwerk abgeschlossen ist. 
+Wiederholen Sie die Schritte 1 bis 14 oben, um ein weiteres ähnliches virtuelles Netzwerk und Subnetz mit den folgenden Angaben zu erstellen. Sie müssen nicht warten, bis die Bereitstellung für das erste virtuelle Netzwerk abgeschlossen ist. 
 
 + Ressourcengruppe: **fw-manager-rg** (vorhandene auswählen)
 + Name des virtuellen Netzwerks: `Spoke-02`
 + Adressraum: **10.1.0.0/16** (löschen Sie alle anderen aufgelisteten Adressräume)
 + Subnetzname: `Workload-02-SN`
-+ Subnetzadressbereich: **10.1.1.0/24**
++ Startadresse des Subnetzes: `10.1.1.0`
 
 ## Aufgabe 2: Erstellen des geschützten virtuellen Hubs
 
@@ -101,9 +103,9 @@ In dieser Aufgabe erstellen Sie Ihren geschützten virtuellen Hub mithilfe von F
 
 1. Geben Sie unter **Name des virtuellen WAN** den Namen `Vwan-01` ein.
 
-1. Klicken Sie auf **Weiter: Azure Firewall** aus.
+1. Klicken Sie auf **Weiter: Azure Firewall** aus. Überprüfen Sie die Angaben, nehmen Sie jedoch keine Änderungen vor. 
 
-1. Klicken Sie auf **Weiter: Sicherheitspartneranbieter**.
+1. Klicken Sie auf **Weiter: Sicherheitspartneranbieter**. Überprüfen Sie die Angaben, nehmen Sie jedoch keine Änderungen vor. 
 
 1. Klicken Sie auf **Weiter: Überprüfen + erstellen**.
 
@@ -119,17 +121,15 @@ In dieser Aufgabe erstellen Sie Ihren geschützten virtuellen Hub mithilfe von F
 
 1. Wählen Sie **Hub-01** aus.
 
-1. Wählen Sie **Öffentliche IP-Konfiguration** aus.
+1. Wählen Sie **Azure Firewall** und dann **Konfiguration der öffentlichen IP-Adresse** aus.
 
-1. Notieren Sie sich die öffentliche IP-Adresse (z. B. **51.143.226.18**), die Sie später verwenden.
+1. Notieren Sie sich die öffentliche IP-Adresse (z. B. **172.191.79.203**), da Sie sie später verwenden.
 
 ## Aufgabe 3: Verbinden der virtuellen Hub-and-Spoke-Netzwerke
 
 In dieser Aufgabe verbinden Sie die virtuellen Hub-and-Spoke-Netzwerke. Dies wird häufig als „Peering“ bezeichnet.
 
-1. Wählen Sie **Zu Ressourcengruppe wechseln** aus.
-2. 
-1. Suchen Sie im Portal nach dem virtuellen WAN **Vwan-01**, und wählen Sie es aus.
+1. Suchen Sie im Portal nach dem virtuellen WAN `Vwan-01`, und wählen Sie es aus.
 
 1. Wählen Sie unter **Konnektivität** die Option **Virtuelle Netzwerkverbindungen** aus.
 
@@ -147,7 +147,7 @@ In dieser Aufgabe verbinden Sie die virtuellen Hub-and-Spoke-Netzwerke. Dies wir
 
 1. Wiederholen Sie die oben genannten Schritte 4 bis 9, um eine weitere ähnliche Verbindung zu erstellen, verwenden Sie aber den Verbindungsnamen `hub-spoke-02`, um das virtuelle Netzwerk **Spoke-02** zu verbinden.
 
-1. **Aktualisieren** Sie die Seite mit VNET-Verbindungen, und stellen Sie sicher, dass Sie über zwei virtuelle Netzwerke verfügen: Spoke-01 und Spoke-02.\
+1. **Aktualisieren** Sie die Seite mit VNET-Verbindungen, und stellen Sie sicher, dass Sie über zwei virtuelle Netzwerke verfügen: Spoke-01 und Spoke-02.
    
 ## Aufgabe 4: Bereitstellen der Server
 
@@ -162,7 +162,7 @@ In dieser Aufgabe verbinden Sie die virtuellen Hub-and-Spoke-Netzwerke. Dies wir
 
 1. Stellen Sie die folgenden ARM-Vorlagen bereit, um die für diese Übung erforderliche VM zu erstellen:
 
-   >**Hinweis**: Sie werden aufgefordert, ein Administratorkennwort anzugeben.
+   >**Hinweis**: Sie werden aufgefordert, ein Administratorkennwort anzugeben. **Sie benötigen dieses Kennwort in einem späteren Schritt.**
 
    ```powershell
    $RGName = "fw-manager-rg"
@@ -174,7 +174,7 @@ In dieser Aufgabe verbinden Sie die virtuellen Hub-and-Spoke-Netzwerke. Dies wir
 
 1. Notieren Sie sich auf der Seite **Übersicht** von **Srv-workload-01** im rechten Bereich unter dem Abschnitt **Netzwerk** die **Private IP-Adresse** (z. B. **10.0.1.4**).
 
-1. Notieren Sie sich auf der Seite **Übersicht** von **Srv-workload-02** im rechten Bereich unter dem Abschnitt **Netzwerk** den Wert für **Private IP-Adresse** (z. B. **10.1.0.4**).
+1. Notieren Sie sich auf der Seite **Übersicht** von **Srv-workload-02** im rechten Bereich unter dem Abschnitt **Netzwerk** die **Private IP-Adresse** (z. B. **10.1.1.4**).
 
 ## Aufgabe 5: Erstellen einer Firewallrichtlinie und Schützen Ihres Hubs
 
@@ -288,31 +288,38 @@ In dieser Aufgabe erstellen Sie zuerst Ihre Firewallrichtlinie und schützen dan
 
 In dieser Aufgabe ordnen Sie die Firewallrichtlinie dem virtuellen Hub zu.
 
-1. Suchen Sie im Portal nach `firewall manager`, und wählen Sie dann **Netzwerksicherheit:Stichwort: Firewall Manager** aus.
+1. Suchen Sie im Portal die Option `Hub-01`, und wählen Sie sie aus.
 
-1. Wählen Sie in **Firewall Manager** unter **Sicherheit** die Option **Azure Firewall-Richtlinien** aus.
+1. Wählen Sie auf dem Blatt **Einstellungen** **Sicherheitsanbieter** aus.
 
-1. Aktivieren Sie das Kontrollkästchen für **Policy-01**.
+1. Aktivieren Sie das Kontrollkästchen für **Richtlinie hinzufügen**.
 
-1. Wählen Sie **Zuordnungen verwalten&gt;Hubs zuordnen** aus.
+1. Wählen Sie **Policy-01** und dann **Speichern** aus.
 
 1. Aktivieren Sie das Kontrollkästchen für **Hub-01**.
 
-1. Wählen Sie **Hinzufügen** aus.
+1. Wählen Sie **Hinzufügen**.
 
-1. Wenn die Richtlinie angefügt wurde, wählen Sie **Aktualisieren** aus. Die Zuordnung sollte angezeigt werden.
+1. Wählen Sie nach der Zuordnung der Richtlinie **Aktualisieren** aus. Die Zuordnung sollte angezeigt werden.
 
 ## Aufgabe 7: Weiterleiten von Datenverkehr an Ihren Hub
 
 In dieser Aufgabe stellen Sie sicher, dass Netzwerkdatenverkehr durch Ihre Firewall weitergeleitet wird.
 
-1. Wählen Sie in **Firewall Manager** die Option **Virtuelle Hubs** aus.
-1. Wählen Sie **Hub-01** aus.
-1. Wählen Sie unter **Einstellungen** die Option **Sicherheitskonfiguration** aus.
+1. Suchen Sie im Portal die Option **Vwan-01**, und wählen Sie sie aus.
+
+1. Wählen Sie auf dem Blatt **Konnektivität** **Hubs** und dann **Hub-01** aus.
+   
+1. Wählen Sie auf dem Blatt **Sicherheit** **Azure Firewall und Firewall Manager** und dann **Hub-01** und **Sicherheitskonfiguration** aus.
+
 1. Wählen Sie unter **Internetdatenverkehr** die Option **Azure Firewall** aus.
+
 1. Wählen Sie unter **Privater Datenverkehr** die Option **Über Azure Firewall senden** aus.
-1. Wählen Sie **Speichern**.
+
+1. Wählen Sie **Speichern** aus, und klicken Sie auf **OK**, um Ihre Auswahl zu bestätigen.
+
 1. Der Erstellungsvorgang dauert ein paar Minuten.
+
 1. Stellen Sie nach Abschluss der Konfiguration sicher, dass unter **INTERNETDATENVERKEHR** und **PRIVATER DATENVERKEHR** für beide Hub-Spoke-Verbindungen die Angabe **Geschützt durch Azure Firewall** angezeigt wird.
 
 ## Aufgabe 8: Testen der Anwendungsregel
@@ -341,7 +348,7 @@ In dieser Aufgabe testen Sie die Anwendungsregel, um zu bestätigen, dass sie wi
 
 1. Öffnen Sie Internet Explorer, und wählen Sie im Dialogfeld **Internet Explorer 11 einrichten** die Option **OK** aus.
 
-1. Wechseln Sie zu **https://** **<www.microsoft.com>**.
+1. Navigieren Sie zu `https://www.microsoft.com`.
 
 1. Wählen Sie im Dialogfeld **Sicherheitswarnung** die Option **OK** aus.
 
