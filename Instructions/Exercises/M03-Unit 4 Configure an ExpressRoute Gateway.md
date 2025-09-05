@@ -88,11 +88,8 @@ Beachten Sie, dass der Subnetzname automatisch ausgefüllt wird.
    | Gatewaytyp              | ExpressRoute               |
    | SKU                       | Standard                   |
    | Virtuelles Netzwerk           | CoreServicesVNet           |
-   | **Öffentliche IP-Adresse**     |                            |
-   | Öffentliche IP-Adresse         | Neu erstellen                 |
-   | Name der öffentlichen IP-Adresse    | CoreServicesVnetGateway-IP |
-   | Zuweisung                | Nicht konfigurierbar           |
-
+   | Subnetz                    | GatewaySubnet              |
+   
 1. Klicken Sie auf **Überprüfen + erstellen**.
 
 1. Vergewissern Sie sich, dass die Gatewaykonfiguration erfolgreich überprüft wurde, und wählen Sie dann **Erstellen** aus.
@@ -105,7 +102,7 @@ Beachten Sie, dass der Subnetzname automatisch ausgefüllt wird.
 ## Erweitern Ihrer Lernerfahrung mit Copilot
 
 Copilot kann Sie beim Erlernen der Verwendung von Azure-Skripttools unterstützen. Copilot kann Sie auch in Bereichen unterstützen, die nicht im Lab behandelt werden oder in denen Sie weitere Informationen benötigen. Öffnen Sie einen Edge-Browser, und wählen Sie „Copilot“ (rechts oben) aus, oder navigieren Sie zu *copilot.microsoft.com*. Nehmen Sie sich einige Minuten Zeit, um diese Prompts auszuprobieren.
-+ Wie unterscheidet sich Azure ExpressRoute von Virtual WAN? Können Sie die Technologien gemeinsam nutzen? Bereitstellen von Beispielen.
++ Wie unterscheidet sich Azure ExpressRoute von Virtual WAN? Können Sie die Technologien gemeinsam nutzen? Stellen Sie Beispiele bereit.
 + Was sollte ich bei der Wahl zwischen einem ExpressRoute-Anbietermodell und ExpressRoute Direct beachten?
 + Erstellen Sie eine Tabelle, die die Azure ExpressRoute SKU und ihre Funktionen zusammenfasst.
 
@@ -121,3 +118,4 @@ Herzlichen Glückwunsch zum erfolgreichen Abschluss des Labs. Hier sind die wich
 + Microsoft garantiert für dedizierte ExpressRoute-Verbindungen eine Verfügbarkeit von mindestens 99,95 %. Die Verbindung ist privat und läuft über eine Standleitung. Dritte können den Datenverkehr nicht abfangen.
 + Sie können eine Verbindung zwischen Ihrem lokalen Netzwerk und der Microsoft-Cloud auf vier verschiedene Arten erstellen: CloudExchange-Zusammenstellung, Point-to-Point-Ethernet-Verbindung, Any-to-Any-Verbindung (IPVPN) und ExpressRoute Direct.
 + Die ExpressRoute-Funktionen werden durch die SKU bestimmt: Lokal, Standard und Premuium. 
+

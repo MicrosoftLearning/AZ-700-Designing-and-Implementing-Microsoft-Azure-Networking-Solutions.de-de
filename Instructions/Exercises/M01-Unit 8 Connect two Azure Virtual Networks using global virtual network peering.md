@@ -140,6 +140,8 @@ In diesem Abschnitt erstellen Sie eine Test-VM im VNet, um zu testen, ob Sie üb
     | ------------------------------------ | --------------------------------------------- | 
     | Erlauben Sie 'CoreServicesVnet' den Zugriff auf 'ManufacturingVnet' | Aktiviert
     | Erlauben Sie, dass 'CoreServicesVnet' weitergeleiteten Verkehr von 'ManufacturingVnet' empfängt | Aktiviert |
+
+1. Aktivieren Sie das Kontrollkästchen links neben **CoreServicesVnet-to-ManufacturingVnet**, und wählen Sie **Synchronisieren** aus.
  
 1. Überprüfen Sie in „CoreServicesVnet" \| Peerings, dass das **CoreServicesVnet-to-ManufacturingVnet** Peering **Verbunden** ist.
 
