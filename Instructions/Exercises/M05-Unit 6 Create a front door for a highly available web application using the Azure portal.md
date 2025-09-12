@@ -126,7 +126,7 @@ Nachdem Sie eine Front Door-Instanz erstellt haben, dauert es einige Minuten, b
 
 1. Wechseln Sie zurück zu Ihrem Browser, und wählen Sie „Aktualisieren“ aus. Die gleiche Seite mit Informationen sollte angezeigt werden.
 
-**Es kann zu einer Verzögerung kommen, während die Web-App beendet wird. Wenn in Ihrem Browser eine Fehlerseite angezeigt wird, aktualisieren Sie die Seite**.
+    **Es kann zu einer Verzögerung kommen, während die Web-App beendet wird. Wenn in Ihrem Browser eine Fehlerseite angezeigt wird, aktualisieren Sie die Seite**.
 
 1. Wechseln Sie zurück zum Azure-Portal, suchen Sie die andere Web-App, und beenden Sie sie.
 
