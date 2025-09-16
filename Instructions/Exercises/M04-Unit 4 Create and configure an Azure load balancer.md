@@ -59,19 +59,21 @@ In diesem Abschnitt erstellen Sie ein virtuelles Netzwerk und ein Subnetz.
 
 7. Wählen Sie **Weiter** aus (dies führt Sie zur Registerkarte „IP-Adressen“).
 
-8. Entfernen Sie auf der Registerkarte **IP-Adressen** im Feld **IPv4-Adressraum** den Standardwert, und geben Sie **10.1.0.0/16** ein.
+8. Ersetzen Sie auf der Registerkarte **IP-Adressen** im Feld **IPv4-Adressraum** den vorausgefüllten IPv4-Adressraum durch: **10.1.0.0/16**.
 
-9. Wählen Sie auf der Registerkarte **IP-Adressen** die Option **+ Subnetz hinzufügen** aus.
+9. Löschen Sie unter **Subnetze** auf der Registerkarte **IP-Adressen** das Subnetz **Standard**.
 
-10. Geben Sie im Bereich **Subnetz hinzufügen** den Subnetznamen **myBackendSubnet** und den Subnetzadressbereich **10.1.0.0/24** an. Wählen Sie **Hinzufügen** aus.
+10. Wählen Sie auf der Registerkarte **IP-Adressen** die Option **+ Subnetz hinzufügen** aus.
 
-11. Wählen Sie erneut **Subnetz hinzufügen** aus, und geben Sie den Subnetznamen **myFrontEndSubnet** und den Subnetzadressbereich **10.1.2.0/24** ein. Wählen Sie **Hinzufügen** aus.
+11. Geben Sie im Bereich **Subnetz** den Subnetznamen **myBackendSubnet** und die folgende Startadresse ein: **10.1.0.0/24**. Wählen Sie **Hinzufügen** aus.
 
-12. Wählen Sie in der Benachrichtigung zu Azure Bastion **Azure Bastion-Subnetz hinzufügen** aus
+12. Wählen Sie erneut **+ Subnetz hinzufügen** aus, und geben Sie den Subnetznamen **myFrontEndSubnet** und die folgende Startadresse ein: **10.1.2.0/24**. Wählen Sie **Hinzufügen** aus.
 
-13. Klicken Sie auf **Überprüfen + erstellen**.
+13. Vergewissern Sie sich, dass **AzureBastionSubnet** vorhanden ist, sofern erforderlich.
 
-14. Klicken Sie auf **Erstellen**.
+14. Klicken Sie auf **Überprüfen + erstellen**.
+
+15. Klicken Sie auf **Erstellen**.
 
 ## Aufgabe 2: Erstellen von Back-End-Servern
 
@@ -126,7 +128,7 @@ In diesem Abschnitt erstellen Sie einen internen Lastenausgleich der Standard-SK
    
 1. Wählen Sie „Front-End-IP hinzufügen“ aus
 
-1. Geben Sie auf dem Blatt **Front-End-IP-Adresse hinzufügen** die Informationen aus der folgenden Tabelle ein, und wählen Sie **Hinzufügen** aus.
+1. Geben Sie auf dem Blatt **Front-End-IP-Adresse hinzufügen** die Informationen aus der folgenden Tabelle ein, und wählen Sie **Speichern** aus.
 
    | **Einstellung**     | **Wert**                |
    | --------------- | ------------------------ |
@@ -158,7 +160,7 @@ Der Back-End-Adresspool enthält die IP-Adressen der virtuellen NICs, die mit de
    | Name            | **myBackendPool**    |
    | Virtuelles Netzwerk | **IntLB-VNet**       |
 
-1. Wählen Sie unter **Virtuelle Computer** die Option **Hinzufügen** aus.
+1. Wählen Sie unter **Virtuelle Computer** die Option **Speichern** aus.
 
 1. Aktivieren Sie die Kontrollkästchen für alle drei VMs (**myVM1**, **myVM2** und **myVM3**), und wählen Sie dann **Hinzufügen** aus.
 

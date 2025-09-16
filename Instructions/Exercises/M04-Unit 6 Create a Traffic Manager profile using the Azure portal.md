@@ -100,7 +100,7 @@ Jetzt erstellen Sie ein Traffic Manager-Profil, das Benutzerdatenverkehr basiere
    | Resource group          | **Contoso-RG-TM1**       |
    | Ressourcengruppenstandort | **USA, Osten**              |
 
-1. Klicken Sie auf **Erstellen**.
+1. Wählen Sie **Überprüfen + erstellen** und danach **Erstellen** aus.
 
 ## Aufgabe 3: Hinzufügen von Traffic Manager-Endpunkten
 
@@ -160,13 +160,13 @@ In diesem Abschnitt überprüfen Sie den DNS-Namen Ihres Traffic Manager-Profils
 
 1. Um zu testen, ob der Failoverendpunkt ordnungsgemäß funktioniert, müssen Sie den primären Standort deaktivieren.
 
-1. Wählen Sie auf der Seite **Contoso-TMProfile** auf dem Übersichtsbildschirm **myPrimaryEndpoint** aus.
+1. Wählen Sie auf der Seite **Contoso-TMProfile** auf dem Übersichtsbildschirm rechts neben **Endpunkte:** die Nummer **2** aus.
 
-1. Wählen Sie auf der Seite **myPrimaryEndpoint** unter **Status** die Einstellung **Deaktiviert** und anschließend **Speichern** aus.
+1. Wählen Sie für **myPrimaryEndpoint** die Schaltfläche „Bearbeiten“ (Bleistiftsymbol) aus.
 
-   ![Abbildung 25](../media/disable-primary-endpoint-1.png)
+1. Deaktivieren Sie auf dem Blatt **myPrimaryEndpoint** unter **Status** das Kontrollkästchen für **Endpunkt aktivieren**, und wählen Sie dann **Speichern** aus.
 
-1. Schließen Sie die Seite **myPrimaryEndpoint** (wählen Sie oben rechts auf der Seite das **X** aus).
+1. Schließen Sie bei Bedarf das Blatt **myPrimaryEndpoint** (wählen Sie in der oberen rechten Ecke der Seite das **X** aus).
 
 1. Auf der Seite **Contoso-TMProfile** sollte der **Überwachungsstatus** für **myPrimaryEndpoint** jetzt **Deaktiviert** lauten.
 
