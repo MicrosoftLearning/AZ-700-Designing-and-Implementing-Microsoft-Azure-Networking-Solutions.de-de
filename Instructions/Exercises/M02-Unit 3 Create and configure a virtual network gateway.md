@@ -202,7 +202,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
    | Grundlagen          | Projektdetails   | Subscription                                | Keine Änderungen erforderlich          |
    |                 |                   | ResourceGroup                               | ContosoResourceGroup         |
    |                 | Instanzdetails  | Name                                        | ManufacturingVnetGateway     |
-   |                 |                   | Region                                      | Nordeuropa                 |
+   |                 |                   | Region                                      | Europa, Westen                  |
    |                 |                   | Gatewaytyp                                | VPN                          |
    |                 |                   | SKU                                         | VpnGw1                       |
    |                 |                   | Generation                                  | Generation 1                  |
