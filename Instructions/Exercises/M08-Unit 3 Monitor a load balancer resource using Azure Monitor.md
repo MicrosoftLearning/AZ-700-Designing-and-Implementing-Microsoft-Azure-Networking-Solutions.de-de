@@ -44,7 +44,7 @@ In diesem Abschnitt erstellen Sie ein virtuelles Netzwerk und ein Subnetz.
 
 1. Melden Sie sich beim Azure-Portal an.
 
-1. Suchen Sie auf der Startseite des Azure-Portals nach **Virtuelles Netzwerk**, und wählen Sie unter „Dienste“ das virtuelle Netzwerk aus.
+1. Suchen Sie im Azure-Portal nach der Option **Virtuelle Netzwerke**, und wählen Sie sie aus.
 
 1. Wählen Sie **+ Erstellen** aus.
 
@@ -59,16 +59,6 @@ In diesem Abschnitt erstellen Sie ein virtuelles Netzwerk und ein Subnetz.
    | Name           | **IntLB-VNet**                                      |
    | Region         | **(USA) USA, Westen**                                    |
 
-1. Wählen Sie **Weiter: IP-Adressen** aus.
-
-1. Geben Sie auf der Registerkarte **IP-Adressen** in das Feld **IPv4-Adressraum** **10.1.0.0/16** ein.
-
-1. Wählen Sie über **Subnetzname** die Option **+ Subnetz hinzufügen** aus.
-
-1. Geben Sie im Bereich **Subnetz hinzufügen** den Subnetznamen **myBackendSubnet** und den Subnetzadressbereich **10.1.0.0/24** ein.
-
-1. Wählen Sie **Hinzufügen** aus.
-
 1. Klicken Sie auf **Weiter: Sicherheit**.
 
 1. Wählen Sie unter **BastionHost** die Option **Aktivieren** aus, und geben Sie dann die Informationen aus der folgenden Tabelle ein.
@@ -76,8 +66,17 @@ In diesem Abschnitt erstellen Sie ein virtuelles Netzwerk und ein Subnetz.
     | **Einstellung**                       | **Wert**                                              |
     | --------------------------------- | ------------------------------------------------------ |
     | Bastion-Name                      | **myBastionHost**                                      |
-    | AzureBastionSubnet-Adressraum  | **10.1.1.0/24**                                        |
     | Öffentliche IP-Adresse                 | Wählen Sie **Neu erstellen** aus.<br /><br />Name: **myBastionIP** |
+
+1. Wählen Sie **Weiter: IP-Adressen** aus.
+
+1. **Löschen Sie die IP-Adresse** und dann den **IPv4-Adressraum**. Geben Sie **10.1.0.0/16** ein.
+
+1. Bearbeiten Sie das Subnetz **AzureBastionSubnet**, und ändern Sie die **Startadresse** in **10.1.1.0**. **Speichern** Sie die Änderung. 
+
+1. Wählen Sie **+ Subnetz hinzufügen** aus. Der Subnetzname lautet `myBackendSubnet`, und der Subnetzadressbereich ist `10.1.0.0/24`. Wählen Sie **Hinzufügen**.
+
+1. Sie sollten jetzt ein virtuelles Netzwerk mit zwei Subnetzen haben. 
 
 1. Klicken Sie auf **Überprüfen + erstellen**.
 
@@ -87,9 +86,9 @@ In diesem Abschnitt erstellen Sie ein virtuelles Netzwerk und ein Subnetz.
 
 In diesem Abschnitt erstellen Sie einen internen Lastenausgleich der Standard-SKU. Wir erstellen in der Übung anstelle eines Lastenausgleichs der Basic-SKU einen Lastenausgleich der Standard-SKU, weil für spätere Übungen eine Standard-SKU-Version des Lastenausgleichs erforderlich ist.
 
-1. Geben Sie auf der Azure-Homepage **Load Balancer** in das Suchfeld ein.
+1. Suchen Sie im Azure-Portal nach der Option **Lastenausgleichsmodule**, und wählen Sie sie aus.
 
-1. Wählen Sie **Load Balancer erstellen** aus.
+1. Wählen Sie **Erstellen** und dann **Load Balancer Standard** aus.
 
 1. Verwenden Sie auf der Registerkarte **Grundlagen** die Informationen aus der folgenden Tabelle, um den Lastenausgleich zu erstellen.
 
@@ -102,21 +101,24 @@ In diesem Abschnitt erstellen Sie einen internen Lastenausgleich der Standard-SK
    | Region                | **(USA) USA, Westen**         |
    | SKU                   | **Standard**             |
    | Typ                  | **Intern**             |
-   | Registerkarte „Front-End-IP-Konfiguration“ | + Front-End-IP-Konfiguration hinzufügen |
-   | Name                  | **LoadBalancerFrontEnd** |
+
+1. Wechseln Sie zur Registerkarte **Front-End-IP-Konfiguration**, und wählen Sie **+ Front-End-IP-Konfiguration hinzufügen** aus.
+
+   | **Einstellung**            | **Wert**            |
+   | Name                  | `LoadBalancerFrontEnd` |
    | Virtuelles Netzwerk       | **IntLB-VNet**           |
-   | Subnet                | **myBackendSubnet**      |
+   | Subnetz                | **myBackendSubnet**      |
    | IP-Adresszuweisung | **Dynamisch**              |
 
-1. Klicken Sie auf **Überprüfen + erstellen**.
+1. **Speichern** Sie Ihre Änderungen, und wählen Sie dann **Überprüfen + erstellen** aus.
 
-1. Klicken Sie auf **Erstellen**.
+1. Wählen Sie nach erfolgreicher Überprüfung **Erstellen** aus.
 
 ## Aufgabe 3: Erstellen eines Back-End-Pools
 
 Der Back-End-Adresspool enthält die IP-Adressen der virtuellen NICs, die mit dem Lastenausgleich verbunden sind.
 
-1. Wählen Sie auf der Startseite des Azure-Portals **Alle Ressourcen** und dann **myIntLoadBalancer** aus der Ressourcenliste aus.
+1. Suchen Sie im Azure-Portal nach der Ressource **myIntLoadBalancer**, und wählen Sie sie aus.
 
 1. Wählen Sie unter **Einstellungen** die Option **Back-End-Pools** und dann **Hinzufügen** aus.
 
@@ -125,10 +127,10 @@ Der Back-End-Adresspool enthält die IP-Adressen der virtuellen NICs, die mit de
    | **Einstellung**     | **Wert**            |
    | --------------- | -------------------- |
    | Name            | **myBackendPool**    |
-   | Virtuelles Netzwerk | **IntLB-VNet**       |
+   | Virtuelles Netzwerk | IntLB-VNet    |
    | Konfiguration des Back-End-Pools   | **NIC** |
 
-1. Wählen Sie **Hinzufügen** aus.
+1. Wählen Sie **Speichern**.
 
    ![Anzeigen des im Lastenausgleich erstellten Back-End-Pools](../media/create-backendpool.png)
 
@@ -136,19 +138,19 @@ Der Back-End-Adresspool enthält die IP-Adressen der virtuellen NICs, die mit de
 
 Der Status Ihrer App wird vom Lastenausgleich mithilfe eines Integritätstests überwacht. Abhängig von der Reaktion auf Integritätsüberprüfungen werden der Load Balancer-Instanz durch den Integritätstest virtuelle Computer hinzugefügt oder daraus entfernt. Hier erstellen Sie wie folgt einen Integritätstest zur Überwachung der Integrität der virtuellen Computer.
 
-1. Wählen Sie auf der Seite **Back-End-Pools** Ihres Lastenausgleichs unter **Einstellungen** die Option **Integritätstests** und dann **Hinzufügen**.
+1. Wählen Sie für die Lastenausgleichsressource die Option **Einstellungen**, dann **Integritätstests** und anschließend **Hinzufügen** aus.
 
 1. Geben Sie auf der Seite **Integritätstest hinzufügen** die Informationen aus der folgenden Tabelle ein.
 
    | **Einstellung**         | **Wert**         |
    | ------------------- | ----------------- |
-   | Name                | **myHealthProbe** |
-   | Protocol            | **HTTP**          |
+   | Name                | `myHealthProbe` |
+   | Protokoll            | **HTTP**          |
    | Port                | **80**            |
    | Pfad                | **/**             |
    | Intervall            | **15**            |
 
-1. Wählen Sie **Hinzufügen** aus.
+1. Wählen Sie **Speichern**.
 
    ![Anzeigen des im Lastenausgleich erstellten Integritätstests](../media/create-healthprobe.png)
 
@@ -156,25 +158,21 @@ Der Status Ihrer App wird vom Lastenausgleich mithilfe eines Integritätstests �
 
 Mithilfe einer Load Balancer-Regel wird definiert, wie Datenverkehr auf die virtuellen Computer verteilt werden soll. Sie definieren die Front-End-IP-Konfiguration für den eingehenden Datenverkehr und den Back-End-IP-Pool für den Empfang des Datenverkehrs. Quell- und Zielport werden in der Regel definiert. Hier erstellen Sie eine Lastenausgleichsregel.
 
-1. Wählen Sie auf der Seite **Back-End-Pools** Ihres Lastenausgleichs unter **Einstellungen** die Option **Lastausgleichsregeln** und wählen Sie dann **Hinzufügen** aus.
-
-1. Geben Sie auf der Seite **Lastenausgleichsregel hinzufügen** die Informationen aus der folgenden Tabelle ein.
+1. Wählen Sie für die Lastenausgleichsressource die Option **Einstellungen**, dann **Lastenausgleichsregeln** und anschließend **Hinzufügen** aus.
 
    | **Einstellung**            | **Wert**                |
    | ---------------------- | ------------------------ |
    | Name                   | **myHTTPRule**           |
    | IP-Version             | **IPv4**                 |
    | Front-End-IP-Adresse    | **LoadBalancerFrontEnd** |
+   | Back-End-Pool           | **myBackendPool**        |
    | Protokoll               | **TCP**                  |
    | Port                   | **80**                   |
    | Back-End-Port           | **80**                   |
-   | Back-End-Pool           | **myBackendPool**        |
    | Integritätstest           | **myHealthProbe**        |
    | Sitzungspersistenz    | **None**                 |
    | Leerlaufzeitüberschreitung (Minuten) | **15**                   |
    | Unverankerte IP            | **Deaktiviert**             |
-
-1. Wählen Sie **Hinzufügen** aus.
 
    ![Anzeigen der im Lastenausgleich erstellten Lastenausgleichsregel](../media/create-loadbalancerrule.png)
 
@@ -191,90 +189,41 @@ In diesem Abschnitt erstellen Sie drei VMs für den Back-End-Pool des Lastenausg
 
     > **Hinweis:** Wenn Sie in Ihrem eigenen Abonnement arbeiten, sind die [Vorlagendateien](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises) im GitHub-Lab-Repository verfügbar.
 
-1. Stellen Sie die folgenden ARM-Vorlagen bereit, um das virtuelle Netzwerk, die Subnetze und die VMs zu erstellen, die für diese Übung erforderlich sind:
-
-   >**Hinweis**: Sie werden aufgefordert, ein Administratorkennwort anzugeben.
+1. Stellen Sie die folgenden Azure Resource Manager (ARM)-Vorlagen bereit, um das virtuelle Netzwerk, die Subnetze und die VMs zu erstellen, die Sie für diese Übung benötigen. **Hinweis**: Sie werden aufgefordert, ein Admin-Kennwort anzugeben.
 
    ```powershell
    $RGName = "IntLB-RG"
-
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
-  
-    > **Hinweis:** Dies wird einige Minuten in Anspruch nehmen.
+1. Die Bereitstellung kann einige Minuten dauern. Sie können den Status im Portal überprüfen, indem Sie die Ressourcenseite der VM aktualisieren.   
 
 ## Aufgabe 7: Hinzufügen von VMs zum Back-End-Pool
 
-1. Wählen Sie auf der Startseite des Azure-Portals **Alle Ressourcen** und dann **myIntLoadBalancer** aus der Ressourcenliste aus.
+1. Suchen Sie im Azure-Portal nach der Ressource **myIntLoadBalancer**, und wählen Sie sie aus.
 
 1. Wählen Sie unter **Einstellungen** die Option **Back-End-Pools** und dann **myBackendPool** aus.
 
-1. Wählen Sie im Feld **Zugeordnet zu** die Option **Virtuelle Computer** aus.
+1. Wählen Sie im Abschnitt **IP-Konfigurationen** die Option **Hinzufügen** aus.
 
-1. Wählen Sie unter **Virtuelle Computer** die Option **Hinzufügen** aus.
+1. Wählen Sie alle angezeigten VMs und dann **Hinzufügen** aus.
 
-1. Aktivieren Sie die Kontrollkästchen für alle drei VMs (**myVM1**, **myVM2** und **myVM3**), und wählen Sie dann **Hinzufügen** aus.
+1. Aktivieren Sie die Kontrollkästchen für **myVM1** und **myVM2**, und wählen Sie dann **Hinzufügen** aus.
 
 1. Wählen Sie auf der Seite **myBackendPool** die Option **Speichern** aus.
-
-   ![Anzeigen von VMs, die dem Back-End-Pool im Lastenausgleich hinzugefügt wurden](../media/add-vms-backendpool.png)
 
 ## Aufgabe 8: Testen des Lastenausgleichs
 
 In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausgleich.
 
-### Erstellen einer Test-VM
+### Herstellen einer Verbindung mit der Test-VM (VM3) zum Testen des Lastenausgleichs
 
-   >**Hinweis**: Möglicherweise stellen Sie geringfügige Unterschiede zwischen den Anweisungen und der Azure-Portal Schnittstelle fest, aber das Kernkonzept ist identisch.
-
-1. Geben Sie auf Startseite des Azure-Portals bei der globalen Suche **Virtuelle Computer** ein, und wählen Sie unter „Dienste“ die Option „Virtuelle Computer“ aus.
-
-1. Wählen Sie **+ Erstellen; + Virtueller Computer** auf der Registerkarte **Grundlagen** aus, und verwenden Sie die Informationen in der Tabelle unten, um die erste VM zu erstellen.
-
-   | **Einstellung**          | **Wert**                                    |
-   | -------------------- | -------------------------------------------- |
-   | Abonnement         | Wählen Sie Ihr Abonnement aus.                     |
-   | Resource group       | **IntLB-RG**                                 |
-   | Name des virtuellen Computers | **myTestVM**                                 |
-   | Region               | **(USA) USA, Westen**                             |
-   | Verfügbarkeitsoptionen | **Keine Infrastrukturredundanz erforderlich**    |
-   | Sicherheitstyp        | **Standard**                                 |
-   | Abbildung                | **Alle Bilder anzeigen** --> **Datacenter für Windows Server 2019**  |
-   | Größe                 | **Standard_DS2_v3 – 2 vCPU, 8 GiB Arbeitsspeicher** |
-   | Username             | **TestUser**                                 |
-   | Kennwort             | **Bereitstellen eines sicheren Kennworts**                |
-   | Kennwort bestätigen     | **Bereitstellen eines sicheren Kennworts**                |
-
-1. Wählen Sie **Weiter: Datenträger** und dann **Weiter: Netzwerk** aus.
-
-1. Verwenden Sie auf der Registerkarte **Netzwerk** die Informationen aus der folgenden Tabelle, um Netzwerkeinstellungen zu konfigurieren.
-
-   | **Einstellung**                                                  | **Wert**                     |
-   | ------------------------------------------------------------ | ----------------------------- |
-   | Virtuelles Netzwerk                                              | **IntLB-VNet**                |
-   | Subnet                                                       | **myBackendSubnet**           |
-   | Öffentliche IP-Adresse                                                    | Ändern Sie sie in **Keine**.            |
-   | NIC-Netzwerksicherheitsgruppe                                   | **Erweitert**                  |
-   | Konfigurieren von Netzwerksicherheitsgruppen                             | Wählen Sie die vorhandene Netzwerksicherheitsgruppe (**myNSG**) aus. |
-   | Lastenausgleich                                               | **Keine** (oder deaktiviert)       |
-
-1. Klicken Sie auf **Überprüfen + erstellen**.
-
-1. Klicken Sie auf **Erstellen**.
-
-1. Warten Sie, bis dieser letzte virtuelle Computer bereitgestellt wurde, bevor Sie mit der nächsten Aufgabe fortfahren.
-
-### Verbinden mit der Test-VM zum Testen des Lastenausgleichs
-
-1. Wählen Sie auf der Startseite des Azure-Portals **Alle Ressourcen** und dann **myIntLoadBalancer** aus der Ressourcenliste aus.
+1. Suchen Sie im Azure-Portal nach der Ressource **myIntLoadBalancer**, und wählen Sie sie aus.
 
 1. Notieren Sie sich auf der Seite **Übersicht** die **Private IP-Adresse**, oder kopieren Sie sie in die Zwischenablage. Hinweis: Sie müssen möglicherweise **Weitere Informationen anzeigen** auswählen, um die **private IP-Adresse** anzuzeigen.
 
-1. Wählen Sie **Start** und dann auf der Startseite des Azure-Portals **Alle Ressourcen** aus, und wählen Sie dann auf dem virtuellen Computer, den Sie gerade erstellt haben, **myTestVM** aus.
+1. Suchen Sie nach der VM **myVM3**, und wählen Sie sie aus. 
 
-1. Wählen Sie auf der Seite **Übersicht** die Option **Verbinden** und dann **Bastion** aus.
-
-1. Klicken Sie auf **Bastion verwenden**.
+1. Wählen Sie **Verbinden** und dann **Verbindung über Bastion herstellen** aus.
 
 1. Geben Sie in das Feld **Benutzername** **TestUser** und in das Feld **Kennwort** das Kennwort ein, das Sie bei der Bereitstellung angegeben haben, und wählen Sie dann **Verbinden** aus.
 
@@ -286,21 +235,14 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
 
 1. Wählen Sie im Dialogfeld **Internet Explorer 11 einrichten** die Option **OK** aus.
 
-1. Geben (oder fügen Sie) die **Private IP-Adresse** (z. B. 10.1.0.4) aus dem vorherigen Schritt in die Adressleiste des Browsers ein, und drücken Sie die EINGABETASTE.
+1. Geben oder fügen Sie die IP-Adresse des Lastenausgleichs ein (z. B. 10.1.0.4).
 
-1. Die Standard-Webstartseite des IIS-Webservers wird im Browserfenster angezeigt. Einer der drei virtuellen Computer im Back-End-Pool antwortet.
-    ![Browserfenster mit Hello World-Antwort von VM1](../media/load-balancer-web-test-1.png)
-
-1. Wenn Sie im Browser mehrmals die Schaltfläche „Aktualisieren“ auswählen, stellen Sie fest, dass die Antwort nach dem Zufallsprinzip von den verschiedenen VMs im Back-End-Pool des internen Lastenausgleichs gesendet wird.
-
-    ![Browserfenster mit Hello World-Antwort von VM3](../media/load-balancer-web-test-2.png)
+1. Eine der beiden Back-End-Server-VMs (myVM1 oder myVM2) antwortet. Aktualisieren Sie die Seite weiter, und beachten Sie, dass die Antwort nach dem Zufallsprinzip von den Back-End-Servern gesendet wird. 
 
 ## Aufgabe 9: Erstellen eines Log Analytics-Arbeitsbereichs
 
-1. Wählen Sie auf der Startseite des Azure-Portals **Alle Dienste** aus, geben Sie dann im Suchfeld oben auf der Seite **Log Analytics** ein, und wählen Sie **Log Analytics-Arbeitsbereiche** aus der gefilterten Liste aus.
-
-   ![Zugreifen auf Log Analytics-Arbeitsbereiche über die Startseite des Azure-Portals](../media/log-analytics-workspace-1.png)
-
+1. Suchen Sie im Azure-Portal nach der Ressource **Log Analytics-Arbeitsbereiche**, und wählen Sie sie aus.
+   
 1. Klicken Sie auf **Erstellen**.
 
 1. Verwenden Sie auf der Seite **Log Analytics-Arbeitsbereich erstellen** auf der Registerkarte **Grundlagen** die Informationen aus der folgenden Tabelle, um den Arbeitsbereich zu erstellen.
@@ -314,30 +256,13 @@ In diesem Abschnitt erstellen Sie eine Test-VM und testen dann den Lastenausglei
 
 1. Wählen Sie **Überprüfen + erstellen** und dann **Erstellen** aus.
 
-   ![Liste der Log Analytics-Arbeitsbereiche](../media/log-analytics-workspace-2.png)
-
 ## Aufgabe 10: Verwenden der Ansicht der funktionalen Abhängigkeiten
 
-1. Wählen Sie auf der Startseite des Azure-Portals **Alle Ressourcen** aus, und wählen Sie dann in der Ressourcenliste **myIntLoadBalancer** aus.
+1. Suchen Sie im Azure-Portal nach der Ressource **myIntLoadBalancer**, und wählen Sie sie aus. 
 
    ![Liste „Alle Ressourcen“ im Azure-Portal](../media/network-insights-functional-dependency-view-1.png)
 
 1. Wählen Sie unter **Überwachung** die Option **Erkenntnisse** aus.
-
-1. Wählen Sie in der oberen rechten Ecke der Seite das **X** aus, um den Bereich **Metriken** vorerst zu schließen. Sie werden ihn in Kürze erneut öffnen.
-
-1. Diese Seitenansicht wird als Ansicht der funktionalen Abhängigkeiten bezeichnet. Sie bietet ein nützliches interaktives Diagramm, das die Topologie der ausgewählten Netzwerkressource veranschaulicht – in diesem Fall die Topologie eines Lastenausgleichs. Für Load Balancer Standard werden Ihre Back-End-Pool-Ressourcen gemäß dem Integritätsteststatus farblich codiert, um die aktuelle Verfügbarkeit Ihres Back-End-Pools für den Datenverkehr anzuzeigen.
-
-1. Verwenden Sie die Schaltflächen **Vergrößern (+)** und **Verkleinern (-)** in der rechten unteren Ecke der Seite, um das Topologiediagramm zu vergrößern bzw. zu verkleinern (alternativ können Sie das Mausrad verwenden, sofern vorhanden). Sie können auch das Topologiediagramm auf der Seite ziehen, um es zu verschieben.
-
-1. Zeigen Sie im Diagramm auf die Komponente **LoadBalancerFrontEnd** und dann auf die Komponente **MyBackendPool**.
-
-1. Beachten Sie, dass Sie mithilfe der Links in den Popupfenstern Informationen zu diesen Lastenausgleichskomponenten anzeigen und die entsprechenden Blätter im Azure-Portal öffnen können.
-
-1. Um eine Kopie des Topologiediagramms als SVG-Datei herunterzuladen, wählen Sie **Topologie herunterladen** aus, und speichern Sie die Datei im Ordner **Downloads**.
-
-1. Wählen Sie in der rechten oberen Ecke **Metriken anzeigen** aus, um den Bereich „Metriken“ auf der rechten Seite des Bildschirms erneut zu öffnen.
-    ![Ansicht der funktionalen Abhängigkeiten in Azure Monitor Network Insights. Die Schaltfläche „Metriken anzeigen“ ist hervorgehoben](../media/network-insights-functional-dependency-view-3.png)
 
 1. Der Bereich „Metriken“ bietet in Form von Balken- und Liniendiagrammen eine Übersicht über einige wichtige Metriken für die Lastenausgleichsressource.
 
