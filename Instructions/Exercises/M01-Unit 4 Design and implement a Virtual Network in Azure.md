@@ -12,10 +12,6 @@ Nun können Sie virtuelle Netzwerke im Azure-Portal bereitstellen.
 
 Betrachten wir als Beispiel das fiktive Unternehmen Contoso Ltd, das dabei ist, seine Infrastruktur und Anwendungen zu Azure zu migrieren. In Ihrer Rolle als Netzwerktechniker müssen Sie drei virtuelle Netzwerke und Subnetze planen und implementieren, um Ressourcen in diesen virtuellen Netzwerken zu unterstützen.
 
-### Interaktive Labsimulationen
-
->**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
-
 ### Geschätzte Dauer: 20 Minuten
 
 Das virtuelle Netzwerk **CoreServicesVnet** wird in der Region **USA, Osten** bereitgestellt. Dieses virtuelle Netzwerk wird über die größte Anzahl von Ressourcen verfügen. Es wird über eine VPN-Verbindung mit lokalen Netzwerken verbunden sein. Dieses Netzwerk verfügt über Webdienste, Datenbanken und andere Systeme, die für den Betrieb des Unternehmens wichtig sind. Freigegebene Dienste, wie z. B. Domänencontroller und DNS, befinden sich ebenfalls hier. Es wird ein großes Wachstum erwartet, daher ist ein großer Adressraum für dieses virtuelle Netzwerk erforderlich.
