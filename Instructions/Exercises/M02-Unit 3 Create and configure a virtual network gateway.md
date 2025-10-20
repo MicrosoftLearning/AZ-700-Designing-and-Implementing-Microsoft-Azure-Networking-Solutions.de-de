@@ -29,10 +29,6 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 10: Überprüfen, ob die Verbindungen hergestellt werden
 + Aufgabe 11: Testen der Verbindung zwischen den VMs
 
-### Interaktive Labsimulationen
-
->**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
-
 ### Geschätzte Dauer: 70 Minuten (einschließlich ca. 45 Minuten Wartezeit bei der Bereitstellung)
 
 ## Aufgabe 1: Erstellen von CoreServicesVnet und ManufacturingVnet

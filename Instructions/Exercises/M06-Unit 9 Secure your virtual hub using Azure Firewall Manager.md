@@ -13,11 +13,6 @@ In dieser Übung erstellen Sie das virtuelle Spoke-Netzwerk und einen geschützt
 
 ![Abbildung: Architektur des virtuellen Netzwerks mit einem sicheren Hub](../media/9-exercise-secure-your-virtual-hub-using-azure-firewall-manager.png)
 
-### Interaktive Labsimulationen
-
-**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
-
-
 ## Erstellen einer Hub-Spoke-Architektur
 
 In diesem Teil der Übung erstellen Sie die virtuellen Spoke-Netzwerke und Subnetze, in denen Sie die Workloadserver platzieren. Anschließend erstellen Sie den geschützten virtuellen Hub und verbinden die virtuellen Hub-and-Spoke-Netzwerke .

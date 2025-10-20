@@ -32,10 +32,6 @@ Das folgende Diagramm veranschaulicht die Umgebung, die Sie in dieser Übung ber
 + Aufgabe 12: Anzeigen der Ressourcenintegrität
 + Aufgabe 13: Konfigurieren von Diagnoseeinstellungen
 
-### Interaktive Labsimulationen
-
->**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
-
 ### Geschätzte Dauer: 55 Minuten
 
 ## Aufgabe 1: Erstellen des virtuellen Netzwerks

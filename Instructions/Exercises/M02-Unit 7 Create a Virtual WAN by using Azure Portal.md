@@ -19,10 +19,6 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 2: Erstellen eines Hubs mithilfe des Azure-Portals
 + Aufgabe 3: Verbinden eines VNet mit dem virtuellen Hub
 
-### Interaktive Labsimulationen
-
->**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
->
 ### Geschätzte Dauer: 65 Minuten (einschließlich ca. 45 Minuten Wartezeit bei der Bereitstellung)
 
 ## Aufgabe 1: Erstellen eines virtuellen WAN

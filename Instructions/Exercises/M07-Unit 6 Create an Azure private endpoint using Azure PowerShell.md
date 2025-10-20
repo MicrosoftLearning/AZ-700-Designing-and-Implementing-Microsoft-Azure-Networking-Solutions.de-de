@@ -14,10 +14,6 @@ Beginnen Sie mit Azure Private Link, indem Sie einen privaten Endpunkt verwenden
 
 ![Diagramm: Architektur eines privaten Endpunkts](../media/6-exercise-create-azure-private-endpoint-using-azure-powershell.png)
 
-### Interaktive Labsimulationen
-
->**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
-
 ### Geschätzte Dauer: 45 Minuten
 
 Sie erstellen einen privaten Endpunkt für eine Azure-Web-App und stellen einen virtuellen Computer bereit, um die private Verbindung zu testen.
