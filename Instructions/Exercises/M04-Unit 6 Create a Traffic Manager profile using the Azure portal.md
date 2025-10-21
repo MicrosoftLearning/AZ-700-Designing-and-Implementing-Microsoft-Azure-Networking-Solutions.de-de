@@ -10,10 +10,6 @@ Exercise:
 
 In dieser Übung erstellen Sie ein Traffic Manager-Profil, um Hochverfügbarkeit für die Webanwendung der fiktiven Organisation Contoso Ltd bereitzustellen.
 
-### Interaktive Labsimulationen
-
->**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
-
 ### Geschätzte Dauer: 35 Minuten
 
 Sie erstellen zwei Instanzen einer Webanwendung, die in zwei verschiedenen Regionen bereitgestellt werden („USA, Osten“ und „Europa, Westen“). Die Region „USA, Osten“ fungiert als primärer Endpunkt für Traffic Manager, und die Region „Europa, Westen“ fungiert als Failoverendpunkt.
@@ -51,11 +47,11 @@ In diesem Abschnitt erstellen Sie zwei Instanzen einer Webanwendung, die in den 
    | Betriebssystem | **Windows**                                                  |
    | Region           | **USA, Osten**                                                  |
    | Windows-Plan     | Wählen Sie **Neu erstellen** Name: **ContosoAppServicePlanEastUS** aus. |
-   | Pricing Plan (Tarif)     | **Standard S1, ACU gesamt: 100, 1,75 GB Arbeitsspeicher**               |
+   | Tarif     | **Premium V3 P1V3** (Wählen Sie einen anderen Plan aus, wenn dieser nicht verfügbar ist.)          |
 
-1. Wählen Sie die Registerkarte **Überwachung** aus.
+1. Wählen Sie Registerkarte **Überwachen und sichern** aus.
 
-1. Wählen Sie auf der Registerkarte **Überwachung** die Option **Nein** für **Application Insights aktivieren** aus.
+1. Wählen Sie für **Application Insights aktivieren** die Option **Nein** aus.
 
 1. Klicken Sie auf **Überprüfen + erstellen**.
 
