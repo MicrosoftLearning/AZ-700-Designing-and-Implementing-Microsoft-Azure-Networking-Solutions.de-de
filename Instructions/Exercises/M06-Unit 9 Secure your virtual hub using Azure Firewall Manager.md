@@ -13,11 +13,6 @@ In dieser Übung erstellen Sie das virtuelle Spoke-Netzwerk und einen geschützt
 
 ![Abbildung: Architektur des virtuellen Netzwerks mit einem sicheren Hub](../media/9-exercise-secure-your-virtual-hub-using-azure-firewall-manager.png)
 
-### Interaktive Labsimulationen
-
-**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
-
-
 ## Erstellen einer Hub-Spoke-Architektur
 
 In diesem Teil der Übung erstellen Sie die virtuellen Spoke-Netzwerke und Subnetze, in denen Sie die Workloadserver platzieren. Anschließend erstellen Sie den geschützten virtuellen Hub und verbinden die virtuellen Hub-and-Spoke-Netzwerke .
@@ -180,105 +175,96 @@ In dieser Aufgabe verbinden Sie die virtuellen Hub-and-Spoke-Netzwerke. Dies wir
 
 In dieser Aufgabe erstellen Sie zuerst Ihre Firewallrichtlinie und schützen dann Ihren Hub. Die Firewallrichtlinie definiert Regelsammlungen für die Weiterleitung von Datenverkehr an mindestens einen geschützten virtuellen Hub.
 
-1. Suchen Sie im Portal nach `firewall manager`, und wählen Sie dann **Netzwerksicherheit:Stichwort: Firewall Manager** aus.
-
-1. Wählen Sie auf dem Blatt **Firewall Manager** die Option **Azure Firewall-Richtlinien** aus.
+1. Suchen Sie im Portal die Option `Firewall Policies`, und wählen Sie sie aus.
 
 1. Klicken Sie auf **Erstellen**.
 
-1. Wählen Sie unter **Ressourcengruppe** die Option **fw-manager-rg** aus.
-
-5. Geben Sie unter **Richtliniendetails** unter **Name** den Namen `Policy-01` ein.
-
-1. Wählen Sie unter **Region** Ihre Region aus.
-
-1. Wählen Sie **Standard** als **Richtlinienebene** aus.
+    | **Einstellung**    | **Wert** |
+    | ---------- | --------------|
+    | Ressourcengruppe | **fw-manager-rg** |
+    | Name    | `Policy-01` |
+    | Region     | Auswählen Ihrer Region |
+    | Richtlinientarif | **Standard** |
 
 1. Wählen Sie **Weiter: DNS-Einstellungen** aus. Überprüfen Sie die Angaben, nehmen Sie jedoch keine Änderungen vor. 
 
 1. Klicken Sie auf **Weiter: TLS-Überprüfung**. Überprüfen Sie die Angaben, nehmen Sie jedoch keine Änderungen vor. 
 
-1. Wählen Sie **Weiter: Regeln** aus.
+**Hinzufügen einer Regelsammlung und einer Regel zum Zulassen der Microsoft-Domäne**
 
-1. Wählen Sie auf der Registerkarte **Regeln** die Option **Regelsammlung hinzufügen** aus.
+1. Klicken Sie auf **Weiter: Regeln**, und wählen Sie dann **Regelsammlung hinzufügen** aus.
 
-1. Geben Sie auf der Seite **Regelsammlung hinzufügen** unter **Name** den Namen `App-RC-01` ein.
+   | **Einstellung** | **Wert** |
+   | ---------- | --------------|
+   | Name        |  `App-RC-01` |
+   | Regelsammlungstyp | **Anwendung** |
+   | Priorität    | `100` |
+   | Regelsammlungsaktion | **Zulassen** |
 
-1. Wählen Sie unter **Regelsammlungstyp** die Option **Anwendung** aus.
+1. Im Abschnitt **Regeln**:
 
-1. Geben Sie unter **Priorität**den Wert **100** ein.
+   | **Einstellung** | **Wert** |
+   | ---------- | --------------|
+   | Name |  `Allow-msft` |
+   | Quellentyp | **IP-Adresse** |
+   | Quelle | `*` |
+   | Protocol | `http,https` |
+   | Zieltyp | **FQDN** |
+   | Destination | `*.microsoft.com` |
 
-1. Vergewissern Sie sich, dass die **Regelsammlungsaktion** auf **Zulassen** festgelegt ist.
+**Fügen Sie eine Regelsammlung und Regel hinzu, um eine Remotedesktopverbindung mit der VM „Srv-workload-01“ zuzulassen.**
 
-1. Geben Sie unter **Regeln** unter **Name** den Namen `Allow-msft` ein.
+1. Wählen Sie **Regelsammlung hinzufügen** aus.
 
-1. Wählen Sie unter **Quellentyp** die Option **IP-Adresse** aus.
+   | **Einstellung** | **Wert** |
+   | ---------- | --------------|
+   | Name        |  `dnat-rdp` |
+   | Regelsammlungstyp | **DNAT** |
+   | Priorität    | `100` |
+   | Regelsammlungsaktion | **Zulassen** |
 
-1. Geben Sie unter **Quelle** „*“ ein.
+1. Im Abschnitt **Regeln**:
 
-1. Geben Sie unter **Protokoll** das Protokoll `http,https` ein.
+   | **Einstellung** | **Wert** |
+   | ---------- | --------------|
+   | Name |  `Allow-rdp` |
+   | Quellentyp | **IP-Adresse** |
+   | Quelle | `*` |
+   | Protokoll | **TCP** |
+   | Zielports | `3389` |
+   | Ziel (Firewall-IP-Adresse) | Geben Sie die öffentliche IP-Adresse des virtuellen Firewallhubs ein. |
+   | Übersetzter Typ | **IP-Adresse** |
+   | Übersetzte Adresse oder übersetzter vollqualifizierter Domänenname (FQDN) | Geben Sie die private IP-Adresse der VM „Srv-workload-01“ ein. |
+   | Übersetzter Port | `3389` |
+   
+**Fügen Sie eine Regelsammlung und eine Regel hinzu, um eine Remotedesktopverbindung mit der VM „Srv-workload-02“ zuzulassen.**
 
-1. Vergewissern Sie sich, dass **Zieltyp** auf **FQDN** festgelegt ist.
+1. Wählen Sie **Regelsammlung hinzufügen** aus.
 
-1. Geben Sie unter **Ziel** den Wert `*.microsoft.com` ein.
+   | **Einstellung** | **Wert** |
+   | ---------- | --------------|
+   | Name        |  `vnet-rdp` |
+   | Regelsammlungstyp | **Netzwerk** |
+   | Priorität    | `100` |
+   | Regelsammlungsaktion | **Zulassen** |
 
-1. Wählen Sie **Hinzufügen**.
+1. Im Abschnitt **Regeln**:
 
-1. Um eine DNAT-Regel hinzuzufügen, damit Sie einen Remotedesktop mit der VM „Srv-workload-01“ verbinden können, wählen Sie **Regelsammlung hinzufügen** aus.
-
-1. Geben Sie unter **Name**`dnat-rdp` ein.
-
-1. Wählen Sie unter **Regelsammlungstyp** die Option **DNAT** aus.
-
-1. Geben Sie unter **Priorität**den Wert **100** ein.
-
-1. Geben Sie unter **Regeln** unter **Name** den Namen `Allow-rdp` ein.
-
-1. Wählen Sie unter **Quellentyp** die Option **IP-Adresse** aus.
-
-1. Geben Sie unter **Quelle** „*“ ein.
-
-1. Wählen Sie für **Protokoll** die Option **TCP** aus.
-
-1. Geben Sie unter **Zielports** den Wert `3389` ein.
-
-1. Geben Sie unter **Ziel-IP-Adresse** die öffentliche IP-Adresse des virtuellen Firewallhubs ein, die Sie sich zuvor notiert haben (z. B. **51.143.226.18**).
-
-1. Wählen Sie unter **Übersetzter Typ** die Option **IP-Adresse** aus.
-
-1. Geben Sie unter **Übersetzte Adresse** die private IP-Adresse für **Srv-workload-01** ein, die Sie sich zuvor notiert haben (z. B. **10.0.1.4**).
-
-1. Geben Sie unter **Übersetzter Port** den Wert **3389** ein.
-
-1. Wählen Sie **Hinzufügen** aus.
-
-1. Um eine Netzwerkregel hinzuzufügen, damit Sie einen Remotedesktop von der VM „Srv-workload-01“ mit der VM „Srv-workload-02“ verbinden können, wählen Sie **Regelsammlung hinzufügen** aus.
-
-1. Geben Sie unter **Name**`vnet-rdp` ein.
-
-1. Wählen Sie unter **Regelsammlungstyp** die Option **Netzwerk** aus.
-
-1. Geben Sie unter **Priorität**den Wert **100** ein.
-
-1. Wählen Sie unter **Regelsammlungsaktion** die Option **Zulassen** aus.
-
-1. Geben Sie unter **Regeln** unter **Name** den Namen `Allow-vnet` ein.
-
-1. Wählen Sie unter **Quellentyp** die Option **IP-Adresse** aus.
-
-1. Geben Sie unter **Quelle** „*“ ein.
-
-1. Wählen Sie für **Protokoll** die Option **TCP** aus.
-
-1. Geben Sie unter **Zielports** den Wert **3389** ein.
-
-1. Wählen Sie unter **Zieltyp** die Option **IP-Adresse** aus.
-
-1. Geben Sie unter **Ziel** die private IP-Adresse für **Srv-workload-02** ein, die Sie sich zuvor notiert haben (z. B. **10.1.0.4**).
+   | **Einstellung** | **Wert** |
+   | ---------- | --------------|
+   | Name |  `Allow-vnet` |
+   | Quellentyp | **IP-Adresse** |
+   | Quelle | `*` |
+   | Protokoll | **TCP** |
+   | Zielports | `3389` |
+   | Ziel (Firewall-IP-Adresse) | Geben Sie die öffentliche IP-Adresse des virtuellen Firewallhubs ein. |
+   | Übersetzter Typ | **IP-Adresse** |
+   | Übersetzte Adresse oder übersetzter vollqualifizierter Domänenname (FQDN) | Geben Sie die private IP-Adresse der VM „Srv-workload-02“ ein. |
+   | Übersetzter Port | `3389` |
 
 1. Wählen Sie **Hinzufügen**.
 
-1. Sie sollten nun drei Regelsammlungen aufgelistet werden.
+1. Stellen Sie sicher, dass Sie über drei Regelsammlungen verfügen.
 
 1. Klicken Sie auf **Überprüfen + erstellen**.
 

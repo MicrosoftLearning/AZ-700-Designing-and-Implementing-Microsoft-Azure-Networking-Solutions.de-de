@@ -20,10 +20,6 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 3: Erstellen von VMs zum Testen der Konfiguration
 + Aufgabe 4: Überprüfen des Vorhandenseins von Einträgen in der DNS-Zone
 
-### Interaktive Labsimulationen
-
->**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
-
 ### Geschätzte Dauer: 25 Minuten
 
 **Wichtig:** Für diese Übung ist ein virtuelles Netzwerk aus der vorherigen Übung erforderlich. Dies kann mithilfe einer [Vorlagendatei](https://github.com/MicrosoftLearning/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/tree/master/Allfiles/Exercises/M01/template.json) installiert werden. Alle virtuellen Netzwerke werden installiert, aber nur das CoreServicesVNet ist erforderlich. 

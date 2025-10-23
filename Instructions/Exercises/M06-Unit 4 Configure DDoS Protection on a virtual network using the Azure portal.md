@@ -24,9 +24,6 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 6: Konfigurieren von DDoS-Warnungen
 + Aufgabe 7: Testen mit Simulationspartnern
   
-### Interaktive Labsimulationen
-
->**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
 ### Geschätzte Dauer: 40 Minuten
 
 ## Aufgabe 1: Erstellen einer Ressourcengruppe

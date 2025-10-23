@@ -12,10 +12,6 @@ Nun können Sie virtuelle Netzwerke im Azure-Portal bereitstellen.
 
 Betrachten wir als Beispiel das fiktive Unternehmen Contoso Ltd, das dabei ist, seine Infrastruktur und Anwendungen zu Azure zu migrieren. In Ihrer Rolle als Netzwerktechniker müssen Sie drei virtuelle Netzwerke und Subnetze planen und implementieren, um Ressourcen in diesen virtuellen Netzwerken zu unterstützen.
 
-### Interaktive Labsimulationen
-
->**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
-
 ### Geschätzte Dauer: 20 Minuten
 
 Das virtuelle Netzwerk **CoreServicesVnet** wird in der Region **USA, Osten** bereitgestellt. Dieses virtuelle Netzwerk wird über die größte Anzahl von Ressourcen verfügen. Es wird über eine VPN-Verbindung mit lokalen Netzwerken verbunden sein. Dieses Netzwerk verfügt über Webdienste, Datenbanken und andere Systeme, die für den Betrieb des Unternehmens wichtig sind. Freigegebene Dienste, wie z. B. Domänencontroller und DNS, befinden sich ebenfalls hier. Es wird ein großes Wachstum erwartet, daher ist ein großer Adressraum für dieses virtuelle Netzwerk erforderlich.
@@ -178,7 +174,7 @@ Copilot kann Sie beim Erlernen der Verwendung von Azure-Skripttools unterstütze
 
 ## Wichtige Erkenntnisse
 
-+ Azure Virtual Network ist ein Dienst, der den Grundbaustein für Ihr privates Netzwerk in Azure bereitstellt. Eine Instanz des Diensts (ein virtuelles Netzwerk) ermöglicht zahlreichen Azure-Ressourcentypen die sichere Kommunikation untereinander sowie mit dem Internet und lokalen Netzwerken. Stellen Sie sicher, dass sich Adressräume nicht überschneiden. Stellen Sie sicher, dass der Adressraum Ihres virtuellen Netzwerks (CIDR-Block) sich nicht mit anderen Netzwerkbereichen Ihrer Organisation überschneidet.
++ Azure Virtual Network ist ein Dienst, der den grundlegenden Baustein für Ihr privates Netzwerk in Azure bereitstellt. Eine Instanz des Diensts (ein virtuelles Netzwerk) ermöglicht es vielen Arten von Azure-Ressourcen, sicher miteinander, dem Internet und lokalen Netzwerken zu kommunizieren. Stellen Sie sicher, dass sich Adressräume nicht überschneiden. Stellen Sie sicher, dass der Adressraum Ihres virtuellen Netzwerks (CIDR-Block) sich nicht mit anderen Netzwerkbereichen Ihrer Organisation überschneidet.
 + Alle Azure-Ressourcen in einem virtuellen Netzwerk werden in Subnetzen innerhalb des virtuellen Netzwerks bereitgestellt. Mit Subnetzen können Sie das virtuelle Netzwerk in ein oder mehrere Subnetze unterteilen und jedem Subnetz einen Teil des Adressraums des virtuellen Netzwerks zuweisen. Die Subnetze sollten nicht den gesamten Adressraum des virtuellen Netzwerks ausmachen. Planen Sie voraus, und reservieren Sie Adressraum für die Zukunft.
 
 

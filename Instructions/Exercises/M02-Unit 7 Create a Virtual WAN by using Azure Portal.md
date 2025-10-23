@@ -19,10 +19,6 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 2: Erstellen eines Hubs mithilfe des Azure-Portals
 + Aufgabe 3: Verbinden eines VNet mit dem virtuellen Hub
 
-### Interaktive Labsimulationen
-
->**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
->
 ### Geschätzte Dauer: 65 Minuten (einschließlich ca. 45 Minuten Wartezeit bei der Bereitstellung)
 
 ## Aufgabe 1: Erstellen eines virtuellen WAN
@@ -129,7 +125,7 @@ Ein Hub enthält Gateways für Verbindungen vom Typ „Site-to-Site“, „Expre
 
 Copilot kann Sie beim Erlernen der Verwendung von Azure-Skripttools unterstützen. Copilot kann Sie auch in Bereichen unterstützen, die nicht im Lab behandelt werden oder in denen Sie weitere Informationen benötigen. Öffnen Sie einen Edge-Browser, und wählen Sie „Copilot“ (rechts oben) aus, oder navigieren Sie zu *copilot.microsoft.com*. Nehmen Sie sich einige Minuten Zeit, um diese Prompts auszuprobieren.
 + Welche Art von Netzwerkarchitektur verwendet Azure VWAN?
-+ Was sind die Unterschiede zwischen Azure VWAN Basic und Standard? Bereitstellen von Beispielen.
++ Was sind die Unterschiede zwischen Azure VWAN Basic und Standard? Stellen Sie Beispiele bereit.
 + Kann ein Azure VWAN mit Skripting-Tools erstellt werden?
 
 ## Weiterlernen im eigenen Tempo

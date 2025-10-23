@@ -22,10 +22,6 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 4: Erstellen von VNet-Peerings zwischen CoreServicesVnet und ManufacturingVnet
 + Aufgabe 5: Testen der Verbindung zwischen den VMs
 
-### Interaktive Labsimulationen
-
->**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
-
 ### Geschätzte Dauer: 20 Minuten
 
 ## Aufgabe 1: Erstellen einer virtuellen Maschine zum Testen der Konfiguration

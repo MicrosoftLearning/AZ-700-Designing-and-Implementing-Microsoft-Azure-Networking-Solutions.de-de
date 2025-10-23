@@ -22,10 +22,6 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 2: Erstellen einer Front Door-Instanz für Ihre Anwendung
 + Aufgabe 3: Anzeigen von Azure Front Door in Aktion
 
-### Interaktive Labsimulationen
-
->**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
-
 ### Geschätzte Dauer: 30 Minuten
 
 ## Aufgabe 1: Erstellen von zwei Instanzen einer Web-App

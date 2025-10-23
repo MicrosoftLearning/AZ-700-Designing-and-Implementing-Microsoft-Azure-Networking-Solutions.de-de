@@ -9,10 +9,6 @@ Exercise:
 
 In dieser Übung erstellen Sie eine ExpressRoute-Leitung mithilfe des Azure-Portals und des Azure Resource Manager-Bereitstellungsmodells.
 
-### Interaktive Labsimulationen
-
->**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
-
 ### Geschätzte Dauer: 15 Minuten
 
 ![Diagramm: Layout der ExpressRoute-Leitung für die Übung](../media/5-exercise-provision-expressroute-circuit.png)
@@ -36,7 +32,7 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 
 1. Geben Sie auf der Seite **ExpressRoute erstellen** die **Ressourcengruppe** als `ExpressRouteResourceGroup` an. Wählen Sie dann **Standardresilienz** für **Resilienz** aus.
 
-1. Stellen unter ***Verbindungsdetails** sicher, dass Sie die richtige Region (**USA, Osten 2**), den Verbindungsnamen (**TestERCircuit**), den Peering-Standort (**Seattle**), Provider (**Equinix**), Bandbreite (**50 Mbps**), SKU-Tier (**Standard**) und Abrechnungsmodell für die Datenmessung (**Gemessen**) angeben.
+1. Stellen Sie sicher, dass Sie unter **Verbindungsdetails** die Region (**USA, Osten 2**), den Leitungsnamen (**TestERCircuit**), den Peeringstandort (**Seattle**), den Anbieter (**Equinix**), die Bandbreite (**50 MBit/s**), den SKU-Tarif (**Standard**) und das Abrechnungsmodell für die Datenmessung (**Getaktet**) richtig angeben.
 
 1. Klicken Sie auf **Überprüfen + erstellen**.
 
@@ -84,11 +80,11 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 1. Wenn Sie eine neue ExpressRoute-Verbindung erstellen, weist die Verbindung folgenden Zustand auf:
 
    + Anbieterstatus: Nicht bereitgestellt
-   + Schaltkreisstatus: Aktiviert
+   + Verbindungsstatus: Aktiviert
 
    + Die Verbindung wechselt in den folgenden Zustand, wenn sie vom Konnektivitätsanbieter aktuell für Sie aktiviert wird:
      + Anbieterstatus: Wird bereitgestellt
-     + Schaltkreisstatus: Aktiviert
+     + Verbindungsstatus: Aktiviert
    + Damit Sie eine ExpressRoute-Verbindung verwenden können, muss sie sich im folgenden Zustand befinden:
      + Anbieterstatus: Bereitgestellt
      + Schaltkreisstatus: Aktiviert
@@ -141,3 +137,5 @@ Herzlichen Glückwunsch zum erfolgreichen Abschluss des Labs. Hier sind die wich
 + Microsoft garantiert für dedizierte ExpressRoute-Verbindungen eine Verfügbarkeit von mindestens 99,95 %. Die Verbindung ist privat und läuft über eine Standleitung. Dritte können den Datenverkehr nicht abfangen.
 + Sie können eine Verbindung zwischen Ihrem lokalen Netzwerk und der Microsoft-Cloud auf vier verschiedene Arten erstellen: CloudExchange-Zusammenstellung, Point-to-Point-Ethernet-Verbindung, Any-to-Any-Verbindung (IPVPN) und ExpressRoute Direct.
 + Die ExpressRoute-Funktionen werden durch die SKU bestimmt: Lokal, Standard und Premuium. 
+
+

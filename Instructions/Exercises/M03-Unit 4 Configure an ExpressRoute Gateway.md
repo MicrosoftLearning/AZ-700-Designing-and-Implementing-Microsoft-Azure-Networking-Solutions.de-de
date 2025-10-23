@@ -11,10 +11,6 @@ Exercise:
 
 Wenn Sie Ihr virtuelles Azure-Netzwerk und Ihr lokales Netzwerk über ExpressRoute verbinden möchten, müssen Sie ein virtuelles Netzwerkgateway erstellen. Ein Gateway für virtuelle Netzwerke dient zwei Zwecken: dem Austausch von IP-Routen zwischen den Netzwerken und der Weiterleitung des Netzwerkdatenverkehrs.
 
-### Interaktive Labsimulationen
-
->**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
-
 ### Geschätzte Dauer: 60 Minuten (einschließlich ca. 45 Minuten Wartezeit für die Bereitstellung)
 
 **Gatewaytypen**
@@ -118,4 +114,5 @@ Herzlichen Glückwunsch zum erfolgreichen Abschluss des Labs. Hier sind die wich
 + Microsoft garantiert für dedizierte ExpressRoute-Verbindungen eine Verfügbarkeit von mindestens 99,95 %. Die Verbindung ist privat und läuft über eine Standleitung. Dritte können den Datenverkehr nicht abfangen.
 + Sie können eine Verbindung zwischen Ihrem lokalen Netzwerk und der Microsoft-Cloud auf vier verschiedene Arten erstellen: CloudExchange-Zusammenstellung, Point-to-Point-Ethernet-Verbindung, Any-to-Any-Verbindung (IPVPN) und ExpressRoute Direct.
 + Die ExpressRoute-Funktionen werden durch die SKU bestimmt: Lokal, Standard und Premuium. 
+
 

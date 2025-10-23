@@ -9,10 +9,6 @@ Exercise:
 
 In dieser Übung erstellen Sie einen internen Lastenausgleich für die fiktive Organisation Contoso Ltd.
 
-### Interaktive Labsimulationen
-
->**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
-
 ### Geschätzte Dauer: 60 Minuten (einschließlich ca. 45 Minuten Wartezeit für die Bereitstellung)
 
 Die Schritte zum Erstellen eines internen Lastenausgleichs sind denen, die Sie bereits in diesem Modul kennengelernt haben, um einen öffentlichen Lastenausgleich zu erstellen, sehr ähnlich. Der Hauptunterschied besteht darin, dass bei einem öffentlichen Lastenausgleich über eine öffentliche IP-Adresse auf das Front-End zugegriffen wird und Sie die Konnektivität von einem Host aus testen, der sich außerhalb Ihres virtuellen Netzwerks befindet, während bei einem internen Lastenausgleich das Front-End eine private IP-Adresse in Ihrem virtuellen Netzwerk ist, und Sie die Konnektivität von einem Host innerhalb desselben Netzwerks aus testen.

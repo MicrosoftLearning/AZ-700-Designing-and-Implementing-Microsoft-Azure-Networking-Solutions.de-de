@@ -27,10 +27,6 @@ In dieser Übung führen Sie die folgenden Schritte aus:
 + Aufgabe 9: Ändern der primären und sekundären DNS-Adresse für die Netzwerkschnittstelle des Servers
 + Aufgabe 10: Testen der Firewall
 
-### Interaktive Labsimulationen
-
->**Hinweis**: Die zuvor bereitgestellten Laborsimulationen wurden eingestellt.
-
 ### Geschätzte Dauer: 60 Minuten.
 
 ## Aufgabe 1: Erstellen einer Ressourcengruppe
@@ -69,11 +65,11 @@ In dieser Aufgabe erstellen Sie ein einzelnes virtuelles Netzwerk mit zwei Subne
 
 1. Klicken Sie auf **Weiter: IP-Adressen**. Geben Sie den IPv4-Adressraum „10.0.0.0/16“ ein, falls nicht bereits vorhanden.
 
-1. Wählen Sie unter **Subnetzname** das Wort **Standard** aus.
+1. Klicken Sie neben dem Subnetz **Default** auf das Symbol **Bearbeiten**.
 
-1. Ändern Sie im Dialogfeld **Subnetz bearbeiten** den Namen in **AzureFirewallSubnet**.
+1. Wählen Sie in der Dropdownliste **Subnetzzweck** die Option **Azure Firewall** aus. 
 
-1. Ändern Sie den **Adressbereich des Subnetzes** in **10.0.1.0/26**.
+1. Ändern Sie die **Startadresse** in **10.0.1.0/26**.
 
 1. Wählen Sie **Speichern**.
 
